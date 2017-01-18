@@ -721,6 +721,135 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/22/use-jquery-skill/" itemprop="url">
+                  jQuery使用技巧
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-22T11:54:55+08:00" content="2016-11-22">
+              2016-11-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="禁用页面的右键菜单"><a href="#禁用页面的右键菜单" class="headerlink" title="禁用页面的右键菜单"></a>禁用页面的右键菜单</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">  $(<span class="built_in">document</span>).bind(<span class="string">"contextmenu"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;  </div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;  </div><div class="line">  &#125;);  </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="新窗口打开页面"><a href="#新窗口打开页面" class="headerlink" title="新窗口打开页面"></a>新窗口打开页面</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.google.com"</span>&gt;</span>google_新窗口<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.google.com"</span> <span class="attr">rel</span>=<span class="string">"external"</span>&gt;</span>google_新窗口<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"demo1.html"</span>&gt;</span>当前窗口<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">'a[href^="http://"]'</span>).attr(<span class="string">"target"</span>,<span class="string">"_blank"</span>);</div><div class="line">  &#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="输入框文字获取和失去焦点【推荐】"><a href="#输入框文字获取和失去焦点【推荐】" class="headerlink" title="输入框文字获取和失去焦点【推荐】"></a><font color="#099">输入框文字获取和失去焦点【推荐】</font></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"text1"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">  $(<span class="string">"input.text1"</span>).val(<span class="string">"Enter your search text here."</span>);  </div><div class="line">  textFill( $(<span class="string">'input.text1'</span>) );  </div><div class="line">&#125;);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">textFill</span>(<span class="params">input</span>)</span>&#123; <span class="comment">//input focus text function  </span></div><div class="line">  <span class="keyword">var</span> originalvalue = input.val();  </div><div class="line">  input.focus( <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">    <span class="keyword">if</span>( $.trim(input.val()) == originalvalue )&#123;</div><div class="line">      input.val(<span class="string">''</span>); </div><div class="line">    &#125;  </div><div class="line">  &#125;).blur( <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">    <span class="keyword">if</span>( $.trim(input.val()) == <span class="string">''</span> )&#123; </div><div class="line">      input.val(originalvalue); </div><div class="line">    &#125;  </div><div class="line">  &#125;);  </div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="返回头部滑动动画"><a href="#返回头部滑动动画" class="headerlink" title="返回头部滑动动画"></a>返回头部滑动动画</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">jQuery.fn.scrollTo = <span class="function"><span class="keyword">function</span>(<span class="params">speed</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> targetOffset = $(<span class="keyword">this</span>).offset().top;</div><div class="line">  $(<span class="string">'html,body'</span>).stop().animate(&#123;scrollTop: targetOffset&#125;, speed);</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">&#125;; </div><div class="line"><span class="comment">// use</span></div><div class="line">$(<span class="string">"#goheader"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"body"</span>).scrollTo(<span class="number">500</span>);</div><div class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;); </div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="获取鼠标位置"><a href="#获取鼠标位置" class="headerlink" title="获取鼠标位置"></a>获取鼠标位置</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"XY"</span> &gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="built_in">document</span>).mousemove(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;  </div><div class="line">    $(<span class="string">'#XY'</span>).html(<span class="string">"X : "</span> + e.pageX + <span class="string">" | Y : "</span> + e.pageY);  </div><div class="line">  &#125;);</div><div class="line">&#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="关闭所有-jQuery-动画效果"><a href="#关闭所有-jQuery-动画效果" class="headerlink" title="关闭所有 jQuery 动画效果"></a>关闭所有 jQuery 动画效果</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jQuery.fx.off = <span class="literal">true</span>;</div></pre></td></tr></table></figure>
+<h3 id="检测鼠标的右键和左键"><a href="#检测鼠标的右键和左键" class="headerlink" title="检测鼠标的右键和左键"></a>检测鼠标的右键和左键</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#box'</span>).mousedown(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  alert(e.which);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="回车提交表单"><a href="#回车提交表单" class="headerlink" title="回车提交表单"></a>回车提交表单</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  $(<span class="string">'input'</span>).keyup(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(e.which == <span class="string">'13'</span>) &#123;</div><div class="line">      alert(<span class="string">'回车提交'</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="切换复选框"><a href="#切换复选框" class="headerlink" title="切换复选框"></a>切换复选框</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> tog = <span class="literal">false</span>;</div><div class="line">$(<span class="string">'button'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  $(<span class="string">"input[type=checkbox]"</span>).attr(<span class="string">"checked"</span>,!tog);</div><div class="line">  tog = !tog;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="使用-siblings-来选择同辈元素"><a href="#使用-siblings-来选择同辈元素" class="headerlink" title="使用 siblings() 来选择同辈元素"></a>使用 siblings() 来选择同辈元素</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//不这样做</span></div><div class="line">$(<span class="string">'#nav li'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">'#nav li'</span>).removeClass(<span class="string">'active'</span>);</div><div class="line">  $(<span class="keyword">this</span>).addClass(<span class="string">'active'</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//替代做法是</span></div><div class="line">$(<span class="string">'#nav li'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  $(<span class="keyword">this</span>).addClass(<span class="string">'active'</span>).siblings().removeClass(<span class="string">'active'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="为任何与选择器相匹配的元素绑定事件"><a href="#为任何与选择器相匹配的元素绑定事件" class="headerlink" title="为任何与选择器相匹配的元素绑定事件"></a>为任何与选择器相匹配的元素绑定事件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"table"</span>).on(<span class="string">"click"</span>,<span class="string">"td"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </div><div class="line">  $(<span class="keyword">this</span>).toggleClass(<span class="string">"hover"</span>); </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="proxy-的使用"><a href="#proxy-的使用" class="headerlink" title="$.proxy 的使用"></a>$.proxy 的使用</h3><p>使用回调方法的缺点之一是当执行类库中的方法后，上下文对象被设置到另外一个元素，比如，执行下面代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">    <span class="selector-id">#panel</span> &#123;</div><div class="line">      <span class="attribute">width</span>: <span class="number">300px</span>;</div><div class="line">      <span class="attribute">height</span>: <span class="number">300px</span>;</div><div class="line">      <span class="attribute">background-color</span>: <span class="number">#ccc</span>;</div><div class="line">    &#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"panel"</span> <span class="attr">style</span>=<span class="string">"display:none"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Close<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  $(<span class="string">'#panel'</span>).fadeIn(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">'#panel button'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      $(<span class="keyword">this</span>).fadeOut();</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>你将遇到问题，button 元素会消失，而不是 panel 元素。可以使用 <code>$.proxy</code> 方法解决这个问题，代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">    <span class="selector-id">#panel</span> &#123;</div><div class="line">      <span class="attribute">width</span>: <span class="number">300px</span>;</div><div class="line">      <span class="attribute">height</span>: <span class="number">300px</span>;</div><div class="line">      <span class="attribute">background-color</span>: <span class="number">#ccc</span>;</div><div class="line">    &#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"panel"</span> <span class="attr">style</span>=<span class="string">"display:none"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Close<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  $(<span class="string">'#panel'</span>).fadeIn(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">'#panel button'</span>).click($.proxy(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      $(<span class="keyword">this</span>).fadeOut();</div><div class="line">    &#125;,<span class="keyword">this</span>));</div><div class="line">  &#125;);</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>这样才正确执行。</p>
+<h3 id="限制-Text-Area-域中的字符的个数"><a href="#限制-Text-Area-域中的字符的个数" class="headerlink" title="限制 Text-Area 域中的字符的个数"></a>限制 Text-Area 域中的字符的个数</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"mytextarea"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    jQuery.fn.maxLength = <span class="function"><span class="keyword">function</span>(<span class="params">max</span>)</span>&#123;</div><div class="line">      <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> type = <span class="keyword">this</span>.tagName.toLowerCase();</div><div class="line">          <span class="keyword">var</span> inputType = <span class="keyword">this</span>.type? <span class="keyword">this</span>.type.toLowerCase() : <span class="literal">null</span>;</div><div class="line">            <span class="keyword">if</span>(type == <span class="string">"input"</span> &amp;&amp; inputType == <span class="string">"text"</span> || inputType == <span class="string">"password"</span>)&#123;</div><div class="line">              <span class="comment">//应用标准的maxLength</span></div><div class="line">              <span class="keyword">this</span>.maxLength = max;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(type == <span class="string">"textarea"</span>)&#123;</div><div class="line">              <span class="keyword">this</span>.onkeypress = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">                <span class="keyword">var</span> ob = e || event;</div><div class="line">                <span class="keyword">var</span> keyCode = ob.keyCode;</div><div class="line">                <span class="keyword">var</span> hasSelection = <span class="built_in">document</span>.selection? <span class="built_in">document</span>.selection.createRange().text.length &gt; <span class="number">0</span> : <span class="keyword">this</span>.selectionStart != <span class="keyword">this</span>.selectionEnd;</div><div class="line">                <span class="keyword">return</span> !(<span class="keyword">this</span>.value.length &gt;= max &amp;&amp; (keyCode &gt; <span class="number">50</span> || keyCode == <span class="number">32</span> || keyCode == <span class="number">0</span> || keyCode == <span class="number">13</span>) &amp;&amp; !ob.ctrlKey &amp;&amp; !ob.altKey &amp;&amp; !hasSelection);</div><div class="line">              &#125;;</div><div class="line">              <span class="keyword">this</span>.onkeyup = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                <span class="keyword">if</span>(<span class="keyword">this</span>.value.length &gt; max)&#123;</div><div class="line">                  <span class="keyword">this</span>.value = <span class="keyword">this</span>.value.substring(<span class="number">0</span>,max);</div><div class="line">                &#125;</div><div class="line">              &#125;;</div><div class="line">            &#125;</div><div class="line">      &#125;);</div><div class="line">    &#125;;</div><div class="line">    <span class="comment">//use</span></div><div class="line">    $(<span class="string">'#mytextarea'</span>).maxLength(<span class="number">10</span>);</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span>    </div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="解析-json-数据时报-parseError-错误"><a href="#解析-json-数据时报-parseError-错误" class="headerlink" title="解析 json 数据时报 parseError 错误"></a>解析 json 数据时报 parseError 错误</h3><p>jQuery 在 1.4 版本后，采用了更为严格的 json 解析方式，即所有内容都必须要有双引号，如果升级 jQuery 版本后，ajax 加载 json 报错，有可能就是这个原因。比如：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 1.4之前版本，key没引号，这样没问题</div><div class="line">&#123;</div><div class="line">  key:"coco",</div><div class="line">  status:"0"</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>但升级成jQuery1.4后，都必须加上双引号，格式如下：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"key"</span>:<span class="string">"coco"</span>,</div><div class="line">  <span class="attr">"status"</span>:<span class="string">"0"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="从元素中除去-HTML"><a href="#从元素中除去-HTML" class="headerlink" title="从元素中除去 HTML"></a>从元素中除去 HTML</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123; </div><div class="line">$.fn.stripHtml = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </div><div class="line">　<span class="keyword">var</span> regexp = <span class="regexp">/&lt;("[^"]*"|'[^']*'|[^'"&gt;])*&gt;/gi</span>; </div><div class="line">　<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </div><div class="line">  　$(<span class="keyword">this</span>).html( $(<span class="keyword">this</span>).html().replace(regexp,<span class="string">''</span>) ); </div><div class="line">　&#125;);</div><div class="line">　<span class="keyword">return</span> $(<span class="keyword">this</span>); </div><div class="line">&#125; </div><div class="line">&#125;)(jQuery); </div><div class="line"><span class="comment">//用法： </span></div><div class="line">$(<span class="string">'div'</span>).stripHtml(); </div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="扩展-String-对象的方法"><a href="#扩展-String-对象的方法" class="headerlink" title="扩展 String 对象的方法"></a>扩展 String 对象的方法</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> /&gt;</span><span class="tag">&lt;<span class="name">button</span> &gt;</span>check<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  $.extend(<span class="built_in">String</span>.prototype, &#123;</div><div class="line">  isPositiveInteger:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^[1-9]\d*$/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  isInteger:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^\d+$/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  isNumber: <span class="function"><span class="keyword">function</span>(<span class="params">value, element</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^-?(?:\d+|\d&#123;1,3&#125;(?:,\d&#123;3&#125;)+)(?:\.\d+)?$/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  trim:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/(^\s*)|(\s*$)|\r|\n/g</span>, <span class="string">""</span>);</div><div class="line">  &#125;,</div><div class="line">  trans:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/&amp;lt;/g</span>, <span class="string">'&lt;'</span>).replace(<span class="regexp">/&amp;gt;/g</span>,<span class="string">'&gt;'</span>).replace(<span class="regexp">/&amp;quot;/g</span>, <span class="string">'"'</span>);</div><div class="line">  &#125;,</div><div class="line">  replaceAll:<span class="function"><span class="keyword">function</span>(<span class="params">os, ns</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="keyword">new</span> <span class="built_in">RegExp</span>(os,<span class="string">"gm"</span>),ns);</div><div class="line">  &#125;,</div><div class="line">  skipChar:<span class="function"><span class="keyword">function</span>(<span class="params">ch</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span> || <span class="keyword">this</span>.length===<span class="number">0</span>) &#123;<span class="keyword">return</span> <span class="string">''</span>;&#125;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.charAt(<span class="number">0</span>)===ch) &#123;<span class="keyword">return</span> <span class="keyword">this</span>.substring(<span class="number">1</span>).skipChar(ch);&#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">  &#125;,</div><div class="line">  isValidPwd:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^([_]|[a-zA-Z0-9])&#123;6,32&#125;$/</span>).test(<span class="keyword">this</span>)); </div><div class="line">  &#125;,</div><div class="line">  isValidMail:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span>(<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/</span>).test(<span class="keyword">this</span>.trim()));</div><div class="line">  &#125;,</div><div class="line">  isSpaces:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="keyword">this</span>.length; i+=<span class="number">1</span>) &#123;</div><div class="line">    <span class="keyword">var</span> ch = <span class="keyword">this</span>.charAt(i);</div><div class="line">    <span class="keyword">if</span> (ch!=<span class="string">' '</span>&amp;&amp; ch!=<span class="string">"\n"</span> &amp;&amp; ch!=<span class="string">"\t"</span> &amp;&amp; ch!=<span class="string">"\r"</span>) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">  &#125;,</div><div class="line">  isPhone:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/(^([0-9]&#123;3,4&#125;[-])?\d&#123;3,8&#125;(-\d&#123;1,6&#125;)?$)|(^\([0-9]&#123;3,4&#125;\)\d&#123;3,8&#125;(\(\d&#123;1,6&#125;\))?$)|(^\d&#123;3,8&#125;$)/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  isUrl:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^[a-zA-z]+:\/\/([a-zA-Z0-9\-\.]+)([-\w .\/?%&amp;=:]*)$/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  isExternalUrl:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.isUrl() &amp;&amp; <span class="keyword">this</span>.indexOf(<span class="string">"://"</span>+<span class="built_in">document</span>.domain) == <span class="number">-1</span>;</div><div class="line">  &#125;</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(   $(<span class="string">"input"</span>).val().isInteger()  );</div><div class="line">  &#125;);</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/11/18/china-javascript-environment/" itemprop="url">
                   中国国内 JavaScript 圈的现状如何
                 </a>
@@ -1515,130 +1644,13 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/03/hexo-next-one/" itemprop="url">
-                  Hexo-NexT搭建个人博客（一）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-03T13:25:24+08:00" content="2016-09-03">
-              2016-09-03
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/综合/" itemprop="url" rel="index">
-                    <span itemprop="name">综合</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><a href="https://hexo.io/zh-cn/">Hexo</a> 是一个快速、简洁且高效的静态站点生成框架，它基于 <a href="https://nodejs.org/en/">Node.js</a> 。 它有以下特点：</p>
-<ul>
-<li><i class="fa fa-bolt"></i><h6 style="display: inline;">　超快速度</h6><br><i>Node.js 所带来的超快生成速度，让上百个页面在几秒内瞬间完成渲染。</i></li>
-<li><i class="fa fa-pencil"></i><h6 style="display: inline;">　支持Markdown</h6><br><i>Hexo 支持 GitHub Flavored Markdown 的所有功能，甚至可以整合 Octopress 的大多数插件。</i></li>
-<li><i class="fa fa-cloud-upload"></i><h6 style="display: inline;">　一件部署</h6><br><i>只需一条指令即可部署到Github Pages，或其他网站</i></li>
-<li><i class="fa fa-cog"></i><h6 style="display: inline;">　丰富的插件</h6><br><i>Hexo 拥有强大的插件系统，安装插件可以让 Hexo 支持 Jade, CoffeeScript。</i></li>
-</ul>
-<p>通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 <a href="https://hexo.io/zh-cn/docs/tag-plugins.html">标签插件</a> 来快速的插入特定形式的内容。</p>
-<p>基于 Hexo 这个优秀的博客框架，很多优秀的开发者奉献出了它们基于 Hexo 开发的<a href="https://hexo.io/themes/">主题</a>。<br><a href="http://theme-next.iissnan.com/">NexT</a> 因其 <span id="yu-1">精于心，简于形</span> 的风格，一直被广大用户所喜爱。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/03/hexo-next-one/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1677,7 +1689,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1694,7 +1706,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
