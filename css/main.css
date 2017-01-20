@@ -1672,7 +1672,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff0e85;
+  background: #acff12;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2759,11 +2759,6 @@ hr {
   -webkit-transition-property: all;
   -webkit-transition-timing-function: initial;
 }
-#ds-reset span.duoshuo-ua-platform,
-#ds-reset .duoshuo-ua-browser,
-#ds-reset .duoshuo-ua-admin {
-  display: none;
-}
 .user_admin {
   background-color: #f69ee5 !important;
   border-color: #357ebd !important;
@@ -2909,6 +2904,11 @@ span.ua {
   border-color: #1f1f1f !important;
   border-radius: 4px;
   padding: 0 5px !important;
+}
+#ds-reset span.duoshuo-ua-platform,
+#ds-reset .duoshuo-ua-browser,
+#ds-reset .duoshuo-ua-admin {
+  display: none !important;
 }
 .post-body p a {
   color: #0593d3;
