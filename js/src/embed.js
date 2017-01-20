@@ -3,7 +3,7 @@
 function sskadmin(e) {
     var ssk = '';
     if(e=='6326435153992221442'){
-        ssk = '<span class="user_admin">管理员</span> '
+        ssk = '<span class="user_admin">博主</span> '
     }
     return ssk;
 }

@@ -1672,7 +1672,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff30c4;
+  background: #ff0e85;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2758,6 +2758,11 @@ hr {
   -webkit-transition-duration: 0.4s;
   -webkit-transition-property: all;
   -webkit-transition-timing-function: initial;
+}
+#ds-reset span.duoshuo-ua-platform,
+#ds-reset .duoshuo-ua-browser,
+#ds-reset .duoshuo-ua-admin {
+  display: none;
 }
 .user_admin {
   background-color: #f69ee5 !important;
