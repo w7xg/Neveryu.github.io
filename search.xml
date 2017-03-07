@@ -4,6 +4,78 @@
   
     
     <entry>
+      <title><![CDATA[polyfill — Respond.js]]></title>
+      <url>https://neveryu.github.io/2017/02/11/respond-js/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>Respond.js 让不支持 css3 Media Query 的浏览器包括 IE6-IE8 等其他浏览器支持媒体查询。</p>
+</blockquote>
+<p>Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它不支持 CSS3 Media Queries 的浏览器提供媒体查询的 <code>min-width</code> 和 <code>max-width</code>特性，实现响应式网页设计（Responsive Web Design）。</p>
+<p>响应式布局，理想状态是，对 <code>PC/移动</code> 各种终端进行响应。媒体查询的支持程度是 IE9+ 以及其他现代的浏览器，但是 IE8 在市场当中仍然占据了比较大量的市场份额，使我们不得不进行 IE 低端浏览器的考虑。那么如何在 IE6~8 浏览器中兼容响应式布局呢？<br>这里我们需要借助这样一个文件：<code>respond.js</code>.</p>
+<p>文件下载地址：<a href="respond.js">respond.js</a>.</p>
+<p>自己在阅读了官方文档之后，进行了一系列测试。友情提示各位朋友，关于 <strong>respond.js</strong> 的使用，有一些需要注意的地方，一旦不注意，在 IE6-8 中就无法显示出来。</p>
+<h1 id="插件原理"><a href="#插件原理" class="headerlink" title="插件原理"></a>插件原理</h1><p>既然要实现响应式网页，那么就需要用到媒体查询，媒体查询的核心是 <code>min-width</code> 和 <code>max-width</code>,而 IE8 以下以及一些其它的浏览器不支持这两个属性，<strong>respond.js</strong> 是怎么做的呢？</p>
+<ul>
+<li>将 <code>&lt;head&gt;</code> 中所有外部引入的CSS文件路径取出来存储到一个数组当中；</li>
+<li>遍历数组，并一个个发送 AJAX 请求；</li>
+<li>AJAX 回调后，分析 response 中的 media query 的 <code>min-width</code> 和 <code>max-width</code> 语法（注意，仅仅支持 <code>min-width</code> 和 <code>max-width</code> ），分析出 viewport 变化区间对应相应的 css 块；</li>
+<li>页面初始化时和 <code>window.resize</code> 时，根据当前 viewport 使用相应的 css 块。</li>
+</ul>
+<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>考虑到 IE9 是支持 CSS3 的，所以直接在 HTML 页面的 <code>&lt;head&gt;</code> 标签中添加脚本引入即可：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"style.css"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!--[if lt IE 9]&gt;</span></div><div class="line">      &lt;script src="js/respond.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;![endif]--&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>讲道理，我们是应该将 js 文件放在 html 文件的最后，但是 repond.js 文件，我还是建议你将它放在 <code>&lt;head&gt;</code> 中，并且放在 css 文件的后面。越早引入越好，在 IE 下面看到页面闪屏的概率就越低，因为最初 css 会先渲染出来，如果 respond.js 加载得很后面，这时重新根据 media query 解析出来的 css 会再改变一次页面的布局等，所以看起来有闪屏的现象.</p>
+<h1 id="核心结论"><a href="#核心结论" class="headerlink" title="核心结论"></a>核心结论</h1><p>那么此时，就可以根据基本的实现思路，得到一些书写代码时要注意的地方：</p>
+<ul>
+<li>需要启动本地服务器（localhost），不能使用普通本地的url地址（file://开头）；</li>
+<li>需要外部引入 CSS 文件，将 CSS 样式书写在 style 中是无效的；</li>
+<li>由于 respond 插件是查找 CSS 文件，再进行处理，所以 respond.js 文件一定要放置在 CSS 文件的后面；</li>
+<li>另外，虽然把 respond.js 放置在 <code>&lt;head&gt;</code> 里还是在 <code>&lt;body&gt;</code> 后面都能够实现，但是建议放置在 <code>&lt;head&gt;</code> 中（具体原因在下面的文档提示中有提到）；</li>
+<li>最好不要为 CSS 设置 utf-8 的编码，使用默认（原因详见下面的文档提示部分）</li>
+</ul>
+<h1 id="文档提示"><a href="#文档提示" class="headerlink" title="文档提示"></a>文档提示</h1><p>在官方文档当中的一些提示：</p>
+<ul>
+<li>越早的引入 respond.js 文件，也就越可能避免 IE 下出现的闪屏。</li>
+<li>不支持嵌套的媒体查询。</li>
+<li>utf-8 的字符编码对 respond.js 文件的运行有影响。<br>官方API原文：<br><code>if CSS files are encoded in UTF-8 with Byte-Order-Mark, they will not work with Respond.js in IE7 or IE8.</code><br>基本含义就是：<strong>utf-8 格式的 CSS 文件字符编码会对插件造成影响</strong><br>但是在我使用 IE6-8 进行测试的时候，都能够正常显示（无论是在 css 文件中增加 charset 设置还是在 link 标签中增加 charset 设置）。因此，并不是太清楚这个位置 bug 的含义。</li>
+<li>跨域可能会出现闪屏（还没有测试，具体情况不详）</li>
+</ul>
+<h1 id="NOTE"><a href="#NOTE" class="headerlink" title="NOTE"></a>NOTE</h1><ol>
+<li><p>Respond.js 和 跨域（cross-domain） CSS 的问题<br>如果Respond.js和CSS文件被放在不同的域名或子域名下面（例如，使用CDN）时需要一些额外的设置。请参考Respond.js文档获取详细信息。</p>
+</li>
+<li><p>Internet Explorer 8 与 box-sizing<br>IE8 不能完全支持 <code>box-sizing: border-box;</code> 与 <code>min-width</code>、<code>max-width</code>、<code>min-height</code> 或 <code>max-height</code> 一同使用。由于此原因，从 Bootstrap v3.0.1 版本开始，我们不再为 <code>.container</code> 使用 <code>max-width</code>。</p>
+</li>
+<li><p>IE兼容模式<br>Bootstrap 不支持 IE 的兼容模式。为了让 IE 浏览器运行最新的渲染模式，建议将此 标签加入到你的页面中：<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge&quot;&gt;</code><br>此标签被加入到所有文档页面和案例页面中，以确保在每个被支持的 IE 浏览器中保持最好的页面展现效果。</p>
+</li>
+<li><p>Respond.js 和 @import</p>
+<p> Respond.js不支持通过@import引入的CSS文件。例如，Drupal一般被配置为通过@import引入CSS文件，Respond.js对其将无法起到作用。</p>
+</li>
+</ol>
+<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p>从 respond.js 的工作原理可以知道，它将 <code>&lt;head&gt;</code> 中所有外部引入的 CSS 文件路径取出来存储到一个数组当中；然后遍历数组，并一个个发送 AJAX 请求；可以看出这里必须依赖 ajax 请求 css 路径才能得到 css 文件中的 media query 的内容，那 ajax 的跨域问题就要解决了；</p>
+<p>由于我们的静态资源都是要放在 cdn 的，responds.js 也给出了跨域方法，即引入代理页面：</p>
+<p>//把 cross-domain/respond-proxy.html 放到cdn上<br>//把 cross-domain/respond.proxy.gif 放到当前域服务器上</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Respond.js proxy on external server --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"http://externalcdn.com/respond-proxy.html"</span> <span class="attr">id</span>=<span class="string">"respond-proxy"</span> <span class="attr">rel</span>=<span class="string">"respond-proxy"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Respond.js redirect location on local server --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"/path/to/respond.proxy.gif"</span> <span class="attr">id</span>=<span class="string">"respond-redirect"</span> <span class="attr">rel</span>=<span class="string">"respond-redirect"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Respond.js proxy script on local server --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/path/to/respond.proxy.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="其他的支持响应式布局的插件-css3-dediaqueries-js"><a href="#其他的支持响应式布局的插件-css3-dediaqueries-js" class="headerlink" title="其他的支持响应式布局的插件  css3-dediaqueries.js"></a>其他的支持响应式布局的插件  css3-dediaqueries.js</h1><p>css3-mediaqueries.js 支持几乎所有的 media query 的语法。会出现闪屏。并不是很推荐使用，虽然能够支持全部的 media queries,但 <code>min-width</code> 和 <code>max-width</code> 其实就可以满足我们对响应式布局的需要。</p>
+<h1 id="补充一点"><a href="#补充一点" class="headerlink" title="补充一点"></a>补充一点</h1><p>if CSS files are encoded in UTF-8 with Byte-Order-Mark,they will not work with Repond.js in IE7 or IE8.</p>
+<p>也就是说保存格式应该是 utf-8 无 BOM 格式，BOM 会影响程序对文档的处理，正常的 utf-8 文档应该没事。</p>
+<h1 id="Tips-1"><a href="#Tips-1" class="headerlink" title="Tips"></a>Tips</h1><p><strong>always link stylesheets or write inline CSS before js scripts.</strong></p>
+<p>Respond.js on Github： <a href="https://github.com/scottjehl/Respond" target="_blank" rel="external">https://github.com/scottjehl/Respond</a>.</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 前端 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[腻子脚本 — HTML5Shiv]]></title>
       <url>https://neveryu.github.io/2017/01/18/html5shiv/</url>
       <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="external">HTML5shiv</a> is a javascript workaround to provide support for the new HTML 5 elements in IE Browsers older than IE 9.</p>
@@ -60,8 +132,22 @@
 <h3 id="XHTML-1-0-Strict-Document"><a href="#XHTML-1-0-Strict-Document" class="headerlink" title="XHTML 1.0 Strict Document"></a>XHTML 1.0 Strict Document</h3><p>HTML5shiv does not apply to XHTML 1.0 Strict.</p>
 <h3 id="XHTML-1-1-Document"><a href="#XHTML-1-1-Document" class="headerlink" title="XHTML 1.1 Document"></a>XHTML 1.1 Document</h3><p>HTML5shiv does not apply to XHTML 1.1.</p>
 <h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p>关于低版本浏览器不能识别 HTML5 标签的问题，除了使用 html5shiv.js 之外，还有一种做法就是为网站创建多套模版，通过程序对 User-Agent 的判断给不同的浏览器用户显示不同的页面，比如优酷网就是采用的这种模式。</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><a href="https://neveryu.github.io/2017/01/18/html5shiv/">HTML5Shiv</a> and <a href="">Respond.js</a> for IE8 support of HTML5 elements and media queries.</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><a href="https://neveryu.github.io/2017/01/18/html5shiv/">HTML5Shiv</a> and <a href="https://neveryu.github.io/2017/02/11/respond-js/">Respond.js</a> for IE8 support of HTML5 elements and media queries.</p>
 ]]></content>
+      
+        <categories>
+            
+            <category> 前端 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -93,6 +179,20 @@
 <p><img src="http://p1.bpimg.com/567571/0351c7f1aa17b88b.jpg" alt=""></p>
 <p>作者：Lachel<br>原文：<a href="https://www.zhihu.com/question/24303670" target="_blank" rel="external">https://www.zhihu.com/question/24303670</a></p>
 ]]></content>
+      
+        <categories>
+            
+            <category> 综合 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> essay </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -118,6 +218,22 @@
 <p>那么，就以这两个例子来作为本次的示范吧，其实，<strong>Hexo</strong> 中的一些问题还是比较好解决的，因为它都是依赖其他模块的，定位到出问题的模块，卸载重装即可。</p>
 <p id="div-border-top-red">总结：遇到问题 <strong>bug</strong>，一定要仔细查阅错误提示信息，遵守从上往下解决的方案。</p>
 ]]></content>
+      
+        <categories>
+            
+            <category> 综合 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Next </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -127,7 +243,7 @@
 <h3 id="新窗口打开页面"><a href="#新窗口打开页面" class="headerlink" title="新窗口打开页面"></a>新窗口打开页面</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.google.com"</span>&gt;</span>google_新窗口<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.google.com"</span> <span class="attr">rel</span>=<span class="string">"external"</span>&gt;</span>google_新窗口<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"demo1.html"</span>&gt;</span>当前窗口<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">'a[href^="http://"]'</span>).attr(<span class="string">"target"</span>,<span class="string">"_blank"</span>);</div><div class="line">  &#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="输入框文字获取和失去焦点【推荐】"><a href="#输入框文字获取和失去焦点【推荐】" class="headerlink" title="输入框文字获取和失去焦点【推荐】"></a><font color="#099">输入框文字获取和失去焦点【推荐】</font></h3><a id="more"></a>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"text1"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">  $(<span class="string">"input.text1"</span>).val(<span class="string">"Enter your search text here."</span>);  </div><div class="line">  textFill( $(<span class="string">'input.text1'</span>) );  </div><div class="line">&#125;);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">textFill</span>(<span class="params">input</span>)</span>&#123; <span class="comment">//input focus text function  </span></div><div class="line">  <span class="keyword">var</span> originalvalue = input.val();  </div><div class="line">  input.focus( <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">    <span class="keyword">if</span>( $.trim(input.val()) == originalvalue )&#123;</div><div class="line">      input.val(<span class="string">''</span>); </div><div class="line">    &#125;  </div><div class="line">  &#125;).blur( <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">    <span class="keyword">if</span>( $.trim(input.val()) == <span class="string">''</span> )&#123; </div><div class="line">      input.val(originalvalue); </div><div class="line">    &#125;  </div><div class="line">  &#125;);  </div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="返回头部滑动动画"><a href="#返回头部滑动动画" class="headerlink" title="返回头部滑动动画"></a>返回头部滑动动画</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">jQuery.fn.scrollTo = <span class="function"><span class="keyword">function</span>(<span class="params">speed</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> targetOffset = $(<span class="keyword">this</span>).offset().top;</div><div class="line">  $(<span class="string">'html,body'</span>).stop().animate(&#123;scrollTop: targetOffset&#125;, speed);</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">&#125;; </div><div class="line"><span class="comment">// use</span></div><div class="line">$(<span class="string">"#goheader"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"body"</span>).scrollTo(<span class="number">500</span>);</div><div class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;); </div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="返回头部滑动动画"><a href="#返回头部滑动动画" class="headerlink" title="返回头部滑动动画"></a>返回头部滑动动画</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">jQuery.fn.scrollTo = <span class="function"><span class="keyword">function</span>(<span class="params">speed</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> targetOffset = $(<span class="keyword">this</span>).offset().top;</div><div class="line">  $(<span class="string">'html,body'</span>).stop().animate(&#123;<span class="attr">scrollTop</span>: targetOffset&#125;, speed);</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">&#125;; </div><div class="line"><span class="comment">// use</span></div><div class="line">$(<span class="string">"#goheader"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"body"</span>).scrollTo(<span class="number">500</span>);</div><div class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;); </div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="获取鼠标位置"><a href="#获取鼠标位置" class="headerlink" title="获取鼠标位置"></a>获取鼠标位置</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"XY"</span> &gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="built_in">document</span>).mousemove(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;  </div><div class="line">    $(<span class="string">'#XY'</span>).html(<span class="string">"X : "</span> + e.pageX + <span class="string">" | Y : "</span> + e.pageY);  </div><div class="line">  &#125;);</div><div class="line">&#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="关闭所有-jQuery-动画效果"><a href="#关闭所有-jQuery-动画效果" class="headerlink" title="关闭所有 jQuery 动画效果"></a>关闭所有 jQuery 动画效果</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jQuery.fx.off = <span class="literal">true</span>;</div></pre></td></tr></table></figure>
 <h3 id="检测鼠标的右键和左键"><a href="#检测鼠标的右键和左键" class="headerlink" title="检测鼠标的右键和左键"></a>检测鼠标的右键和左键</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#box'</span>).mousedown(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  alert(e.which);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
@@ -142,8 +258,24 @@
 <h3 id="解析-json-数据时报-parseError-错误"><a href="#解析-json-数据时报-parseError-错误" class="headerlink" title="解析 json 数据时报 parseError 错误"></a>解析 json 数据时报 parseError 错误</h3><p>jQuery 在 1.4 版本后，采用了更为严格的 json 解析方式，即所有内容都必须要有双引号，如果升级 jQuery 版本后，ajax 加载 json 报错，有可能就是这个原因。比如：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 1.4之前版本，key没引号，这样没问题</div><div class="line">&#123;</div><div class="line">  key:"coco",</div><div class="line">  status:"0"</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>但升级成jQuery1.4后，都必须加上双引号，格式如下：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"key"</span>:<span class="string">"coco"</span>,</div><div class="line">  <span class="attr">"status"</span>:<span class="string">"0"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="从元素中除去-HTML"><a href="#从元素中除去-HTML" class="headerlink" title="从元素中除去 HTML"></a>从元素中除去 HTML</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123; </div><div class="line">$.fn.stripHtml = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </div><div class="line">　<span class="keyword">var</span> regexp = <span class="regexp">/&lt;("[^"]*"|'[^']*'|[^'"&gt;])*&gt;/gi</span>; </div><div class="line">　<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </div><div class="line">  　$(<span class="keyword">this</span>).html( $(<span class="keyword">this</span>).html().replace(regexp,<span class="string">''</span>) ); </div><div class="line">　&#125;);</div><div class="line">　<span class="keyword">return</span> $(<span class="keyword">this</span>); </div><div class="line">&#125; </div><div class="line">&#125;)(jQuery); </div><div class="line"><span class="comment">//用法： </span></div><div class="line">$(<span class="string">'div'</span>).stripHtml(); </div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="扩展-String-对象的方法"><a href="#扩展-String-对象的方法" class="headerlink" title="扩展 String 对象的方法"></a>扩展 String 对象的方法</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> /&gt;</span><span class="tag">&lt;<span class="name">button</span> &gt;</span>check<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  $.extend(<span class="built_in">String</span>.prototype, &#123;</div><div class="line">  isPositiveInteger:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^[1-9]\d*$/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  isInteger:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^\d+$/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  isNumber: <span class="function"><span class="keyword">function</span>(<span class="params">value, element</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^-?(?:\d+|\d&#123;1,3&#125;(?:,\d&#123;3&#125;)+)(?:\.\d+)?$/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  trim:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/(^\s*)|(\s*$)|\r|\n/g</span>, <span class="string">""</span>);</div><div class="line">  &#125;,</div><div class="line">  trans:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/&amp;lt;/g</span>, <span class="string">'&lt;'</span>).replace(<span class="regexp">/&amp;gt;/g</span>,<span class="string">'&gt;'</span>).replace(<span class="regexp">/&amp;quot;/g</span>, <span class="string">'"'</span>);</div><div class="line">  &#125;,</div><div class="line">  replaceAll:<span class="function"><span class="keyword">function</span>(<span class="params">os, ns</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="keyword">new</span> <span class="built_in">RegExp</span>(os,<span class="string">"gm"</span>),ns);</div><div class="line">  &#125;,</div><div class="line">  skipChar:<span class="function"><span class="keyword">function</span>(<span class="params">ch</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span> || <span class="keyword">this</span>.length===<span class="number">0</span>) &#123;<span class="keyword">return</span> <span class="string">''</span>;&#125;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.charAt(<span class="number">0</span>)===ch) &#123;<span class="keyword">return</span> <span class="keyword">this</span>.substring(<span class="number">1</span>).skipChar(ch);&#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">  &#125;,</div><div class="line">  isValidPwd:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^([_]|[a-zA-Z0-9])&#123;6,32&#125;$/</span>).test(<span class="keyword">this</span>)); </div><div class="line">  &#125;,</div><div class="line">  isValidMail:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span>(<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/</span>).test(<span class="keyword">this</span>.trim()));</div><div class="line">  &#125;,</div><div class="line">  isSpaces:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="keyword">this</span>.length; i+=<span class="number">1</span>) &#123;</div><div class="line">    <span class="keyword">var</span> ch = <span class="keyword">this</span>.charAt(i);</div><div class="line">    <span class="keyword">if</span> (ch!=<span class="string">' '</span>&amp;&amp; ch!=<span class="string">"\n"</span> &amp;&amp; ch!=<span class="string">"\t"</span> &amp;&amp; ch!=<span class="string">"\r"</span>) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">  &#125;,</div><div class="line">  isPhone:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/(^([0-9]&#123;3,4&#125;[-])?\d&#123;3,8&#125;(-\d&#123;1,6&#125;)?$)|(^\([0-9]&#123;3,4&#125;\)\d&#123;3,8&#125;(\(\d&#123;1,6&#125;\))?$)|(^\d&#123;3,8&#125;$)/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  isUrl:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^[a-zA-z]+:\/\/([a-zA-Z0-9\-\.]+)([-\w .\/?%&amp;=:]*)$/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  isExternalUrl:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.isUrl() &amp;&amp; <span class="keyword">this</span>.indexOf(<span class="string">"://"</span>+<span class="built_in">document</span>.domain) == <span class="number">-1</span>;</div><div class="line">  &#125;</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(   $(<span class="string">"input"</span>).val().isInteger()  );</div><div class="line">  &#125;);</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="扩展-String-对象的方法"><a href="#扩展-String-对象的方法" class="headerlink" title="扩展 String 对象的方法"></a>扩展 String 对象的方法</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> /&gt;</span><span class="tag">&lt;<span class="name">button</span> &gt;</span>check<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  $.extend(<span class="built_in">String</span>.prototype, &#123;</div><div class="line">  <span class="attr">isPositiveInteger</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^[1-9]\d*$/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">isInteger</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^\d+$/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">isNumber</span>: <span class="function"><span class="keyword">function</span>(<span class="params">value, element</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^-?(?:\d+|\d&#123;1,3&#125;(?:,\d&#123;3&#125;)+)(?:\.\d+)?$/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">trim</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/(^\s*)|(\s*$)|\r|\n/g</span>, <span class="string">""</span>);</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">trans</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/&amp;lt;/g</span>, <span class="string">'&lt;'</span>).replace(<span class="regexp">/&amp;gt;/g</span>,<span class="string">'&gt;'</span>).replace(<span class="regexp">/&amp;quot;/g</span>, <span class="string">'"'</span>);</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">replaceAll</span>:<span class="function"><span class="keyword">function</span>(<span class="params">os, ns</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="keyword">new</span> <span class="built_in">RegExp</span>(os,<span class="string">"gm"</span>),ns);</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">skipChar</span>:<span class="function"><span class="keyword">function</span>(<span class="params">ch</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span> || <span class="keyword">this</span>.length===<span class="number">0</span>) &#123;<span class="keyword">return</span> <span class="string">''</span>;&#125;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.charAt(<span class="number">0</span>)===ch) &#123;<span class="keyword">return</span> <span class="keyword">this</span>.substring(<span class="number">1</span>).skipChar(ch);&#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">isValidPwd</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^([_]|[a-zA-Z0-9])&#123;6,32&#125;$/</span>).test(<span class="keyword">this</span>)); </div><div class="line">  &#125;,</div><div class="line">  <span class="attr">isValidMail</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span>(<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/</span>).test(<span class="keyword">this</span>.trim()));</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">isSpaces</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="keyword">this</span>.length; i+=<span class="number">1</span>) &#123;</div><div class="line">    <span class="keyword">var</span> ch = <span class="keyword">this</span>.charAt(i);</div><div class="line">    <span class="keyword">if</span> (ch!=<span class="string">' '</span>&amp;&amp; ch!=<span class="string">"\n"</span> &amp;&amp; ch!=<span class="string">"\t"</span> &amp;&amp; ch!=<span class="string">"\r"</span>) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">isPhone</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/(^([0-9]&#123;3,4&#125;[-])?\d&#123;3,8&#125;(-\d&#123;1,6&#125;)?$)|(^\([0-9]&#123;3,4&#125;\)\d&#123;3,8&#125;(\(\d&#123;1,6&#125;\))?$)|(^\d&#123;3,8&#125;$)/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">isUrl</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^[a-zA-z]+:\/\/([a-zA-Z0-9\-\.]+)([-\w .\/?%&amp;=:]*)$/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">isExternalUrl</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.isUrl() &amp;&amp; <span class="keyword">this</span>.indexOf(<span class="string">"://"</span>+<span class="built_in">document</span>.domain) == <span class="number">-1</span>;</div><div class="line">  &#125;</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(   $(<span class="string">"input"</span>).val().isInteger()  );</div><div class="line">  &#125;);</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 ]]></content>
+      
+        <categories>
+            
+            <category> 前端 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> jQuery </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -207,6 +339,20 @@
 
 <p><a href="https://www.zhihu.com/question/24317445" target="_blank" rel="external">原文</a></p>
 ]]></content>
+      
+        <categories>
+            
+            <category> 综合 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -235,6 +381,22 @@
 <p><strong> 图片展示效果 </strong><br><code>{\% gp 5-3 \%}</code>：设置图片展示效果，参考 themes\next\scripts\tags\group-pictures.js 注释示意图。<br><img src="http://p1.bpimg.com/567571/eaef5acfcb3011c2.png" alt=""><br><code>5-3</code> 的意思就是5张图片将会按照这种布局来展示，Next 提供了多张图片的多种布局，你可以随意选择。</p>
 <p></p><h5 style="color:#f63;"><i>最后要说的是：</i></h5><p></p>
 <p id="div-border-top-green"><i><a href="https://github.com/Neveryu/Neveryu.github.io" target="_blank" rel="external">博客源码</a><br></i></p>]]></content>
+      
+        <categories>
+            
+            <category> 综合 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Next </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -333,6 +495,22 @@
 <p>你也已经学到了 sass 的另一个重要特性，样式导入。通过样式导入可以把分散在多个 sass 文件中的内容合并生成到一个 css 文件，避免了项目中有大量的 css 文件通过原生的 css @import 带来的性能问题。通过嵌套导入和默认变量值，导入可以构建更强有力的、可定制的样式。混合器允许用户编写语义化样式的同时避免视觉层面上样式的重复。你不仅学到了如何使用混合器减少重复，同时学习到了如何使用混合器让你的 css 变得更加可维护和语义化。最后，我们学习了与混合器相辅相成的选择器继承。继承允许你声明类之间语义化的关系，通过这些关系可以保持你的 css 的整洁和可维护性。</p>
 <p><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html" target="_blank" rel="external">sass文档</a><br><a href="http://sass-lang.com/documentation/Sass/Script/Functions.html" target="_blank" rel="external">sass函数列表</a></p>
 ]]></content>
+      
+        <categories>
+            
+            <category> 前端 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> css </tag>
+            
+            <tag> sass </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -677,6 +855,20 @@
 
 <p>译者：方应杭<br><a href="https://link.zhihu.com/?target=https%3A//hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f" target="_blank" rel="external">原文</a></p>
 ]]></content>
+      
+        <categories>
+            
+            <category> 前端 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> essay </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -746,6 +938,20 @@
 <h4 id="对于ssh协议，可以用ssh-key，具体教程网上很多"><a href="#对于ssh协议，可以用ssh-key，具体教程网上很多" class="headerlink" title="对于ssh协议，可以用ssh  key，具体教程网上很多"></a>对于ssh协议，可以用ssh  key，具体教程网上很多</h4><h3 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h3><p>默认方法是在当前项目目录下创建一个.gitignore文件，如果需要忽略的文件已经添加到版本库中，请先移除<br><code>git rm --cached [file]</code><br>不删除文件，只移除追踪。</p>
 <p><a href="http://git-scm.com/book/zh/v2" target="_blank" rel="external">权威教程</a></p>
 ]]></content>
+      
+        <categories>
+            
+            <category> 综合 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -776,6 +982,22 @@
 <h4 id="10-给-Blog-添加-LICENSE"><a href="#10-给-Blog-添加-LICENSE" class="headerlink" title="10. 给 Blog 添加 LICENSE"></a>10. 给 Blog 添加 LICENSE</h4><p>在 <span id="inline-purple">主题配置文件</span> 中的 160 行左右：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># Creative Commons 4.0 International License.</div><div class="line"># http://creativecommons.org/</div><div class="line"># Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero</div><div class="line">creative_commons: by-nc-sa</div><div class="line">#creative_commons:</div></pre></td></tr></table></figure></p>
 <p>将其中第 4 行的注释放开，然后选择你想使用的 LICENSE 即可，可选项参照第 3 行。</p>
 ]]></content>
+      
+        <categories>
+            
+            <category> 综合 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Next </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -796,6 +1018,20 @@
 
 
 ]]></content>
+      
+        <categories>
+            
+            <category> 随笔 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> essay </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -854,6 +1090,22 @@
 <h2 id="常见问题2"><a href="#常见问题2" class="headerlink" title="常见问题2"></a>常见问题2</h2><p>关于 Git 提交中用户名和 Email 的设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name &quot;Your name&quot;</div><div class="line">git config --global user.email &quot;Your email&quot;</div></pre></td></tr></table></figure></p>
 <h2 id="常见问题3"><a href="#常见问题3" class="headerlink" title="常见问题3"></a>常见问题3</h2><p>Hexo 中的图标使用的是 <a href="http://fontawesome.io/" target="_blank" rel="external">Font Awesome</a> ，所以，我们的博客已经自带了 Font Awesome 中的所有图标，基本可以满足我们的所有需求，我们可以去 Font Awesome 中查找我们想要使用的图标。<br><i class="fa fa-github"></i> <code>&lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt;</code><br><i class="fa fa-github fa-lg"></i> <code>&lt;i class=&quot;fa fa-github fa-lg&quot;&gt;&lt;/i&gt;</code><br><i class="fa fa-github fa-2x"></i> <code>&lt;i class=&quot;fa fa-github fa-2x&quot;&gt;&lt;/i&gt;</code></p>
 ]]></content>
+      
+        <categories>
+            
+            <category> 综合 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Next </tag>
+            
+        </tags>
+        
     </entry>
     
   

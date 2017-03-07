@@ -1673,7 +1673,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #bdff93;
+  background: #ff38ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3006,12 +3006,10 @@ span.ua {
   display: none !important;
 }
 .post-body a {
-  color: #0593d3;
-  border-bottom: none;
+  color: #72baa7;
 }
 .post-body a:hover {
-  color: #0477ab;
-  text-decoration: underline;
+  color: #0bdca5;
 }
 .link-blue {
   color: #f36;
@@ -3020,8 +3018,9 @@ span.ua {
   color: #f00;
 }
 code {
-  color: #fff;
-  background: #333;
+  color: #c7254e;
+  background: #f9f2f4;
+  border: 1px solid #d6d6d6;
 }
 .posts-expand .post-body img {
   margin: 0 auto;
