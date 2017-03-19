@@ -4,6 +4,27 @@
 
     
   <url>
+    <loc>https://neveryu.github.io/2016/10/07/git/</loc>
+    <lastmod>2017-03-19T08:51:58.292Z</lastmod>
+    <data>
+        <display>
+        <title>Git学习总结</title>
+        <pubTime>2016-10-07T05:25:24.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>https://neveryu.github.io/2017/02/11/respond-js/</loc>
     <lastmod>2017-03-07T14:44:23.859Z</lastmod>
     <data>
@@ -42,7 +63,6 @@
     </data>
     </url>
 
-    
     
     
     
@@ -133,12 +153,12 @@
 
     
   <url>
-    <loc>https://neveryu.github.io/2016/11/11/hexo-next-three/</loc>
+    <loc>https://neveryu.github.io/2016/09/30/hexo-next-two/</loc>
     <lastmod>2017-03-04T11:49:49.578Z</lastmod>
     <data>
         <display>
-        <title>Hexo-NexT搭建个人博客（三）</title>
-        <pubTime>2016-11-11T05:25:24.000Z</pubTime>
+        <title>Hexo-NexT搭建个人博客（二）</title>
+        <pubTime>2016-09-30T14:18:22.000Z</pubTime>
         
         <tag>Hexo</tag>
          
@@ -155,12 +175,12 @@
 
     
   <url>
-    <loc>https://neveryu.github.io/2016/09/30/hexo-next-two/</loc>
+    <loc>https://neveryu.github.io/2016/11/11/hexo-next-three/</loc>
     <lastmod>2017-03-04T11:49:49.578Z</lastmod>
     <data>
         <display>
-        <title>Hexo-NexT搭建个人博客（二）</title>
-        <pubTime>2016-09-30T14:18:22.000Z</pubTime>
+        <title>Hexo-NexT搭建个人博客（三）</title>
+        <pubTime>2016-11-11T05:25:24.000Z</pubTime>
         
         <tag>Hexo</tag>
          
@@ -209,26 +229,6 @@
         <tag>Hexo</tag>
          
         <tag>Next</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://neveryu.github.io/2016/10/07/git/</loc>
-    <lastmod>2017-03-04T11:49:49.574Z</lastmod>
-    <data>
-        <display>
-        <title>Git学习总结</title>
-        <pubTime>2016-10-07T05:25:24.000Z</pubTime>
-        
-        <tag>Git</tag>
          
          
            
