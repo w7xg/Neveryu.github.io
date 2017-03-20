@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>https://neveryu.github.io/2017/01/18/html5shiv/</loc>
+    <lastmod>2017-03-20T13:49:29.038Z</lastmod>
+    <data>
+        <display>
+        <title>腻子脚本 — HTML5Shiv</title>
+        <pubTime>2017-01-18T05:25:24.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://neveryu.github.io/2016/10/07/git/</loc>
-    <lastmod>2017-03-19T08:51:58.292Z</lastmod>
+    <lastmod>2017-03-19T13:38:07.772Z</lastmod>
     <data>
         <display>
         <title>Git学习总结</title>
@@ -31,26 +51,6 @@
         <display>
         <title>polyfill — Respond.js</title>
         <pubTime>2017-02-11T15:25:24.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://neveryu.github.io/2017/01/18/html5shiv/</loc>
-    <lastmod>2017-03-07T14:38:38.711Z</lastmod>
-    <data>
-        <display>
-        <title>腻子脚本 — HTML5Shiv</title>
-        <pubTime>2017-01-18T05:25:24.000Z</pubTime>
         
         <tag>javascript</tag>
          

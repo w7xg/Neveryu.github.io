@@ -90,7 +90,7 @@
 <meta property="og:url" content="https://neveryu.github.io/2016/10/07/git/index.html">
 <meta property="og:site_name" content="Never_yu's Blog">
 <meta property="og:description" content="git 简介git 是分布式的，所以其核心就是分支，分支的意义在于，可以将项目代码按照功能、模块拆分成不同的分支。比如这个产品要加一个支付功能和一个登陆功能，可以创建两个分支，交给不同的开发人员并行开发。登陆功能先开发完，测试无误后合并改分支到 master 分支，master 分支部署上线。支付功能虽然没有开发完成，但是在另一条分支上，所以产品上线和功能开发完全不受影响。这才是分布式开发的高效模">
-<meta property="og:updated_time" content="2017-03-19T08:51:58.292Z">
+<meta property="og:updated_time" content="2017-03-19T13:38:07.772Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git学习总结">
 <meta name="twitter:description" content="git 简介git 是分布式的，所以其核心就是分支，分支的意义在于，可以将项目代码按照功能、模块拆分成不同的分支。比如这个产品要加一个支付功能和一个登陆功能，可以创建两个分支，交给不同的开发人员并行开发。登陆功能先开发完，测试无误后合并改分支到 master 分支，master 分支部署上线。支付功能虽然没有开发完成，但是在另一条分支上，所以产品上线和功能开发完全不受影响。这才是分布式开发的高效模">
@@ -623,7 +623,7 @@
 <h3 id="问题三"><a href="#问题三" class="headerlink" title="问题三"></a>问题三</h3><p>使用 windows 的同学注意了，如果你在资源管理器里新建一个 .gitignore 文件，它会提示你必须输入文件名，但是在文本编辑器里“保存”或者“另存为”就可以把文件保存为 .gitignore 了。<br>有些时候，你想添加一个文件到 git，但发现添加不了，原因是这个文件被 .gitignore 忽略了：<br><code>git add App.class</code><br>如果你确实想添加该文件，可以用 -f 制添加到 git：<br><code>git add -f App.class</code><br>或者你发现，可能是 .gitignore 写得有问题，需要找出来到底哪个规则写错了。<br>可以用 <code>git check-ignore</code> 命令检查：<br><code>git check-ignore -v App.class</code></p>
 <h3 id="问题四"><a href="#问题四" class="headerlink" title="问题四"></a>问题四</h3><p>为什么我把我生成的 ssh key 添加到了 github 中<br>然后 也 remote 了 <code>https://github.com/Neveryu/Xxx.git</code><br>为什么提交的时候报错，或者提示 输入密码账号是为什么</p>
 <p>ssh key 是 ssh 协议的密钥，http 协议没权限</p>
-<p><a href="http://git-scm.com/book/zh/v2" target="_blank" rel="external">权威教程</a></p>
+<p><a href="http://git-scm.com/book/zh/v2" target="_blank" rel="external">权威教程</a><br><a href="http://iissnan.com/progit/" target="_blank" rel="external">Pro Git 简体中文版</a></p>
 
       
     </div>
