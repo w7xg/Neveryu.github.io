@@ -98,7 +98,7 @@
 越来越多的站点开始使用 HTML5 标签。但是目前的情况是还有很多人在使用IE6，IE7，IE8。
 而IE6，IE7，IE8是不能识别 HTML5 标签的。
 这里">
-<meta property="og:updated_time" content="2017-03-20T13:49:29.038Z">
+<meta property="og:updated_time" content="2017-03-26T00:16:50.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="腻子脚本 — HTML5Shiv">
 <meta name="twitter:description" content="简介HTML5shiv is a javascript workaround to provide support for the new HTML 5 elements in IE Browsers older than IE 9.
@@ -587,7 +587,7 @@
 <h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><h2 id="注意事项一"><a href="#注意事项一" class="headerlink" title="注意事项一"></a>注意事项一</h2><p>在引入了 html5shiv.js 以后，还需要在你自己的 css 文件中添加:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">article</span>,<span class="selector-tag">aside</span>,<span class="selector-tag">dialog</span>,<span class="selector-tag">footer</span>,<span class="selector-tag">header</span>,<span class="selector-tag">section</span>,<span class="selector-tag">footer</span>,<span class="selector-tag">nav</span>,<span class="selector-tag">figure</span>,<span class="selector-tag">menu</span>&#123;</div><div class="line">  <span class="attribute">display</span>:block;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>主要是让这些 HTML5 标签成块状,像 div 那样。</p>
 <p>No matter how ways what did you using, you should be initialize the new lable css.<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">article</span>,<span class="selector-tag">aside</span>,<span class="selector-tag">dialog</span>,<span class="selector-tag">footer</span>,<span class="selector-tag">header</span>,<span class="selector-tag">section</span>,<span class="selector-tag">footer</span>,<span class="selector-tag">nav</span>,<span class="selector-tag">figure</span>,<span class="selector-tag">menu</span>&#123;</div><div class="line">  <span class="attribute">display</span>:block;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="注意事项二"><a href="#注意事项二" class="headerlink" title="注意事项二"></a>注意事项二</h2><p>　　因为 html5shiv.js 是 JavaScript 文件，如果 IE6/7/8 禁用脚本的用户,那么就变成了无样式的”白板”网页,我们该怎么解决呢?<br>　　我们可以参照 Facebook 的做法，即引导用户进入带有 noscript 标识的页面，用 xhtml 标签替换 html5 标签，这要比为了保持兼容而写大量 hack 的作法更轻便一些。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if lte IE 8]&gt; </div><div class="line">&lt;noscript&gt;</div><div class="line">&lt;style&gt;</div><div class="line">  .html5-wrappers&#123;display:none!important;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;div class=&quot;ie-noscript-warning&quot;&gt;您的浏览器禁用了脚本，请&lt;a href=&quot;#&quot;&gt;查看这里&lt;/a&gt;来启用脚本!或者&lt;a href=&quot;/?noscript=1&quot;&gt;继续访问&lt;/a&gt;.</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/noscript&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="注意事项二"><a href="#注意事项二" class="headerlink" title="注意事项二"></a>注意事项二</h2><p>　　因为 html5shiv.js 是 JavaScript 文件，如果 IE6/7/8 禁用脚本的用户,那么就变成了无样式的”白板”网页,我们该怎么解决呢?<br>　　我们可以参照 Facebook 的做法，即引导用户进入带有 noscript 标识的页面，用 xhtml 标签替换 html5 标签，这要比为了保持兼容而写大量 hack 的作法更轻便一些。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--[if lte IE 8]&gt; </span></div><div class="line">&lt;noscript&gt;</div><div class="line">&lt;style&gt;</div><div class="line">  .html5-wrappers&#123;display:none!important;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;div class="ie-noscript-warning"&gt;您的浏览器禁用了脚本，请&lt;a href="#"&gt;查看这里&lt;/a&gt;来启用脚本!或者&lt;a href="/?noscript=1"&gt;继续访问&lt;/a&gt;.</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/noscript&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure></p>
 <p>这样可以引导用户开启脚本，或者直接跳到 xhtml 标签设计的页面。</p>
 <h2 id="注意事项三"><a href="#注意事项三" class="headerlink" title="注意事项三"></a>注意事项三</h2><ul>
 <li>HTML5shiv is found within the <code>&lt;head&gt;</code> tag.</li>
@@ -597,13 +597,8 @@
 <li>You will require the HTML5shiv to provide compatibility for IE Browser older than IE 9.</li>
 </ul>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><h3 id="HTML-5-Document"><a href="#HTML-5-Document" class="headerlink" title="HTML 5 Document"></a>HTML 5 Document</h3><p>If you created a new web page in HTML5,you would include the HTML5shiv as follows:</p>
-<pre><code>&lt;head&gt;
-&lt;meta charset=&quot;UTF-8&quot;&gt;
-&lt;!--[if lt IE 9]&gt;
-  &lt;script src=&quot;.js/html5shiv.min.js&quot;&gt;&lt;/script&gt;
-&lt;![endif]--&gt;
-&lt;/head&gt;
-</code></pre><p>In this HTML 5 Document example,we have added HTML5shiv within the <head> tag.In this case,the HTML5shiv is a javascript file called <strong>html5shiv.js</strong> found in the ./js directory.</head></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></div><div class="line">  &lt;script src=".js/html5shiv.min.js"&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>In this HTML 5 Document example,we have added HTML5shiv within the <head> tag.In this case,the HTML5shiv is a javascript file called <strong>html5shiv.js</strong> found in the ./js directory.</head></p>
 <p>If you did not want to download and store the HTML5shiv on your site,you could reference the version found on the Open Source Software CDN site.</p>
 <h3 id="Support-two-CDN-site"><a href="#Support-two-CDN-site" class="headerlink" title="Support two CDN site"></a>Support two CDN site</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>HTML 5 Example by github.com/neveryu<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></div><div class="line">    &lt;script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>HTML 5 Example by github.com/neveryu<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></div><div class="line">    &lt;script src="https://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -768,7 +763,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -785,7 +780,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
