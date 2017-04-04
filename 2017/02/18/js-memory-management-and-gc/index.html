@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -84,22 +84,16 @@
 
 
 
-<meta name="description" content="Respond.js 让不支持 css3 Media Query 的浏览器包括 IE6-IE8 等其他浏览器支持媒体查询。
-
-Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它不支持 CSS3 Media Queries 的浏览器提供媒体查询的 min-width 和 max-width特性，实现响应式网页设计（Responsive Web Design）。">
+<meta name="description" content="简介低级语言，比如C，有低级的内存管理基元，像 malloc()，free()。另一方面，JavaScript 的内存基元在变量（对象，字符串等等）创建时分配，然后在他们不再被使用时“自动释放”。后者被称为垃圾回收。这个“自动”是混淆并给 JavaScript （和其他高级语言）开发者一个错觉：他们可以不用考虑内存管理。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="polyfill — Respond.js">
-<meta property="og:url" content="https://neveryu.github.io/2017/02/11/respond-js/index.html">
+<meta property="og:title" content="JavaScript 内存管理 & 垃圾回收机制">
+<meta property="og:url" content="https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/index.html">
 <meta property="og:site_name" content="Never_yu's Blog">
-<meta property="og:description" content="Respond.js 让不支持 css3 Media Query 的浏览器包括 IE6-IE8 等其他浏览器支持媒体查询。
-
-Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它不支持 CSS3 Media Queries 的浏览器提供媒体查询的 min-width 和 max-width特性，实现响应式网页设计（Responsive Web Design）。">
-<meta property="og:updated_time" content="2017-03-07T14:44:23.859Z">
+<meta property="og:description" content="简介低级语言，比如C，有低级的内存管理基元，像 malloc()，free()。另一方面，JavaScript 的内存基元在变量（对象，字符串等等）创建时分配，然后在他们不再被使用时“自动释放”。后者被称为垃圾回收。这个“自动”是混淆并给 JavaScript （和其他高级语言）开发者一个错觉：他们可以不用考虑内存管理。">
+<meta property="og:updated_time" content="2017-04-03T10:40:58.694Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="polyfill — Respond.js">
-<meta name="twitter:description" content="Respond.js 让不支持 css3 Media Query 的浏览器包括 IE6-IE8 等其他浏览器支持媒体查询。
-
-Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它不支持 CSS3 Media Queries 的浏览器提供媒体查询的 min-width 和 max-width特性，实现响应式网页设计（Responsive Web Design）。">
+<meta name="twitter:title" content="JavaScript 内存管理 & 垃圾回收机制">
+<meta name="twitter:description" content="简介低级语言，比如C，有低级的内存管理基元，像 malloc()，free()。另一方面，JavaScript 的内存基元在变量（对象，字符串等等）创建时分配，然后在他们不再被使用时“自动释放”。后者被称为垃圾回收。这个“自动”是混淆并给 JavaScript （和其他高级语言）开发者一个错觉：他们可以不用考虑内存管理。">
 
 
 
@@ -120,9 +114,9 @@ Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它�
 
 
 
-  <link rel="canonical" href="https://neveryu.github.io/2017/02/11/respond-js/"/>
+  <link rel="canonical" href="https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/"/>
 
-  <title> polyfill — Respond.js | Never_yu's Blog </title>
+  <title> JavaScript 内存管理 & 垃圾回收机制 | Never_yu's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -493,7 +487,7 @@ Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它�
             
             
               
-                polyfill — Respond.js
+                JavaScript 内存管理 & 垃圾回收机制
               
             
           </h1>
@@ -505,8 +499,8 @@ Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-11T23:25:24+08:00" content="2017-02-11">
-              2017-02-11
+            <time itemprop="dateCreated" datetime="2017-02-18T13:25:24+08:00" content="2017-02-18">
+              2017-02-18
             </time>
           </span>
 
@@ -519,8 +513,8 @@ Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它�
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/综合/" itemprop="url" rel="index">
+                    <span itemprop="name">综合</span>
                   </a>
                 </span>
 
@@ -555,58 +549,33 @@ Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它�
       
 
       
-        <blockquote>
-<p>Respond.js 让不支持 css3 Media Query 的浏览器包括 IE6-IE8 等其他浏览器支持媒体查询。</p>
-</blockquote>
-<p>Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它不支持 CSS3 Media Queries 的浏览器提供媒体查询的 <code>min-width</code> 和 <code>max-width</code>特性，实现响应式网页设计（Responsive Web Design）。</p>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>低级语言，比如C，有低级的内存管理基元，像 malloc()，free()。另一方面，JavaScript 的内存基元在变量（对象，字符串等等）创建时分配，然后在他们不再被使用时“自动释放”。后者被称为垃圾回收。这个“自动”是混淆并给 JavaScript （和其他高级语言）开发者一个错觉：他们可以不用考虑内存管理。</p>
 <a id="more"></a>
-<p>响应式布局，理想状态是，对 <code>PC/移动</code> 各种终端进行响应。媒体查询的支持程度是 IE9+ 以及其他现代的浏览器，但是 IE8 在市场当中仍然占据了比较大量的市场份额，使我们不得不进行 IE 低端浏览器的考虑。那么如何在 IE6~8 浏览器中兼容响应式布局呢？<br>这里我们需要借助这样一个文件：<code>respond.js</code>.</p>
-<p>文件下载地址：<a href="respond.js">respond.js</a>.</p>
-<p>自己在阅读了官方文档之后，进行了一系列测试。友情提示各位朋友，关于 <strong>respond.js</strong> 的使用，有一些需要注意的地方，一旦不注意，在 IE6-8 中就无法显示出来。</p>
-<h1 id="插件原理"><a href="#插件原理" class="headerlink" title="插件原理"></a>插件原理</h1><p>既然要实现响应式网页，那么就需要用到媒体查询，媒体查询的核心是 <code>min-width</code> 和 <code>max-width</code>,而 IE8 以下以及一些其它的浏览器不支持这两个属性，<strong>respond.js</strong> 是怎么做的呢？</p>
+<h1 id="JavaScript-的内存分配"><a href="#JavaScript-的内存分配" class="headerlink" title="JavaScript 的内存分配"></a>JavaScript 的内存分配</h1><h2 id="变量初始化"><a href="#变量初始化" class="headerlink" title="变量初始化"></a>变量初始化</h2><p>为了不让程序员为分配费心，JavaScript 在定义变量时完成内存分配。<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> n = <span class="number">123</span>;  <span class="comment">// 给数值变量分配内存</span></div><div class="line"></div><div class="line"><span class="comment">// 为对象及其包含变量分配内存</span></div><div class="line"><span class="keyword">var</span> o = &#123;</div><div class="line">    <span class="attr">a</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">b</span>: <span class="literal">null</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 函数表达式也能分配一个对象</span></div><div class="line">obj.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  obj.style.backgroundColor = <span class="string">'blue'</span>;</div><div class="line">&#125;, <span class="literal">false</span>);</div></pre></td></tr></table></figure></p>
+<h2 id="通过函数调用的内存分配"><a href="#通过函数调用的内存分配" class="headerlink" title="通过函数调用的内存分配"></a>通过函数调用的内存分配</h2><p>有些函数调用结果是分配对象内存：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="keyword">var</span> e = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</div></pre></td></tr></table></figure></p>
+<h2 id="值的使用"><a href="#值的使用" class="headerlink" title="值的使用"></a>值的使用</h2><p>使用值的过程实际上是对分配内存进行读取与写入的操作，这意味着可以写入一个变量或者一个对象的属性值，甚至传递函数的参数。</p>
+<h2 id="当内存不再需要使用时释放"><a href="#当内存不再需要使用时释放" class="headerlink" title="当内存不再需要使用时释放"></a>当内存不再需要使用时释放</h2><p>大多数内存管理的问题都在这个阶段。在这里最艰难的任务是找到“所分配的内存确实已经不再需要了”。它往往要求开发人员来确定在程序中哪一块内存不再需要并且释放它。</p>
+<p>高级语言解释器嵌入了“垃圾回收器”，主要工作是跟踪内存的分配和使用，以便当分配的内存不再使用时，自动释放它。这个过程是一个近似的，因为要知道某块内存是否需要是 <a href="http://en.wikipedia.org/wiki/Decidability_%28logic%29" target="_blank" rel="external">无法判定的</a> （无法被某种算法所解决）。</p>
+<h1 id="垃圾回收机制——GC"><a href="#垃圾回收机制——GC" class="headerlink" title="垃圾回收机制——GC"></a>垃圾回收机制——GC</h1><p>JavaScript 具有自动垃圾回收机制（GC:Garbage Collecation），也就是说，执行环境会负责管理代码执行过程中使用的内存。</p>
+<p>原理：垃圾收集器会定期（周期性）找出那些不在继续使用的变量，然后释放其内存。</p>
+<p>JavaScript 垃圾回收的机制很简单：找出不再使用的变量，然后释放掉其占用的内存，但是这个过程不是实时的，因为其开销比较大，所以垃圾回收器会按照固定的时间间隔周期性的执行。</p>
+<p>不再使用的变量也就是生命周期结束的变量，当然只可能是局部变量，全局变量的生命周期直至浏览器卸载页面才会结束。局部变量只在函数的执行过程中存在，而在这个过程中会为局部变量在栈或堆上分配相应的空间，以存储它们的值，然后在函数中使用这些变量，直至函数结束，而闭包中由于内部函数的原因，外部函数并不能算是结束。</p>
+<p>还是上代码说明吧：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = &#123;<span class="attr">name</span>: <span class="string">'yu'</span>, <span class="attr">age</span>: <span class="number">10</span>&#125;;</div><div class="line">&#125; </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = &#123;<span class="attr">name</span>: <span class="string">'yu'</span>, <span class="attr">age</span>: <span class="number">11</span>&#125;;</div><div class="line">    <span class="keyword">return</span> obj;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = fn1();</div><div class="line"><span class="keyword">var</span> b = fn2();</div></pre></td></tr></table></figure></p>
+<p>我们来看代码是如何执行的。首先定义了两个 function,分别叫做 fn1 和 fn2，当 fn1 被调用时，进入 fn1 的环境，会开辟一块内存存放对象，而当调用结束后，出了 fn1 的环境，那么该块内存会被 js 引擎中的垃圾回收器自动释放；在 fn2 被调用的过程中，返回的对象被全局变量 b 所指向，所以该块内存并不会被释放。</p>
+<p>这里问题就出现了：到底哪个变量是没有用的？所以垃圾收集器必须跟踪到底哪个变量没用，对于不再有用的变量打上标记，以备将来收回其内存。用于标记的无用变量的策略可能因实现而有所区别，通常情况下有两种实现方式：标记清除和引用计数。引用计数不太常用，标记清除较为常用。</p>
+<h2 id="标记清除"><a href="#标记清除" class="headerlink" title="标记清除"></a>标记清除</h2><p>js 中最常用的垃圾回收方式就是标记清除。当变量进入环境时，例如，在函数中声明一个变量，就将这个而变量标记为“进入环境”。从逻辑上讲，永远不能释放进入环境的变量所占用的内存，因为只要执行流进入相应的环境，就可能会用到它们。而当变量离开环境时，则将其标记为“离开环境”。</p>
+<h2 id="引用计数"><a href="#引用计数" class="headerlink" title="引用计数"></a>引用计数</h2><p>这是最简单的垃圾收集算法。此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用它”。如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。<br>Netscape Navigator3 是最早使用引用计数策略的浏览器，但很快它就遇到了一个严重的问题：循环引用。循环引用指的是对象 A 中包含一个指向对象 B 的指针，而对象 B 中也包含一个指向对象 A 的引用。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> a = &#123;&#125;;</div><div class="line">    <span class="keyword">var</span> b = &#123;&#125;;</div><div class="line">    a.pro = b;</div><div class="line">    b.pro = a;</div><div class="line">&#125; </div><div class="line">fn();</div></pre></td></tr></table></figure></p>
+<p>以上代码a和b的引用次数都是2，fn()执行完毕后，两个对象都已经离开环境，在标记清除方式下是没有问题的，但是在引用计数策略下，因为a和b的引用次数不为0，所以不会被垃圾回收器回收内存，如果fn函数被大量调用，就会造成内存泄漏。在IE7与IE8上，内存直线上升。<br>最简单的方式就是自己手工解除循环引用，比如刚才的函数可以这样<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">myObject.element = <span class="literal">null</span>;</div><div class="line">element.o = <span class="literal">null</span>;</div></pre></td></tr></table></figure></p>
+<h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><p>1、什么时候触发垃圾回收？<br>垃圾回收周期性运行，如果分配的内存非常多，那么回收工作也会很艰巨，确定垃圾回收时间间隔就变成了一个值得思考的问题。IE6 的垃圾回收是根据内存分配量运行的，当环境中存在 256 个变量、4096 个对象、64K 的字符串任意一种情况的时候就会触发垃圾回收器工作，看起来很科学，不用按一段时间就调用一次，有时候会没必要，这样按需调用不是很好嘛？但是如果环境中就是有这么多变量一直存在，现在脚本如此复杂，很正常，那么结果就是垃圾回收器一直在工作，这样浏览器就没法玩了。</p>
+<p>微软在 IE7 中做了调整，触发条件不再是固定的，而是动态修改的，初始值和IE6相同，如果垃圾回收器回收的内存分配量低于程序占用内存的 15%，说明大部分内存不可被回收，设的垃圾回收触发条件过于敏感，这时候把临界条件翻倍，如果回收的内存高于 85%，说明大部分内存早就该清理了，这时候把触发条件置回。这样就使垃圾回收工作智能了很多。</p>
+<p>2、合理的 GC 方案<br>1）、JavaScript 引擎基础 GC 方案是（simple GC）：mark and sweep（标记清除），即：</p>
 <ul>
-<li>将 <code>&lt;head&gt;</code> 中所有外部引入的CSS文件路径取出来存储到一个数组当中；</li>
-<li>遍历数组，并一个个发送 AJAX 请求；</li>
-<li>AJAX 回调后，分析 response 中的 media query 的 <code>min-width</code> 和 <code>max-width</code> 语法（注意，仅仅支持 <code>min-width</code> 和 <code>max-width</code> ），分析出 viewport 变化区间对应相应的 css 块；</li>
-<li>页面初始化时和 <code>window.resize</code> 时，根据当前 viewport 使用相应的 css 块。</li>
+<li>遍历所有可访问的对象。</li>
+<li>回收已不可访问的对象。</li>
 </ul>
-<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>考虑到 IE9 是支持 CSS3 的，所以直接在 HTML 页面的 <code>&lt;head&gt;</code> 标签中添加脚本引入即可：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"style.css"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!--[if lt IE 9]&gt;</span></div><div class="line">      &lt;script src="js/respond.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;![endif]--&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>讲道理，我们是应该将 js 文件放在 html 文件的最后，但是 repond.js 文件，我还是建议你将它放在 <code>&lt;head&gt;</code> 中，并且放在 css 文件的后面。越早引入越好，在 IE 下面看到页面闪屏的概率就越低，因为最初 css 会先渲染出来，如果 respond.js 加载得很后面，这时重新根据 media query 解析出来的 css 会再改变一次页面的布局等，所以看起来有闪屏的现象.</p>
-<h1 id="核心结论"><a href="#核心结论" class="headerlink" title="核心结论"></a>核心结论</h1><p>那么此时，就可以根据基本的实现思路，得到一些书写代码时要注意的地方：</p>
-<ul>
-<li>需要启动本地服务器（localhost），不能使用普通本地的url地址（file://开头）；</li>
-<li>需要外部引入 CSS 文件，将 CSS 样式书写在 style 中是无效的；</li>
-<li>由于 respond 插件是查找 CSS 文件，再进行处理，所以 respond.js 文件一定要放置在 CSS 文件的后面；</li>
-<li>另外，虽然把 respond.js 放置在 <code>&lt;head&gt;</code> 里还是在 <code>&lt;body&gt;</code> 后面都能够实现，但是建议放置在 <code>&lt;head&gt;</code> 中（具体原因在下面的文档提示中有提到）；</li>
-<li>最好不要为 CSS 设置 utf-8 的编码，使用默认（原因详见下面的文档提示部分）</li>
-</ul>
-<h1 id="文档提示"><a href="#文档提示" class="headerlink" title="文档提示"></a>文档提示</h1><p>在官方文档当中的一些提示：</p>
-<ul>
-<li>越早的引入 respond.js 文件，也就越可能避免 IE 下出现的闪屏。</li>
-<li>不支持嵌套的媒体查询。</li>
-<li>utf-8 的字符编码对 respond.js 文件的运行有影响。<br>官方API原文：<br><code>if CSS files are encoded in UTF-8 with Byte-Order-Mark, they will not work with Respond.js in IE7 or IE8.</code><br>基本含义就是：<strong>utf-8 格式的 CSS 文件字符编码会对插件造成影响</strong><br>但是在我使用 IE6-8 进行测试的时候，都能够正常显示（无论是在 css 文件中增加 charset 设置还是在 link 标签中增加 charset 设置）。因此，并不是太清楚这个位置 bug 的含义。</li>
-<li>跨域可能会出现闪屏（还没有测试，具体情况不详）</li>
-</ul>
-<h1 id="NOTE"><a href="#NOTE" class="headerlink" title="NOTE"></a>NOTE</h1><ol>
-<li><p>Respond.js 和 跨域（cross-domain） CSS 的问题<br>如果Respond.js和CSS文件被放在不同的域名或子域名下面（例如，使用CDN）时需要一些额外的设置。请参考Respond.js文档获取详细信息。</p>
-</li>
-<li><p>Internet Explorer 8 与 box-sizing<br>IE8 不能完全支持 <code>box-sizing: border-box;</code> 与 <code>min-width</code>、<code>max-width</code>、<code>min-height</code> 或 <code>max-height</code> 一同使用。由于此原因，从 Bootstrap v3.0.1 版本开始，我们不再为 <code>.container</code> 使用 <code>max-width</code>。</p>
-</li>
-<li><p>IE兼容模式<br>Bootstrap 不支持 IE 的兼容模式。为了让 IE 浏览器运行最新的渲染模式，建议将此 标签加入到你的页面中：<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge&quot;&gt;</code><br>此标签被加入到所有文档页面和案例页面中，以确保在每个被支持的 IE 浏览器中保持最好的页面展现效果。</p>
-</li>
-<li><p>Respond.js 和 @import<br>Respond.js 不支持通过 @import 引入的 CSS 文件。例如，Drupal 一般被配置为通过 @import 引入 CSS 文件，Respond.js 对其将无法起到作用。</p>
-</li>
-</ol>
-<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p>从 respond.js 的工作原理可以知道，它将 <code>&lt;head&gt;</code> 中所有外部引入的 CSS 文件路径取出来存储到一个数组当中；然后遍历数组，并一个个发送 AJAX 请求；可以看出这里必须依赖 ajax 请求 css 路径才能得到 css 文件中的 media query 的内容，那 ajax 的跨域问题就要解决了；</p>
-<p>由于我们的静态资源都是要放在 cdn 的，responds.js 也给出了跨域方法，即引入代理页面：</p>
-<p>//把 cross-domain/respond-proxy.html 放到cdn上<br>//把 cross-domain/respond.proxy.gif 放到当前域服务器上</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Respond.js proxy on external server --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"http://externalcdn.com/respond-proxy.html"</span> <span class="attr">id</span>=<span class="string">"respond-proxy"</span> <span class="attr">rel</span>=<span class="string">"respond-proxy"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Respond.js redirect location on local server --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"/path/to/respond.proxy.gif"</span> <span class="attr">id</span>=<span class="string">"respond-redirect"</span> <span class="attr">rel</span>=<span class="string">"respond-redirect"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Respond.js proxy script on local server --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/path/to/respond.proxy.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="其他的支持响应式布局的插件-css3-dediaqueries-js"><a href="#其他的支持响应式布局的插件-css3-dediaqueries-js" class="headerlink" title="其他的支持响应式布局的插件  css3-dediaqueries.js"></a>其他的支持响应式布局的插件  css3-dediaqueries.js</h1><p>css3-mediaqueries.js 支持几乎所有的 media query 的语法。会出现闪屏。并不是很推荐使用，虽然能够支持全部的 media queries,但 <code>min-width</code> 和 <code>max-width</code> 其实就可以满足我们对响应式布局的需要。</p>
-<h1 id="补充一点"><a href="#补充一点" class="headerlink" title="补充一点"></a>补充一点</h1><p>if CSS files are encoded in UTF-8 with Byte-Order-Mark,they will not work with Repond.js in IE7 or IE8.</p>
-<p>也就是说保存格式应该是 utf-8 无 BOM 格式，BOM 会影响程序对文档的处理，正常的 utf-8 文档应该没事。</p>
-<h1 id="Tips-1"><a href="#Tips-1" class="headerlink" title="Tips"></a>Tips</h1><p><strong>always link stylesheets or write inline CSS before js scripts.</strong></p>
-<p>Respond.js on Github： <a href="https://github.com/scottjehl/Respond" target="_blank" rel="external">https://github.com/scottjehl/Respond</a>.</p>
+<p>2）、GC 的缺陷<br>和其他语言一样，JavaScript 的 GC 策略也无法避免一个问题：GC 时，停止响应其他操作，这是为了安全考虑。而 JavaScript 的 GC 在 100ms 甚至以上，对一般的应用还好，但对于 JS 游戏，动画连贯性要求比较高的应用，就麻烦了。这就是新引擎需要优化的点：避免 GC 造成的长时间停止响应。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>一般不用 setInterval，而用 setTimeout 的延时递归来代替 interval。<br>setInterval 会产生回调堆积，特别是时间很短的时候。</p>
+<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><p>setInterval 有个很烦的地方就是当 js 主程序空闲的时候，执行代码队列里面的代码的时候，如果此时候我们有一个问题，定时器是等到回调执行完，才开始计时进行下次循环呢？还是只要一次计时完毕，插入回调之后不管回调执不执行就开始计时呢？答案显示是后者，这也就是我说 setInterval 坑的原因啊，因为这会出现一种情况，当我们插入回调的时候前队列有别的代码在执行，这时候回调肯定是不会执行的，因此如果这个时候无限定时时间到了会再次插入回调，这个时候如果发现队列中的第一次回调没有执行，那么再次插入的回调浏览器就默认取消，（这是以防出现回调连续执行多次的情况）但是这又引发了新的情况就是有些回调是不能取消掉的？</p>
 
       
     </div>
@@ -657,7 +626,7 @@ Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它�
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag">#javascript</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -666,16 +635,16 @@ Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/18/html5shiv/" rel="next" title="腻子脚本 — HTML5Shiv">
-                <i class="fa fa-chevron-left"></i> 腻子脚本 — HTML5Shiv
+              <a href="/2017/02/14/why-we-dropped-zepto/" rel="next" title="【转】为什么我们放弃了 Zepto">
+                <i class="fa fa-chevron-left"></i> 【转】为什么我们放弃了 Zepto
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/14/why-we-dropped-zepto/" rel="prev" title="【转】为什么我们放弃了 Zepto">
-                【转】为什么我们放弃了 Zepto <i class="fa fa-chevron-right"></i>
+              <a href="/2017/02/28/memory-leak/" rel="prev" title="如何解决内存泄漏引发的血案">
+                如何解决内存泄漏引发的血案 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -691,10 +660,10 @@ Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它�
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/02/11/respond-js/"
-     data-title="polyfill — Respond.js"
+        <div class="ds-share flat" data-thread-key="2017/02/18/js-memory-management-and-gc/"
+     data-title="JavaScript 内存管理 & 垃圾回收机制"
      data-content=""
-     data-url="https://neveryu.github.io/2017/02/11/respond-js/">
+     data-url="https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -851,7 +820,7 @@ Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#插件原理"><span class="nav-number">1.</span> <span class="nav-text">插件原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用方法"><span class="nav-number">2.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核心结论"><span class="nav-number">3.</span> <span class="nav-text">核心结论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文档提示"><span class="nav-number">4.</span> <span class="nav-text">文档提示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NOTE"><span class="nav-number">5.</span> <span class="nav-text">NOTE</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tips"><span class="nav-number">6.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他的支持响应式布局的插件-css3-dediaqueries-js"><span class="nav-number">7.</span> <span class="nav-text">其他的支持响应式布局的插件  css3-dediaqueries.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#补充一点"><span class="nav-number">8.</span> <span class="nav-text">补充一点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tips-1"><span class="nav-number">9.</span> <span class="nav-text">Tips</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-的内存分配"><span class="nav-number">2.</span> <span class="nav-text">JavaScript 的内存分配</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量初始化"><span class="nav-number">2.1.</span> <span class="nav-text">变量初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过函数调用的内存分配"><span class="nav-number">2.2.</span> <span class="nav-text">通过函数调用的内存分配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#值的使用"><span class="nav-number">2.3.</span> <span class="nav-text">值的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当内存不再需要使用时释放"><span class="nav-number">2.4.</span> <span class="nav-text">当内存不再需要使用时释放</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#垃圾回收机制——GC"><span class="nav-number">3.</span> <span class="nav-text">垃圾回收机制——GC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#标记清除"><span class="nav-number">3.1.</span> <span class="nav-text">标记清除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用计数"><span class="nav-number">3.2.</span> <span class="nav-text">引用计数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存管理"><span class="nav-number">4.</span> <span class="nav-text">内存管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展"><span class="nav-number">6.</span> <span class="nav-text">扩展</span></a></li></ol></div>
             
           </div>
         </section>

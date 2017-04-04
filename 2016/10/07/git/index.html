@@ -90,7 +90,7 @@
 <meta property="og:url" content="https://neveryu.github.io/2016/10/07/git/index.html">
 <meta property="og:site_name" content="Never_yu's Blog">
 <meta property="og:description" content="git 简介git 是分布式的，所以其核心就是分支，分支的意义在于，可以将项目代码按照功能、模块拆分成不同的分支。比如这个产品要加一个支付功能和一个登陆功能，可以创建两个分支，交给不同的开发人员并行开发。登陆功能先开发完，测试无误后合并改分支到 master 分支，master 分支部署上线。支付功能虽然没有开发完成，但是在另一条分支上，所以产品上线和功能开发完全不受影响。这才是分布式开发的高效模">
-<meta property="og:updated_time" content="2017-03-19T13:38:07.772Z">
+<meta property="og:updated_time" content="2017-03-30T13:47:11.376Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git学习总结">
 <meta name="twitter:description" content="git 简介git 是分布式的，所以其核心就是分支，分支的意义在于，可以将项目代码按照功能、模块拆分成不同的分支。比如这个产品要加一个支付功能和一个登陆功能，可以创建两个分支，交给不同的开发人员并行开发。登陆功能先开发完，测试无误后合并改分支到 master 分支，master 分支部署上线。支付功能虽然没有开发完成，但是在另一条分支上，所以产品上线和功能开发完全不受影响。这才是分布式开发的高效模">
@@ -106,7 +106,7 @@
     motion: true,
     duoshuo: {
       userId: 6326435153992222000,
-      author: 'Author'
+      author: '博主'
     }
   };
 </script>
@@ -596,7 +596,8 @@
 <p><code>git checkout -b [local branch] [remote base]/[remote branch]</code><br>将远程分支检出到本地分支，并追踪</p>
 <p><code>git checkout --track &lt;remote base&gt;/&lt;remote branch&gt;</code><br>让当前分支跟踪远程分支</p>
 <h3 id="rebase"><a href="#rebase" class="headerlink" title="rebase"></a>rebase</h3><p><code>git rebase [basebranch]</code><br>变基是将一系列提交按照原有次序依次应用到另一分支上，而合并是把最终结果合在一起。</p>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h3><p>git clone 支持多种协议，除了HTTP(s)以外，还支持SSH、Git、本地文件协议等。<br>使用 https 除了速度慢意外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放 http 端口的公司内部就无法使用ssh协议而只能用 https。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h3><p>git clone 支持多种协议，除了HTTP(s)以外，还支持SSH、Git、本地文件协议等。<br>使用 https 除了速度慢意外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放 http 端口的公司内部就无法使用 ssh 协议而只能用 https。</p>
+<p><code>git clone &lt;版本库的网址&gt; &lt;本地目录名&gt;</code><br>如果不写本地目录名，默认就是版本库的名字</p>
 <h3 id="如何新建分支"><a href="#如何新建分支" class="headerlink" title="如何新建分支"></a>如何新建分支</h3><p>本地建立 branch 並立即切换到新分支<br><code>git checkout -b &lt;branch_name&gt;</code> </p>
 <p>下面的命令表示，在 <code>origin/master</code> 的基础上，创建一个分支。<br><code>git checkout -b newBranch origin/master</code></p>
 <p>修改分支名称<br><code>git branch -m &lt;new_name&gt;</code></p>
@@ -779,7 +780,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -854,10 +855,6 @@
               
                 <li class="links-of-blogroll-item">
                   <a href="http://blog.csdn.net/csdn_yudong" title="CSDN" target="_blank">CSDN</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://weibo.com/misswangtingting" title="王婷婷" target="_blank">王婷婷</a>
                 </li>
               
             </ul>
@@ -1022,7 +1019,7 @@
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
       ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//neveryu.github.io/js/src/embed.js';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
       ds.charset = 'UTF-8';
       (document.getElementById('footer')
       || document.getElementsByTagName('body')[0]).appendChild(ds);

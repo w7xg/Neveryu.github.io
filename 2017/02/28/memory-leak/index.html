@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -84,22 +84,19 @@
 
 
 
-<meta name="description" content="Respond.js 让不支持 css3 Media Query 的浏览器包括 IE6-IE8 等其他浏览器支持媒体查询。
-
-Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它不支持 CSS3 Media Queries 的浏览器提供媒体查询的 min-width 和 max-width特性，实现响应式网页设计（Responsive Web Design）。">
+<meta name="description" content="之前做了一个谷歌浏览器的插件开发，它会打开一个链接，然后收集数据并上传。依次循环，但是跑的时间久了，内存就变得很高，然后浏览器就会变卡，慢慢的影响这个插件的运行，最后浏览器也会崩溃。
+什么是内存泄漏内存泄露是指一块被分配的内存既不能使用，又不能回收，直到浏览器进程结束。在 C++ 中，因为是手动管理内存，内存泄露是经常出现的事情。而现在流行的 C# 和 Java 等语言采用了自动垃圾回收方法管理内">
 <meta property="og:type" content="article">
-<meta property="og:title" content="polyfill — Respond.js">
-<meta property="og:url" content="https://neveryu.github.io/2017/02/11/respond-js/index.html">
+<meta property="og:title" content="如何解决内存泄漏引发的血案">
+<meta property="og:url" content="https://neveryu.github.io/2017/02/28/memory-leak/index.html">
 <meta property="og:site_name" content="Never_yu's Blog">
-<meta property="og:description" content="Respond.js 让不支持 css3 Media Query 的浏览器包括 IE6-IE8 等其他浏览器支持媒体查询。
-
-Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它不支持 CSS3 Media Queries 的浏览器提供媒体查询的 min-width 和 max-width特性，实现响应式网页设计（Responsive Web Design）。">
-<meta property="og:updated_time" content="2017-03-07T14:44:23.859Z">
+<meta property="og:description" content="之前做了一个谷歌浏览器的插件开发，它会打开一个链接，然后收集数据并上传。依次循环，但是跑的时间久了，内存就变得很高，然后浏览器就会变卡，慢慢的影响这个插件的运行，最后浏览器也会崩溃。
+什么是内存泄漏内存泄露是指一块被分配的内存既不能使用，又不能回收，直到浏览器进程结束。在 C++ 中，因为是手动管理内存，内存泄露是经常出现的事情。而现在流行的 C# 和 Java 等语言采用了自动垃圾回收方法管理内">
+<meta property="og:updated_time" content="2017-04-03T10:40:50.139Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="polyfill — Respond.js">
-<meta name="twitter:description" content="Respond.js 让不支持 css3 Media Query 的浏览器包括 IE6-IE8 等其他浏览器支持媒体查询。
-
-Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它不支持 CSS3 Media Queries 的浏览器提供媒体查询的 min-width 和 max-width特性，实现响应式网页设计（Responsive Web Design）。">
+<meta name="twitter:title" content="如何解决内存泄漏引发的血案">
+<meta name="twitter:description" content="之前做了一个谷歌浏览器的插件开发，它会打开一个链接，然后收集数据并上传。依次循环，但是跑的时间久了，内存就变得很高，然后浏览器就会变卡，慢慢的影响这个插件的运行，最后浏览器也会崩溃。
+什么是内存泄漏内存泄露是指一块被分配的内存既不能使用，又不能回收，直到浏览器进程结束。在 C++ 中，因为是手动管理内存，内存泄露是经常出现的事情。而现在流行的 C# 和 Java 等语言采用了自动垃圾回收方法管理内">
 
 
 
@@ -120,9 +117,9 @@ Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它�
 
 
 
-  <link rel="canonical" href="https://neveryu.github.io/2017/02/11/respond-js/"/>
+  <link rel="canonical" href="https://neveryu.github.io/2017/02/28/memory-leak/"/>
 
-  <title> polyfill — Respond.js | Never_yu's Blog </title>
+  <title> 如何解决内存泄漏引发的血案 | Never_yu's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -493,7 +490,7 @@ Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它�
             
             
               
-                polyfill — Respond.js
+                如何解决内存泄漏引发的血案
               
             
           </h1>
@@ -505,8 +502,8 @@ Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-11T23:25:24+08:00" content="2017-02-11">
-              2017-02-11
+            <time itemprop="dateCreated" datetime="2017-02-28T01:01:00+08:00" content="2017-02-28">
+              2017-02-28
             </time>
           </span>
 
@@ -519,8 +516,8 @@ Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它�
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/综合/" itemprop="url" rel="index">
+                    <span itemprop="name">综合</span>
                   </a>
                 </span>
 
@@ -555,58 +552,22 @@ Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它�
       
 
       
-        <blockquote>
-<p>Respond.js 让不支持 css3 Media Query 的浏览器包括 IE6-IE8 等其他浏览器支持媒体查询。</p>
-</blockquote>
-<p>Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它不支持 CSS3 Media Queries 的浏览器提供媒体查询的 <code>min-width</code> 和 <code>max-width</code>特性，实现响应式网页设计（Responsive Web Design）。</p>
+        <p>之前做了一个谷歌浏览器的插件开发，它会打开一个链接，然后收集数据并上传。依次循环，但是跑的时间久了，内存就变得很高，然后浏览器就会变卡，慢慢的影响这个插件的运行，最后浏览器也会崩溃。</p>
+<h1 id="什么是内存泄漏"><a href="#什么是内存泄漏" class="headerlink" title="什么是内存泄漏"></a>什么是内存泄漏</h1><p>内存泄露是指一块被分配的内存既不能使用，又不能回收，直到浏览器进程结束。在 C++ 中，因为是手动管理内存，内存泄露是经常出现的事情。而现在流行的 C# 和 Java 等语言采用了自动垃圾回收方法管理内存，正常使用的情况下几乎不会发生内存泄露。浏览器中也是采用自动垃圾回收方法管理内存，但由于浏览器垃圾回收方法有 bug，会产生内存泄露。</p>
 <a id="more"></a>
-<p>响应式布局，理想状态是，对 <code>PC/移动</code> 各种终端进行响应。媒体查询的支持程度是 IE9+ 以及其他现代的浏览器，但是 IE8 在市场当中仍然占据了比较大量的市场份额，使我们不得不进行 IE 低端浏览器的考虑。那么如何在 IE6~8 浏览器中兼容响应式布局呢？<br>这里我们需要借助这样一个文件：<code>respond.js</code>.</p>
-<p>文件下载地址：<a href="respond.js">respond.js</a>.</p>
-<p>自己在阅读了官方文档之后，进行了一系列测试。友情提示各位朋友，关于 <strong>respond.js</strong> 的使用，有一些需要注意的地方，一旦不注意，在 IE6-8 中就无法显示出来。</p>
-<h1 id="插件原理"><a href="#插件原理" class="headerlink" title="插件原理"></a>插件原理</h1><p>既然要实现响应式网页，那么就需要用到媒体查询，媒体查询的核心是 <code>min-width</code> 和 <code>max-width</code>,而 IE8 以下以及一些其它的浏览器不支持这两个属性，<strong>respond.js</strong> 是怎么做的呢？</p>
-<ul>
-<li>将 <code>&lt;head&gt;</code> 中所有外部引入的CSS文件路径取出来存储到一个数组当中；</li>
-<li>遍历数组，并一个个发送 AJAX 请求；</li>
-<li>AJAX 回调后，分析 response 中的 media query 的 <code>min-width</code> 和 <code>max-width</code> 语法（注意，仅仅支持 <code>min-width</code> 和 <code>max-width</code> ），分析出 viewport 变化区间对应相应的 css 块；</li>
-<li>页面初始化时和 <code>window.resize</code> 时，根据当前 viewport 使用相应的 css 块。</li>
-</ul>
-<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>考虑到 IE9 是支持 CSS3 的，所以直接在 HTML 页面的 <code>&lt;head&gt;</code> 标签中添加脚本引入即可：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"style.css"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!--[if lt IE 9]&gt;</span></div><div class="line">      &lt;script src="js/respond.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;![endif]--&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>讲道理，我们是应该将 js 文件放在 html 文件的最后，但是 repond.js 文件，我还是建议你将它放在 <code>&lt;head&gt;</code> 中，并且放在 css 文件的后面。越早引入越好，在 IE 下面看到页面闪屏的概率就越低，因为最初 css 会先渲染出来，如果 respond.js 加载得很后面，这时重新根据 media query 解析出来的 css 会再改变一次页面的布局等，所以看起来有闪屏的现象.</p>
-<h1 id="核心结论"><a href="#核心结论" class="headerlink" title="核心结论"></a>核心结论</h1><p>那么此时，就可以根据基本的实现思路，得到一些书写代码时要注意的地方：</p>
-<ul>
-<li>需要启动本地服务器（localhost），不能使用普通本地的url地址（file://开头）；</li>
-<li>需要外部引入 CSS 文件，将 CSS 样式书写在 style 中是无效的；</li>
-<li>由于 respond 插件是查找 CSS 文件，再进行处理，所以 respond.js 文件一定要放置在 CSS 文件的后面；</li>
-<li>另外，虽然把 respond.js 放置在 <code>&lt;head&gt;</code> 里还是在 <code>&lt;body&gt;</code> 后面都能够实现，但是建议放置在 <code>&lt;head&gt;</code> 中（具体原因在下面的文档提示中有提到）；</li>
-<li>最好不要为 CSS 设置 utf-8 的编码，使用默认（原因详见下面的文档提示部分）</li>
-</ul>
-<h1 id="文档提示"><a href="#文档提示" class="headerlink" title="文档提示"></a>文档提示</h1><p>在官方文档当中的一些提示：</p>
-<ul>
-<li>越早的引入 respond.js 文件，也就越可能避免 IE 下出现的闪屏。</li>
-<li>不支持嵌套的媒体查询。</li>
-<li>utf-8 的字符编码对 respond.js 文件的运行有影响。<br>官方API原文：<br><code>if CSS files are encoded in UTF-8 with Byte-Order-Mark, they will not work with Respond.js in IE7 or IE8.</code><br>基本含义就是：<strong>utf-8 格式的 CSS 文件字符编码会对插件造成影响</strong><br>但是在我使用 IE6-8 进行测试的时候，都能够正常显示（无论是在 css 文件中增加 charset 设置还是在 link 标签中增加 charset 设置）。因此，并不是太清楚这个位置 bug 的含义。</li>
-<li>跨域可能会出现闪屏（还没有测试，具体情况不详）</li>
-</ul>
-<h1 id="NOTE"><a href="#NOTE" class="headerlink" title="NOTE"></a>NOTE</h1><ol>
-<li><p>Respond.js 和 跨域（cross-domain） CSS 的问题<br>如果Respond.js和CSS文件被放在不同的域名或子域名下面（例如，使用CDN）时需要一些额外的设置。请参考Respond.js文档获取详细信息。</p>
-</li>
-<li><p>Internet Explorer 8 与 box-sizing<br>IE8 不能完全支持 <code>box-sizing: border-box;</code> 与 <code>min-width</code>、<code>max-width</code>、<code>min-height</code> 或 <code>max-height</code> 一同使用。由于此原因，从 Bootstrap v3.0.1 版本开始，我们不再为 <code>.container</code> 使用 <code>max-width</code>。</p>
-</li>
-<li><p>IE兼容模式<br>Bootstrap 不支持 IE 的兼容模式。为了让 IE 浏览器运行最新的渲染模式，建议将此 标签加入到你的页面中：<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge&quot;&gt;</code><br>此标签被加入到所有文档页面和案例页面中，以确保在每个被支持的 IE 浏览器中保持最好的页面展现效果。</p>
-</li>
-<li><p>Respond.js 和 @import<br>Respond.js 不支持通过 @import 引入的 CSS 文件。例如，Drupal 一般被配置为通过 @import 引入 CSS 文件，Respond.js 对其将无法起到作用。</p>
-</li>
-</ol>
-<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p>从 respond.js 的工作原理可以知道，它将 <code>&lt;head&gt;</code> 中所有外部引入的 CSS 文件路径取出来存储到一个数组当中；然后遍历数组，并一个个发送 AJAX 请求；可以看出这里必须依赖 ajax 请求 css 路径才能得到 css 文件中的 media query 的内容，那 ajax 的跨域问题就要解决了；</p>
-<p>由于我们的静态资源都是要放在 cdn 的，responds.js 也给出了跨域方法，即引入代理页面：</p>
-<p>//把 cross-domain/respond-proxy.html 放到cdn上<br>//把 cross-domain/respond.proxy.gif 放到当前域服务器上</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Respond.js proxy on external server --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"http://externalcdn.com/respond-proxy.html"</span> <span class="attr">id</span>=<span class="string">"respond-proxy"</span> <span class="attr">rel</span>=<span class="string">"respond-proxy"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Respond.js redirect location on local server --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"/path/to/respond.proxy.gif"</span> <span class="attr">id</span>=<span class="string">"respond-redirect"</span> <span class="attr">rel</span>=<span class="string">"respond-redirect"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Respond.js proxy script on local server --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/path/to/respond.proxy.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="其他的支持响应式布局的插件-css3-dediaqueries-js"><a href="#其他的支持响应式布局的插件-css3-dediaqueries-js" class="headerlink" title="其他的支持响应式布局的插件  css3-dediaqueries.js"></a>其他的支持响应式布局的插件  css3-dediaqueries.js</h1><p>css3-mediaqueries.js 支持几乎所有的 media query 的语法。会出现闪屏。并不是很推荐使用，虽然能够支持全部的 media queries,但 <code>min-width</code> 和 <code>max-width</code> 其实就可以满足我们对响应式布局的需要。</p>
-<h1 id="补充一点"><a href="#补充一点" class="headerlink" title="补充一点"></a>补充一点</h1><p>if CSS files are encoded in UTF-8 with Byte-Order-Mark,they will not work with Repond.js in IE7 or IE8.</p>
-<p>也就是说保存格式应该是 utf-8 无 BOM 格式，BOM 会影响程序对文档的处理，正常的 utf-8 文档应该没事。</p>
-<h1 id="Tips-1"><a href="#Tips-1" class="headerlink" title="Tips"></a>Tips</h1><p><strong>always link stylesheets or write inline CSS before js scripts.</strong></p>
-<p>Respond.js on Github： <a href="https://github.com/scottjehl/Respond" target="_blank" rel="external">https://github.com/scottjehl/Respond</a>.</p>
+<p>自动垃圾收集是不能代替有效的内存管理的，特别是在大型，长时间运行的Web应用程序中。</p>
+<h1 id="内存泄漏的几种情况"><a href="#内存泄漏的几种情况" class="headerlink" title="内存泄漏的几种情况"></a>内存泄漏的几种情况</h1><p>1、Delete 一个 Object 的属性会让此对象变慢<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">x</span>: <span class="string">'y'</span>&#125;;</div><div class="line"><span class="keyword">delete</span> obj;  <span class="comment">// 此时 obj 会成一个慢对象</span></div><div class="line">obj.x;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">x</span>: <span class="string">'y'</span>&#125;;</div><div class="line">obj = <span class="literal">null</span>;  <span class="comment">// 应该这样</span></div></pre></td></tr></table></figure></p>
+<p>2、闭包<br>1）在闭包中引入闭包外部的变量时，当闭包结束时此对象无法被垃圾回收（GC）。<br>2）闭包可以维持函数内局部变量，使其得不到释放。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> largeStr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1000000</span>).join(<span class="string">'x'</span>);</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> largeStr;</div><div class="line">  &#125;</div><div class="line">&#125;();</div></pre></td></tr></table></figure></p>
+<p>3、DOM 泄漏<br>当原有的 DOM 被移除时，子节点引用没有被移除则无法回收<br>当页面中元素被移除或替换时，若元素绑定的事件仍没被移除，在 IE 中不会作出恰当处理，此时要先手工移除事件，不然会存在内存泄漏。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"myBth"</span>);</div><div class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML = <span class="string">'test memory'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>应改成下面：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"myBth"</span>);</div><div class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  btn.onclick = <span class="literal">null</span>;</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML = <span class="string">'test memory'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>4、Timers 计(定)时器泄漏<br>定时器也是常见产生内存泄露的地方<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">90000</span>; i++) &#123;</div><div class="line">  <span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">callAgain</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> ref = <span class="keyword">this</span>;</div><div class="line">        <span class="keyword">var</span> val = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          ref.callAgain();</div><div class="line">        &#125;,<span class="number">90000</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  obj.callAgain();</div><div class="line">  <span class="comment">// 虽然你想回收但是 timer 还在</span></div><div class="line">  obj = <span class="literal">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>5、jquery 的 html() 函数<br>页面中还需要注意的一点是使用 jquery 的 html() 函数，该函数不是基于 innerHTML 实现的，大量使用同样也会导致系统性能下降。</p>
+<p>6、使用事件委托代替事件注册<br>页面中如果元素过多，且需要为每个元素注册相同的 click 事件，这个时候我们优先考虑到使用委托机制，将需要注册的 click 事件注册到元素的上层或者顶层元素，这样我们就节省了大量的 click 注册事件。</p>
+<p>7、自动类型装箱转换<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="string">"test test"</span>;</div><div class="line">alert(s.length);</div></pre></td></tr></table></figure></p>
+<p>s 本身是一个 string 而非 object，它没有 length 属性，所以当访问 length 时，JS 引擎会自动创建一个临时 String 对象封装 s，而这个对象一定会泄漏。这个 bug 匪夷所思，所幸解决起来相当容易，记得所有值类型做.运算之前先显示转换一下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="string">"test test"</span>;</div><div class="line">alert(<span class="keyword">new</span> <span class="built_in">String</span>(s).length);</div></pre></td></tr></table></figure></p>
+<h1 id="调试内存"><a href="#调试内存" class="headerlink" title="调试内存"></a>调试内存</h1><p>1、Timeline<br>Chrome 自带的内存调试工具可以很方便的查看内存使用情况和内存泄漏：<br>F12 -&gt; Timeline -&gt; Memory<br>点击 record 即可开始收集，点击弹出框的 Finish 即停止，然后会统计出 record 到 Finish 这一段时间内的内存使用情况。</p>
+<p>2、Profiles<br>Chrome 自带的 Profiles 可以记录当前的内存使用情况<br>F12 -&gt; Profiles -&gt; Take Heap Snapshot<br>点击 Take Snapshot 就可以拍下当前 JS 的 heap 快照。<br><em>注意：每次拍快照前，都会先自动执行一个 GC，所以在视图里的对象都是可及的。</em></p>
 
       
     </div>
@@ -657,7 +618,7 @@ Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它�
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag">#javascript</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -666,17 +627,13 @@ Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/18/html5shiv/" rel="next" title="腻子脚本 — HTML5Shiv">
-                <i class="fa fa-chevron-left"></i> 腻子脚本 — HTML5Shiv
+              <a href="/2017/02/18/js-memory-management-and-gc/" rel="next" title="JavaScript 内存管理 & 垃圾回收机制">
+                <i class="fa fa-chevron-left"></i> JavaScript 内存管理 & 垃圾回收机制
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/14/why-we-dropped-zepto/" rel="prev" title="【转】为什么我们放弃了 Zepto">
-                【转】为什么我们放弃了 Zepto <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -691,10 +648,10 @@ Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它�
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/02/11/respond-js/"
-     data-title="polyfill — Respond.js"
+        <div class="ds-share flat" data-thread-key="2017/02/28/memory-leak/"
+     data-title="如何解决内存泄漏引发的血案"
      data-content=""
-     data-url="https://neveryu.github.io/2017/02/11/respond-js/">
+     data-url="https://neveryu.github.io/2017/02/28/memory-leak/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -851,7 +808,7 @@ Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#插件原理"><span class="nav-number">1.</span> <span class="nav-text">插件原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用方法"><span class="nav-number">2.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核心结论"><span class="nav-number">3.</span> <span class="nav-text">核心结论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文档提示"><span class="nav-number">4.</span> <span class="nav-text">文档提示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NOTE"><span class="nav-number">5.</span> <span class="nav-text">NOTE</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tips"><span class="nav-number">6.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他的支持响应式布局的插件-css3-dediaqueries-js"><span class="nav-number">7.</span> <span class="nav-text">其他的支持响应式布局的插件  css3-dediaqueries.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#补充一点"><span class="nav-number">8.</span> <span class="nav-text">补充一点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tips-1"><span class="nav-number">9.</span> <span class="nav-text">Tips</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是内存泄漏"><span class="nav-number">1.</span> <span class="nav-text">什么是内存泄漏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存泄漏的几种情况"><span class="nav-number">2.</span> <span class="nav-text">内存泄漏的几种情况</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调试内存"><span class="nav-number">3.</span> <span class="nav-text">调试内存</span></a></li></ol></div>
             
           </div>
         </section>

@@ -102,7 +102,7 @@
 <meta property="og:image" content="http://i1.piimg.com/567571/40a2d64a4aba2a04.png">
 <meta property="og:image" content="http://i1.piimg.com/567571/6a740eb49f5ad0c2.png">
 <meta property="og:image" content="http://i1.piimg.com/567571/91abd56ac0617023.png">
-<meta property="og:updated_time" content="2017-03-04T11:49:49.576Z">
+<meta property="og:updated_time" content="2017-04-03T10:51:18.988Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-NexT搭建个人博客（四）">
 <meta name="twitter:description" content="提示：本篇文章将介绍在使用 heox 做博客框架中的一些 bug 处理情况。
@@ -122,7 +122,7 @@
     motion: true,
     duoshuo: {
       userId: 6326435153992222000,
-      author: 'Author'
+      author: '博主'
     }
   };
 </script>
@@ -585,6 +585,8 @@
 <p>那么，就以这两个例子来作为本次的示范吧，其实，<strong>Hexo</strong> 中的一些问题还是比较好解决的，因为它都是依赖其他模块的，定位到出问题的模块，卸载重装即可。</p>
 <p id="div-border-top-red">总结：遇到问题 <strong>bug</strong>，一定要仔细查阅错误提示信息，遵守从上往下解决的方案。</p>
 
+<p></p><h5 style="color:#f63;"><i>最后要说的是：</i></h5><p></p>
+<p id="div-border-top-green"><i><a href="https://github.com/Neveryu/Neveryu.github.io" target="_blank" rel="external">博客源码</a> ， 欢迎 start<br></i></p>
       
     </div>
 
@@ -741,7 +743,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -818,10 +820,6 @@
                   <a href="http://blog.csdn.net/csdn_yudong" title="CSDN" target="_blank">CSDN</a>
                 </li>
               
-                <li class="links-of-blogroll-item">
-                  <a href="http://weibo.com/misswangtingting" title="王婷婷" target="_blank">王婷婷</a>
-                </li>
-              
             </ul>
           </div>
         
@@ -834,7 +832,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">最后要说的是：</span></a></li></ol></div>
             
           </div>
         </section>
@@ -984,7 +982,7 @@
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
       ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//neveryu.github.io/js/src/embed.js';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
       ds.charset = 'UTF-8';
       (document.getElementById('footer')
       || document.getElementsByTagName('body')[0]).appendChild(ds);

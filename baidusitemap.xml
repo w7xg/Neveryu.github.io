@@ -3,9 +3,159 @@
 
 
     
+    
+    
+  <url>
+    <loc>https://neveryu.github.io/2016/12/15/hexo-next-four/</loc>
+    <lastmod>2017-04-03T10:51:18.988Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo-NexT搭建个人博客（四）</title>
+        <pubTime>2016-12-15T15:25:24.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Next</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2016/09/03/hexo-next-one/</loc>
+    <lastmod>2017-04-03T10:51:11.933Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo-NexT搭建个人博客（一）</title>
+        <pubTime>2016-09-03T05:25:24.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Next</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2016/09/30/hexo-next-two/</loc>
+    <lastmod>2017-04-03T10:51:03.486Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo-NexT搭建个人博客（二）</title>
+        <pubTime>2016-09-30T14:18:22.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Next</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2016/11/11/hexo-next-three/</loc>
+    <lastmod>2017-04-03T10:44:21.273Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo-NexT搭建个人博客（三）</title>
+        <pubTime>2016-11-11T05:25:24.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Next</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/</loc>
+    <lastmod>2017-04-03T10:40:58.694Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript 内存管理 & 垃圾回收机制</title>
+        <pubTime>2017-02-18T05:25:24.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2017/02/28/memory-leak/</loc>
+    <lastmod>2017-04-03T10:40:50.139Z</lastmod>
+    <data>
+        <display>
+        <title>如何解决内存泄漏引发的血案</title>
+        <pubTime>2017-02-27T17:01:00.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2016/10/07/git/</loc>
+    <lastmod>2017-03-30T13:47:11.376Z</lastmod>
+    <data>
+        <display>
+        <title>Git学习总结</title>
+        <pubTime>2016-10-07T05:25:24.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>https://neveryu.github.io/2017/02/14/why-we-dropped-zepto/</loc>
-    <lastmod>2017-03-29T14:42:14.347Z</lastmod>
+    <lastmod>2017-03-30T13:08:24.116Z</lastmod>
     <data>
         <display>
         <title>【转】为什么我们放弃了 Zepto</title>
@@ -44,27 +194,6 @@
 
     
   <url>
-    <loc>https://neveryu.github.io/2016/10/07/git/</loc>
-    <lastmod>2017-03-19T13:38:07.772Z</lastmod>
-    <data>
-        <display>
-        <title>Git学习总结</title>
-        <pubTime>2016-10-07T05:25:24.000Z</pubTime>
-        
-        <tag>Git</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
     <loc>https://neveryu.github.io/2017/02/11/respond-js/</loc>
     <lastmod>2017-03-07T14:44:23.859Z</lastmod>
     <data>
@@ -83,7 +212,6 @@
     </data>
     </url>
 
-    
     
     
     
@@ -166,94 +294,6 @@
            
              
               <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://neveryu.github.io/2016/09/30/hexo-next-two/</loc>
-    <lastmod>2017-03-04T11:49:49.578Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo-NexT搭建个人博客（二）</title>
-        <pubTime>2016-09-30T14:18:22.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>Next</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://neveryu.github.io/2016/11/11/hexo-next-three/</loc>
-    <lastmod>2017-03-04T11:49:49.578Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo-NexT搭建个人博客（三）</title>
-        <pubTime>2016-11-11T05:25:24.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>Next</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://neveryu.github.io/2016/09/03/hexo-next-one/</loc>
-    <lastmod>2017-03-04T11:49:49.577Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo-NexT搭建个人博客（一）</title>
-        <pubTime>2016-09-03T05:25:24.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>Next</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://neveryu.github.io/2016/12/15/hexo-next-four/</loc>
-    <lastmod>2017-03-04T11:49:49.576Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo-NexT搭建个人博客（四）</title>
-        <pubTime>2016-12-15T15:25:24.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>Next</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
           
         </display>
     </data>

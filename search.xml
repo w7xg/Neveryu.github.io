@@ -4,6 +4,89 @@
   
     
     <entry>
+      <title><![CDATA[如何解决内存泄漏引发的血案]]></title>
+      <url>https://neveryu.github.io/2017/02/28/memory-leak/</url>
+      <content type="html"><![CDATA[<p>之前做了一个谷歌浏览器的插件开发，它会打开一个链接，然后收集数据并上传。依次循环，但是跑的时间久了，内存就变得很高，然后浏览器就会变卡，慢慢的影响这个插件的运行，最后浏览器也会崩溃。</p>
+<h1 id="什么是内存泄漏"><a href="#什么是内存泄漏" class="headerlink" title="什么是内存泄漏"></a>什么是内存泄漏</h1><p>内存泄露是指一块被分配的内存既不能使用，又不能回收，直到浏览器进程结束。在 C++ 中，因为是手动管理内存，内存泄露是经常出现的事情。而现在流行的 C# 和 Java 等语言采用了自动垃圾回收方法管理内存，正常使用的情况下几乎不会发生内存泄露。浏览器中也是采用自动垃圾回收方法管理内存，但由于浏览器垃圾回收方法有 bug，会产生内存泄露。</p>
+<a id="more"></a>
+<p>自动垃圾收集是不能代替有效的内存管理的，特别是在大型，长时间运行的Web应用程序中。</p>
+<h1 id="内存泄漏的几种情况"><a href="#内存泄漏的几种情况" class="headerlink" title="内存泄漏的几种情况"></a>内存泄漏的几种情况</h1><p>1、Delete 一个 Object 的属性会让此对象变慢<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">x</span>: <span class="string">'y'</span>&#125;;</div><div class="line"><span class="keyword">delete</span> obj;  <span class="comment">// 此时 obj 会成一个慢对象</span></div><div class="line">obj.x;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">x</span>: <span class="string">'y'</span>&#125;;</div><div class="line">obj = <span class="literal">null</span>;  <span class="comment">// 应该这样</span></div></pre></td></tr></table></figure></p>
+<p>2、闭包<br>1）在闭包中引入闭包外部的变量时，当闭包结束时此对象无法被垃圾回收（GC）。<br>2）闭包可以维持函数内局部变量，使其得不到释放。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> largeStr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1000000</span>).join(<span class="string">'x'</span>);</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> largeStr;</div><div class="line">  &#125;</div><div class="line">&#125;();</div></pre></td></tr></table></figure></p>
+<p>3、DOM 泄漏<br>当原有的 DOM 被移除时，子节点引用没有被移除则无法回收<br>当页面中元素被移除或替换时，若元素绑定的事件仍没被移除，在 IE 中不会作出恰当处理，此时要先手工移除事件，不然会存在内存泄漏。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"myBth"</span>);</div><div class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML = <span class="string">'test memory'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>应改成下面：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"myBth"</span>);</div><div class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  btn.onclick = <span class="literal">null</span>;</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML = <span class="string">'test memory'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>4、Timers 计(定)时器泄漏<br>定时器也是常见产生内存泄露的地方<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">90000</span>; i++) &#123;</div><div class="line">  <span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">callAgain</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> ref = <span class="keyword">this</span>;</div><div class="line">        <span class="keyword">var</span> val = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          ref.callAgain();</div><div class="line">        &#125;,<span class="number">90000</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  obj.callAgain();</div><div class="line">  <span class="comment">// 虽然你想回收但是 timer 还在</span></div><div class="line">  obj = <span class="literal">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>5、jquery 的 html() 函数<br>页面中还需要注意的一点是使用 jquery 的 html() 函数，该函数不是基于 innerHTML 实现的，大量使用同样也会导致系统性能下降。</p>
+<p>6、使用事件委托代替事件注册<br>页面中如果元素过多，且需要为每个元素注册相同的 click 事件，这个时候我们优先考虑到使用委托机制，将需要注册的 click 事件注册到元素的上层或者顶层元素，这样我们就节省了大量的 click 注册事件。</p>
+<p>7、自动类型装箱转换<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="string">"test test"</span>;</div><div class="line">alert(s.length);</div></pre></td></tr></table></figure></p>
+<p>s 本身是一个 string 而非 object，它没有 length 属性，所以当访问 length 时，JS 引擎会自动创建一个临时 String 对象封装 s，而这个对象一定会泄漏。这个 bug 匪夷所思，所幸解决起来相当容易，记得所有值类型做.运算之前先显示转换一下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="string">"test test"</span>;</div><div class="line">alert(<span class="keyword">new</span> <span class="built_in">String</span>(s).length);</div></pre></td></tr></table></figure></p>
+<h1 id="调试内存"><a href="#调试内存" class="headerlink" title="调试内存"></a>调试内存</h1><p>1、Timeline<br>Chrome 自带的内存调试工具可以很方便的查看内存使用情况和内存泄漏：<br>F12 -&gt; Timeline -&gt; Memory<br>点击 record 即可开始收集，点击弹出框的 Finish 即停止，然后会统计出 record 到 Finish 这一段时间内的内存使用情况。</p>
+<p>2、Profiles<br>Chrome 自带的 Profiles 可以记录当前的内存使用情况<br>F12 -&gt; Profiles -&gt; Take Heap Snapshot<br>点击 Take Snapshot 就可以拍下当前 JS 的 heap 快照。<br><em>注意：每次拍快照前，都会先自动执行一个 GC，所以在视图里的对象都是可及的。</em></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 综合 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[JavaScript 内存管理 & 垃圾回收机制]]></title>
+      <url>https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/</url>
+      <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>低级语言，比如C，有低级的内存管理基元，像 malloc()，free()。另一方面，JavaScript 的内存基元在变量（对象，字符串等等）创建时分配，然后在他们不再被使用时“自动释放”。后者被称为垃圾回收。这个“自动”是混淆并给 JavaScript （和其他高级语言）开发者一个错觉：他们可以不用考虑内存管理。</p>
+<a id="more"></a>
+<h1 id="JavaScript-的内存分配"><a href="#JavaScript-的内存分配" class="headerlink" title="JavaScript 的内存分配"></a>JavaScript 的内存分配</h1><h2 id="变量初始化"><a href="#变量初始化" class="headerlink" title="变量初始化"></a>变量初始化</h2><p>为了不让程序员为分配费心，JavaScript 在定义变量时完成内存分配。<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> n = <span class="number">123</span>;  <span class="comment">// 给数值变量分配内存</span></div><div class="line"></div><div class="line"><span class="comment">// 为对象及其包含变量分配内存</span></div><div class="line"><span class="keyword">var</span> o = &#123;</div><div class="line">    <span class="attr">a</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">b</span>: <span class="literal">null</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 函数表达式也能分配一个对象</span></div><div class="line">obj.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  obj.style.backgroundColor = <span class="string">'blue'</span>;</div><div class="line">&#125;, <span class="literal">false</span>);</div></pre></td></tr></table></figure></p>
+<h2 id="通过函数调用的内存分配"><a href="#通过函数调用的内存分配" class="headerlink" title="通过函数调用的内存分配"></a>通过函数调用的内存分配</h2><p>有些函数调用结果是分配对象内存：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="keyword">var</span> e = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</div></pre></td></tr></table></figure></p>
+<h2 id="值的使用"><a href="#值的使用" class="headerlink" title="值的使用"></a>值的使用</h2><p>使用值的过程实际上是对分配内存进行读取与写入的操作，这意味着可以写入一个变量或者一个对象的属性值，甚至传递函数的参数。</p>
+<h2 id="当内存不再需要使用时释放"><a href="#当内存不再需要使用时释放" class="headerlink" title="当内存不再需要使用时释放"></a>当内存不再需要使用时释放</h2><p>大多数内存管理的问题都在这个阶段。在这里最艰难的任务是找到“所分配的内存确实已经不再需要了”。它往往要求开发人员来确定在程序中哪一块内存不再需要并且释放它。</p>
+<p>高级语言解释器嵌入了“垃圾回收器”，主要工作是跟踪内存的分配和使用，以便当分配的内存不再使用时，自动释放它。这个过程是一个近似的，因为要知道某块内存是否需要是 <a href="http://en.wikipedia.org/wiki/Decidability_%28logic%29" target="_blank" rel="external">无法判定的</a> （无法被某种算法所解决）。</p>
+<h1 id="垃圾回收机制——GC"><a href="#垃圾回收机制——GC" class="headerlink" title="垃圾回收机制——GC"></a>垃圾回收机制——GC</h1><p>JavaScript 具有自动垃圾回收机制（GC:Garbage Collecation），也就是说，执行环境会负责管理代码执行过程中使用的内存。</p>
+<p>原理：垃圾收集器会定期（周期性）找出那些不在继续使用的变量，然后释放其内存。</p>
+<p>JavaScript 垃圾回收的机制很简单：找出不再使用的变量，然后释放掉其占用的内存，但是这个过程不是实时的，因为其开销比较大，所以垃圾回收器会按照固定的时间间隔周期性的执行。</p>
+<p>不再使用的变量也就是生命周期结束的变量，当然只可能是局部变量，全局变量的生命周期直至浏览器卸载页面才会结束。局部变量只在函数的执行过程中存在，而在这个过程中会为局部变量在栈或堆上分配相应的空间，以存储它们的值，然后在函数中使用这些变量，直至函数结束，而闭包中由于内部函数的原因，外部函数并不能算是结束。</p>
+<p>还是上代码说明吧：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = &#123;<span class="attr">name</span>: <span class="string">'yu'</span>, <span class="attr">age</span>: <span class="number">10</span>&#125;;</div><div class="line">&#125; </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = &#123;<span class="attr">name</span>: <span class="string">'yu'</span>, <span class="attr">age</span>: <span class="number">11</span>&#125;;</div><div class="line">    <span class="keyword">return</span> obj;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = fn1();</div><div class="line"><span class="keyword">var</span> b = fn2();</div></pre></td></tr></table></figure></p>
+<p>我们来看代码是如何执行的。首先定义了两个 function,分别叫做 fn1 和 fn2，当 fn1 被调用时，进入 fn1 的环境，会开辟一块内存存放对象，而当调用结束后，出了 fn1 的环境，那么该块内存会被 js 引擎中的垃圾回收器自动释放；在 fn2 被调用的过程中，返回的对象被全局变量 b 所指向，所以该块内存并不会被释放。</p>
+<p>这里问题就出现了：到底哪个变量是没有用的？所以垃圾收集器必须跟踪到底哪个变量没用，对于不再有用的变量打上标记，以备将来收回其内存。用于标记的无用变量的策略可能因实现而有所区别，通常情况下有两种实现方式：标记清除和引用计数。引用计数不太常用，标记清除较为常用。</p>
+<h2 id="标记清除"><a href="#标记清除" class="headerlink" title="标记清除"></a>标记清除</h2><p>js 中最常用的垃圾回收方式就是标记清除。当变量进入环境时，例如，在函数中声明一个变量，就将这个而变量标记为“进入环境”。从逻辑上讲，永远不能释放进入环境的变量所占用的内存，因为只要执行流进入相应的环境，就可能会用到它们。而当变量离开环境时，则将其标记为“离开环境”。</p>
+<h2 id="引用计数"><a href="#引用计数" class="headerlink" title="引用计数"></a>引用计数</h2><p>这是最简单的垃圾收集算法。此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用它”。如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。<br>Netscape Navigator3 是最早使用引用计数策略的浏览器，但很快它就遇到了一个严重的问题：循环引用。循环引用指的是对象 A 中包含一个指向对象 B 的指针，而对象 B 中也包含一个指向对象 A 的引用。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> a = &#123;&#125;;</div><div class="line">    <span class="keyword">var</span> b = &#123;&#125;;</div><div class="line">    a.pro = b;</div><div class="line">    b.pro = a;</div><div class="line">&#125; </div><div class="line">fn();</div></pre></td></tr></table></figure></p>
+<p>以上代码a和b的引用次数都是2，fn()执行完毕后，两个对象都已经离开环境，在标记清除方式下是没有问题的，但是在引用计数策略下，因为a和b的引用次数不为0，所以不会被垃圾回收器回收内存，如果fn函数被大量调用，就会造成内存泄漏。在IE7与IE8上，内存直线上升。<br>最简单的方式就是自己手工解除循环引用，比如刚才的函数可以这样<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">myObject.element = <span class="literal">null</span>;</div><div class="line">element.o = <span class="literal">null</span>;</div></pre></td></tr></table></figure></p>
+<h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><p>1、什么时候触发垃圾回收？<br>垃圾回收周期性运行，如果分配的内存非常多，那么回收工作也会很艰巨，确定垃圾回收时间间隔就变成了一个值得思考的问题。IE6 的垃圾回收是根据内存分配量运行的，当环境中存在 256 个变量、4096 个对象、64K 的字符串任意一种情况的时候就会触发垃圾回收器工作，看起来很科学，不用按一段时间就调用一次，有时候会没必要，这样按需调用不是很好嘛？但是如果环境中就是有这么多变量一直存在，现在脚本如此复杂，很正常，那么结果就是垃圾回收器一直在工作，这样浏览器就没法玩了。</p>
+<p>微软在 IE7 中做了调整，触发条件不再是固定的，而是动态修改的，初始值和IE6相同，如果垃圾回收器回收的内存分配量低于程序占用内存的 15%，说明大部分内存不可被回收，设的垃圾回收触发条件过于敏感，这时候把临界条件翻倍，如果回收的内存高于 85%，说明大部分内存早就该清理了，这时候把触发条件置回。这样就使垃圾回收工作智能了很多。</p>
+<p>2、合理的 GC 方案<br>1）、JavaScript 引擎基础 GC 方案是（simple GC）：mark and sweep（标记清除），即：</p>
+<ul>
+<li>遍历所有可访问的对象。</li>
+<li>回收已不可访问的对象。</li>
+</ul>
+<p>2）、GC 的缺陷<br>和其他语言一样，JavaScript 的 GC 策略也无法避免一个问题：GC 时，停止响应其他操作，这是为了安全考虑。而 JavaScript 的 GC 在 100ms 甚至以上，对一般的应用还好，但对于 JS 游戏，动画连贯性要求比较高的应用，就麻烦了。这就是新引擎需要优化的点：避免 GC 造成的长时间停止响应。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>一般不用 setInterval，而用 setTimeout 的延时递归来代替 interval。<br>setInterval 会产生回调堆积，特别是时间很短的时候。</p>
+<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><p>setInterval 有个很烦的地方就是当 js 主程序空闲的时候，执行代码队列里面的代码的时候，如果此时候我们有一个问题，定时器是等到回调执行完，才开始计时进行下次循环呢？还是只要一次计时完毕，插入回调之后不管回调执不执行就开始计时呢？答案显示是后者，这也就是我说 setInterval 坑的原因啊，因为这会出现一种情况，当我们插入回调的时候前队列有别的代码在执行，这时候回调肯定是不会执行的，因此如果这个时候无限定时时间到了会再次插入回调，这个时候如果发现队列中的第一次回调没有执行，那么再次插入的回调浏览器就默认取消，（这是以防出现回调连续执行多次的情况）但是这又引发了新的情况就是有些回调是不能取消掉的？</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 综合 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[【转】为什么我们放弃了 Zepto]]></title>
       <url>https://neveryu.github.io/2017/02/14/why-we-dropped-zepto/</url>
       <content type="html"><![CDATA[<p><img src="http://i2.muimg.com/567571/fae45a374015a1c2.png" alt=""></p>
@@ -243,7 +326,9 @@
 <p><img src="http://i1.piimg.com/567571/91abd56ac0617023.png" alt=""></p>
 <p>那么，就以这两个例子来作为本次的示范吧，其实，<strong>Hexo</strong> 中的一些问题还是比较好解决的，因为它都是依赖其他模块的，定位到出问题的模块，卸载重装即可。</p>
 <p id="div-border-top-red">总结：遇到问题 <strong>bug</strong>，一定要仔细查阅错误提示信息，遵守从上往下解决的方案。</p>
-]]></content>
+
+<p></p><h5 style="color:#f63;"><i>最后要说的是：</i></h5><p></p>
+<p id="div-border-top-green"><i><a href="https://github.com/Neveryu/Neveryu.github.io" target="_blank" rel="external">博客源码</a> ， 欢迎 start<br></i></p>]]></content>
       
         <categories>
             
@@ -406,7 +491,7 @@
 <h2 id="六、图片模式"><a href="#六、图片模式" class="headerlink" title="六、图片模式"></a>六、图片模式</h2><p>新建博文，设置 <code>type: &quot;picture&quot;</code> ，使用 <code>{\% gp x-x \%}...{\% endgp \%}</code> 标签引用要展示的图片地址，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: Naruto-Pictures</div><div class="line">categories: [picture]</div><div class="line">tags: [picture,naruto]</div><div class="line">date: 2016-11-02 14:36:04</div><div class="line">type: &quot;picture&quot;</div><div class="line">---</div><div class="line">&#123;% gp 5-3 %&#125;</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/18210.jpg)</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/196232.jpg)</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/224147.jpg)</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/199301.jpg)</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/213318.jpg)</div><div class="line">&#123;% endgp %&#125;</div></pre></td></tr></table></figure></p>
 <p><strong> 图片展示效果 </strong><br><code>{\% gp 5-3 \%}</code>：设置图片展示效果，参考 themes\next\scripts\tags\group-pictures.js 注释示意图。<br><img src="http://p1.bpimg.com/567571/eaef5acfcb3011c2.png" alt=""><br><code>5-3</code> 的意思就是5张图片将会按照这种布局来展示，Next 提供了多张图片的多种布局，你可以随意选择。</p>
 <p></p><h5 style="color:#f63;"><i>最后要说的是：</i></h5><p></p>
-<p id="div-border-top-green"><i><a href="https://github.com/Neveryu/Neveryu.github.io" target="_blank" rel="external">博客源码</a><br></i></p>]]></content>
+<p id="div-border-top-green"><i><a href="https://github.com/Neveryu/Neveryu.github.io" target="_blank" rel="external">博客源码</a> ， 欢迎 start<br></i></p>]]></content>
       
         <categories>
             
@@ -947,7 +1032,8 @@
 <p><code>git checkout -b [local branch] [remote base]/[remote branch]</code><br>将远程分支检出到本地分支，并追踪</p>
 <p><code>git checkout --track &lt;remote base&gt;/&lt;remote branch&gt;</code><br>让当前分支跟踪远程分支</p>
 <h3 id="rebase"><a href="#rebase" class="headerlink" title="rebase"></a>rebase</h3><p><code>git rebase [basebranch]</code><br>变基是将一系列提交按照原有次序依次应用到另一分支上，而合并是把最终结果合在一起。</p>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h3><p>git clone 支持多种协议，除了HTTP(s)以外，还支持SSH、Git、本地文件协议等。<br>使用 https 除了速度慢意外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放 http 端口的公司内部就无法使用ssh协议而只能用 https。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h3><p>git clone 支持多种协议，除了HTTP(s)以外，还支持SSH、Git、本地文件协议等。<br>使用 https 除了速度慢意外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放 http 端口的公司内部就无法使用 ssh 协议而只能用 https。</p>
+<p><code>git clone &lt;版本库的网址&gt; &lt;本地目录名&gt;</code><br>如果不写本地目录名，默认就是版本库的名字</p>
 <h3 id="如何新建分支"><a href="#如何新建分支" class="headerlink" title="如何新建分支"></a>如何新建分支</h3><p>本地建立 branch 並立即切换到新分支<br><code>git checkout -b &lt;branch_name&gt;</code> </p>
 <p>下面的命令表示，在 <code>origin/master</code> 的基础上，创建一个分支。<br><code>git checkout -b newBranch origin/master</code></p>
 <p>修改分支名称<br><code>git branch -m &lt;new_name&gt;</code></p>
@@ -1019,7 +1105,8 @@
 <h4 id="9-给-Github-添加-README"><a href="#9-给-Github-添加-README" class="headerlink" title="9. 给 Github 添加 README"></a>9. 给 Github 添加 README</h4><p>默认情况下，Github中每一个项目，我们希望有一份 README.md 的文件来作为项目的说明，但是我们在项目根目录下的 blog\source 目录下创建一份 README.md 文件，写好说明介绍，部署的时候，这个 README.md 会被 hexo 解析掉，而不会被解析到 Github 中去的。<br>正确的解决方法其实很简单：<br><strong> 把 README.md 文件的后缀名改成 “MDOWN” 然后扔到<code>blog/source</code>文件夹下即可，这样 hexo 不会解析，Github 也会将其作为 MD 文件解析。 </strong></p>
 <h4 id="10-给-Blog-添加-LICENSE"><a href="#10-给-Blog-添加-LICENSE" class="headerlink" title="10. 给 Blog 添加 LICENSE"></a>10. 给 Blog 添加 LICENSE</h4><p>在 <span id="inline-purple">主题配置文件</span> 中的 160 行左右：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># Creative Commons 4.0 International License.</div><div class="line"># http://creativecommons.org/</div><div class="line"># Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero</div><div class="line">creative_commons: by-nc-sa</div><div class="line">#creative_commons:</div></pre></td></tr></table></figure></p>
 <p>将其中第 4 行的注释放开，然后选择你想使用的 LICENSE 即可，可选项参照第 3 行。</p>
-]]></content>
+<p></p><h5 style="color:#f63;"><i>最后要说的是：</i></h5><p></p>
+<p id="div-border-top-green"><i><a href="https://github.com/Neveryu/Neveryu.github.io" target="_blank" rel="external">博客源码</a> ， 欢迎 start<br></i></p>]]></content>
       
         <categories>
             
@@ -1127,7 +1214,8 @@
 <p>正确的设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">author: Neveryu</div><div class="line">email: react.dong.yu@gmail.com</div><div class="line">language: zh-CN</div></pre></td></tr></table></figure></p>
 <h2 id="常见问题2"><a href="#常见问题2" class="headerlink" title="常见问题2"></a>常见问题2</h2><p>关于 Git 提交中用户名和 Email 的设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name &quot;Your name&quot;</div><div class="line">git config --global user.email &quot;Your email&quot;</div></pre></td></tr></table></figure></p>
 <h2 id="常见问题3"><a href="#常见问题3" class="headerlink" title="常见问题3"></a>常见问题3</h2><p>Hexo 中的图标使用的是 <a href="http://fontawesome.io/" target="_blank" rel="external">Font Awesome</a> ，所以，我们的博客已经自带了 Font Awesome 中的所有图标，基本可以满足我们的所有需求，我们可以去 Font Awesome 中查找我们想要使用的图标。<br><i class="fa fa-github"></i> <code>&lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt;</code><br><i class="fa fa-github fa-lg"></i> <code>&lt;i class=&quot;fa fa-github fa-lg&quot;&gt;&lt;/i&gt;</code><br><i class="fa fa-github fa-2x"></i> <code>&lt;i class=&quot;fa fa-github fa-2x&quot;&gt;&lt;/i&gt;</code></p>
-]]></content>
+<p></p><h5 style="color:#f63;"><i>最后要说的是：</i></h5><p></p>
+<p id="div-border-top-green"><i><a href="https://github.com/Neveryu/Neveryu.github.io" target="_blank" rel="external">博客源码</a> ， 欢迎 start<br></i></p>]]></content>
       
         <categories>
             
