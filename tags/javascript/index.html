@@ -87,7 +87,7 @@
 <meta name="description" content="Stay Hungry,Stay Foolish">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Never_yu's Blog">
-<meta property="og:url" content="https://neveryu.github.io/tags/JavaScript/index.html">
+<meta property="og:url" content="https://neveryu.github.io/tags/javascript/index.html">
 <meta property="og:site_name" content="Never_yu's Blog">
 <meta property="og:description" content="Stay Hungry,Stay Foolish">
 <meta name="twitter:card" content="summary">
@@ -113,9 +113,9 @@
 
 
 
-  <link rel="canonical" href="https://neveryu.github.io/tags/JavaScript/"/>
+  <link rel="canonical" href="https://neveryu.github.io/tags/javascript/"/>
 
-  <title> 标签: JavaScript | Never_yu's Blog </title>
+  <title> 标签: javascript | Never_yu's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -468,7 +468,7 @@
   <div id="posts" class="posts-collapse">
     <div class="collection-title">
       <h2 >
-        JavaScript
+        javascript
         <small>标签</small>
       </h2>
     </div>
@@ -481,9 +481,9 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/2017/03/20/amd-cmd/" itemprop="url">
+            <a class="post-title-link" href="/2017/02/11/respond-js/" itemprop="url">
               
-                <span itemprop="name">AMD，CMD 规范详解</span>
+                <span itemprop="name">polyfill — Respond.js</span>
               
             </a>
         
@@ -491,9 +491,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-20T03:25:24+08:00"
-              content="2017-03-20" >
-          03-20
+              datetime="2017-02-11T23:25:24+08:00"
+              content="2017-02-11" >
+          02-11
         </time>
       </div>
 
@@ -509,9 +509,9 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/2017/03/07/commonjs/" itemprop="url">
+            <a class="post-title-link" href="/2017/01/18/html5shiv/" itemprop="url">
               
-                <span itemprop="name">CommonJS 详细介绍</span>
+                <span itemprop="name">腻子脚本 — HTML5Shiv</span>
               
             </a>
         
@@ -519,9 +519,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-07T13:25:24+08:00"
-              content="2017-03-07" >
-          03-07
+              datetime="2017-01-18T13:25:24+08:00"
+              content="2017-01-18" >
+          01-18
         </time>
       </div>
 
@@ -537,37 +537,9 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/2017/02/28/memory-leak/" itemprop="url">
+            <a class="post-title-link" href="/2016/11/18/china-javascript-environment/" itemprop="url">
               
-                <span itemprop="name">如何解决内存泄漏引发的血案</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-02-28T01:01:00+08:00"
-              content="2017-02-28" >
-          02-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/02/18/js-memory-management-and-gc/" itemprop="url">
-              
-                <span itemprop="name">JavaScript 内存管理 & 垃圾回收机制</span>
+                <span itemprop="name">中国国内 JavaScript 圈的现状如何</span>
               
             </a>
         
@@ -575,37 +547,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-02-18T13:25:24+08:00"
-              content="2017-02-18" >
-          02-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/11/22/use-jquery-skill/" itemprop="url">
-              
-                <span itemprop="name">jQuery使用技巧</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-22T11:54:55+08:00"
-              content="2016-11-22" >
-          11-22
+              datetime="2016-11-18T13:25:24+08:00"
+              content="2016-11-18" >
+          11-18
         </time>
       </div>
 
@@ -1050,6 +994,37 @@
           if(a.indexOf(b)!=-1){return true;}  
       };   
       if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla"))||(contains(ua,"android") && contains(ua,"opera"))||contains(ua,"ucweb7")||contains(ua,"iphone")){
+        return false;
+      } else {
+        $.getScript("/js/src/particle.js");
+      }
+    }  
+  })();  
+  function GetRequest() {  
+    var url = location.search;
+    var theRequest = new Object();  
+    if (url.indexOf("?") != -1) {  
+      var str = url.substr(1);  
+      strs = str.split("&");  
+      for(var i = 0; i < strs.length; i ++) {  
+        theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);  
+      }  
+    }  
+    return theRequest;  
+  }  
+  </script>  
+  <!-- 识别手机或电脑的js结束 -->  
+
+  <!-- 背景动画 -->
+  <!-- <script type="text/javascript" src="/js/src/particle.js"></script> -->
+  <!-- 页面点击小红心 -->
+  <!-- <script type="text/javascript" src="/js/src/love.js"></script> -->
+
+  <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="≡[。。]≡ 回不去了吗？!",clearTimeout(st)):(document.title="(ฅ>ω<*ฅ) Thank Vue~ "+OriginTitile,st=setTimeout(function(){document.title=OriginTitile},4e3))})</script>
+
+</body>
+</html>
+contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla"))||(contains(ua,"android") && contains(ua,"opera"))||contains(ua,"ucweb7")||contains(ua,"iphone")){
         return false;
       } else {
         $.getScript("/js/src/particle.js");
