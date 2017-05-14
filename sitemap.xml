@@ -2,37 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://neveryu.github.io/2016/10/23/sass/</loc>
+    <loc>https://neveryu.github.io/2017/04/10/npm/</loc>
     
-    <lastmod>2017-04-27T14:08:35.021Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://neveryu.github.io/2016/09/03/hexo-next-one/</loc>
-    
-    <lastmod>2017-04-26T20:27:27.873Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://neveryu.github.io/2016/12/15/hexo-next-four/</loc>
-    
-    <lastmod>2017-04-25T14:06:52.499Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://neveryu.github.io/2016/11/11/hexo-next-three/</loc>
-    
-    <lastmod>2017-04-25T14:06:47.725Z</lastmod>
+    <lastmod>2017-05-14T07:50:12.669Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://neveryu.github.io/2016/09/30/hexo-next-two/</loc>
     
-    <lastmod>2017-04-25T14:06:40.175Z</lastmod>
+    <lastmod>2017-05-14T07:40:42.146Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://neveryu.github.io/2016/11/11/hexo-next-three/</loc>
+    
+    <lastmod>2017-05-14T07:40:37.162Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://neveryu.github.io/2016/09/03/hexo-next-one/</loc>
+    
+    <lastmod>2017-05-14T07:40:32.792Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://neveryu.github.io/2016/12/15/hexo-next-four/</loc>
+    
+    <lastmod>2017-05-14T07:40:27.631Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://neveryu.github.io/2016/10/23/sass/</loc>
+    
+    <lastmod>2017-04-27T14:08:35.021Z</lastmod>
     
   </url>
   
