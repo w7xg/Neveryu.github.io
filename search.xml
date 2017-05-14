@@ -9,6 +9,7 @@
       <content type="html"><![CDATA[<h1 id="什么是-NPM"><a href="#什么是-NPM" class="headerlink" title="什么是 NPM"></a>什么是 NPM</h1><p>npm 之于 Node.js ，就像 pip 之于 Python， gem 之于 Ruby， pear 之于 PHP 。</p>
 <p>npm 是 Node.js 官方提供的包管理工具，他已经成了 Node.js 包的标准发布平台，用于 Node.js 包的发布、传播、依赖控制。npm 提供了命令行工具，使你可以方便地下载、安装、升级、删除包，也可以让你作为开发者发布并维护包。</p>
 <h1 id="为什么要使用-NPM"><a href="#为什么要使用-NPM" class="headerlink" title="为什么要使用 NPM"></a>为什么要使用 NPM</h1><p>npm 是随同 Node.js 一起安装的包管理工具，能解决 Node.js 代码部署上的很多问题，常见的场景有以下几种：</p>
+<a id="more"></a>
 <ul>
 <li>允许用户从 npm 服务器下载别人编写的第三方包到本地使用。</li>
 <li>允许用户从 npm 服务器下载并安装别人编写的命令行程序到本地使用。</li>
