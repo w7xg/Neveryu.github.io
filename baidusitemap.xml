@@ -3,9 +3,30 @@
 
 
     
+    
+  <url>
+    <loc>https://neveryu.github.io/2017/02/14/why-we-dropped-zepto/</loc>
+    <lastmod>2017-05-15T14:57:16.459Z</lastmod>
+    <data>
+        <display>
+        <title>【转】为什么我们放弃了 Zepto</title>
+        <pubTime>2017-02-13T17:25:24.000Z</pubTime>
+        
+        <tag>zepto</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>https://neveryu.github.io/2017/04/10/npm/</loc>
-    <lastmod>2017-05-14T07:58:53.846Z</lastmod>
+    <lastmod>2017-05-15T14:57:12.542Z</lastmod>
     <data>
         <display>
         <title>npm 全面介绍</title>
@@ -238,26 +259,6 @@
 
     
   <url>
-    <loc>https://neveryu.github.io/2017/02/14/why-we-dropped-zepto/</loc>
-    <lastmod>2017-03-30T13:08:24.116Z</lastmod>
-    <data>
-        <display>
-        <title>【转】为什么我们放弃了 Zepto</title>
-        <pubTime>2017-02-13T17:25:24.000Z</pubTime>
-        
-        <tag>zepto</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://neveryu.github.io/2017/01/18/html5shiv/</loc>
     <lastmod>2017-03-26T00:16:50.683Z</lastmod>
     <data>
@@ -296,7 +297,6 @@
     </data>
     </url>
 
-    
     
     
   <url>

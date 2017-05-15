@@ -6,10 +6,11 @@
     <entry>
       <title><![CDATA[npm 全面介绍]]></title>
       <url>https://neveryu.github.io/2017/04/10/npm/</url>
-      <content type="html"><![CDATA[<h1 id="什么是-NPM"><a href="#什么是-NPM" class="headerlink" title="什么是 NPM"></a>什么是 NPM</h1><p>npm 之于 Node.js ，就像 pip 之于 Python， gem 之于 Ruby， pear 之于 PHP 。</p>
+      <content type="html"><![CDATA[<!-- <img src="http://i1.piimg.com/588926/30e7b49044d5cfc4.png" alt="summary-img-src-npm"> -->
+<a id="more"></a>
+<h1 id="什么是-NPM"><a href="#什么是-NPM" class="headerlink" title="什么是 NPM"></a>什么是 NPM</h1><p>npm 之于 Node.js ，就像 pip 之于 Python， gem 之于 Ruby， pear 之于 PHP 。</p>
 <p>npm 是 Node.js 官方提供的包管理工具，他已经成了 Node.js 包的标准发布平台，用于 Node.js 包的发布、传播、依赖控制。npm 提供了命令行工具，使你可以方便地下载、安装、升级、删除包，也可以让你作为开发者发布并维护包。</p>
 <h1 id="为什么要使用-NPM"><a href="#为什么要使用-NPM" class="headerlink" title="为什么要使用 NPM"></a>为什么要使用 NPM</h1><p>npm 是随同 Node.js 一起安装的包管理工具，能解决 Node.js 代码部署上的很多问题，常见的场景有以下几种：</p>
-<a id="more"></a>
 <ul>
 <li>允许用户从 npm 服务器下载别人编写的第三方包到本地使用。</li>
 <li>允许用户从 npm 服务器下载并安装别人编写的命令行程序到本地使用。</li>
@@ -56,12 +57,12 @@
 </table>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 本地安装</span></div><div class="line">$ npm install &lt;package name&gt;</div><div class="line"></div><div class="line"><span class="comment"># 全局安装</span></div><div class="line">$ sudo npm install -global &lt;package name&gt;</div><div class="line">$ sudo npm install -g &lt;package name&gt;</div></pre></td></tr></table></figure>
 <p>npm install 也支持直接输入 Github 代码库地址。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install git://github.com/package/path.git</div><div class="line">$ npm install git://github.com/package/path.git<span class="comment">#0.1.0</span></div></pre></td></tr></table></figure></p>
-<p>安装之前，npm install 会先检查，node_modules 目录之中是否已经存在指定模块。如果存在，就不再重新安装了，及时远程仓库已经有了一个新版本，也是如此。</p>
+<p>安装之前，npm install 会先检查，node_modules 目录之中是否已经存在指定模块。如果存在，就不再重新安装了，即使远程仓库已经有了一个新版本，也是如此。</p>
 <p>如果你希望，一个模块不管是否安装过， npm 都要强制重新安装，可以使用 -f 或 –force 参数。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install &lt;packageName&gt; --force</div></pre></td></tr></table></figure></p>
 <h4 id="安装不同版本"><a href="#安装不同版本" class="headerlink" title="安装不同版本"></a>安装不同版本</h4><p>install 命令总是安装模块的最新版本，如果要安装模块的特定版本，可以在模块名后面加上 @ 和版本号。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ npm install sax@latest</div><div class="line">$ npm install sax@0.1.1</div><div class="line">$ npm install sax@<span class="string">"&gt;=0.1.0 &lt;0.2.0"</span></div></pre></td></tr></table></figure></p>
 <p>install 命令可以使用不同参数，指定所安装的模块属于哪一种性质的依赖关系，即出现在 packages.json 文件的哪一项中。</p>
 <blockquote>
-<p>–save：模块名将被添加到 dependencies，可以简化为参数-S。<br>–save-dev：模块名将被添加到devDependencies，可以简化为参数-D。</p>
+<p>–save：模块名将被添加到 dependencies，可以简化为参数-S。<br>–save-dev：模块名将被添加到 devDependencies，可以简化为参数-D。</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install sax --save</div><div class="line">$ npm install node-tap --save-dev</div><div class="line"><span class="comment"># 或者</span></div><div class="line">$ npm install sax -S</div><div class="line">$ npm install node-tap -D</div></pre></td></tr></table></figure>
 <h5 id="dependencies-依赖"><a href="#dependencies-依赖" class="headerlink" title="dependencies 依赖"></a>dependencies 依赖</h5><p>这个可以说是我们 npm 核心一项内容，依赖管理，这个对象里面的内容就是我们这个项目所依赖的 js 模块包。下面这段代码表示我们依赖了 <code>markdown-it</code> 这个包，版本是 <code>^8.1.0</code> ，代表最小依赖版本是 <code>8.1.0</code> ，如果这个包有更新，那么当我们使用 npm install 命令的时候，npm 会帮我们下载最新的包。当别人引用我们这个包的时候，包内的依赖包也会被下载下来。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">"dependencies"</span>: &#123;</div><div class="line">    <span class="string">"markdown-it"</span>: <span class="string">"^8.1.0"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -332,7 +333,7 @@
     <entry>
       <title><![CDATA[【转】为什么我们放弃了 Zepto]]></title>
       <url>https://neveryu.github.io/2017/02/14/why-we-dropped-zepto/</url>
-      <content type="html"><![CDATA[<p><img src="http://i2.muimg.com/567571/fae45a374015a1c2.png" alt=""></p>
+      <content type="html"><![CDATA[<!-- <img src="http://i2.muimg.com/567571/fae45a374015a1c2.png" alt="summary-img-src-zepto"> -->
 <a id="more"></a>
 <blockquote>
 <p><a href="http://foundation.zurb.com/" target="_blank" rel="external">Foundation</a> 是 <a href="http://zurb.com/" target="_blank" rel="external">Zurb</a> 公司开源的一套前端框架，和 <a href="http://www.bootcss.com/" target="_blank" rel="external">Bootstrap</a> 类似。</p>

@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://neveryu.github.io/weblog/index.html</loc>
+    
+    <lastmod>2017-05-15T15:21:58.717Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://neveryu.github.io/2017/02/14/why-we-dropped-zepto/</loc>
+    
+    <lastmod>2017-05-15T14:57:16.459Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://neveryu.github.io/2017/04/10/npm/</loc>
     
-    <lastmod>2017-05-14T07:58:53.846Z</lastmod>
+    <lastmod>2017-05-15T14:57:12.542Z</lastmod>
     
   </url>
   
@@ -107,13 +121,6 @@
   </url>
   
   <url>
-    <loc>https://neveryu.github.io/2017/02/14/why-we-dropped-zepto/</loc>
-    
-    <lastmod>2017-03-30T13:08:24.116Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://neveryu.github.io/2017/01/18/html5shiv/</loc>
     
     <lastmod>2017-03-26T00:16:50.683Z</lastmod>
@@ -124,13 +131,6 @@
     <loc>https://neveryu.github.io/2017/02/11/respond-js/</loc>
     
     <lastmod>2017-03-07T14:44:23.859Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://neveryu.github.io/weblog/index.html</loc>
-    
-    <lastmod>2017-03-04T11:49:49.600Z</lastmod>
     
   </url>
   
