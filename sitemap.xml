@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://neveryu.github.io/2017/05/01/gulp/</loc>
+    
+    <lastmod>2017-06-03T02:38:41.376Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://neveryu.github.io/2017/04/10/npm/</loc>
+    
+    <lastmod>2017-05-30T10:46:40.875Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://neveryu.github.io/weblog/index.html</loc>
     
     <lastmod>2017-05-15T15:21:58.717Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>https://neveryu.github.io/2017/02/14/why-we-dropped-zepto/</loc>
     
     <lastmod>2017-05-15T14:57:16.459Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://neveryu.github.io/2017/04/10/npm/</loc>
-    
-    <lastmod>2017-05-15T14:57:12.542Z</lastmod>
     
   </url>
   

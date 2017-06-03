@@ -3,6 +3,46 @@
 
 
     
+  <url>
+    <loc>https://neveryu.github.io/2017/05/01/gulp/</loc>
+    <lastmod>2017-06-03T02:38:41.376Z</lastmod>
+    <data>
+        <display>
+        <title>gulp 详解与使用</title>
+        <pubTime>2017-04-30T17:25:24.000Z</pubTime>
+        
+        <tag>gulp</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2017/04/10/npm/</loc>
+    <lastmod>2017-05-30T10:46:40.875Z</lastmod>
+    <data>
+        <display>
+        <title>npm 全面介绍</title>
+        <pubTime>2017-04-09T19:25:24.000Z</pubTime>
+        
+        <tag>npm</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>https://neveryu.github.io/2017/02/14/why-we-dropped-zepto/</loc>
@@ -18,26 +58,6 @@
            
              
               <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://neveryu.github.io/2017/04/10/npm/</loc>
-    <lastmod>2017-05-15T14:57:12.542Z</lastmod>
-    <data>
-        <display>
-        <title>npm 全面介绍</title>
-        <pubTime>2017-04-09T19:25:24.000Z</pubTime>
-        
-        <tag>综合</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
           
         </display>
     </data>
