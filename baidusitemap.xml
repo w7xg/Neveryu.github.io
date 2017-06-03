@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>https://neveryu.github.io/2017/05/20/npm-two/</loc>
+    <lastmod>2017-06-03T06:56:51.954Z</lastmod>
+    <data>
+        <display>
+        <title>npm 的一个小细节</title>
+        <pubTime>2017-05-19T17:25:24.000Z</pubTime>
+        
+        <tag>npm</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://neveryu.github.io/2017/05/01/gulp/</loc>
-    <lastmod>2017-06-03T02:38:41.376Z</lastmod>
+    <lastmod>2017-06-03T04:15:40.267Z</lastmod>
     <data>
         <display>
         <title>gulp 详解与使用</title>

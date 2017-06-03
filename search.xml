@@ -4,10 +4,39 @@
   
     
     <entry>
+      <title><![CDATA[npm 的一个小细节]]></title>
+      <url>https://neveryu.github.io/2017/05/20/npm-two/</url>
+      <content type="html"><![CDATA[<p>在使用 electron 构建桌面应用的时候，在 package.json 里面的 scripts 字段是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">  &quot;start&quot;: &quot;electron .&quot;</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<p>我们可以执行 npm start ，那么它就会执行 <code>electron .</code> 这个命令。<br>那么如果我们直接执行 <code>electron .</code><br>由于我们没有将 electron 加入到全局，所以不行。<br>那么为什么 npm start 可以执行呢？</p>
+<a id="more"></a>
+<p>这就涉及到 npm run 命令的一个小细节了。<br>npm run xxx 可以执行 package.json 里面 scripts 里面对应的命令，并且是 shell 脚本。但是在执行的时候有一个小处理：</p>
+<p><strong>npm run 新建的这个 shell ，会将当前目录的 node_modules/.bin 子目录加入 PATH 变量，执行结束后，再将 PATH 变量恢复原样。</strong></p>
+<p>这就解释了，没有安装全局的 electron ，直接运行 <code>electron .</code> 是不行的，但是使用 <code>npm start</code> 来运行 <code>electron .</code> 可以。</p>
+<p><strong>下面介绍一个使用 npm 的实践：</strong><br>很多朋友使用 hexo 来构建博客；hexo 是基于 Node.js 产物，用它发表博文，很是方便；你只需 hexo clean, hexo g, hexo d三个命令即可；而且每一个命令必须等待前一个命令运行完成。文章数据一多，一套命令打下来，也得 20s+；如果略懂 npm，在 package.js 中加入点命名，例如像这样；<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">"scripts"</span>: &#123;</div><div class="line">  <span class="string">"start"</span>: <span class="string">"sudo hexo clean &amp;&amp; sudo hexo g &amp;&amp; sudo gulp &amp;&amp; sudo hexo d"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>那么 只需运行 npm start 就好，可将时间消耗缩短至 2s节省时间虽说不多，却也是数量级的提升，而且代价只是那么小，并一劳永逸。所以有必要对此。</p>
+<p>关于 npm 的详细学习，可以查看：<a href="https://neveryu.github.io/2017/04/10/npm/">npm 全面介绍</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 前端 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> npm </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[gulp 详解与使用]]></title>
       <url>https://neveryu.github.io/2017/05/01/gulp/</url>
       <content type="html"><![CDATA[<h1 id="什么是-gulp"><a href="#什么是-gulp" class="headerlink" title="什么是 gulp"></a>什么是 gulp</h1><p><a href="http://gulpjs.com/" target="_blank" rel="external">gulp</a> 是一个前端构建工具，它能通过自动执行常见任务，比如编译预处理 CSS ，压缩 JavaScript 和刷新浏览器，来改进网站开发的过程，从而使开发更加快速高效。</p>
-<h1 id="为什么要用-gulp"><a href="#为什么要用-gulp" class="headerlink" title="为什么要用 gulp"></a>为什么要用 gulp</h1><p>与 grunt 相比，gulp 无需写一大堆繁杂的配置参数，<a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md" target="_blank" rel="external">API</a>（<a href="http://www.gulpjs.com.cn/docs/api/" target="_blank" rel="external">中文 API</a>） 也非常简单，学习起来很容易，而且 gulp 使用的是 nodejs 中 <a href="https://nodejs.org/api/stream.html" target="_blank" rel="external">stream</a> 来读取和操作数据，其速度更快。</p>
+<h1 id="为什么要用-gulp"><a href="#为什么要用-gulp" class="headerlink" title="为什么要用 gulp"></a>为什么要用 gulp</h1><p>与 grunt 相比，gulp 无需写一大堆繁杂的配置参数，<a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md" target="_blank" rel="external">API</a>（<a href="http://www.gulpjs.com.cn/docs/api/" target="_blank" rel="external">中文 API</a>） 也非常简单，学习起来很容易，而且 gulp 使用的是 nodejs 中 <a href="https://nodejs.org/api/stream.html" target="_blank" rel="external">stream</a> 来读取和操作数据，其速度更快。<br>gulp 有庞大的生态圈，且每天都在发展。依靠成千上万可供选择的插件，你可以利用 gulp 自动完成几乎任何事。</p>
 <h1 id="如何使用-gulp"><a href="#如何使用-gulp" class="headerlink" title="如何使用 gulp"></a>如何使用 gulp</h1><h2 id="Installing-Gulp"><a href="#Installing-Gulp" class="headerlink" title="Installing Gulp"></a>Installing Gulp</h2><p>新版的 gulp 命令行工具已经改名为 gulp-cli 。<br>如果你之前安装了全局的 gulp 。在使用新的 gulp-cli 之前，执行命令<br> <code>npm rm --global gulp</code> ，将之前的全局 gulp 卸掉。</p>
 <a id="more"></a>
 <h3 id="Install-the-gulp-command"><a href="#Install-the-gulp-command" class="headerlink" title="Install the gulp command"></a>Install the gulp command</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --global gulp-cli</div></pre></td></tr></table></figure>
