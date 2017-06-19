@@ -88,7 +88,7 @@
 <meta property="og:title" content="npm 全面介绍">
 <meta property="og:url" content="https://neveryu.github.io/2017/04/10/npm/index.html">
 <meta property="og:site_name" content="Never_yu's Blog">
-<meta property="og:updated_time" content="2017-05-30T10:46:40.875Z">
+<meta property="og:updated_time" content="2017-06-11T12:46:56.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npm 全面介绍">
 
@@ -102,7 +102,7 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 6326435153992222000,
+      userId: undefined,
       author: '博主'
     }
   };
@@ -637,6 +637,7 @@
 <p id="div-border-top-yellow"><em>需要说明的是：json 文件不能有注释</em><br></p>
 
 <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="http://javascript.ruanyifeng.com/nodejs/npm.html" target="_blank" rel="external">http://javascript.ruanyifeng.com/nodejs/npm.html</a></p>
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>npm version  查看npm和node的版本<br>npm list –depth=0 [-g]  查看[全局]安装的包<br>npm root [-g]  查看[全局的]包的安装路径</p>
 
       
     </div>
@@ -720,28 +721,6 @@
 
 
     <div class="post-spread">
-      
-        <div class="ds-share flat" data-thread-key="2017/04/10/npm/"
-     data-title="npm 全面介绍"
-     data-content=""
-     data-url="https://neveryu.github.io/2017/04/10/npm/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
-
-      <li data-toggle="ds-share-icons-more"><span class="ds-more">分享到：</span></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-      <li><a class="ds-facebook" href="javascript:void(0);" data-service="facebook">Facebook</a></li>
-      <li><a class="ds-google" href="javascript:void(0);" data-service="google">Google</a></li>
-    </ul>
-    <!--
-      <div class="ds-share-icons-more">
-      </div>
-    -->
-  </div>
-</div>
       
     </div>
   </div>
@@ -881,7 +860,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是-NPM"><span class="nav-number">1.</span> <span class="nav-text">什么是 NPM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要使用-NPM"><span class="nav-number">2.</span> <span class="nav-text">为什么要使用 NPM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何使用-NPM"><span class="nav-number">3.</span> <span class="nav-text">如何使用 NPM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">3.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">3.2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-init"><span class="nav-number">3.2.1.</span> <span class="nav-text">npm init</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-set"><span class="nav-number">3.2.2.</span> <span class="nav-text">npm set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-info"><span class="nav-number">3.2.3.</span> <span class="nav-text">npm info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-search"><span class="nav-number">3.2.4.</span> <span class="nav-text">npm search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-list"><span class="nav-number">3.2.5.</span> <span class="nav-text">npm list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-install"><span class="nav-number">3.2.6.</span> <span class="nav-text">npm install</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#本地模式和全局模式"><span class="nav-number">3.2.6.1.</span> <span class="nav-text">本地模式和全局模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装不同版本"><span class="nav-number">3.2.6.2.</span> <span class="nav-text">安装不同版本</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#dependencies-依赖"><span class="nav-number">3.2.6.2.1.</span> <span class="nav-text">dependencies 依赖</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#devDependencies-开发依赖"><span class="nav-number">3.2.6.2.2.</span> <span class="nav-text">devDependencies 开发依赖</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-run"><span class="nav-number">3.2.7.</span> <span class="nav-text">npm run</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#scripts-脚本"><span class="nav-number">3.2.7.1.</span> <span class="nav-text">scripts 脚本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pre-和-post-脚本"><span class="nav-number">3.2.8.</span> <span class="nav-text">pre- 和 post- 脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-bin"><span class="nav-number">3.2.9.</span> <span class="nav-text">npm bin</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建全局链接"><span class="nav-number">4.</span> <span class="nav-text">创建全局链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建包"><span class="nav-number">5.</span> <span class="nav-text">创建包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包的发布"><span class="nav-number">6.</span> <span class="nav-text">包的发布</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">7.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是-NPM"><span class="nav-number">1.</span> <span class="nav-text">什么是 NPM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要使用-NPM"><span class="nav-number">2.</span> <span class="nav-text">为什么要使用 NPM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何使用-NPM"><span class="nav-number">3.</span> <span class="nav-text">如何使用 NPM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">3.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">3.2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-init"><span class="nav-number">3.2.1.</span> <span class="nav-text">npm init</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-set"><span class="nav-number">3.2.2.</span> <span class="nav-text">npm set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-info"><span class="nav-number">3.2.3.</span> <span class="nav-text">npm info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-search"><span class="nav-number">3.2.4.</span> <span class="nav-text">npm search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-list"><span class="nav-number">3.2.5.</span> <span class="nav-text">npm list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-install"><span class="nav-number">3.2.6.</span> <span class="nav-text">npm install</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#本地模式和全局模式"><span class="nav-number">3.2.6.1.</span> <span class="nav-text">本地模式和全局模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装不同版本"><span class="nav-number">3.2.6.2.</span> <span class="nav-text">安装不同版本</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#dependencies-依赖"><span class="nav-number">3.2.6.2.1.</span> <span class="nav-text">dependencies 依赖</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#devDependencies-开发依赖"><span class="nav-number">3.2.6.2.2.</span> <span class="nav-text">devDependencies 开发依赖</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-run"><span class="nav-number">3.2.7.</span> <span class="nav-text">npm run</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#scripts-脚本"><span class="nav-number">3.2.7.1.</span> <span class="nav-text">scripts 脚本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pre-和-post-脚本"><span class="nav-number">3.2.8.</span> <span class="nav-text">pre- 和 post- 脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-bin"><span class="nav-number">3.2.9.</span> <span class="nav-text">npm bin</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建全局链接"><span class="nav-number">4.</span> <span class="nav-text">创建全局链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建包"><span class="nav-number">5.</span> <span class="nav-text">创建包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包的发布"><span class="nav-number">6.</span> <span class="nav-text">包的发布</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">7.</span> <span class="nav-text">参考链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用命令"><span class="nav-number">8.</span> <span class="nav-text">常用命令</span></a></li></ol></div>
             
           </div>
         </section>
@@ -1021,30 +1000,9 @@
 
   
 
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"Neveryu"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementById('footer')
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
 
 
+  
 
 
 

@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://neveryu.github.io/2016/09/25/essay-20160925/</loc>
+    
+    <lastmod>2017-06-19T14:30:09.383Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://neveryu.github.io/2017/04/10/npm/</loc>
+    
+    <lastmod>2017-06-11T12:46:56.926Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://neveryu.github.io/2017/05/20/npm-two/</loc>
     
     <lastmod>2017-06-03T06:56:51.954Z</lastmod>
@@ -16,13 +30,6 @@
   </url>
   
   <url>
-    <loc>https://neveryu.github.io/2017/04/10/npm/</loc>
-    
-    <lastmod>2017-05-30T10:46:40.875Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://neveryu.github.io/weblog/index.html</loc>
     
     <lastmod>2017-05-15T15:21:58.717Z</lastmod>
@@ -32,7 +39,7 @@
   <url>
     <loc>https://neveryu.github.io/2017/02/14/why-we-dropped-zepto/</loc>
     
-    <lastmod>2017-05-15T14:57:16.459Z</lastmod>
+    <lastmod>2017-05-15T14:57:16.460Z</lastmod>
     
   </url>
   
@@ -53,7 +60,7 @@
   <url>
     <loc>https://neveryu.github.io/2016/09/03/hexo-next-one/</loc>
     
-    <lastmod>2017-05-14T07:40:32.792Z</lastmod>
+    <lastmod>2017-05-14T07:40:32.793Z</lastmod>
     
   </url>
   
@@ -74,21 +81,21 @@
   <url>
     <loc>https://neveryu.github.io/2017/03/20/amd-cmd/</loc>
     
-    <lastmod>2017-04-19T14:31:56.237Z</lastmod>
+    <lastmod>2017-04-19T14:31:56.238Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://neveryu.github.io/2017/03/07/commonjs/</loc>
     
-    <lastmod>2017-04-19T14:21:50.815Z</lastmod>
+    <lastmod>2017-04-19T14:21:50.816Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://neveryu.github.io/404.html</loc>
     
-    <lastmod>2017-04-08T16:05:07.661Z</lastmod>
+    <lastmod>2017-04-08T16:05:07.662Z</lastmod>
     
   </url>
   
@@ -116,7 +123,7 @@
   <url>
     <loc>https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/</loc>
     
-    <lastmod>2017-04-03T10:40:58.694Z</lastmod>
+    <lastmod>2017-04-03T10:40:58.695Z</lastmod>
     
   </url>
   
@@ -144,49 +151,42 @@
   <url>
     <loc>https://neveryu.github.io/2017/02/11/respond-js/</loc>
     
-    <lastmod>2017-03-07T14:44:23.859Z</lastmod>
+    <lastmod>2017-03-07T14:44:23.860Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://neveryu.github.io/tags/index.html</loc>
     
-    <lastmod>2017-03-04T11:49:49.597Z</lastmod>
+    <lastmod>2017-03-04T11:49:49.598Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://neveryu.github.io/2016/12/24/why-introversion-like-alone/</loc>
     
-    <lastmod>2017-03-04T11:49:49.584Z</lastmod>
+    <lastmod>2017-03-04T11:49:49.585Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://neveryu.github.io/2016/11/22/use-jquery-skill/</loc>
     
-    <lastmod>2017-03-04T11:49:49.583Z</lastmod>
+    <lastmod>2017-03-04T11:49:49.584Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://neveryu.github.io/2016/10/16/how-it-feels-to-learn-javascript-in-2016/</loc>
     
-    <lastmod>2017-03-04T11:49:49.580Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://neveryu.github.io/2016/09/25/essay-20160925/</loc>
-    
-    <lastmod>2017-03-04T11:49:49.573Z</lastmod>
+    <lastmod>2017-03-04T11:49:49.581Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://neveryu.github.io/2016/11/18/china-javascript-environment/</loc>
     
-    <lastmod>2017-03-04T11:49:49.572Z</lastmod>
+    <lastmod>2017-03-04T11:49:49.573Z</lastmod>
     
   </url>
   
