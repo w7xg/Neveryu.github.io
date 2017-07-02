@@ -3,6 +3,47 @@
 
 
     
+  <url>
+    <loc>https://neveryu.github.io/2017/06/08/service-worker/</loc>
+    <lastmod>2017-07-02T05:03:40.433Z</lastmod>
+    <data>
+        <display>
+        <title>使用 Service worker 实现加速/离线访问博客</title>
+        <pubTime>2017-06-08T03:25:24.000Z</pubTime>
+        
+        <tag>Service-worker</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2017/05/01/gulp/</loc>
+    <lastmod>2017-07-01T03:48:08.193Z</lastmod>
+    <data>
+        <display>
+        <title>gulp 详解与使用</title>
+        <pubTime>2017-04-30T17:25:24.000Z</pubTime>
+        
+        <tag>gulp</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
     
     
   <url>
@@ -242,21 +283,20 @@
     
     
     
-    
   <url>
-    <loc>https://neveryu.github.io/2017/04/10/npm/</loc>
+    <loc>https://neveryu.github.io/2016/12/24/why-introversion-like-alone/</loc>
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     <data>
         <display>
-        <title>npm 全面介绍</title>
-        <pubTime>2017-04-09T19:25:24.000Z</pubTime>
+        <title>【转】为什么一些生活中很外向开朗的人会喜欢独来独往</title>
+        <pubTime>2016-12-24T14:25:24.000Z</pubTime>
         
-        <tag>npm</tag>
+        <tag>essay</tag>
          
          
            
              
-              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
           
         </display>
     </data>
@@ -272,48 +312,6 @@
         <pubTime>2017-02-18T05:25:24.000Z</pubTime>
         
         <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://neveryu.github.io/2016/11/22/use-jquery-skill/</loc>
-    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
-    <data>
-        <display>
-        <title>jQuery使用技巧</title>
-        <pubTime>2016-11-22T03:54:55.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>jQuery</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://neveryu.github.io/2016/12/24/why-introversion-like-alone/</loc>
-    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
-    <data>
-        <display>
-        <title>【转】为什么一些生活中很外向开朗的人会喜欢独来独往</title>
-        <pubTime>2016-12-24T14:25:24.000Z</pubTime>
-        
-        <tag>essay</tag>
          
          
            
@@ -346,26 +344,6 @@
 
     
   <url>
-    <loc>https://neveryu.github.io/2017/05/01/gulp/</loc>
-    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
-    <data>
-        <display>
-        <title>gulp 详解与使用</title>
-        <pubTime>2017-04-30T17:25:24.000Z</pubTime>
-        
-        <tag>gulp</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://neveryu.github.io/2016/09/25/essay-20160925/</loc>
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     <data>
@@ -386,19 +364,21 @@
 
     
   <url>
-    <loc>https://neveryu.github.io/2017/02/28/memory-leak/</loc>
-    <lastmod>2017-06-19T14:39:02.008Z</lastmod>
+    <loc>https://neveryu.github.io/2016/11/22/use-jquery-skill/</loc>
+    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     <data>
         <display>
-        <title>如何解决内存泄漏引发的血案</title>
-        <pubTime>2017-02-27T17:01:00.000Z</pubTime>
+        <title>jQuery使用技巧</title>
+        <pubTime>2016-11-22T03:54:55.000Z</pubTime>
         
         <tag>JavaScript</tag>
+         
+        <tag>jQuery</tag>
          
          
            
              
-              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -406,12 +386,12 @@
 
     
   <url>
-    <loc>https://neveryu.github.io/2017/05/20/npm-two/</loc>
-    <lastmod>2017-06-19T14:39:02.008Z</lastmod>
+    <loc>https://neveryu.github.io/2017/04/10/npm/</loc>
+    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     <data>
         <display>
-        <title>npm 的一个小细节</title>
-        <pubTime>2017-05-19T17:25:24.000Z</pubTime>
+        <title>npm 全面介绍</title>
+        <pubTime>2017-04-09T19:25:24.000Z</pubTime>
         
         <tag>npm</tag>
          
@@ -445,4 +425,44 @@
     </url>
 
     
+  <url>
+    <loc>https://neveryu.github.io/2017/02/28/memory-leak/</loc>
+    <lastmod>2017-06-19T14:39:02.008Z</lastmod>
+    <data>
+        <display>
+        <title>如何解决内存泄漏引发的血案</title>
+        <pubTime>2017-02-27T17:01:00.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>https://neveryu.github.io/2017/05/20/npm-two/</loc>
+    <lastmod>2017-06-19T14:39:02.008Z</lastmod>
+    <data>
+        <display>
+        <title>npm 的一个小细节</title>
+        <pubTime>2017-05-19T17:25:24.000Z</pubTime>
+        
+        <tag>npm</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
 </urlset>
