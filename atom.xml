@@ -1,40 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Never_yu&#39;s Blog</title>
+  <subtitle>认真的人才有资格开玩笑</subtitle>
+  <link href="/atom.xml" rel="self"/>
   
+  <link href="https://neveryu.github.io/"/>
+  <updated>2017-08-20T15:06:18.001Z</updated>
+  <id>https://neveryu.github.io/</id>
   
+  <author>
+    <name>Never_yu</name>
+    <email>never_yu@foxmail.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo-NexT搭建个人博客（五）</title>
+    <link href="https://neveryu.github.io/2017/07/15/hexo-next-five/"/>
+    <id>https://neveryu.github.io/2017/07/15/hexo-next-five/</id>
+    <published>2017-07-15T15:25:24.000Z</published>
+    <updated>2017-08-20T15:06:18.001Z</updated>
     
-    <entry>
-      <title><![CDATA[Hexo-NexT搭建个人博客（五）]]></title>
-      <url>https://neveryu.github.io/2017/07/15/hexo-next-five/</url>
-      <content type="html"><![CDATA[<h1 id="文章封面"><a href="#文章封面" class="headerlink" title="文章封面"></a>文章封面</h1><p>文章封面的意思就是：在博客首页的时候会显示文章的封面图片，点击这篇文章的标题，进入文章后，不显示这张图片。</p>
+    <content type="html"><![CDATA[<h1 id="文章封面"><a href="#文章封面" class="headerlink" title="文章封面"></a>文章封面</h1><p>文章封面的意思就是：在博客首页的时候会显示文章的封面图片，点击这篇文章的标题，进入文章后，不显示这张图片。</p>
 <p>如果想添加文章封面的话，在写文章的时候，需要添加一个字段属性：<code>summary_img</code> 。</p>
 <a id="more"></a>
 <p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: CSS 各种Hack手段</div><div class="line">date: 2017-06-25 03:25:24</div><div class="line">categories: 前端</div><div class="line">tags: [CSS]</div><div class="line">comments: false</div><div class="line">summary_img: /images/css-hack-1.png</div><div class="line">---</div></pre></td></tr></table></figure></p>
 <p>具体细节如下：</p>
 <p>未完待续…</p>
 ]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Next </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[CSS 各种Hack手段]]></title>
-      <url>https://neveryu.github.io/2017/06/25/css-hack/</url>
-      <content type="html"><![CDATA[<!-- <img src="/images/css-hack-1.png" alt="css-hack"> -->
+    <summary type="html">
+    
+      &lt;h1 id=&quot;文章封面&quot;&gt;&lt;a href=&quot;#文章封面&quot; class=&quot;headerlink&quot; title=&quot;文章封面&quot;&gt;&lt;/a&gt;文章封面&lt;/h1&gt;&lt;p&gt;文章封面的意思就是：在博客首页的时候会显示文章的封面图片，点击这篇文章的标题，进入文章后，不显示这张图片。&lt;/p&gt;
+&lt;p&gt;如果想添加文章封面的话，在写文章的时候，需要添加一个字段属性：&lt;code&gt;summary_img&lt;/code&gt; 。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://neveryu.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="https://neveryu.github.io/tags/Hexo/"/>
+    
+      <category term="Next" scheme="https://neveryu.github.io/tags/Next/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS 各种Hack手段</title>
+    <link href="https://neveryu.github.io/2017/06/25/css-hack/"/>
+    <id>https://neveryu.github.io/2017/06/25/css-hack/</id>
+    <published>2017-06-24T19:25:24.000Z</published>
+    <updated>2017-07-30T04:29:58.542Z</updated>
+    
+    <content type="html"><![CDATA[<!-- <img src="/images/css-hack-1.png" alt="css-hack"> -->
 <a id="more"></a>
 <p>随着浏览器的发展，css hack 技术的使用应该越来越少了，但是在某些关键时刻以及综合的WEB应用或者老项目中，可能还需要使用 css hack 技术来解决一些问题。</p>
 <h1 id="css-hack-分类"><a href="#css-hack-分类" class="headerlink" title="css hack 分类"></a>css hack 分类</h1><p>css hack 分类大致有 3 种表现形式：<strong>IE条件注释法</strong>、<strong>CSS属性前缀法</strong>以及<strong>选择器前缀法</strong>。</p>
@@ -59,26 +78,28 @@
 <p><strong>说明：</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">* <span class="selector-tag">html</span> <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:<span class="number">#090</span>;&#125;       <span class="comment">/* For IE6 and earlier */</span></div><div class="line">* + <span class="selector-tag">html</span> <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:<span class="number">#ff0</span>;&#125;     <span class="comment">/* For IE7 */</span></div><div class="line"><span class="selector-class">.test</span><span class="selector-pseudo">:lang(zh-cn)</span>&#123;<span class="attribute">color</span>:<span class="number">#f00</span>;&#125;  <span class="comment">/* For IE8+ and not IE */</span></div><div class="line"><span class="selector-class">.test</span><span class="selector-pseudo">:nth-child(1)</span>&#123;<span class="attribute">color</span>:<span class="number">#0ff</span>;&#125; <span class="comment">/* For IE9+ and not IE */</span></div></pre></td></tr></table></figure></p>
 <p id="div-border-left-yellow">上述代码中的3,4两行就是典型的利用能力来进行选择的 CSS Hack。</p>
 ]]></content>
-      
-        <categories>
-            
-            <category> 前端 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> CSS </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[使用 Service worker 实现加速/离线访问博客]]></title>
-      <url>https://neveryu.github.io/2017/06/08/service-worker/</url>
-      <content type="html"><![CDATA[<p>有一个困扰 web 用户多年的难题——丢失网络连接。即使是世界上最好的 web app，如果下载不了它，也是非常糟糕的体验。如今虽然已经有很多种技术去尝试着解决这一问题。而随着<strong>离线页面</strong>的出现，一些问题已经得到了解决。有一个叫做 APP Cache 的 API 可以提供离线体验，但它的问题比较多。最重要的问题是，仍然没有一个好的统筹机制对资源缓存和自定义的网络请求进行控制。</p>
+    <summary type="html">
+    
+      &lt;!-- &lt;img src=&quot;/images/css-hack-1.png&quot; alt=&quot;css-hack&quot;&gt; --&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="CSS" scheme="https://neveryu.github.io/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Service worker 实现加速/离线访问博客</title>
+    <link href="https://neveryu.github.io/2017/06/08/service-worker/"/>
+    <id>https://neveryu.github.io/2017/06/08/service-worker/</id>
+    <published>2017-06-08T03:25:24.000Z</published>
+    <updated>2017-07-02T05:03:40.433Z</updated>
+    
+    <content type="html"><![CDATA[<p>有一个困扰 web 用户多年的难题——丢失网络连接。即使是世界上最好的 web app，如果下载不了它，也是非常糟糕的体验。如今虽然已经有很多种技术去尝试着解决这一问题。而随着<strong>离线页面</strong>的出现，一些问题已经得到了解决。有一个叫做 APP Cache 的 API 可以提供离线体验，但它的问题比较多。最重要的问题是，仍然没有一个好的统筹机制对资源缓存和自定义的网络请求进行控制。</p>
 <h1 id="Service-worker"><a href="#Service-worker" class="headerlink" title="Service worker"></a>Service worker</h1><p>于是 HTML5 提出了 Service Worker，Service worker 提供了很多新的能力，使得 web app 拥有与 nativeapp 相同的离线体验、消息推送体验。</p>
 <a id="more"></a>
 <p>Service worker 是一段脚本，它有能力往我们的浏览器中写入缓存，过滤网络请求，将缓存内容作为网络响应结果输出。<br><strong>带来的效果是显而易见的：</strong></p>
@@ -103,26 +124,29 @@
 <h1 id="其他使用场景"><a href="#其他使用场景" class="headerlink" title="其他使用场景"></a>其他使用场景</h1><p>在网站 A 中，隐藏一个 iframe ，在这个 iframe 中注册一个 service worker ，这个 service worker 会缓存网站 B 所需的资源。<br>从未访问过网站 B，但网站已经在你的设备上预加载过了，一切仅仅因为你访问过网站 A。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://B.com/iframe.html"</span> <span class="attr">style</span>=<span class="string">"width: 0; height: 0; border: 0"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>HTML5 For Web Designers<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="keyword">if</span> (<span class="string">'serviceWorker'</span> <span class="keyword">in</span> navigator) &#123;</div><div class="line">  navigator.serviceWorker.register(<span class="string">'/serviceworker.js'</span>);</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 ]]></content>
-      
-        <categories>
-            
-            <category> 前端 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Service-worker </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[npm 的一个小细节]]></title>
-      <url>https://neveryu.github.io/2017/05/20/npm-two/</url>
-      <content type="html"><![CDATA[<p>在使用 electron 构建桌面应用的时候，在 package.json 里面的 scripts 字段是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">  &quot;start&quot;: &quot;electron .&quot;</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+    <summary type="html">
+    
+      &lt;p&gt;有一个困扰 web 用户多年的难题——丢失网络连接。即使是世界上最好的 web app，如果下载不了它，也是非常糟糕的体验。如今虽然已经有很多种技术去尝试着解决这一问题。而随着&lt;strong&gt;离线页面&lt;/strong&gt;的出现，一些问题已经得到了解决。有一个叫做 APP Cache 的 API 可以提供离线体验，但它的问题比较多。最重要的问题是，仍然没有一个好的统筹机制对资源缓存和自定义的网络请求进行控制。&lt;/p&gt;
+&lt;h1 id=&quot;Service-worker&quot;&gt;&lt;a href=&quot;#Service-worker&quot; class=&quot;headerlink&quot; title=&quot;Service worker&quot;&gt;&lt;/a&gt;Service worker&lt;/h1&gt;&lt;p&gt;于是 HTML5 提出了 Service Worker，Service worker 提供了很多新的能力，使得 web app 拥有与 nativeapp 相同的离线体验、消息推送体验。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Service-worker" scheme="https://neveryu.github.io/tags/Service-worker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>npm 的一个小细节</title>
+    <link href="https://neveryu.github.io/2017/05/20/npm-two/"/>
+    <id>https://neveryu.github.io/2017/05/20/npm-two/</id>
+    <published>2017-05-19T17:25:24.000Z</published>
+    <updated>2017-06-19T14:39:02.008Z</updated>
+    
+    <content type="html"><![CDATA[<p>在使用 electron 构建桌面应用的时候，在 package.json 里面的 scripts 字段是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">  &quot;start&quot;: &quot;electron .&quot;</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
 <p>我们可以执行 npm start ，那么它就会执行 <code>electron .</code> 这个命令。<br>那么如果我们直接执行 <code>electron .</code><br>由于我们没有将 electron 加入到全局，所以不行。<br>那么为什么 npm start 可以执行呢？</p>
 <a id="more"></a>
 <p>这就涉及到 npm run 命令的一个小细节了。<br>npm run xxx 可以执行 package.json 里面 scripts 里面对应的命令，并且是 shell 脚本。但是在执行的时候有一个小处理：</p>
@@ -132,26 +156,29 @@
 <p>那么 只需运行 npm start 就好，可将时间消耗缩短至 2s节省时间虽说不多，却也是数量级的提升，而且代价只是那么小，并一劳永逸。所以有必要对此。</p>
 <p>关于 npm 的详细学习，可以查看：<a href="https://neveryu.github.io/2017/04/10/npm/">npm 全面介绍</a></p>
 ]]></content>
-      
-        <categories>
-            
-            <category> 前端 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> npm </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[gulp 详解与使用]]></title>
-      <url>https://neveryu.github.io/2017/05/01/gulp/</url>
-      <content type="html"><![CDATA[<h1 id="什么是-gulp"><a href="#什么是-gulp" class="headerlink" title="什么是 gulp"></a>什么是 gulp</h1><p><a href="http://gulpjs.com/" target="_blank" rel="external">gulp</a> 是一个前端构建工具，它能通过自动执行常见任务，比如编译预处理 CSS ，压缩 JavaScript 和刷新浏览器，来改进网站开发的过程，从而使开发更加快速高效。</p>
+    <summary type="html">
+    
+      &lt;p&gt;在使用 electron 构建桌面应用的时候，在 package.json 里面的 scripts 字段是这样的&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;quot;scripts&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;start&amp;quot;: &amp;quot;electron .&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;,&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;我们可以执行 npm start ，那么它就会执行 &lt;code&gt;electron .&lt;/code&gt; 这个命令。&lt;br&gt;那么如果我们直接执行 &lt;code&gt;electron .&lt;/code&gt;&lt;br&gt;由于我们没有将 electron 加入到全局，所以不行。&lt;br&gt;那么为什么 npm start 可以执行呢？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="npm" scheme="https://neveryu.github.io/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gulp 详解与使用</title>
+    <link href="https://neveryu.github.io/2017/05/01/gulp/"/>
+    <id>https://neveryu.github.io/2017/05/01/gulp/</id>
+    <published>2017-04-30T17:25:24.000Z</published>
+    <updated>2017-07-01T03:48:08.193Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="什么是-gulp"><a href="#什么是-gulp" class="headerlink" title="什么是 gulp"></a>什么是 gulp</h1><p><a href="http://gulpjs.com/" target="_blank" rel="external">gulp</a> 是一个前端构建工具，它能通过自动执行常见任务，比如编译预处理 CSS ，压缩 JavaScript 和刷新浏览器，来改进网站开发的过程，从而使开发更加快速高效。</p>
 <h1 id="为什么要用-gulp"><a href="#为什么要用-gulp" class="headerlink" title="为什么要用 gulp"></a>为什么要用 gulp</h1><p>与 grunt 相比，gulp 无需写一大堆繁杂的配置参数，<a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md" target="_blank" rel="external">API</a>（<a href="http://www.gulpjs.com.cn/docs/api/" target="_blank" rel="external">中文 API</a>） 也非常简单，学习起来很容易，而且 gulp 使用的是 nodejs 中 <a href="https://nodejs.org/api/stream.html" target="_blank" rel="external">stream</a> 来读取和操作数据，其速度更快。<br>gulp 有庞大的生态圈，且每天都在发展。依靠成千上万可供选择的插件，你可以利用 gulp 自动完成几乎任何事。</p>
 <h1 id="如何使用-gulp"><a href="#如何使用-gulp" class="headerlink" title="如何使用 gulp"></a>如何使用 gulp</h1><h2 id="Installing-Gulp"><a href="#Installing-Gulp" class="headerlink" title="Installing Gulp"></a>Installing Gulp</h2><p>新版的 gulp 命令行工具已经改名为 gulp-cli 。<br>如果你之前安装了全局的 gulp 。在使用新的 gulp-cli 之前，执行命令<br> <code>npm rm --global gulp</code> ，将之前的全局 gulp 卸掉。</p>
 <a id="more"></a>
@@ -246,26 +273,30 @@
 <h1 id="tip"><a href="#tip" class="headerlink" title="tip"></a>tip</h1><p>1、gulp 写进项目 package.json 文件的依赖有什么作用<br>方便别人查看你项目中有些什么依赖，而且在项目目录下执行 npm install 命令会安装项目 package.json 中的所有依赖模块，这样就能简化项目的安装程序了，不用一个一个模块去安装啊。</p>
 <p>2、gulp 中着重了解 gulp.task() 如何处理依赖任务是耗时操作或者异步操作的情况。</p>
 ]]></content>
-      
-        <categories>
-            
-            <category> 前端 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> gulp </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[npm 全面介绍]]></title>
-      <url>https://neveryu.github.io/2017/04/10/npm/</url>
-      <content type="html"><![CDATA[<!-- <img src="http://i1.piimg.com/588926/30e7b49044d5cfc4.png" alt="summary-img-src-npm"> -->
+    <summary type="html">
+    
+      &lt;h1 id=&quot;什么是-gulp&quot;&gt;&lt;a href=&quot;#什么是-gulp&quot; class=&quot;headerlink&quot; title=&quot;什么是 gulp&quot;&gt;&lt;/a&gt;什么是 gulp&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://gulpjs.com/&quot;&gt;gulp&lt;/a&gt; 是一个前端构建工具，它能通过自动执行常见任务，比如编译预处理 CSS ，压缩 JavaScript 和刷新浏览器，来改进网站开发的过程，从而使开发更加快速高效。&lt;/p&gt;
+&lt;h1 id=&quot;为什么要用-gulp&quot;&gt;&lt;a href=&quot;#为什么要用-gulp&quot; class=&quot;headerlink&quot; title=&quot;为什么要用 gulp&quot;&gt;&lt;/a&gt;为什么要用 gulp&lt;/h1&gt;&lt;p&gt;与 grunt 相比，gulp 无需写一大堆繁杂的配置参数，&lt;a href=&quot;https://github.com/gulpjs/gulp/blob/master/docs/API.md&quot;&gt;API&lt;/a&gt;（&lt;a href=&quot;http://www.gulpjs.com.cn/docs/api/&quot;&gt;中文 API&lt;/a&gt;） 也非常简单，学习起来很容易，而且 gulp 使用的是 nodejs 中 &lt;a href=&quot;https://nodejs.org/api/stream.html&quot;&gt;stream&lt;/a&gt; 来读取和操作数据，其速度更快。&lt;br&gt;gulp 有庞大的生态圈，且每天都在发展。依靠成千上万可供选择的插件，你可以利用 gulp 自动完成几乎任何事。&lt;/p&gt;
+&lt;h1 id=&quot;如何使用-gulp&quot;&gt;&lt;a href=&quot;#如何使用-gulp&quot; class=&quot;headerlink&quot; title=&quot;如何使用 gulp&quot;&gt;&lt;/a&gt;如何使用 gulp&lt;/h1&gt;&lt;h2 id=&quot;Installing-Gulp&quot;&gt;&lt;a href=&quot;#Installing-Gulp&quot; class=&quot;headerlink&quot; title=&quot;Installing Gulp&quot;&gt;&lt;/a&gt;Installing Gulp&lt;/h2&gt;&lt;p&gt;新版的 gulp 命令行工具已经改名为 gulp-cli 。&lt;br&gt;如果你之前安装了全局的 gulp 。在使用新的 gulp-cli 之前，执行命令&lt;br&gt; &lt;code&gt;npm rm --global gulp&lt;/code&gt; ，将之前的全局 gulp 卸掉。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="gulp" scheme="https://neveryu.github.io/tags/gulp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>npm 全面介绍</title>
+    <link href="https://neveryu.github.io/2017/04/10/npm/"/>
+    <id>https://neveryu.github.io/2017/04/10/npm/</id>
+    <published>2017-04-09T19:25:24.000Z</published>
+    <updated>2017-06-19T14:39:02.024Z</updated>
+    
+    <content type="html"><![CDATA[<!-- <img src="http://i1.piimg.com/588926/30e7b49044d5cfc4.png" alt="summary-img-src-npm"> -->
 <a id="more"></a>
 <h1 id="什么是-NPM"><a href="#什么是-NPM" class="headerlink" title="什么是 NPM"></a>什么是 NPM</h1><p>npm 之于 Node.js ，就像 pip 之于 Python， gem 之于 Ruby， pear 之于 PHP 。</p>
 <p>npm 是 Node.js 官方提供的包管理工具，他已经成了 Node.js 包的标准发布平台，用于 Node.js 包的发布、传播、依赖控制。npm 提供了命令行工具，使你可以方便地下载、安装、升级、删除包，也可以让你作为开发者发布并维护包。</p>
@@ -358,26 +389,28 @@
 <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="http://javascript.ruanyifeng.com/nodejs/npm.html" target="_blank" rel="external">http://javascript.ruanyifeng.com/nodejs/npm.html</a></p>
 <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>npm version  查看npm和node的版本<br>npm list –depth=0 [-g]  查看[全局]安装的包<br>npm root [-g]  查看[全局的]包的安装路径</p>
 ]]></content>
-      
-        <categories>
-            
-            <category> 前端 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> npm </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[AMD，CMD 规范详解]]></title>
-      <url>https://neveryu.github.io/2017/03/20/amd-cmd/</url>
-      <content type="html"><![CDATA[<p>当我们了解了 <a href="https://neveryu.github.io/2017/03/07/commonjs/">CommonJS</a> 以后，CommonJS 规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作。<br>由于 Node.js 主要用于服务器编程，模块文件一般都已经存在于本地硬盘，所以加载起来比较快，不用考虑非同步加载的方式，所以 CommonJS 规范比较适用。<br>但是，如果是浏览器环境，要从服务器端加载模块，这时就必须采用非同步模式。为什么呢？</p>
+    <summary type="html">
+    
+      &lt;!-- &lt;img src=&quot;http://i1.piimg.com/588926/30e7b49044d5cfc4.png&quot; alt=&quot;summary-img-src-npm&quot;&gt; --&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="npm" scheme="https://neveryu.github.io/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AMD，CMD 规范详解</title>
+    <link href="https://neveryu.github.io/2017/03/20/amd-cmd/"/>
+    <id>https://neveryu.github.io/2017/03/20/amd-cmd/</id>
+    <published>2017-03-19T19:25:24.000Z</published>
+    <updated>2017-06-20T13:23:37.871Z</updated>
+    
+    <content type="html"><![CDATA[<p>当我们了解了 <a href="https://neveryu.github.io/2017/03/07/commonjs/">CommonJS</a> 以后，CommonJS 规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作。<br>由于 Node.js 主要用于服务器编程，模块文件一般都已经存在于本地硬盘，所以加载起来比较快，不用考虑非同步加载的方式，所以 CommonJS 规范比较适用。<br>但是，如果是浏览器环境，要从服务器端加载模块，这时就必须采用非同步模式。为什么呢？</p>
 <a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> math = <span class="built_in">require</span>(<span class="string">'math'</span>);</div><div class="line">math.add(<span class="number">2</span>, <span class="number">3</span>);</div></pre></td></tr></table></figure>
 <p>第二行 math.add(2, 3)，在第一行 require(‘math’) 之后运行，因此必须等 math.js 加载完成。也就是说，如果加载时间很长，整个应用就会停在那里等。<br>对于浏览器，这是一个大问题，因为模块都放在服务器端。等待时间取决于网速的快慢，可能要等很长时间，浏览器处理“假死”状态。</p>
@@ -430,26 +463,28 @@
 <li>CMD 推崇<strong>依赖就近</strong>，AMD 推崇<strong>依赖前置</strong></li>
 </ol>
 ]]></content>
-      
-        <categories>
-            
-            <category> 前端 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[CommonJS 详细介绍]]></title>
-      <url>https://neveryu.github.io/2017/03/07/commonjs/</url>
-      <content type="html"><![CDATA[<h2 id="CommonJS-规范与实现"><a href="#CommonJS-规范与实现" class="headerlink" title="CommonJS 规范与实现"></a>CommonJS 规范与实现</h2><p>正如当年为了统一 JavaScript 语言标准，人们制定了 ECMAScript 规范一样，如今为了统一 JavaScript 在浏览器之外的实现，CommonJS 诞生了。CommonJS 试图定义一套普通应用程序使用的 API，从而填补 JavaScript 标准库过于简单的不足。CommonJS 的终极目标是制定一个像 C++ 标准库一样的规范，使得基于 CommonJS API 的应用程序可以在不同的环境下运行，就像用 C++ 编写的应用程序可以使用不同的编译器和运行时函数库一样。为了保持中立，CommonJS 不参与标准库实现，其实现交给像 Node.js 之类的项目来完成。下图是 CommonJS 的各种实现。</p>
+    <summary type="html">
+    
+      &lt;p&gt;当我们了解了 &lt;a href=&quot;https://neveryu.github.io/2017/03/07/commonjs/&quot;&gt;CommonJS&lt;/a&gt; 以后，CommonJS 规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作。&lt;br&gt;由于 Node.js 主要用于服务器编程，模块文件一般都已经存在于本地硬盘，所以加载起来比较快，不用考虑非同步加载的方式，所以 CommonJS 规范比较适用。&lt;br&gt;但是，如果是浏览器环境，要从服务器端加载模块，这时就必须采用非同步模式。为什么呢？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="https://neveryu.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CommonJS 详细介绍</title>
+    <link href="https://neveryu.github.io/2017/03/07/commonjs/"/>
+    <id>https://neveryu.github.io/2017/03/07/commonjs/</id>
+    <published>2017-03-07T05:25:24.000Z</published>
+    <updated>2017-06-20T13:23:56.406Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="CommonJS-规范与实现"><a href="#CommonJS-规范与实现" class="headerlink" title="CommonJS 规范与实现"></a>CommonJS 规范与实现</h2><p>正如当年为了统一 JavaScript 语言标准，人们制定了 ECMAScript 规范一样，如今为了统一 JavaScript 在浏览器之外的实现，CommonJS 诞生了。CommonJS 试图定义一套普通应用程序使用的 API，从而填补 JavaScript 标准库过于简单的不足。CommonJS 的终极目标是制定一个像 C++ 标准库一样的规范，使得基于 CommonJS API 的应用程序可以在不同的环境下运行，就像用 C++ 编写的应用程序可以使用不同的编译器和运行时函数库一样。为了保持中立，CommonJS 不参与标准库实现，其实现交给像 Node.js 之类的项目来完成。下图是 CommonJS 的各种实现。</p>
 <a id="more"></a>
 <p><img src="http://i2.muimg.com/567571/abd3d52d96d4db7c.png" alt="ConmonJS 的实现"></p>
 <p>CommonJS 规范包括了模块（modules）、包（packages）、系统（system）、二进制（binary）、控制台（console）、编码（encodings）、文件系统（filesystems）、套接字（sockets）、单元测试（unit testing）等部分。</p>
@@ -491,26 +526,28 @@
 </ol>
 <h3 id="CommonJS-中的-Require"><a href="#CommonJS-中的-Require" class="headerlink" title="CommonJS 中的 Require"></a>CommonJS 中的 Require</h3><p>建议阅览：<a href="http://wiki.commonjs.org/wiki/Modules/1.1.1#Require" target="_blank" rel="external">CommonJS require 规范</a></p>
 ]]></content>
-      
-        <categories>
-            
-            <category> 前端 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[如何解决内存泄漏引发的血案]]></title>
-      <url>https://neveryu.github.io/2017/02/28/memory-leak/</url>
-      <content type="html"><![CDATA[<p>之前做了一个谷歌浏览器的插件开发，它会打开一个链接，然后收集数据并上传。依次循环，但是跑的时间久了，内存就变得很高，然后浏览器就会变卡，慢慢的影响这个插件的运行，最后浏览器也会崩溃。</p>
+    <summary type="html">
+    
+      &lt;h2 id=&quot;CommonJS-规范与实现&quot;&gt;&lt;a href=&quot;#CommonJS-规范与实现&quot; class=&quot;headerlink&quot; title=&quot;CommonJS 规范与实现&quot;&gt;&lt;/a&gt;CommonJS 规范与实现&lt;/h2&gt;&lt;p&gt;正如当年为了统一 JavaScript 语言标准，人们制定了 ECMAScript 规范一样，如今为了统一 JavaScript 在浏览器之外的实现，CommonJS 诞生了。CommonJS 试图定义一套普通应用程序使用的 API，从而填补 JavaScript 标准库过于简单的不足。CommonJS 的终极目标是制定一个像 C++ 标准库一样的规范，使得基于 CommonJS API 的应用程序可以在不同的环境下运行，就像用 C++ 编写的应用程序可以使用不同的编译器和运行时函数库一样。为了保持中立，CommonJS 不参与标准库实现，其实现交给像 Node.js 之类的项目来完成。下图是 CommonJS 的各种实现。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="https://neveryu.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何解决内存泄漏引发的血案</title>
+    <link href="https://neveryu.github.io/2017/02/28/memory-leak/"/>
+    <id>https://neveryu.github.io/2017/02/28/memory-leak/</id>
+    <published>2017-02-27T17:01:00.000Z</published>
+    <updated>2017-06-19T14:39:02.008Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前做了一个谷歌浏览器的插件开发，它会打开一个链接，然后收集数据并上传。依次循环，但是跑的时间久了，内存就变得很高，然后浏览器就会变卡，慢慢的影响这个插件的运行，最后浏览器也会崩溃。</p>
 <h1 id="什么是内存泄漏"><a href="#什么是内存泄漏" class="headerlink" title="什么是内存泄漏"></a>什么是内存泄漏</h1><p>内存泄露是指一块被分配的内存既不能使用，又不能回收，直到浏览器进程结束。在 C++ 中，因为是手动管理内存，内存泄露是经常出现的事情。而现在流行的 C# 和 Java 等语言采用了自动垃圾回收方法管理内存，正常使用的情况下几乎不会发生内存泄露。浏览器中也是采用自动垃圾回收方法管理内存，但由于浏览器垃圾回收方法有 bug，会产生内存泄露。</p>
 <a id="more"></a>
 <p>自动垃圾收集是不能代替有效的内存管理的，特别是在大型，长时间运行的Web应用程序中。</p>
@@ -527,26 +564,29 @@
 <h1 id="调试内存"><a href="#调试内存" class="headerlink" title="调试内存"></a>调试内存</h1><p>1、Timeline<br>Chrome 自带的内存调试工具可以很方便的查看内存使用情况和内存泄漏：<br>F12 -&gt; Timeline -&gt; Memory<br>点击 record 即可开始收集，点击弹出框的 Finish 即停止，然后会统计出 record 到 Finish 这一段时间内的内存使用情况。</p>
 <p>2、Profiles<br>Chrome 自带的 Profiles 可以记录当前的内存使用情况<br>F12 -&gt; Profiles -&gt; Take Heap Snapshot<br>点击 Take Snapshot 就可以拍下当前 JS 的 heap 快照。<br><em>注意：每次拍快照前，都会先自动执行一个 GC，所以在视图里的对象都是可及的。</em></p>
 ]]></content>
-      
-        <categories>
-            
-            <category> 综合 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[JavaScript 内存管理 & 垃圾回收机制]]></title>
-      <url>https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/</url>
-      <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>低级语言，比如C，有低级的内存管理基元，像 malloc()，free()。另一方面，JavaScript 的内存基元在变量（对象，字符串等等）创建时分配，然后在他们不再被使用时“自动释放”。后者被称为垃圾回收。这个“自动”是混淆并给 JavaScript （和其他高级语言）开发者一个错觉：他们可以不用考虑内存管理。</p>
+    <summary type="html">
+    
+      &lt;p&gt;之前做了一个谷歌浏览器的插件开发，它会打开一个链接，然后收集数据并上传。依次循环，但是跑的时间久了，内存就变得很高，然后浏览器就会变卡，慢慢的影响这个插件的运行，最后浏览器也会崩溃。&lt;/p&gt;
+&lt;h1 id=&quot;什么是内存泄漏&quot;&gt;&lt;a href=&quot;#什么是内存泄漏&quot; class=&quot;headerlink&quot; title=&quot;什么是内存泄漏&quot;&gt;&lt;/a&gt;什么是内存泄漏&lt;/h1&gt;&lt;p&gt;内存泄露是指一块被分配的内存既不能使用，又不能回收，直到浏览器进程结束。在 C++ 中，因为是手动管理内存，内存泄露是经常出现的事情。而现在流行的 C# 和 Java 等语言采用了自动垃圾回收方法管理内存，正常使用的情况下几乎不会发生内存泄露。浏览器中也是采用自动垃圾回收方法管理内存，但由于浏览器垃圾回收方法有 bug，会产生内存泄露。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="综合" scheme="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+    
+    
+      <category term="JavaScript" scheme="https://neveryu.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 内存管理 &amp; 垃圾回收机制</title>
+    <link href="https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/"/>
+    <id>https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/</id>
+    <published>2017-02-18T05:25:24.000Z</published>
+    <updated>2017-06-19T14:39:02.024Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>低级语言，比如C，有低级的内存管理基元，像 malloc()，free()。另一方面，JavaScript 的内存基元在变量（对象，字符串等等）创建时分配，然后在他们不再被使用时“自动释放”。后者被称为垃圾回收。这个“自动”是混淆并给 JavaScript （和其他高级语言）开发者一个错觉：他们可以不用考虑内存管理。</p>
 <a id="more"></a>
 <h1 id="JavaScript-的内存分配"><a href="#JavaScript-的内存分配" class="headerlink" title="JavaScript 的内存分配"></a>JavaScript 的内存分配</h1><h2 id="变量初始化"><a href="#变量初始化" class="headerlink" title="变量初始化"></a>变量初始化</h2><p>为了不让程序员为分配费心，JavaScript 在定义变量时完成内存分配。<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> n = <span class="number">123</span>;  <span class="comment">// 给数值变量分配内存</span></div><div class="line"></div><div class="line"><span class="comment">// 为对象及其包含变量分配内存</span></div><div class="line"><span class="keyword">var</span> o = &#123;</div><div class="line">    <span class="attr">a</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">b</span>: <span class="literal">null</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 函数表达式也能分配一个对象</span></div><div class="line">obj.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  obj.style.backgroundColor = <span class="string">'blue'</span>;</div><div class="line">&#125;, <span class="literal">false</span>);</div></pre></td></tr></table></figure></p>
 <h2 id="通过函数调用的内存分配"><a href="#通过函数调用的内存分配" class="headerlink" title="通过函数调用的内存分配"></a>通过函数调用的内存分配</h2><p>有些函数调用结果是分配对象内存：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="keyword">var</span> e = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</div></pre></td></tr></table></figure></p>
@@ -574,26 +614,28 @@
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>一般不用 setInterval，而用 setTimeout 的延时递归来代替 interval。<br>setInterval 会产生回调堆积，特别是时间很短的时候。</p>
 <h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><p>setInterval 有个很烦的地方就是当 js 主程序空闲的时候，执行代码队列里面的代码的时候，如果此时候我们有一个问题，定时器是等到回调执行完，才开始计时进行下次循环呢？还是只要一次计时完毕，插入回调之后不管回调执不执行就开始计时呢？答案显示是后者，这也就是我说 setInterval 坑的原因啊，因为这会出现一种情况，当我们插入回调的时候前队列有别的代码在执行，这时候回调肯定是不会执行的，因此如果这个时候无限定时时间到了会再次插入回调，这个时候如果发现队列中的第一次回调没有执行，那么再次插入的回调浏览器就默认取消，（这是以防出现回调连续执行多次的情况）但是这又引发了新的情况就是有些回调是不能取消掉的？</p>
 ]]></content>
-      
-        <categories>
-            
-            <category> 综合 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[【转】为什么我们放弃了 Zepto]]></title>
-      <url>https://neveryu.github.io/2017/02/14/why-we-dropped-zepto/</url>
-      <content type="html"><![CDATA[<!-- <img src="http://i2.muimg.com/567571/fae45a374015a1c2.png" alt="summary-img-src-zepto"> -->
+    <summary type="html">
+    
+      &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;低级语言，比如C，有低级的内存管理基元，像 malloc()，free()。另一方面，JavaScript 的内存基元在变量（对象，字符串等等）创建时分配，然后在他们不再被使用时“自动释放”。后者被称为垃圾回收。这个“自动”是混淆并给 JavaScript （和其他高级语言）开发者一个错觉：他们可以不用考虑内存管理。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="综合" scheme="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+    
+    
+      <category term="JavaScript" scheme="https://neveryu.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【转】为什么我们放弃了 Zepto</title>
+    <link href="https://neveryu.github.io/2017/02/14/why-we-dropped-zepto/"/>
+    <id>https://neveryu.github.io/2017/02/14/why-we-dropped-zepto/</id>
+    <published>2017-02-13T17:25:24.000Z</published>
+    <updated>2017-06-19T14:39:02.008Z</updated>
+    
+    <content type="html"><![CDATA[<!-- <img src="http://i2.muimg.com/567571/fae45a374015a1c2.png" alt="summary-img-src-zepto"> -->
 <a id="more"></a>
 <blockquote>
 <p><a href="http://foundation.zurb.com/" target="_blank" rel="external">Foundation</a> 是 <a href="http://zurb.com/" target="_blank" rel="external">Zurb</a> 公司开源的一套前端框架，和 <a href="http://www.bootcss.com/" target="_blank" rel="external">Bootstrap</a> 类似。</p>
@@ -608,26 +650,28 @@
 <h2 id="译者总结："><a href="#译者总结：" class="headerlink" title="译者总结："></a>译者总结：</h2><p>在开源的世界中，充斥着大量的开源项目，但是，只有少部分的开源项目为广大开发者所熟知并积极使用。一个好的开源项目必须有一个强大的社区和一批积极的贡献者，jQuery 就是其中一个幸运儿。</p>
 <p>原文地址：<a href="http://zurb.com/article/1293/why-we-dropped-zepto" target="_blank" rel="external">http://zurb.com/article/1293/why-we-dropped-zepto</a></p>
 ]]></content>
-      
-        <categories>
-            
-            <category> 综合 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> zepto </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[polyfill — Respond.js]]></title>
-      <url>https://neveryu.github.io/2017/02/11/respond-js/</url>
-      <content type="html"><![CDATA[<blockquote>
+    <summary type="html">
+    
+      &lt;!-- &lt;img src=&quot;http://i2.muimg.com/567571/fae45a374015a1c2.png&quot; alt=&quot;summary-img-src-zepto&quot;&gt; --&gt;
+    
+    </summary>
+    
+      <category term="综合" scheme="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+    
+    
+      <category term="zepto" scheme="https://neveryu.github.io/tags/zepto/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>polyfill — Respond.js</title>
+    <link href="https://neveryu.github.io/2017/02/11/respond-js/"/>
+    <id>https://neveryu.github.io/2017/02/11/respond-js/</id>
+    <published>2017-02-11T15:25:24.000Z</published>
+    <updated>2017-06-20T13:21:37.641Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
 <p>Respond.js 让不支持 css3 Media Query 的浏览器包括 IE6-IE8 等其他浏览器支持媒体查询。</p>
 </blockquote>
 <p>Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它不支持 CSS3 Media Queries 的浏览器提供媒体查询的 <code>min-width</code> 和 <code>max-width</code>特性，实现响应式网页设计（Responsive Web Design）。</p>
@@ -680,26 +724,31 @@
 <h1 id="Tips-1"><a href="#Tips-1" class="headerlink" title="Tips"></a>Tips</h1><p><strong>always link stylesheets or write inline CSS before js scripts.</strong></p>
 <p>Respond.js on Github： <a href="https://github.com/scottjehl/Respond" target="_blank" rel="external">https://github.com/scottjehl/Respond</a>.</p>
 ]]></content>
-      
-        <categories>
-            
-            <category> 前端 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[腻子脚本 — HTML5Shiv]]></title>
-      <url>https://neveryu.github.io/2017/01/18/html5shiv/</url>
-      <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="external">HTML5shiv</a> is a javascript workaround to provide support for the new HTML 5 elements in IE Browsers older than IE 9.</p>
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Respond.js 让不支持 css3 Media Query 的浏览器包括 IE6-IE8 等其他浏览器支持媒体查询。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它不支持 CSS3 Media Queries 的浏览器提供媒体查询的 &lt;code&gt;min-width&lt;/code&gt; 和 &lt;code&gt;max-width&lt;/code&gt;特性，实现响应式网页设计（Responsive Web Design）。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="https://neveryu.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>腻子脚本 — HTML5Shiv</title>
+    <link href="https://neveryu.github.io/2017/01/18/html5shiv/"/>
+    <id>https://neveryu.github.io/2017/01/18/html5shiv/</id>
+    <published>2017-01-18T05:25:24.000Z</published>
+    <updated>2017-06-20T13:21:25.153Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="external">HTML5shiv</a> is a javascript workaround to provide support for the new HTML 5 elements in IE Browsers older than IE 9.</p>
 <ul>
 <li>越来越多的站点开始使用 HTML5 标签。但是目前的情况是还有很多人在使用IE6，IE7，IE8。</li>
 <li>而IE6，IE7，IE8是不能识别 HTML5 标签的。</li>
@@ -747,26 +796,34 @@
 <h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p>关于低版本浏览器不能识别 HTML5 标签的问题，除了使用 html5shiv.js 之外，还有一种做法就是为网站创建多套模版，通过程序对 User-Agent 的判断给不同的浏览器用户显示不同的页面，比如优酷网就是采用的这种模式。</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><a href="https://neveryu.github.io/2017/01/18/html5shiv/">HTML5Shiv</a> and <a href="https://neveryu.github.io/2017/02/11/respond-js/">Respond.js</a> for IE8 support of HTML5 elements and media queries.</p>
 ]]></content>
-      
-        <categories>
-            
-            <category> 前端 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[【转】为什么一些生活中很外向开朗的人会喜欢独来独往]]></title>
-      <url>https://neveryu.github.io/2016/12/24/why-introversion-like-alone/</url>
-      <content type="html"><![CDATA[<p id="div-border-left-purple">因为他是一个内向的人。<br>    不要怀疑，很多人都是这样。<br><br>    内向的人，通过独处来恢复精力。<br>    所以他们不是喜欢孤独，而是，孤独才是他们的常态。<br>    他们跟别人交流、相处，其实都是在消耗精力。<br></p>
+    <summary type="html">
+    
+      &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/aFarkas/html5shiv&quot;&gt;HTML5shiv&lt;/a&gt; is a javascript workaround to provide support for the new HTML 5 elements in IE Browsers older than IE 9.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;越来越多的站点开始使用 HTML5 标签。但是目前的情况是还有很多人在使用IE6，IE7，IE8。&lt;/li&gt;
+&lt;li&gt;而IE6，IE7，IE8是不能识别 HTML5 标签的。&lt;/li&gt;
+&lt;li&gt;这里提供一种让 IE 浏览器支持 HTML5 的方法，那就是使用 HTML5Shiv。&lt;/li&gt;
+&lt;li&gt;HTML5Shiv 主要解决 HTML5 提出的新的元素不被IE6-8识别。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="https://neveryu.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【转】为什么一些生活中很外向开朗的人会喜欢独来独往</title>
+    <link href="https://neveryu.github.io/2016/12/24/why-introversion-like-alone/"/>
+    <id>https://neveryu.github.io/2016/12/24/why-introversion-like-alone/</id>
+    <published>2016-12-24T14:25:24.000Z</published>
+    <updated>2017-06-19T14:39:02.024Z</updated>
+    
+    <content type="html"><![CDATA[<p id="div-border-left-purple">因为他是一个内向的人。<br>    不要怀疑，很多人都是这样。<br><br>    内向的人，通过独处来恢复精力。<br>    所以他们不是喜欢孤独，而是，孤独才是他们的常态。<br>    他们跟别人交流、相处，其实都是在消耗精力。<br></p>
 
 
 
@@ -792,26 +849,32 @@
 <p><img src="http://p1.bpimg.com/567571/0351c7f1aa17b88b.jpg" alt=""></p>
 <p>作者：Lachel<br>原文：<a href="https://www.zhihu.com/question/24303670" target="_blank" rel="external">https://www.zhihu.com/question/24303670</a></p>
 ]]></content>
-      
-        <categories>
-            
-            <category> 综合 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> essay </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[Hexo-NexT搭建个人博客（四）]]></title>
-      <url>https://neveryu.github.io/2016/12/15/hexo-next-four/</url>
-      <content type="html"><![CDATA[<p id="div-border-left-blue">提示：本篇文章将介绍在使用 heox 做博客框架中的一些 bug 处理情况。</p>
+    <summary type="html">
+    
+      &lt;p id=&quot;div-border-left-purple&quot;&gt;因为他是一个内向的人。&lt;br&gt;    不要怀疑，很多人都是这样。&lt;br&gt;&lt;br&gt;    内向的人，通过独处来恢复精力。&lt;br&gt;    所以他们不是喜欢孤独，而是，孤独才是他们的常态。&lt;br&gt;    他们跟别人交流、相处，其实都是在消耗精力。&lt;br&gt;&lt;/p&gt;
+
+
+
+&lt;p&gt;下面详述：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="综合" scheme="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+    
+    
+      <category term="essay" scheme="https://neveryu.github.io/tags/essay/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo-NexT搭建个人博客（四）</title>
+    <link href="https://neveryu.github.io/2016/12/15/hexo-next-four/"/>
+    <id>https://neveryu.github.io/2016/12/15/hexo-next-four/</id>
+    <published>2016-12-15T15:25:24.000Z</published>
+    <updated>2017-06-20T13:25:26.489Z</updated>
+    
+    <content type="html"><![CDATA[<p id="div-border-left-blue">提示：本篇文章将介绍在使用 heox 做博客框架中的一些 bug 处理情况。</p>
 
 <p>按照之前的教程介绍应该是会比较顺利的搭建好你的博客，但是难免会遇到一些意外，这个时候就要学会解决问题了。<br>解决问题的原则是：查看 bug 信息，从上到下依次解决 bug。</p>
 <p>下面来看几个例子：</p>
@@ -833,28 +896,33 @@
 
 <p></p><h5 style="color:#f63;"><i>最后要说的是：</i></h5><p></p>
 <p id="div-border-top-green"><i><a href="https://github.com/Neveryu/Neveryu.github.io" target="_blank" rel="external">博客源码</a> ， 欢迎 star<br></i></p>]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Next </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[jQuery使用技巧]]></title>
-      <url>https://neveryu.github.io/2016/11/22/use-jquery-skill/</url>
-      <content type="html"><![CDATA[<h3 id="禁用页面的右键菜单"><a href="#禁用页面的右键菜单" class="headerlink" title="禁用页面的右键菜单"></a>禁用页面的右键菜单</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">  $(<span class="built_in">document</span>).bind(<span class="string">"contextmenu"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;  </div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;  </div><div class="line">  &#125;);  </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+    <summary type="html">
+    
+      &lt;p id=&quot;div-border-left-blue&quot;&gt;提示：本篇文章将介绍在使用 heox 做博客框架中的一些 bug 处理情况。&lt;/p&gt;
+
+&lt;p&gt;按照之前的教程介绍应该是会比较顺利的搭建好你的博客，但是难免会遇到一些意外，这个时候就要学会解决问题了。&lt;br&gt;解决问题的原则是：查看 bug 信息，从上到下依次解决 bug。&lt;/p&gt;
+&lt;p&gt;下面来看几个例子：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://neveryu.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="https://neveryu.github.io/tags/Hexo/"/>
+    
+      <category term="Next" scheme="https://neveryu.github.io/tags/Next/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jQuery使用技巧</title>
+    <link href="https://neveryu.github.io/2016/11/22/use-jquery-skill/"/>
+    <id>https://neveryu.github.io/2016/11/22/use-jquery-skill/</id>
+    <published>2016-11-22T03:54:55.000Z</published>
+    <updated>2017-06-19T14:39:02.024Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="禁用页面的右键菜单"><a href="#禁用页面的右键菜单" class="headerlink" title="禁用页面的右键菜单"></a>禁用页面的右键菜单</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">  $(<span class="built_in">document</span>).bind(<span class="string">"contextmenu"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;  </div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;  </div><div class="line">  &#125;);  </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h3 id="新窗口打开页面"><a href="#新窗口打开页面" class="headerlink" title="新窗口打开页面"></a>新窗口打开页面</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.google.com"</span>&gt;</span>google_新窗口<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.google.com"</span> <span class="attr">rel</span>=<span class="string">"external"</span>&gt;</span>google_新窗口<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"demo1.html"</span>&gt;</span>当前窗口<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">'a[href^="http://"]'</span>).attr(<span class="string">"target"</span>,<span class="string">"_blank"</span>);</div><div class="line">  &#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="输入框文字获取和失去焦点【推荐】"><a href="#输入框文字获取和失去焦点【推荐】" class="headerlink" title="输入框文字获取和失去焦点【推荐】"></a><font color="#099">输入框文字获取和失去焦点【推荐】</font></h3><a id="more"></a>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"text1"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">  $(<span class="string">"input.text1"</span>).val(<span class="string">"Enter your search text here."</span>);  </div><div class="line">  textFill( $(<span class="string">'input.text1'</span>) );  </div><div class="line">&#125;);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">textFill</span>(<span class="params">input</span>)</span>&#123; <span class="comment">//input focus text function  </span></div><div class="line">  <span class="keyword">var</span> originalvalue = input.val();  </div><div class="line">  input.focus( <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">    <span class="keyword">if</span>( $.trim(input.val()) == originalvalue )&#123;</div><div class="line">      input.val(<span class="string">''</span>); </div><div class="line">    &#125;  </div><div class="line">  &#125;).blur( <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">    <span class="keyword">if</span>( $.trim(input.val()) == <span class="string">''</span> )&#123; </div><div class="line">      input.val(originalvalue); </div><div class="line">    &#125;  </div><div class="line">  &#125;);  </div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -875,28 +943,32 @@
 <h3 id="从元素中除去-HTML"><a href="#从元素中除去-HTML" class="headerlink" title="从元素中除去 HTML"></a>从元素中除去 HTML</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123; </div><div class="line">$.fn.stripHtml = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </div><div class="line">　<span class="keyword">var</span> regexp = <span class="regexp">/&lt;("[^"]*"|'[^']*'|[^'"&gt;])*&gt;/gi</span>; </div><div class="line">　<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </div><div class="line">  　$(<span class="keyword">this</span>).html( $(<span class="keyword">this</span>).html().replace(regexp,<span class="string">''</span>) ); </div><div class="line">　&#125;);</div><div class="line">　<span class="keyword">return</span> $(<span class="keyword">this</span>); </div><div class="line">&#125; </div><div class="line">&#125;)(jQuery); </div><div class="line"><span class="comment">//用法： </span></div><div class="line">$(<span class="string">'div'</span>).stripHtml(); </div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="扩展-String-对象的方法"><a href="#扩展-String-对象的方法" class="headerlink" title="扩展 String 对象的方法"></a>扩展 String 对象的方法</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> /&gt;</span><span class="tag">&lt;<span class="name">button</span> &gt;</span>check<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  $.extend(<span class="built_in">String</span>.prototype, &#123;</div><div class="line">  <span class="attr">isPositiveInteger</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^[1-9]\d*$/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">isInteger</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^\d+$/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">isNumber</span>: <span class="function"><span class="keyword">function</span>(<span class="params">value, element</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^-?(?:\d+|\d&#123;1,3&#125;(?:,\d&#123;3&#125;)+)(?:\.\d+)?$/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">trim</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/(^\s*)|(\s*$)|\r|\n/g</span>, <span class="string">""</span>);</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">trans</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/&amp;lt;/g</span>, <span class="string">'&lt;'</span>).replace(<span class="regexp">/&amp;gt;/g</span>,<span class="string">'&gt;'</span>).replace(<span class="regexp">/&amp;quot;/g</span>, <span class="string">'"'</span>);</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">replaceAll</span>:<span class="function"><span class="keyword">function</span>(<span class="params">os, ns</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="keyword">new</span> <span class="built_in">RegExp</span>(os,<span class="string">"gm"</span>),ns);</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">skipChar</span>:<span class="function"><span class="keyword">function</span>(<span class="params">ch</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span> || <span class="keyword">this</span>.length===<span class="number">0</span>) &#123;<span class="keyword">return</span> <span class="string">''</span>;&#125;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.charAt(<span class="number">0</span>)===ch) &#123;<span class="keyword">return</span> <span class="keyword">this</span>.substring(<span class="number">1</span>).skipChar(ch);&#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">isValidPwd</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^([_]|[a-zA-Z0-9])&#123;6,32&#125;$/</span>).test(<span class="keyword">this</span>)); </div><div class="line">  &#125;,</div><div class="line">  <span class="attr">isValidMail</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span>(<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/</span>).test(<span class="keyword">this</span>.trim()));</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">isSpaces</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="keyword">this</span>.length; i+=<span class="number">1</span>) &#123;</div><div class="line">    <span class="keyword">var</span> ch = <span class="keyword">this</span>.charAt(i);</div><div class="line">    <span class="keyword">if</span> (ch!=<span class="string">' '</span>&amp;&amp; ch!=<span class="string">"\n"</span> &amp;&amp; ch!=<span class="string">"\t"</span> &amp;&amp; ch!=<span class="string">"\r"</span>) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">isPhone</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/(^([0-9]&#123;3,4&#125;[-])?\d&#123;3,8&#125;(-\d&#123;1,6&#125;)?$)|(^\([0-9]&#123;3,4&#125;\)\d&#123;3,8&#125;(\(\d&#123;1,6&#125;\))?$)|(^\d&#123;3,8&#125;$)/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">isUrl</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^[a-zA-z]+:\/\/([a-zA-Z0-9\-\.]+)([-\w .\/?%&amp;=:]*)$/</span>).test(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">isExternalUrl</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.isUrl() &amp;&amp; <span class="keyword">this</span>.indexOf(<span class="string">"://"</span>+<span class="built_in">document</span>.domain) == <span class="number">-1</span>;</div><div class="line">  &#125;</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(   $(<span class="string">"input"</span>).val().isInteger()  );</div><div class="line">  &#125;);</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 ]]></content>
-      
-        <categories>
-            
-            <category> 前端 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-            <tag> jQuery </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[中国国内 JavaScript 圈的现状如何]]></title>
-      <url>https://neveryu.github.io/2016/11/18/china-javascript-environment/</url>
-      <content type="html"><![CDATA[<p id="div-border-top-purple"><span style="color:red;">探讨核心：</span> 我们不编写代码，我们只是国外优秀框架的搬运工。</p>
+    <summary type="html">
+    
+      &lt;h3 id=&quot;禁用页面的右键菜单&quot;&gt;&lt;a href=&quot;#禁用页面的右键菜单&quot; class=&quot;headerlink&quot; title=&quot;禁用页面的右键菜单&quot;&gt;&lt;/a&gt;禁用页面的右键菜单&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$(&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;).ready(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  $(&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;).bind(&lt;span class=&quot;string&quot;&gt;&quot;contextmenu&quot;&lt;/span&gt;,&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;e&lt;/span&gt;)&lt;/span&gt;&amp;#123;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;);  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;新窗口打开页面&quot;&gt;&lt;a href=&quot;#新窗口打开页面&quot; class=&quot;headerlink&quot; title=&quot;新窗口打开页面&quot;&gt;&lt;/a&gt;新窗口打开页面&lt;/h3&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;lang&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;en&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;charset&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;Document&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;jquery.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;https://www.google.com&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;google_新窗口&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;https://www.google.com&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;external&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;google_新窗口&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;demo1.html&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;当前窗口&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;javascript&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  $(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $(&lt;span class=&quot;string&quot;&gt;&#39;a[href^=&quot;http://&quot;]&#39;&lt;/span&gt;).attr(&lt;span class=&quot;string&quot;&gt;&quot;target&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;_blank&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;输入框文字获取和失去焦点【推荐】&quot;&gt;&lt;a href=&quot;#输入框文字获取和失去焦点【推荐】&quot; class=&quot;headerlink&quot; title=&quot;输入框文字获取和失去焦点【推荐】&quot;&gt;&lt;/a&gt;&lt;font color=&#39;#099&#39;&gt;输入框文字获取和失去焦点【推荐】&lt;/font&gt;&lt;/h3&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="https://neveryu.github.io/tags/JavaScript/"/>
+    
+      <category term="jQuery" scheme="https://neveryu.github.io/tags/jQuery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>中国国内 JavaScript 圈的现状如何</title>
+    <link href="https://neveryu.github.io/2016/11/18/china-javascript-environment/"/>
+    <id>https://neveryu.github.io/2016/11/18/china-javascript-environment/</id>
+    <published>2016-11-18T05:25:24.000Z</published>
+    <updated>2017-06-20T13:25:32.263Z</updated>
+    
+    <content type="html"><![CDATA[<p id="div-border-top-purple"><span style="color:red;">探讨核心：</span> 我们不编写代码，我们只是国外优秀框架的搬运工。</p>
 
 <p><img src="http://p1.bqimg.com/567571/9802f2ae435f5ff2.jpg" alt=""></p>
 <hr>
@@ -954,28 +1026,33 @@
 
 <p><a href="https://www.zhihu.com/question/24317445" target="_blank" rel="external">原文</a></p>
 ]]></content>
-      
-        <categories>
-            
-            <category> 综合 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-            <tag> essay </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[Hexo-NexT搭建个人博客（三）]]></title>
-      <url>https://neveryu.github.io/2016/11/11/hexo-next-three/</url>
-      <content type="html"><![CDATA[<p>　　经过前面两期文章，我相信你已经可以在本地建立一个非常令人满意的静态博客了，本篇文章将介绍如何将自己的静态博客部署到 gitpage 上，并托管到 github 上；以及关于 Hexo 和 NexT 中更深层次的一些问题及解方案。</p>
+    <summary type="html">
+    
+      &lt;p id=&quot;div-border-top-purple&quot;&gt;&lt;span style=&quot;color:red;&quot;&gt;探讨核心：&lt;/span&gt; 我们不编写代码，我们只是国外优秀框架的搬运工。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://p1.bqimg.com/567571/9802f2ae435f5ff2.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="综合" scheme="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+    
+    
+      <category term="JavaScript" scheme="https://neveryu.github.io/tags/JavaScript/"/>
+    
+      <category term="essay" scheme="https://neveryu.github.io/tags/essay/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo-NexT搭建个人博客（三）</title>
+    <link href="https://neveryu.github.io/2016/11/11/hexo-next-three/"/>
+    <id>https://neveryu.github.io/2016/11/11/hexo-next-three/</id>
+    <published>2016-11-11T05:25:24.000Z</published>
+    <updated>2017-06-20T13:25:21.306Z</updated>
+    
+    <content type="html"><![CDATA[<p>　　经过前面两期文章，我相信你已经可以在本地建立一个非常令人满意的静态博客了，本篇文章将介绍如何将自己的静态博客部署到 gitpage 上，并托管到 github 上；以及关于 Hexo 和 NexT 中更深层次的一些问题及解方案。</p>
 <h2 id="一、菜单栏中标签与侧边栏中标签关联的问题"><a href="#一、菜单栏中标签与侧边栏中标签关联的问题" class="headerlink" title="一、菜单栏中标签与侧边栏中标签关联的问题"></a>一、菜单栏中标签与侧边栏中标签关联的问题</h2><p>　　以我的博客为例，关于菜单栏中的选项 与侧边栏中的选项，由于顶部菜单栏中位置有限，所以我就想在顶部菜单栏中不显示<strong>标签</strong>这一项，于是我在 <span id="inline-purple">主题配置文件</span> 中 将 menu 配置项中的<strong>标签</strong>这一个选项给注释掉了，所以它不会在菜单栏中显示，但是不代表没有这个页面，这个页面是存在的，我们只是使其不显示在顶部的菜单栏中而已，我们可以直接输入绝对地址来查看这个页面，例如：<a href="https://neveryu.github.io/tags/">https://neveryu.github.io/tags/</a>。但是与此同时，我们发现侧边栏中的<b>标签</b>选项只能显示标签数量，不能点击。</p>
 <a id="more"></a>
 <p>　　这是因为侧边栏中的点击链接是根据菜单栏中对应的项来添加的，什么意思呢？就是说如果顶部菜单栏中有 <strong>标签</strong> 这一项，那么就会给侧边栏中<b>标签</b>这一项也添加点击链接；如果顶部菜单栏中没有<b>标签</b>这一项，那么就不给侧边栏中<b>标签</b>这一项添加点击链接，导致侧边栏中的<b>标签</b>项只有显示数据，不提供点击链接。<br>　　如果我们不想在菜单栏中显示<b>标签</b>项，但是希望侧边栏中的<b>标签</b>项 可以点击，该怎么做呢？<br>　　在 <span id="inline-purple">主题配置文件</span> <code>\themes\next\layout\_macro\sidebar.swing_</code> 中，将<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;% if site.tags.length &gt; 0 %&#125;</div><div class="line">  &lt;div class=&quot;site-state-item site-state-tags&quot;&gt;</div><div class="line">    &#123;% if theme.menu.tags %&#125;&lt;a href=&quot;&#123;&#123; url_for(theme.menu.tags) &#125;&#125;&quot;&gt;&#123;% endif %&#125;</div><div class="line">      &lt;span class=&quot;site-state-item-count&quot;&gt;&#123;&#123; site.tags.length &#125;&#125;&lt;/span&gt;</div><div class="line">      &lt;span class=&quot;site-state-item-name&quot;&gt;&#123;&#123; __(&apos;state.tags&apos;) &#125;&#125;&lt;/span&gt;</div><div class="line">    &#123;% if theme.menu.tags %&#125;&lt;/a&gt;&#123;% endif %&#125;</div><div class="line">  &lt;/div&gt;</div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure></p>
@@ -998,28 +1075,31 @@
 <p><strong> 图片展示效果 </strong><br><code>{\% gp 5-3 \%}</code>：设置图片展示效果，参考 themes\next\scripts\tags\group-pictures.js 注释示意图。<br><img src="http://p1.bpimg.com/567571/eaef5acfcb3011c2.png" alt=""><br><code>5-3</code> 的意思就是5张图片将会按照这种布局来展示，Next 提供了多张图片的多种布局，你可以随意选择。</p>
 <p></p><h5 style="color:#f63;"><i>最后要说的是：</i></h5><p></p>
 <p id="div-border-top-green"><i><a href="https://github.com/Neveryu/Neveryu.github.io" target="_blank" rel="external">博客源码</a> ， 欢迎 star<br></i></p>]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Next </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[Sass 教程]]></title>
-      <url>https://neveryu.github.io/2016/10/23/sass/</url>
-      <content type="html"><![CDATA[<p><span id="inline-blue" style="font-size:100%;border-radius:3px;">Sass</span>： (Syntactically Awesome StyleSheets)</p>
+    <summary type="html">
+    
+      &lt;p&gt;　　经过前面两期文章，我相信你已经可以在本地建立一个非常令人满意的静态博客了，本篇文章将介绍如何将自己的静态博客部署到 gitpage 上，并托管到 github 上；以及关于 Hexo 和 NexT 中更深层次的一些问题及解方案。&lt;/p&gt;
+&lt;h2 id=&quot;一、菜单栏中标签与侧边栏中标签关联的问题&quot;&gt;&lt;a href=&quot;#一、菜单栏中标签与侧边栏中标签关联的问题&quot; class=&quot;headerlink&quot; title=&quot;一、菜单栏中标签与侧边栏中标签关联的问题&quot;&gt;&lt;/a&gt;一、菜单栏中标签与侧边栏中标签关联的问题&lt;/h2&gt;&lt;p&gt;　　以我的博客为例，关于菜单栏中的选项 与侧边栏中的选项，由于顶部菜单栏中位置有限，所以我就想在顶部菜单栏中不显示&lt;strong&gt;标签&lt;/strong&gt;这一项，于是我在 &lt;span id=&quot;inline-purple&quot;&gt;主题配置文件&lt;/span&gt; 中 将 menu 配置项中的&lt;strong&gt;标签&lt;/strong&gt;这一个选项给注释掉了，所以它不会在菜单栏中显示，但是不代表没有这个页面，这个页面是存在的，我们只是使其不显示在顶部的菜单栏中而已，我们可以直接输入绝对地址来查看这个页面，例如：&lt;a href=&quot;https://neveryu.github.io/tags/&quot;&gt;https://neveryu.github.io/tags/&lt;/a&gt;。但是与此同时，我们发现侧边栏中的&lt;b&gt;标签&lt;/b&gt;选项只能显示标签数量，不能点击。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://neveryu.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="https://neveryu.github.io/tags/Hexo/"/>
+    
+      <category term="Next" scheme="https://neveryu.github.io/tags/Next/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sass 教程</title>
+    <link href="https://neveryu.github.io/2016/10/23/sass/"/>
+    <id>https://neveryu.github.io/2016/10/23/sass/</id>
+    <published>2016-10-23T02:49:15.000Z</published>
+    <updated>2017-06-20T13:25:06.378Z</updated>
+    
+    <content type="html"><![CDATA[<p><span id="inline-blue" style="font-size:100%;border-radius:3px;">Sass</span>： (Syntactically Awesome StyleSheets)</p>
 <h1 id="sass简介"><a href="#sass简介" class="headerlink" title="sass简介"></a>sass简介</h1><p>来自于官网的简介：<br>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
 <font color="red"> Sass 是世界上最成熟的，稳定的，功能强大的专业级 CSS 扩展语言。</font>
 
@@ -1135,28 +1215,32 @@
 <h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>本文介绍了 sass 最基本部分,你可以轻松地使用 sass 编写清晰、无冗余、语义化的 css 。对于 sass 提供的工具你已经有了一个比较深入的了解，同时也掌握了何时使用这些工具的指导原则。</p>
 <p><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html" target="_blank" rel="external">sass文档</a><br><a href="http://sass-lang.com/documentation/Sass/Script/Functions.html" target="_blank" rel="external">sass函数列表</a><br><a href="https://sass-guidelin.es/zh/" target="_blank" rel="external">sass guidelines</a></p>
 ]]></content>
-      
-        <categories>
-            
-            <category> 前端 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> css </tag>
-            
-            <tag> sass </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[【转】在2016年学JavaScript是一种什么样的体验]]></title>
-      <url>https://neveryu.github.io/2016/10/16/how-it-feels-to-learn-javascript-in-2016/</url>
-      <content type="html"><![CDATA[<p id="div-border-left-blue" style="width:90%;">嘿，我最近接到一个 Web 项目，不过老实说，我这两年没怎么接触 Web 编程，听说 Web 技术已经发生了一些变化。听说你是这里对新技术最了解的 Web 开发工程师？</p>
+    <summary type="html">
+    
+      &lt;p&gt;&lt;span id=&quot;inline-blue&quot; style=&quot;font-size:100%;border-radius:3px;&quot;&gt;Sass&lt;/span&gt;： (Syntactically Awesome StyleSheets)&lt;/p&gt;
+&lt;h1 id=&quot;sass简介&quot;&gt;&lt;a href=&quot;#sass简介&quot; class=&quot;headerlink&quot; title=&quot;sass简介&quot;&gt;&lt;/a&gt;sass简介&lt;/h1&gt;&lt;p&gt;来自于官网的简介：&lt;br&gt;Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.&lt;/p&gt;
+&lt;font color=red&gt; Sass 是世界上最成熟的，稳定的，功能强大的专业级 CSS 扩展语言。&lt;/font&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="https://neveryu.github.io/tags/css/"/>
+    
+      <category term="sass" scheme="https://neveryu.github.io/tags/sass/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【转】在2016年学JavaScript是一种什么样的体验</title>
+    <link href="https://neveryu.github.io/2016/10/16/how-it-feels-to-learn-javascript-in-2016/"/>
+    <id>https://neveryu.github.io/2016/10/16/how-it-feels-to-learn-javascript-in-2016/</id>
+    <published>2016-10-16T15:25:24.000Z</published>
+    <updated>2017-06-20T13:25:15.296Z</updated>
+    
+    <content type="html"><![CDATA[<p id="div-border-left-blue" style="width:90%;">嘿，我最近接到一个 Web 项目，不过老实说，我这两年没怎么接触 Web 编程，听说 Web 技术已经发生了一些变化。听说你是这里对新技术最了解的 Web 开发工程师？</p>
 
 <p id="div-border-right-green" style="width:90%;margin-left:10%">准确地说，我是一名「前端工程师」。不过你算是找对人了。我对今年的技术别提多熟了，前端可视化、音乐播放器、能踢足球的无人机，你尽管问吧。我刚去 JS 大会和 React 大会逛了一圈，没有什么新技术是我不知道的。</p>
 
@@ -1495,270 +1579,26 @@
 
 <p>译者：方应杭<br><a href="https://link.zhihu.com/?target=https%3A//hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f" target="_blank" rel="external">原文</a></p>
 ]]></content>
-      
-        <categories>
-            
-            <category> 前端 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-            <tag> essay </tag>
-            
-        </tags>
-        
-    </entry>
     
-    <entry>
-      <title><![CDATA[Git学习总结]]></title>
-      <url>https://neveryu.github.io/2016/10/07/git/</url>
-      <content type="html"><![CDATA[<h2 id="git-简介"><a href="#git-简介" class="headerlink" title="git 简介"></a>git 简介</h2><p>git 是分布式的，所以其核心就是分支，分支的意义在于，可以将项目代码按照功能、模块拆分成不同的分支。比如这个产品要加一个支付功能和一个登陆功能，可以创建两个分支，交给不同的开发人员并行开发。登陆功能先开发完，测试无误后合并改分支到 master 分支，master 分支部署上线。支付功能虽然没有开发完成，但是在另一条分支上，所以产品上线和功能开发完全不受影响。这才是分布式开发的高效模式。<br>在 git 中，工作目录下面的所有文件都不外乎这两种状态：<strong>已跟踪</strong>或<strong>未跟踪</strong>。已跟踪的文件是指本来就被纳入版本控制管理的文件，在上次快照中有它们的记录，工作一段时间后，它们的状态可能是未更新，已修改或者已放入暂存区。而所有其他文件都属于未跟踪文件。它们既没有上次更新时的快照，也不在当前的暂存区域。初次克隆某个仓库时，工作目录中的所有文件都属于已跟踪文件，且状态为未修改。</p>
-<a id="more"></a>
-<h2 id="实用指令详解"><a href="#实用指令详解" class="headerlink" title="实用指令详解"></a>实用指令详解</h2><h3 id="merge"><a href="#merge" class="headerlink" title="merge"></a>merge</h3><p>通常，合并分支时，如果可能，Git 会用 Fast froward 模式，但这种模式下，删除分支后，会丢掉分支信息。<br>如果要强制禁用 Fast forward 模式，Git 就会在 merge 时生成一个新的 commit ，这样，从分支历史上就可以看出分支信息。<br><code>git merge --no-ff -m &#39;merge  with no-ff&#39; dev</code><br>因为本次合并要创建一个新的 commit，所以加上 -m 参数，把 commit 描述写进去。</p>
-<p>合并分支时，加上 <code>--no-ff</code> 参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而 fast forward 合并就看不出来曾经做过合并。</p>
-<h3 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h3><p>一旦远程主机的版本库有了更新(git 术语叫做 commit)，需要将这些更新取回本地，这时就要用到 git fetch 命令。<br><code>git fetch &lt;远程主机名&gt;</code><br>上面命令将某个远程主机的更新，全部取回本地。<br>默认情况下，git fetch 取回所有分支(branch)的更新。如果只想取回特定分支的更新，可以指定分支名。<br><code>git fetch &lt;远程主机名&gt; &lt;分支名&gt;</code><br>比如，取回 origin 主机的 master 分支<br><code>git fetch origin master</code><br>所取回的更新，在本地主机上要用“远程主机名/分支名”的形式读取。比如 origin 主机的 master，就要用 origin/master 读取。</p>
-<p><code>git fetch -p</code> ：取回远程更新，删除不存在的分支。</p>
-<h3 id="pull"><a href="#pull" class="headerlink" title="pull"></a>pull</h3><p>git pull 命令的作用是，取回远程主机的某个分支的更新，再与本地的指定分支合并，完整格式如下：<br><code>git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</code><br>比如，取回origin主机的next分支，与本地的master分支合并，需要写成下面这样。<br><code>git pull origin next:master</code><br>如果远程分支是与当前分支合并，则冒号后面的部分可以省略。<br><code>git pull origin master</code><br>上面的命令表示，取回 origin/master 分支，再与当前分支合并。实质上，这等同于先做 git fetch，再 merge。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git fetch origin</div><div class="line">git merge origin/master</div></pre></td></tr></table></figure></p>
-<p>在某些场合，git 会自动在本地分支与远程分支之间，建立一种追踪关系(tracking)。比如，在 git clone 的时候，所有本地分支默认与远程主机的同名分支，建立追踪关系，也就是说，本地的 master 分支自动“追踪” origin/master 分支。<br>git 也允许手动建立追踪关系。<br><code>git branch --set-upstream master origin/next</code><br>上面的命令指定 master 分支追踪 origin/next 分支。<br>如果当前分支与远程分支存在追踪关系，git pull 就可以省略远程分支名。<br><code>git pull origin</code><br>上面命令表示，本地的当前分支自动与对应的 origin 主机“追踪分支”(remote-tracking branch)进行合并。<br>如果当前分支只有一个追踪分支，连远程主机名都可以忽略。<br><code>git pull</code><br>上面命令表示，当前分支自动与唯一一个追踪分支进行合并。<br>如果合并需要采用 rebase 模式，可以使用 -rebase 选项。<br><code>git pull --rebase &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</code></p>
-<h3 id="push"><a href="#push" class="headerlink" title="push"></a>push</h3><p>git push 命令用于将本地分支的更新，推送到远程主机。它的格式与 git pull 命令相仿。<br><code>git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</code><br>如果省略远程分支名，则表示将本地分支推送与之存在“追踪关系”的远程分支(通常两者同名)，如果该远程分支不存在，则会被新建。<br><code>git push origin master</code><br>上面命令表示，将本地的 master 分支推送到 origin 主机的 master 分支。如果后者不存在，则会被新建。<br><strong>如果省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支。</strong><br><code>git push origin :master</code><br>等同于<br><code>git push origin --delete master</code><br>上面命令表示删除 origin 主机的 master 分支。<br>如果当前分支与远程分支之间存在追踪关系，则本地分支和远程分支都可以省略。<br><code>git push origin</code><br>上面命令表示，将当前分支推送到 origin 主机的对应分支。<br>如果当前分支只有一个追踪分支，那么主机名都可以省略。<br><code>git push</code><br>如果当前分支与多个主机存在追踪关系，则可以使用-u选项指定一个默认主机，这样后面就可以不加任何参数使用 git push 。<br><code>git push -u origin master</code><br>上面的命令将本地 master 分支推送到 origin 主机，同时指定 origin 为默认主机，后面就可以不加任何参数使用 git push 了。<br>不带任何参数的 git push ，默认只推送当前分支，这叫做 simple 方式。此外，还有一种 matching 方式，会推送所有有对应的远程分支的本地分支。<br>git 2.0 版本之前，默认采用 matching 方式，现在改为默认采用 simple 方式，如果要修改这个设置，可以采用 git config 命令。<br><code>git config --global push.default matching</code><br>或者<br><code>git config --global push.default simple</code><br>还有一种情况，就是不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机，这时需要使用 -all 选项。<br><code>git push --all origin</code><br>上面命令表示，将所有本地分支都推送到 origin 主机。<br>如果远程主机的版本比本地版本更新，推送时 git 会报错，要求先在本地做 git pull 合并差异，然后再推送到远程主机。这时，如果你一定要推送，可以使用 -force 选项。<br><code>git push --force origin</code><br>上面命令使用-force选项，结果导致在远程主机产生一个“非直进式”的合并(non-fast-forward merge)。除非你很确定要这样做，否则应该尽量避免使用 -force 选项。<br>最后，git push 不会推送标签(tag)，除非使用 -tags 选项。<br><code>git push origin --tags</code></p>
-<h3 id="log"><a href="#log" class="headerlink" title="log"></a>log</h3><p><code>git log</code> 命令可以查看历史记录，<code>git log</code> 命令显示从最近到最远的提交日志；<br>如果嫌输出信息太多，看得眼花缭乱的，可以试试 <code>git log --pretty=oneline</code> 。我们可以看到当前版本以及之前的版本日志以及版本号。<br>用 <code>git log --graph</code> 命令可以看到分支合并图。<br>或者两个参数一起用：<br><code>git log --graph --pretty=oneline</code><br><code>git log --graph --pretty=oneline --abbrev-commit</code><br>首先，git 必须知道当前版本是哪个版本，在 git 中，用 HEAD 表示当前版本，上一个版本就是 <code>HEAD^</code> ，上上一个版本就是 <code>HEAD^^</code> ， 当然往上100个版本写100个 <code>^</code> 比较容易数不过来，所以写成 <code>HEAD~100</code> 。<br>现在，我们要把当前版本回退到上一个版本，就可以使用 <code>git reset</code> 命令：<br><code>git reset --hard HEAD^</code><br>当你回退到了某个版本后，<code>git log</code> 只能显示此版本及之前的版本的日志，之后的版本日志就看不到了，但是，我们想恢复到之后教新的版本怎么办？<br>Git 提供了一个命令 <code>git reflog</code> 用来记录你的每一次命令</p>
-<h3 id="tag"><a href="#tag" class="headerlink" title="tag"></a>tag</h3><p>查看标签（用来标记标志性的稳定版本信息）<br>发布一个版本时，我们通常先在版本库中打一个标签(tag)，这样，就唯一确定了打标签时刻的版本。将来无论什么时候，取某个标签的版本，就是把那个打标签的时刻的历史版本取出来。所以，标签也是版本库的一个快照。<br>相比于 commit 的版本号(40位16进制)，标签号则要好使的多。<br>所以，tag 就是一个让人容易记住的有意义的名字，它跟某个 commit 绑定在一起。</p>
-<p><code>git tag [tag name]</code><br>如果没有标签名，则为查看所有标签，带标签名则为新建标签</p>
-<p><code>git tag &lt;tag name&gt;</code> 就可以打一个新标签</p>
-<p>还可以创建带有说明的标签，用 -a 指定标签名，-m 指定说明文字。<br><code>git tag -a &lt;tag name&gt; -m &lt;comment&gt;</code> ：添加带注释的标签<br>eg: <code>git tag -a v1.2 -m &#39;version 1.2 released&#39;</code></p>
-<p><code>git tag -a &lt;tag name&gt; &lt;md5&gt;</code> ：对某个版本打标签<br>默认标签是打在最新提交的 commit 上的。有时候，如果忘了打标签，比如，现在已经是周五了，但应该在周一打的标签没有打，怎么办？<br>方法是找到历史提交的 commit id，然后打上就可以了。<br><code>git log --pretty=oneline --abbrev-commit</code><br>比方说要对 add merge 这次提交打标签，它对应的 commit id 是 6224937，那么我们就可以使用命令：<br><code>git tag v1.2 6224937</code><br>再用命令 <code>git log</code> 查看标签</p>
-<p>可以用 <code>git show &lt;tagname&gt;</code> 查看标签信息</p>
-<p>如果标签打错了，也可以删除：<br><code>git tag -d v1.2</code></p>
-<p>如果要推送某个标签到远程，使用命令 <code>git push origin &lt;tagname&gt;</code><br>eg: <code>git push origin v1.2</code></p>
-<p>如果标签已经推送到远程，要删除远程标签就要麻烦一点，先从本地删除：<br><code>git tag -d v1.2</code><br>然后，从远程删除；删除命令也是 push ，但是格式如下：<br><code>git push origin :ref/tags/v1.2</code></p>
-<p><code>git tag -l &#39;[expression]&#39;</code><br>查看那符合正则表达式的</p>
-<h3 id="stash"><a href="#stash" class="headerlink" title="stash"></a>stash</h3><p><code>git stash</code><br>备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。同时，将当前的工作区内容保存到 Git 栈中。<br><code>git stash pop</code><br>从 Git 栈中读取最近一次保存的内容，恢复工作区的相关内容。由于可能存在多个 stash 的内容，所以用栈来管理，pop 会从最近的一个 stash 中读取内容并恢复。<br><code>git stash list</code><br>显示 Git 栈中内的所有备份，可以利用这个列表来决定从哪个地方恢复。<br><code>git stash clear</code> : 清空 Git 栈。</p>
-<p>使用 git 的时候，我们往往使用 branch 解决任务切换问题，例如，我们往往会建一个自己的分支去修改和调试代码，如果别人或者自己发现原有的分支上有个不得不修改的 bug，我们往往会把完成一半的代码 commit 提交到本地仓库，然后切换分支去修改 bug，改好之后再切换回来。这样的话往往 log 上会有大量不必要的记录。其实如果我们不想提交完成一半或者不完善的代码，但是却不得不去修改一个紧急 bug，那么使用 git stash 就可以将你当前未提交到本地的代码推入到 git 的栈中，这时候你的工作区间和上一次提交的内容是完全一样的，所以你可以放心的修 bug，等到修完 bug，提交到服务器上后，再使用 git stash apply 将以前一般的工作应用回来。也许有的人会说，那我可不可以多次将未提交的代码压入到栈中？答案是可以的。当你多次使用 git stash 命令后，你的栈里将充满了未提交的代码，这时候你会对将哪个版本应用回来有些困惑， git stash list 命令可以将当前的 Git 栈信息打印出来，你只需要将找到对应的版本号，例如使用 <code>git stash apply stash@{1}</code> 就可以将你指定版本号为 stash@{1} 的工作取出来，当你将所有的栈都应用回来的时候，可以使用 git stash clear 来将栈清空。<br>在这里顺便提下 git format-patch -n , n是具体某个数字， 例如 ‘git format-patch -1’ 这时便会根据log生成一个对应的补丁，如果 ‘git format-patch -2’ 那么便会生成 2 个补丁，当然前提是你的 log 上有至少有两个记录。</p>
-<p>看过上面的信息，就可以知道使用场合了：当前工作区内容已被修改，但是并未完成。这时 Boss 来了，说前面的分支上面有一个 bug，需要立即修复。可是我又不想提交目前的修改，因为修改没有完成。但是，不提交的话，又没有办法 checkout 到前面的分支。此时用 git stash 就相当于备份了工作区了。然后在 checkout 过去修改，就能够达到保存当前工作区，并及时恢复的作用。</p>
-<p>注意这里由于只 stash 了一次所以要使用 pop，具体你存放了多少。</p>
-<h3 id="remote"><a href="#remote" class="headerlink" title="remote"></a>remote</h3><p>查看远程仓库名</p>
-<p><code>git remote -v</code><br>查看远程仓库url</p>
-<p><code>git remote add &lt;basename&gt; &lt;url&gt;</code><br>新增远程仓库</p>
-<p><code>git remote show &lt;basename&gt;</code><br>查看远程仓库详细信息</p>
-<p><code>git remote rename &lt;old basename&gt; &lt;new basename&gt;</code><br>重命名远程仓库</p>
-<h3 id="commit"><a href="#commit" class="headerlink" title="commit"></a>commit</h3><p><code>git commit -a -m &#39;xx&#39;</code><br>暂存并提交</p>
-<h3 id="branch"><a href="#branch" class="headerlink" title="branch"></a>branch</h3><p><code>git branch</code><br>查看本地仓库分支</p>
-<p><code>git branch -r</code><br>查看远程分支情况</p>
-<p><code>git branch -a</code><br>查看本地和远程的所有分支情况</p>
-<p><code>git branch -v</code><br>查看本地仓库分支最后一次提交情况</p>
-<p><code>git branch -vv</code><br>查看分支跟踪情况</p>
-<p><code>git branch &lt;branch name&gt;</code><br>新建分支</p>
-<p><code>git branch -d &lt;branch name&gt;</code><br>删除分支</p>
-<p><code>git branch -D &lt;branch name&gt;</code><br>强制删除分支</p>
-<p><code>git branch [--merged | --no-merged]</code><br>查看已合并|未合并的本地仓库分支</p>
-<p><code>git branch -u &lt;remote base&gt;/&lt;remote branch&gt;</code><br>修改当前跟踪分支</p>
-<h3 id="checkout"><a href="#checkout" class="headerlink" title="checkout"></a>checkout</h3><p><code>git checkout -- [file]</code> ：恢复文件<br><code>git checkout -- demo.html</code> 意思就是，把 <code>demo.html</code> 文件在工作区的修改全部撤销，这里有两种情况：<br>一种是 <code>demo.html</code> 自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；<br>一种是 <code>demo.html</code> 已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加暂存区后的状态。<br>总之，就是让这个文件回到最后一次 <code>git commit</code> 或 <code>git add</code> 时的状态。</p>
-<p>但是如果 <code>git add</code> 到暂存区了，在 commit 之前，想撤销：<br>Git 同样告诉我们，用命令 <code>git reset HEAD file</code> 可以把暂存区的修改撤销掉(unstage)，重新放回工作区。<br><code>git reset</code> 命令既可以回退版本，也可以把暂存区的修改回退到工作区，当我们用 <code>HEAD</code> 时，表示最新的版本。<br>再用 <code>git status</code> 查看一下，现在暂存区是干净的，工作区有修改：<br>还记得如果丢弃工作区的修改吗？<br>对的，使用：<code>git checkout -- demo.html</code> </p>
-<p><code>git checkout</code> 其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以”一键还原”。</p>
-<p><code>git checkout -b [branchname] [tagname]</code><br>在特定的版本上创建一个新的分支并切换到此分支</p>
-<p><code>git checkout -b [local branch] [remote base]/[remote branch]</code><br>将远程分支检出到本地分支，并追踪</p>
-<p><code>git checkout --track &lt;remote base&gt;/&lt;remote branch&gt;</code><br>让当前分支跟踪远程分支</p>
-<h3 id="rebase"><a href="#rebase" class="headerlink" title="rebase"></a>rebase</h3><p><code>git rebase [basebranch]</code><br>变基是将一系列提交按照原有次序依次应用到另一分支上，而合并是把最终结果合在一起。</p>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h3><p>git clone 支持多种协议，除了HTTP(s)以外，还支持SSH、Git、本地文件协议等。<br>使用 https 除了速度慢意外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放 http 端口的公司内部就无法使用 ssh 协议而只能用 https。</p>
-<p><code>git clone &lt;版本库的网址&gt; &lt;本地目录名&gt;</code><br>如果不写本地目录名，默认就是版本库的名字</p>
-<h3 id="如何新建分支"><a href="#如何新建分支" class="headerlink" title="如何新建分支"></a>如何新建分支</h3><p>本地建立 branch 並立即切换到新分支<br><code>git checkout -b &lt;branch_name&gt;</code> </p>
-<p>下面的命令表示，在 <code>origin/master</code> 的基础上，创建一个分支。<br><code>git checkout -b newBranch origin/master</code></p>
-<p>修改分支名称<br><code>git branch -m &lt;new_name&gt;</code></p>
-<h3 id="从远程仓库拉取代码到本地仓库，并建立跟踪关系"><a href="#从远程仓库拉取代码到本地仓库，并建立跟踪关系" class="headerlink" title="从远程仓库拉取代码到本地仓库，并建立跟踪关系"></a>从远程仓库拉取代码到本地仓库，并建立跟踪关系</h3><p><code>git checkout -b &lt;本地新分支名&gt; &lt;对应的远程分支名&gt;</code></p>
-<h3 id="如何在远程仓库新建一个分支"><a href="#如何在远程仓库新建一个分支" class="headerlink" title="如何在远程仓库新建一个分支"></a>如何在远程仓库新建一个分支</h3><p>新建一个本地分支，按照正常流程提交完代码后，推送到远程<br><code>git push &lt;remote base&gt; &lt;local branch&gt;:&lt;remote branch&gt;</code></p>
-<h3 id="比较文件"><a href="#比较文件" class="headerlink" title="比较文件"></a>比较文件</h3><p><code>git diff HEAD -- demo.html</code><br>命令可以查看工作区的 demo.html 和版本库里面最新版本的区别。</p>
-<h3 id="忽略某些文件"><a href="#忽略某些文件" class="headerlink" title="忽略某些文件"></a>忽略某些文件</h3><p>默认方法是在当前项目目录下创建一个 .gitignore 文件，如果需要忽略的文件已经添加到版本库中，请先移除<br><code>git rm --cached [file]</code><br>不删除文件，只移除追踪。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cat .gitignore</div><div class="line">*.[oa]</div><div class="line">*~</div></pre></td></tr></table></figure></p>
-<p>文件 .gitignore 的格式规范如下：</p>
-<ul>
-<li>所有空行或者以注释符号 # 开头的目录都会被 git 忽略</li>
-<li>可以使用标准的 glob 模式匹配</li>
-<li>匹配模式最后跟反斜杠（<code>/</code>）说明要忽略的目录</li>
-<li>要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（<code>!</code>）取反</li>
-</ul>
-<h3 id="bug-分支"><a href="#bug-分支" class="headerlink" title="bug 分支"></a>bug 分支</h3><p>git 提供了一个 stash 功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作。<br><code>git stash</code><br>修改完 bug 后，回到当前分支上继续干活，工作区是干净的，刚才的工作现场存到哪里去了？<br><code>git stash list</code> ：查看 stash 列表(stash 是一个栈的结构)<br>git 把 stash 内容存在某个地方了，但是需要恢复一下，有两个办法：<br>一是用 <code>git stash apply</code> 恢复，但是恢复后，stash 内容并不删除，你需要用 <code>git stash drop</code> 来删除；<br>另一种方式是用 <code>git stash pop</code> ，恢复的同时把 stash 内容也删了；<br>你可以多次 stash ，恢复的时候，先用 <code>git stash list</code> 查看，然后恢复指定的 stash，用命令：<br><code>git stash apply stash@{0}</code></p>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>配置 Git 的时候，加上 –global 是针对当前用户起作用的，如果不加，那只针对当前的仓库起作用。<br>配置文件放哪了？<br>每个仓库的 Git 配置文件都放在 .git/config 文件中，在这份配置文件中，别名就在 [alias] 后面，要删除别名，直接把对应的行删掉即可。</p>
-<h3 id="查看配置"><a href="#查看配置" class="headerlink" title="查看配置"></a>查看配置</h3><p><code>git config -1</code></p>
-<h3 id="设置git-push-默认"><a href="#设置git-push-默认" class="headerlink" title="设置git push 默认"></a>设置git push 默认</h3><p><code>git config --global push.default current</code></p>
-<h3 id="设置别名"><a href="#设置别名" class="headerlink" title="设置别名"></a>设置别名</h3><p><code>git config --global alias.&lt;name&gt; &lt;commend&gt;</code><br>我的设置：<br><code>git config --global alias.st status</code><br><code>git config --global alias.cm &quot;commit -m&quot;</code><br><code>git config --global alias.ph &quot;push origin &lt;local_repository&gt;:&lt;remote_repository&gt;&quot;</code></p>
-<h3 id="保存用户名和密码"><a href="#保存用户名和密码" class="headerlink" title="保存用户名和密码"></a>保存用户名和密码</h3><h4 id="对于http-s-协议，可以用下面命令临时缓存"><a href="#对于http-s-协议，可以用下面命令临时缓存" class="headerlink" title="对于http(s)协议，可以用下面命令临时缓存"></a>对于http(s)协议，可以用下面命令临时缓存</h4><p><code>git config --global credential.helper cache</code><br>开启linux缓存<br><code>git config --global credential.helper wincred</code><br>开启windows缓存</p>
-<h4 id="对于-ssh-协议，可以用-ssh-key，具体教程网上很多"><a href="#对于-ssh-协议，可以用-ssh-key，具体教程网上很多" class="headerlink" title="对于 ssh 协议，可以用 ssh key，具体教程网上很多"></a>对于 ssh 协议，可以用 ssh key，具体教程网上很多</h4><h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p>git 中执行命令 <code>add .</code><br>报错：Unlink of file ‘templates/opms.exe’ failed.Should I try again?(y/n)</p>
-<p>因为这个文件正在被占用，所以不能添加到暂存区，而正好这个 <code>.exe</code> 文件，我们是不需要添加到版本管理工具的。所以我们选择 <code>n</code> 。</p>
-<h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h3><p>git 中生成 sshkey: <code>ssh-keygen -t rsa -C &quot;youremail&quot;</code><br>这个<code>email</code>并没有什么用<br>所以我们使用<code>ssh-keygen -t rsa</code>来生成sshkey就可以了。<br>然后git中的配置文件：<br><code>git config --list</code><br><code>git config --global user.name &quot;yu&quot;</code><br><code>git config --global user.email &quot;react.dong.yu@gmail.com&quot;</code><br>这种配置将会对本地所有的git仓库有效。<br>那么在 push 的时候，远程就知道这个push来自于哪个email.<br>但有时候在公司的时候，有的仓库是公司的，有的仓库是自己github的。<br>这个时候就可以不设置global的配置了，而是在自己的仓库中设置<br><code>git config --local user.email &quot;react.dong.yu@gmail.com&quot;</code></p>
-<h3 id="问题三"><a href="#问题三" class="headerlink" title="问题三"></a>问题三</h3><p>使用 windows 的同学注意了，如果你在资源管理器里新建一个 .gitignore 文件，它会提示你必须输入文件名，但是在文本编辑器里“保存”或者“另存为”就可以把文件保存为 .gitignore 了。<br>有些时候，你想添加一个文件到 git，但发现添加不了，原因是这个文件被 .gitignore 忽略了：<br><code>git add App.class</code><br>如果你确实想添加该文件，可以用 -f 制添加到 git：<br><code>git add -f App.class</code><br>或者你发现，可能是 .gitignore 写得有问题，需要找出来到底哪个规则写错了。<br>可以用 <code>git check-ignore</code> 命令检查：<br><code>git check-ignore -v App.class</code></p>
-<h3 id="问题四"><a href="#问题四" class="headerlink" title="问题四"></a>问题四</h3><p>为什么我把我生成的 ssh key 添加到了 github 中<br>然后 也 remote 了 <code>https://github.com/Neveryu/Xxx.git</code><br>为什么提交的时候报错，或者提示 输入密码账号是为什么</p>
-<p>ssh key 是 ssh 协议的密钥，http 协议没权限</p>
-<p><a href="http://git-scm.com/book/zh/v2" target="_blank" rel="external">权威教程</a><br><a href="http://iissnan.com/progit/" target="_blank" rel="external">Pro Git 简体中文版</a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 综合 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Git </tag>
-            
-        </tags>
-        
-    </entry>
+    <summary type="html">
     
-    <entry>
-      <title><![CDATA[Hexo-NexT搭建个人博客（二）]]></title>
-      <url>https://neveryu.github.io/2016/09/30/hexo-next-two/</url>
-      <content type="html"><![CDATA[<p>本篇文章将介绍基于NexT主题下的一些扩展功能的实现。<br>首先，我们需要明白：</p>
-<p id="div-border-left-yellow">在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml 。其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。<br>  我们约定，将前者称为 <span id="inline-blue">站点配置文件</span>，后者称为 <span id="inline-purple">主题配置文件</span></p>
+      &lt;p id=&quot;div-border-left-blue&quot; style=&quot;width:90%;&quot;&gt;嘿，我最近接到一个 Web 项目，不过老实说，我这两年没怎么接触 Web 编程，听说 Web 技术已经发生了一些变化。听说你是这里对新技术最了解的 Web 开发工程师？&lt;/p&gt;
 
-<h4 id="1-设置侧栏的位置"><a href="#1-设置侧栏的位置" class="headerlink" title="1.设置侧栏的位置"></a>1.设置侧栏的位置</h4><p>修改 <span id="inline-purple">主题配置文件</span> 中 <code>sidebar.position</code> 的值，支持的选项有：<strong>left</strong> <strong>right</strong><br>目前仅 Pisces Scheme 支持 position 配置，也就是说NexT主题的侧栏位置是不能设置的，设置了也没用，反正都在右边。</p>
-<a id="more"></a>
-<h4 id="2-关于添加居中模块"><a href="#2-关于添加居中模块" class="headerlink" title="2. 关于添加居中模块"></a>2. 关于添加居中模块</h4><p><blockquote class="blockquote-center">优秀的人，不是不合群，而是他们合群的人里面没有你</blockquote><br>代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">blockquote</span> <span class="attr">class</span>=<span class="string">"blockquote-center"</span>&gt;</span>优秀的人，不是不合群，而是他们合群的人里面没有你<span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h4 id="3-添加High一下"><a href="#3-添加High一下" class="headerlink" title="3. 添加High一下"></a>3. 添加High一下</h4><p>打开博客根目录 <code>\themes\next\layout\_partials\header.swig</code> ，在<br><code>&lt;ul&gt; ... /ul&gt;</code> 标签之间加入以下代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div></pre></td><td class="code"><pre><div class="line">&lt;li&gt; <span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">title</span>=<span class="string">"把这个链接拖到你的Chrome收藏夹工具栏中"</span> <span class="attr">href</span>=<span class="string">'javascript:(function() &#123;</span></span></span></div><div class="line">    function c() &#123;</div><div class="line">        var e = document.createElement("link");</div><div class="line">        e.setAttribute("type", "text/css");</div><div class="line">        e.setAttribute("rel", "stylesheet");</div><div class="line">        e.setAttribute("href", f);</div><div class="line">        e.setAttribute("class", l);</div><div class="line">        document.body.appendChild(e)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function h() &#123;</div><div class="line">        var e = document.getElementsByClassName(l);</div><div class="line">        for (var t = 0; t &lt; e.length; t++) &#123;</div><div class="line">            document.body.removeChild(e[t])</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function p() &#123;</div><div class="line">        var e = document.createElement("div");</div><div class="line">        e.setAttribute("class", a);</div><div class="line">        document.body.appendChild(e);</div><div class="line">        setTimeout(function() &#123;</div><div class="line">            document.body.removeChild(e)</div><div class="line">        &#125;, 100)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function d(e) &#123;</div><div class="line">        return &#123;</div><div class="line">            height : e.offsetHeight,</div><div class="line">            width : e.offsetWidth</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function v(i) &#123;</div><div class="line">        var s = d(i);</div><div class="line">        return s.height &gt; e &amp;&amp; s.height &lt; n &amp;&amp; s.width &gt; t &amp;&amp; s.width &lt; r</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function m(e) &#123;</div><div class="line">        var t = e;</div><div class="line">        var n = 0;</div><div class="line">        while (!!t) &#123;</div><div class="line">            n += t.offsetTop;</div><div class="line">            t = t.offsetParent</div><div class="line">        &#125;</div><div class="line">        return n</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function g() &#123;</div><div class="line">        var e = document.documentElement;</div><div class="line">        if (!!window.innerWidth) &#123;</div><div class="line">            return window.innerHeight</div><div class="line">        &#125; else if (e &amp;&amp; !isNaN(e.clientHeight)) &#123;</div><div class="line">            return e.clientHeight</div><div class="line">        &#125;</div><div class="line">        return 0</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function y() &#123;</div><div class="line">        if (window.pageYOffset) &#123;</div><div class="line">            return window.pageYOffset</div><div class="line">        &#125;</div><div class="line">        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function E(e) &#123;</div><div class="line">        var t = m(e);</div><div class="line">        return t &gt;= w &amp;&amp; t &lt;= b + w</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function S() &#123;</div><div class="line">        var e = document.createElement("audio");</div><div class="line">        e.setAttribute("class", l);</div><div class="line">        e.src = i;</div><div class="line">        e.loop = false;</div><div class="line">        e.addEventListener("canplay", function() &#123;</div><div class="line">            setTimeout(function() &#123;</div><div class="line">                x(k)</div><div class="line">            &#125;, 500);</div><div class="line">            setTimeout(function() &#123;</div><div class="line">                N();</div><div class="line">                p();</div><div class="line">                for (var e = 0; e &lt; O.length; e++) &#123;</div><div class="line">                    T(O[e])</div><div class="line">                &#125;</div><div class="line">            &#125;, 15500)</div><div class="line">        &#125;, true);</div><div class="line">        e.addEventListener("ended", function() &#123;</div><div class="line">            N();</div><div class="line">            h()</div><div class="line">        &#125;, true);</div><div class="line">        e.innerHTML = " &lt;p&gt;If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.&lt;/p&gt; &lt;p&gt;";</div><div class="line">        document.body.appendChild(e);</div><div class="line">        e.play()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function x(e) &#123;</div><div class="line">        e.className += " " + s + " " + o</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function T(e) &#123;</div><div class="line">        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function N() &#123;</div><div class="line">        var e = document.getElementsByClassName(s);</div><div class="line">        var t = new RegExp("\\b" + s + "\\b");</div><div class="line">        for (var n = 0; n &lt; e.length; ) &#123;</div><div class="line">            e[n].className = e[n].className.replace(t, "")</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var e = 30;</div><div class="line">    var t = 30;</div><div class="line">    var n = 350;</div><div class="line">    var r = 350;</div><div class="line">    var i = "//7xuupy.com1.z0.glb.clouddn.com/tongxingSibel%20-%20Im%20Sorry.mp3";</div><div class="line">    var s = "mw-harlem_shake_me";</div><div class="line">    var o = "im_first";</div><div class="line">    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];</div><div class="line">    var a = "mw-strobe_light";</div><div class="line">    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";</div><div class="line">    var l = "mw_added_css";</div><div class="line">    var b = g();</div><div class="line">    var w = y();</div><div class="line">    var C = document.getElementsByTagName("*");</div><div class="line">    var k = null;</div><div class="line">    for (var L = 0; L &lt; C.length; L++) &#123;</div><div class="line">        var A = C[L];</div><div class="line">        if (v(A)) &#123;</div><div class="line">            if (E(A)) &#123;</div><div class="line">                k = A;</div><div class="line">                break</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    if (A === null) &#123;</div><div class="line">        console.warn("Could not find a node of the right size. Please try a different page.");</div><div class="line">        return</div><div class="line">    &#125;</div><div class="line">    c();</div><div class="line">    S();</div><div class="line">    var O = [];</div><div class="line">    for (var L = 0; L &lt; C.length; L++) &#123;</div><div class="line">        var A = C[L];</div><div class="line">        if (v(A)) &#123;</div><div class="line">            O.push(A)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    &#125;)()    '&gt;High一下<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h4 id="4-添加最近访客"><a href="#4-添加最近访客" class="headerlink" title="4. 添加最近访客"></a>4. 添加最近访客</h4><p>在需要添加最近访客的网页对应的 markdown 文件中添加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">最近访客</div><div class="line">&lt;div class=&quot;ds-recent-visitors&quot; data-num-items=&quot;39&quot; data-avatar-size=&quot;40&quot; id=&quot;ds-recent-visitors&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<h4 id="5-鼠标点击小红心的设置"><a href="#5-鼠标点击小红心的设置" class="headerlink" title="5. 鼠标点击小红心的设置"></a>5. 鼠标点击小红心的设置</h4><ol>
-<li>将 <a href="https://github.com/Neveryu/Neveryu.github.io/blob/master/js/src/love.js" target="_blank" rel="external">love.js</a> 文件添加到 \themes\next\source\js\src 文件目录下。</li>
-<li>找到 <code>\themes\next\layout\_layout.swing</code> 文件，<strong> 在文件的后面，<code>&lt;/body&gt;</code> 标签之前 </strong> 添加以下代码：<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 页面点击小红心 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/js/src/love.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="6-背景的设置"><a href="#6-背景的设置" class="headerlink" title="6. 背景的设置"></a>6. 背景的设置</h4><ol>
-<li>将 <a href="https://github.com/Neveryu/Neveryu.github.io/blob/master/js/src/particle.js" target="_blank" rel="external">particle.js</a> 文件添加到 \themes\next\source\js\src 文件目录下。</li>
-<li>找到 <code>\themes\next\layout\_layout.swing</code> 文件，<strong> 在文件的后面，<code>&lt;/body&gt;</code>标签之前 </strong> 添加以下代码：<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 背景动画 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/js/src/particle.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="7-修改文章内链接文本样式"><a href="#7-修改文章内链接文本样式" class="headerlink" title="7.修改文章内链接文本样式"></a>7.修改文章内链接文本样式</h4><p>将链接文本设置为蓝色，鼠标划过时文字颜色加深，并显示下划线。<br>找到文件 <code>themes\next\source\css\_custom\custom.styl</code> ，添加如下 css 样式：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.post-body p a &#123;</div><div class="line">  color: #0593d3;</div><div class="line">  border-bottom: none;</div><div class="line">  &amp;:hover &#123;</div><div class="line">    color: #0477ab;</div><div class="line">    text-decoration: underline;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="8-多说评论不稳定，加载速度慢怎么办？"><a href="#8-多说评论不稳定，加载速度慢怎么办？" class="headerlink" title="8. 多说评论不稳定，加载速度慢怎么办？"></a>8. 多说评论不稳定，加载速度慢怎么办？</h4><p>把多说评论依赖的 embed.js 放置底部，这里需要修改的文件是 duoshuo.swig。<br>将<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(document.getElementsByTagName(&apos;head&apos;)[0]</div></pre></td></tr></table></figure></p>
-<p>修改成下面的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(document.getElementById(&apos;footer&apos;)</div></pre></td></tr></table></figure></p>
-<h4 id="9-给-Github-添加-README"><a href="#9-给-Github-添加-README" class="headerlink" title="9. 给 Github 添加 README"></a>9. 给 Github 添加 README</h4><p>默认情况下，Github中每一个项目，我们希望有一份 README.md 的文件来作为项目的说明，但是我们在项目根目录下的 blog\source 目录下创建一份 README.md 文件，写好说明介绍，部署的时候，这个 README.md 会被 hexo 解析掉，而不会被解析到 Github 中去的。<br>正确的解决方法其实很简单：<br><strong> 把 README.md 文件的后缀名改成 “MDOWN” 然后扔到<code>blog/source</code>文件夹下即可，这样 hexo 不会解析，Github 也会将其作为 MD 文件解析。 </strong></p>
-<h4 id="10-给-Blog-添加-LICENSE"><a href="#10-给-Blog-添加-LICENSE" class="headerlink" title="10. 给 Blog 添加 LICENSE"></a>10. 给 Blog 添加 LICENSE</h4><p>在 <span id="inline-purple">主题配置文件</span> 中的 160 行左右：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># Creative Commons 4.0 International License.</div><div class="line"># http://creativecommons.org/</div><div class="line"># Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero</div><div class="line">creative_commons: by-nc-sa</div><div class="line">#creative_commons:</div></pre></td></tr></table></figure></p>
-<p>将其中第 4 行的注释放开，然后选择你想使用的 LICENSE 即可，可选项参照第 3 行。</p>
-<p></p><h5 style="color:#f63;"><i>最后要说的是：</i></h5><p></p>
-<p id="div-border-top-green"><i><a href="https://github.com/Neveryu/Neveryu.github.io" target="_blank" rel="external">博客源码</a> ， 欢迎 star<br></i></p>]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Next </tag>
-            
-        </tags>
-        
-    </entry>
+&lt;p id=&quot;div-border-right-green&quot; style=&quot;width:90%;margin-left:10%&quot;&gt;准确地说，我是一名「前端工程师」。不过你算是找对人了。我对今年的技术别提多熟了，前端可视化、音乐播放器、能踢足球的无人机，你尽管问吧。我刚去 JS 大会和 React 大会逛了一圈，没有什么新技术是我不知道的。&lt;/p&gt;
+
+&lt;p id=&quot;div-border-left-blue&quot; style=&quot;width:90%&quot;&gt;厉害。是这样的，我要开发一个网页，用来展示用户的最新动态。我想我应该通过后端接口获取数据，然后用一个 table 来展示数据，用户可以对数据进行排序。如果服务器上的数据变化了，我还需要更新这个 table。我的思路是用 jQuery 来做。&lt;/p&gt;
+
+&lt;p id=&quot;div-border-right-green&quot; style=&quot;width:90%;margin-left:10%&quot;&gt;可别用 jQuery！现在哪还有人用 jQuery。现在是 2016 年了，你绝对应该用 React。&lt;/p&gt;
     
-    <entry>
-      <title><![CDATA[如果深圳的夜晚没有风]]></title>
-      <url>https://neveryu.github.io/2016/09/25/essay-20160925/</url>
-      <content type="html"><![CDATA[<p id="div-border-top-green">这座城市人很多，每天在路上都能看到好多拉着行李箱的人，不管他们是来到这座城市还是离开这座城市，至少他们都曾努力过。<br></p>
-
-<p><br></p>
-<a id="more"></a>
-<p>其实专业做博客的网站还是挺多的，比如说 CSDN 是吧，我之前也是在 CSDN 上面写一点东西，我的 CSDN 博客 <a href="http://blog.csdn.net/csdn_yudong" target="_blank" rel="external">http://blog.csdn.net/csdn_yudong</a> 。但是 CSDN 毕竟是一个技术类的博客网站，如果写一点生活杂谈还是不太好，而且 CSDN 上面挂载的广告，以及页面风格，我不太喜欢，因为我喜欢【精于心，简于形】，这波 <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT</a> 主题的广告是不是很硬。</p>
-<p>在我想做博客之前，一直到我开始着手做这个博客，其实花了好久时间。而在我着手开始做这个博客，到这个博客完成，其实并没有花多久。也说明了一个道理，就是一定要勇于尝试，关键是要动手。我想起了马士兵老师的一句话，一个新鲜的事物，你一定要先去用它，应用驱动学习。——<a href="https://neveryu.github.io/weblog/">我的建站日志</a>有记录网站的建设过程。</p>
-<p>究其原因：第一个，我觉得是自己考虑的太多，没有太大的把握就不会轻易的去尝试，所以我在着手做这个之前花了很多的时间去查，域名空间这些的，而且这些出售这些的服务商也挺多的，我这个人有选择恐惧症。也是怪尴尬的，每次看到一个东西有好多选择的时候，我都去比较，去分析，头痛。。而且我想，域名空间搞好以后，还要自己写页面这些的。关键是还要设计博客风格，页面样式这些的，一想到这些，就感觉是一个不小的工程啊，后来才发现我多虑了。</p>
-<p>后来，无意中看到了 Hexo 的 Next 主题的一篇博客，风格样式挺不错的，感谢 <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> 和 <a href="http://theme-next.iissnan.com/" target="_blank" rel="external">Next</a> 的文档写的如此的棒，以至于每一个人都能根据教程搭建一个自己的博客。这一切是如此的美好。</p>
-]]></content>
-      
-        <categories>
-            
-            <category> 随笔 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> essay </tag>
-            
-        </tags>
-        
-    </entry>
+    </summary>
     
-    <entry>
-      <title><![CDATA[Hexo-NexT搭建个人博客（一）]]></title>
-      <url>https://neveryu.github.io/2016/09/03/hexo-next-one/</url>
-      <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a> 是一个快速、简洁且高效的静态站点生成框架，它基于 <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a> 。 它有以下特点：</p>
-<ul>
-<li><i class="fa fa-bolt"></i><h6 style="display: inline;">　超快速度</h6><br><i>Node.js 所带来的超快生成速度，让上百个页面在几秒内瞬间完成渲染。</i></li>
-<li><i class="fa fa-pencil"></i><h6 style="display: inline;">　支持Markdown</h6><br><i>Hexo 支持 GitHub Flavored Markdown 的所有功能，甚至可以整合 Octopress 的大多数插件。</i></li>
-<li><i class="fa fa-cloud-upload"></i><h6 style="display: inline;">　一键部署</h6><br><i>只需一条指令即可部署到Github Pages，或其他网站</i></li>
-<li><i class="fa fa-cog"></i><h6 style="display: inline;">　丰富的插件</h6><br><i>Hexo 拥有强大的插件系统，安装插件可以让 Hexo 支持 Jade, CoffeeScript。</i></li>
-</ul>
-<p>通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 <a href="https://hexo.io/zh-cn/docs/tag-plugins.html" target="_blank" rel="external">标签插件</a> 来快速的插入特定形式的内容。</p>
-<p>基于 Hexo 这个优秀的博客框架，很多优秀的开发者奉献出了它们基于 Hexo 开发的<a href="https://hexo.io/themes/" target="_blank" rel="external">主题</a>。<br><a href="http://theme-next.iissnan.com/" target="_blank" rel="external">NexT</a> 因其 <span id="yu-1">精于心，简于形</span> 的风格，一直被广大用户所喜爱。</p>
-<a id="more"></a>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>安装 Hexo 只需几分钟时间，若你在安装过程中遇到问题或无法找到解决方式，请<a href="https://neveryu.github.io/guestbook/">提交问题</a>，我会尽力解决你的问题。</p>
-<h2 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h2><p>安装 Hexo 相当简单。然而在安装前，您必须检查电脑中是否已安装下列应用程序:</p>
-<blockquote>
-<p><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a><br><a href="http://git-scm.com/" target="_blank" rel="external">Git</a></p>
-</blockquote>
-<p>如果您的电脑中已经安装上述必备程序，那么恭喜你！接下来只需要使用 npm 即可完成 Hexo 的安装。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
-<p>如果你的电脑中尚未安装所需要的程序，请根据以下安装指示完成安装。</p>
-<h2 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h2><ul>
-<li>Windows：下载安装 git 。<a id="download" href="https://git-scm.com/download/win" target="_blank" rel="external"><i class="fa fa-download"></i><span> Download Now</span><br></a></li>
-<li>Mac：使用 <a href="http://mxcl.github.com/homebrew/" target="_blank" rel="external">Homebrew</a>，<a href="http://www.macports.org/" target="_blank" rel="external">MacPorts</a> 或下载 <a href="http://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="external">安装程序</a> 安装</li>
-<li>Linux（Ubuntu，Debian）：<code>sudo apt-get install git-core</code></li>
-<li>Linux（Fedora，Red Hat，CentOS）：<code>sudo yum install git-core</code></li>
-</ul>
-<h2 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h2><p>安装 Node.js 的最佳方式是使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a>。（nvm：Node Version Manager）<br>windows 下使用 nvm 请看这里： <a href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="external">nvm-windows</a> ，首先需要下载安装 nvm 。<a id="download" href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="external"><i class="fa fa-download"></i><span> Download Now</span><br></a><br>windows下安装完nvm以后，我们可以打开命令行中执行命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ nvm</div><div class="line">$ nvm install latest</div></pre></td></tr></table></figure></p>
-<p>执行完以后，重启命令行，执行命令 <code>node -v</code> ，如果出现版本号，那么 <code>Node.js</code> 就安装成功了。</p>
-<p id="div-border-left-red">如果没有安装成功，那可能就是墙的原因。建议下载 <code>Node.js</code> 直接安装。<a id="download" href="https://nodejs.org/en/download/" target="_blank" rel="external"><i class="fa fa-download"></i><span> Download Now</span><br></a> </p>
-
-<h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>有了 Node.js ，我们可以使用 npm 安装 Hexo。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
-<p>安装 Hexo 完成后，我们首先需要为我们的项目创建一个<span id="inline-green">指定文件夹</span>（例如我在 D 盘目录下创建了一个文件夹 blog 。<code>D:\blog</code> ），在指定文件夹中执行下列命令， Hexo 将会在指定文件夹中新建所需要的文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div></pre></td></tr></table></figure></p>
-<p>等待安装，安装完成后，<span id="inline-green">指定文件夹</span> 的目录如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">├── scaffolds</div><div class="line">├── source</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└──</div></pre></td></tr></table></figure></p>
-<p>我们继续执行命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo s --debug</div></pre></td></tr></table></figure></p>
-<p>Hexo 将 source 文件夹中除 <em>posts 文件夹之外，开头命名为 </em>(下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件夹会被拷贝过去。<br>这个时候，我们在浏览器中访问 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> ，就可以看到基于 Hexo 的默认主题的原型：<br><img src="http://p1.bqimg.com/567571/27324b740c9e91e2.png" alt="hexo-next-one-1"></p>
-<h2 id="安装-NexT-主题"><a href="#安装-NexT-主题" class="headerlink" title="安装 NexT 主题"></a>安装 NexT 主题</h2><h3 id="下载-NexT-主题"><a href="#下载-NexT-主题" class="headerlink" title="下载 NexT 主题"></a>下载 NexT 主题</h3><p>依旧是在当前目录下，使用 Git checkout 代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</div></pre></td></tr></table></figure></p>
-<p>等待下载完成。</p>
-<p id="div-border-left-yellow">在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml 。其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。<br>  我们约定，将前者称为 <span id="inline-blue">站点配置文件</span>，后者称为 <span id="inline-purple">主题配置文件</span></p>
-
-<h3 id="启用-NexT-主题"><a href="#启用-NexT-主题" class="headerlink" title="启用 NexT 主题"></a>启用 NexT 主题</h3><p>打开 <span id="inline-blue">站点配置文件</span> ，找到 theme 字段，并将其值更改为 next 。<br>到此， NexT 主题安装完成。下一步我们将验证主题是否正确启用。在切换主题之后、验证之前，我们最好使用 <code>hexo clean</code> 来清除 Hexo 的缓存。</p>
-<h3 id="验证主题"><a href="#验证主题" class="headerlink" title="验证主题"></a>验证主题</h3><p>首先启动 Hexo 本地站点，并开启调试模式（即加上 <code>--debug</code>），整个命令是 <code>hexo s --debug</code>。在服务启动的过程，注意观察命令行输出是否有任何异常信息。当命令行输出中提示：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure>
-<p>此时即可使用浏览器访问 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> ，检查站点是否正确运行。</p>
-<p id="div-border-left-green">当你看到站点的外观与下图所示类似时即说明你已成功安装 NexT 主题。这是 NexT 默认的 Scheme —— Muse</p><br><img src="http://p1.bqimg.com/567571/8333728b5eaab526.png" alt="hexo-next-one-1"><br>现在，我们已经成功安装并启用了 NexT 主题。<br><br><p id="div-border-top-blue">关于更多基本操作和基础知识，请查阅 <a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a> 与 <a href="http://theme-next.iissnan.com/" target="_blank" rel="external">NexT</a> 官方文档.</p>
-
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="本地调试步骤"><a href="#本地调试步骤" class="headerlink" title="本地调试步骤"></a>本地调试步骤</h2><p>三部曲：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">$ hexo g</div><div class="line">$ hexo s --debug</div></pre></td></tr></table></figure></p>
-<p>这种带 debug 的运行，如果出现错误，可以在命令行中看到错误提示信息。</p>
-<h2 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h2><p>三部曲：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">$ hexo g</div><div class="line">$ hexo d</div></pre></td></tr></table></figure></p>
-<p>当然在部署之前，需要先配置好配置文件中的 deploy。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"postName"</span>  <span class="comment">#新建文章</span></div><div class="line">$ hexo new page <span class="string">"pageName"</span> <span class="comment"># 新建页面</span></div><div class="line">$ hexo generate <span class="comment"># 生成静态页面至public目录</span></div><div class="line">$ hexo server <span class="comment"># 开启预览访问端口(默认端口4000，'ctrl+c'关闭server)</span></div><div class="line">$ hexo deploy <span class="comment"># 项目部署</span></div><div class="line">$ hexo <span class="built_in">help</span> <span class="comment"># 查看帮助</span></div><div class="line">$ hexo version <span class="comment"># 查看Hexo的版本</span></div></pre></td></tr></table></figure>
-<h2 id="简写命令"><a href="#简写命令" class="headerlink" title="简写命令"></a>简写命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ hexo new == hexo n</div><div class="line">$ hexo generate == hexo g</div><div class="line">$ hexo server == hexo s</div><div class="line">$ hexo deploy == hexo d</div></pre></td></tr></table></figure>
-<h2 id="常见问题1"><a href="#常见问题1" class="headerlink" title="常见问题1"></a>常见问题1</h2><p>在 hexo 的配置和设置文件中，在冒号后面没留空格会导致出问题：<br>错误的设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">author:Neveryu</div><div class="line">email:react.dong.yu@gmail.com</div><div class="line">language:zh-CN</div></pre></td></tr></table></figure></p>
-<p>正确的设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">author: Neveryu</div><div class="line">email: react.dong.yu@gmail.com</div><div class="line">language: zh-CN</div></pre></td></tr></table></figure></p>
-<h2 id="常见问题2"><a href="#常见问题2" class="headerlink" title="常见问题2"></a>常见问题2</h2><p>关于 Git 提交中用户名和 Email 的设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name &quot;Your name&quot;</div><div class="line">git config --global user.email &quot;Your email&quot;</div></pre></td></tr></table></figure></p>
-<h2 id="常见问题3"><a href="#常见问题3" class="headerlink" title="常见问题3"></a>常见问题3</h2><p>Hexo 中的图标使用的是 <a href="http://fontawesome.io/" target="_blank" rel="external">Font Awesome</a> ，所以，我们的博客已经自带了 Font Awesome 中的所有图标，基本可以满足我们的所有需求，我们可以去 Font Awesome 中查找我们想要使用的图标。<br><i class="fa fa-github"></i> <code>&lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt;</code><br><i class="fa fa-github fa-lg"></i> <code>&lt;i class=&quot;fa fa-github fa-lg&quot;&gt;&lt;/i&gt;</code><br><i class="fa fa-github fa-2x"></i> <code>&lt;i class=&quot;fa fa-github fa-2x&quot;&gt;&lt;/i&gt;</code></p>
-<p></p><h5 style="color:#f63;"><i>最后要说的是：</i></h5><p></p>
-<p id="div-border-top-green"><i><a href="https://github.com/Neveryu/Neveryu.github.io" target="_blank" rel="external">博客源码</a> ， 欢迎 star<br></i></p>]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Next </tag>
-            
-        </tags>
-        
-    </entry>
+      <category term="前端" scheme="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
+    
+      <category term="JavaScript" scheme="https://neveryu.github.io/tags/JavaScript/"/>
+    
+      <category term="essay" scheme="https://neveryu.github.io/tags/essay/"/>
+    
+  </entry>
   
-  
-</search>
+</feed>
