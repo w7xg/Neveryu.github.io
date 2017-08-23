@@ -86,19 +86,25 @@
 
 
 
-<meta name="description" content="文章封面文章封面的意思就是：在博客首页的时候会显示文章的封面图片，点击这篇文章的标题，进入文章后，不显示这张图片。
-如果想添加文章封面的话，在写文章的时候，需要添加一个字段属性：summary_img 。">
+<meta name="description" content="在这之前，我写过四篇关于 Hexo + NexT 构建博客的文章。=》【传送门】
+本文将会介绍一些自定义的功能。相较于之前主要是修改配置文件中的内容，现在更多的是动手改源码来实现功能，而且还能帮你搞懂一些 Hexo NexT 的源码。如果你能弄懂源码的一些流程和逻辑，那么，你将能更好的来实现自己的一些想法。
+文章封面文章封面的意思就是：在博客首页的时候会显示文章的封面图片，进入这篇文章的详细页面后">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo-NexT搭建个人博客（五）">
 <meta property="og:url" content="https://neveryu.github.io/2017/07/15/hexo-next-five/index.html">
 <meta property="og:site_name" content="Never_yu's Blog">
-<meta property="og:description" content="文章封面文章封面的意思就是：在博客首页的时候会显示文章的封面图片，点击这篇文章的标题，进入文章后，不显示这张图片。
-如果想添加文章封面的话，在写文章的时候，需要添加一个字段属性：summary_img 。">
-<meta property="og:updated_time" content="2017-08-20T15:06:18.001Z">
+<meta property="og:description" content="在这之前，我写过四篇关于 Hexo + NexT 构建博客的文章。=》【传送门】
+本文将会介绍一些自定义的功能。相较于之前主要是修改配置文件中的内容，现在更多的是动手改源码来实现功能，而且还能帮你搞懂一些 Hexo NexT 的源码。如果你能弄懂源码的一些流程和逻辑，那么，你将能更好的来实现自己的一些想法。
+文章封面文章封面的意思就是：在博客首页的时候会显示文章的封面图片，进入这篇文章的详细页面后">
+<meta property="og:image" content="https://neveryu.github.io/images/hexo-next-five-1.png">
+<meta property="og:image" content="https://neveryu.github.io/images/hexo-next-five-2.png">
+<meta property="og:updated_time" content="2017-08-23T15:43:11.010Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-NexT搭建个人博客（五）">
-<meta name="twitter:description" content="文章封面文章封面的意思就是：在博客首页的时候会显示文章的封面图片，点击这篇文章的标题，进入文章后，不显示这张图片。
-如果想添加文章封面的话，在写文章的时候，需要添加一个字段属性：summary_img 。">
+<meta name="twitter:description" content="在这之前，我写过四篇关于 Hexo + NexT 构建博客的文章。=》【传送门】
+本文将会介绍一些自定义的功能。相较于之前主要是修改配置文件中的内容，现在更多的是动手改源码来实现功能，而且还能帮你搞懂一些 Hexo NexT 的源码。如果你能弄懂源码的一些流程和逻辑，那么，你将能更好的来实现自己的一些想法。
+文章封面文章封面的意思就是：在博客首页的时候会显示文章的封面图片，进入这篇文章的详细页面后">
+<meta name="twitter:image" content="https://neveryu.github.io/images/hexo-next-five-1.png">
 
 
 
@@ -567,13 +573,21 @@
       
 
       
-        <h1 id="文章封面"><a href="#文章封面" class="headerlink" title="文章封面"></a>文章封面</h1><p>文章封面的意思就是：在博客首页的时候会显示文章的封面图片，点击这篇文章的标题，进入文章后，不显示这张图片。</p>
-<p>如果想添加文章封面的话，在写文章的时候，需要添加一个字段属性：<code>summary_img</code> 。</p>
+        <p>在这之前，我写过四篇关于 Hexo + NexT 构建博客的文章。=》【<a href="/categories/Hexo/">传送门</a>】</p>
+<p>本文将会介绍一些自定义的功能。相较于之前主要是修改配置文件中的内容，现在更多的是动手改源码来实现功能，而且还能帮你搞懂一些 Hexo NexT 的源码。如果你能弄懂源码的一些流程和逻辑，那么，你将能更好的来实现自己的一些想法。</p>
+<h1 id="文章封面"><a href="#文章封面" class="headerlink" title="文章封面"></a>文章封面</h1><p>文章封面的意思就是：在博客首页的时候会显示文章的封面图片，进入这篇文章的详细页面后，将不显示这张图片。</p>
+<p>如果想添加文章封面的话，需要添加一个字段属性：<code>summary_img</code>，<code>summary_img</code> 的值是图片的路径。</p>
 <a id="more"></a>
 <p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: CSS 各种Hack手段</div><div class="line">date: 2017-06-25 03:25:24</div><div class="line">categories: 前端</div><div class="line">tags: [CSS]</div><div class="line">comments: false</div><div class="line">summary_img: /images/css-hack-1.png</div><div class="line">---</div></pre></td></tr></table></figure></p>
-<p>具体细节如下：</p>
-<p>未完待续…</p>
-
+<p>具体实现细节如下：<br>修改 <code>\themes\next\layout\_macro\post.swing</code> 文件。<br>将代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;% if post.summary_img  %&#125;</div><div class="line">  &lt;div class=&quot;out-img-topic&quot;&gt;</div><div class="line">    &lt;img src=&#123;&#123; post.summary_img &#125;&#125; class=&quot;img-topic&quot;&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure></p>
+<p>添加到下图所示的位置</p>
+<p><img src="/images/hexo-next-five-1.png" alt=""></p>
+<p>这样的话，就可以使用 <code>summary_img: imageurl</code> 来设置文章封面了。</p>
+<p>开启了文章封面的文章，我建议将 <code>&lt;!-- more --&gt;</code> 放在文章内容的开头，像这样：</p>
+<p><img src="/images/hexo-next-five-2.png" alt=""></p>
+<h1 id="网页加载进度条"><a href="#网页加载进度条" class="headerlink" title="网页加载进度条"></a>网页加载进度条</h1><p>打开 <code>/themes/next/layout/_partials/head.swing</code> 文件，在文件末尾添加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 网页加载条 --&gt;</div><div class="line">&lt;script src=&quot;https://neveryu.github.io/js/src/pace.min.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>然后，打开 <code>/themes/source/css/_custom/custom.styl</code> 文件，在文件末尾添加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div></pre></td><td class="code"><pre><div class="line">/*网页加载条*/</div><div class="line">/* This is a compiled file, you should be editing the file in the templates directory */</div><div class="line">.pace &#123;</div><div class="line">  -webkit-pointer-events: none;</div><div class="line">  pointer-events: none;</div><div class="line">  -webkit-user-select: none;</div><div class="line">  -moz-user-select: none;</div><div class="line">  user-select: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pace-inactive &#123;</div><div class="line">  display: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pace .pace-progress &#123;</div><div class="line">  background: #1e92fb;</div><div class="line">  position: fixed;</div><div class="line">  z-index: 2000;</div><div class="line">  top: 0;</div><div class="line">  right: 100%;</div><div class="line">  width: 100%;</div><div class="line">  height: 3px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pace .pace-progress-inner &#123;</div><div class="line">  display: block;</div><div class="line">  position: absolute;</div><div class="line">  right: 0px;</div><div class="line">  width: 100px;</div><div class="line">  height: 100%;</div><div class="line">  box-shadow: 0 0 10px #e90f92, 0 0 5px #e90f92;</div><div class="line">  opacity: 1.0;</div><div class="line">  -webkit-transform: rotate(3deg) translate(0px, -4px);</div><div class="line">  -moz-transform: rotate(3deg) translate(0px, -4px);</div><div class="line">  -ms-transform: rotate(3deg) translate(0px, -4px);</div><div class="line">  -o-transform: rotate(3deg) translate(0px, -4px);</div><div class="line">  transform: rotate(3deg) translate(0px, -4px);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pace .pace-activity &#123;</div><div class="line">  display: block;</div><div class="line">  position: fixed;</div><div class="line">  z-index: 2000;</div><div class="line">  top: 15px;</div><div class="line">  right: 15px;</div><div class="line">  width: 14px;</div><div class="line">  height: 14px;</div><div class="line">  border: solid 2px transparent;</div><div class="line">  border-top-color: #e90f92;</div><div class="line">  border-left-color: #e90f92;</div><div class="line">  border-radius: 10px;</div><div class="line">  -webkit-animation: pace-spinner 400ms linear infinite;</div><div class="line">  -moz-animation: pace-spinner 400ms linear infinite;</div><div class="line">  -ms-animation: pace-spinner 400ms linear infinite;</div><div class="line">  -o-animation: pace-spinner 400ms linear infinite;</div><div class="line">  animation: pace-spinner 400ms linear infinite;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@-webkit-keyframes pace-spinner &#123;</div><div class="line">  0% &#123; -webkit-transform: rotate(0deg); transform: rotate(0deg); &#125;</div><div class="line">  100% &#123; -webkit-transform: rotate(360deg); transform: rotate(360deg); &#125;</div><div class="line">&#125;</div><div class="line">@-moz-keyframes pace-spinner &#123;</div><div class="line">  0% &#123; -moz-transform: rotate(0deg); transform: rotate(0deg); &#125;</div><div class="line">  100% &#123; -moz-transform: rotate(360deg); transform: rotate(360deg); &#125;</div><div class="line">&#125;</div><div class="line">@-o-keyframes pace-spinner &#123;</div><div class="line">  0% &#123; -o-transform: rotate(0deg); transform: rotate(0deg); &#125;</div><div class="line">  100% &#123; -o-transform: rotate(360deg); transform: rotate(360deg); &#125;</div><div class="line">&#125;</div><div class="line">@-ms-keyframes pace-spinner &#123;</div><div class="line">  0% &#123; -ms-transform: rotate(0deg); transform: rotate(0deg); &#125;</div><div class="line">  100% &#123; -ms-transform: rotate(360deg); transform: rotate(360deg); &#125;</div><div class="line">&#125;</div><div class="line">@keyframes pace-spinner &#123;</div><div class="line">  0% &#123; transform: rotate(0deg); transform: rotate(0deg); &#125;</div><div class="line">  100% &#123; transform: rotate(360deg); transform: rotate(360deg); &#125;</div><div class="line">&#125;</div><div class="line">/*网页加载条 END*/</div></pre></td></tr></table></figure></p>
+<h1 id="开发环境自动刷新"><a href="#开发环境自动刷新" class="headerlink" title="开发环境自动刷新"></a>开发环境自动刷新</h1><h1 id="代码压缩"><a href="#代码压缩" class="headerlink" title="代码压缩"></a>代码压缩</h1>
       
     </div>
 
@@ -818,7 +832,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文章封面"><span class="nav-number">1.</span> <span class="nav-text">文章封面</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文章封面"><span class="nav-number">1.</span> <span class="nav-text">文章封面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网页加载进度条"><span class="nav-number">2.</span> <span class="nav-text">网页加载进度条</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开发环境自动刷新"><span class="nav-number">3.</span> <span class="nav-text">开发环境自动刷新</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码压缩"><span class="nav-number">4.</span> <span class="nav-text">代码压缩</span></a></li></ol></div>
             
           </div>
         </section>
@@ -878,7 +892,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count" style="color: #e90f92;">全站共 46.6k 字</span>
+  <span class="post-count" style="color: #e90f92;">全站共 47.2k 字</span>
 </div>
         
       </div>
