@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://neveryu.github.io/2017/07/15/hexo-next-five/</loc>
-    <lastmod>2017-08-23T15:43:11.010Z</lastmod>
+    <lastmod>2017-08-30T12:28:03.455Z</lastmod>
     <data>
         <display>
         <title>Hexo-NexT搭建个人博客（五）</title>
@@ -19,6 +19,26 @@
            
              
               <breadCrumb title="Hexo" url="https://neveryu.github.io/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2016/10/07/git/</loc>
+    <lastmod>2017-08-26T14:28:45.740Z</lastmod>
+    <data>
+        <display>
+        <title>Git学习总结</title>
+        <pubTime>2016-10-07T05:25:24.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
           
         </display>
     </data>
@@ -347,19 +367,41 @@
 
     
   <url>
-    <loc>https://neveryu.github.io/2016/12/24/why-introversion-like-alone/</loc>
+    <loc>https://neveryu.github.io/2017/04/10/npm/</loc>
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     <data>
         <display>
-        <title>【转】为什么一些生活中很外向开朗的人会喜欢独来独往</title>
-        <pubTime>2016-12-24T14:25:24.000Z</pubTime>
+        <title>npm 全面介绍</title>
+        <pubTime>2017-04-09T19:25:24.000Z</pubTime>
         
-        <tag>essay</tag>
+        <tag>npm</tag>
          
          
            
              
-              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2016/11/22/use-jquery-skill/</loc>
+    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
+    <data>
+        <display>
+        <title>jQuery使用技巧</title>
+        <pubTime>2016-11-22T03:54:55.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>jQuery</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -387,34 +429,14 @@
 
     
   <url>
-    <loc>https://neveryu.github.io/2017/04/10/npm/</loc>
+    <loc>https://neveryu.github.io/2016/12/24/why-introversion-like-alone/</loc>
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     <data>
         <display>
-        <title>npm 全面介绍</title>
-        <pubTime>2017-04-09T19:25:24.000Z</pubTime>
+        <title>【转】为什么一些生活中很外向开朗的人会喜欢独来独往</title>
+        <pubTime>2016-12-24T14:25:24.000Z</pubTime>
         
-        <tag>npm</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://neveryu.github.io/2016/10/07/git/</loc>
-    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
-    <data>
-        <display>
-        <title>Git学习总结</title>
-        <pubTime>2016-10-07T05:25:24.000Z</pubTime>
-        
-        <tag>Git</tag>
+        <tag>essay</tag>
          
          
            
@@ -427,16 +449,14 @@
 
     
   <url>
-    <loc>https://neveryu.github.io/2016/11/22/use-jquery-skill/</loc>
-    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
+    <loc>https://neveryu.github.io/2017/05/20/npm-two/</loc>
+    <lastmod>2017-06-19T14:39:02.008Z</lastmod>
     <data>
         <display>
-        <title>jQuery使用技巧</title>
-        <pubTime>2016-11-22T03:54:55.000Z</pubTime>
+        <title>npm 的一个小细节</title>
+        <pubTime>2017-05-19T17:25:24.000Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
-        <tag>jQuery</tag>
+        <tag>npm</tag>
          
          
            
@@ -483,26 +503,6 @@
            
              
               <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://neveryu.github.io/2017/05/20/npm-two/</loc>
-    <lastmod>2017-06-19T14:39:02.008Z</lastmod>
-    <data>
-        <display>
-        <title>npm 的一个小细节</title>
-        <pubTime>2017-05-19T17:25:24.000Z</pubTime>
-        
-        <tag>npm</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
           
         </display>
     </data>
