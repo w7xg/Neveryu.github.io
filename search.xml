@@ -30,6 +30,16 @@
 <p>然后在 <code>gulpfile.js</code> 里面写上相关代码，详情查看 <a href="https://github.com/Neveryu/Neveryu.github.io/blob/resource/gulpfile.js" target="_blank" rel="external">源码</a> 。</p>
 <p>然后执行 <code>gulp min</code> 就会根据 <code>gulpfile.js</code> 中的配置，对 public 目录中的静态资源文件进行压缩。</p>
 <p>鼠标右键 -&gt; 查看网页源代码，可以看到已经是压缩过的。</p>
+<h1 id="自定义页面与目录"><a href="#自定义页面与目录" class="headerlink" title="自定义页面与目录"></a>自定义页面与目录</h1><p>下面介绍两种方法：</p>
+<p>第一种方法是使用 Hexo 提供的跳过渲染配置，适用于整个目录的设置。</p>
+<p><img src="/images/hexo-next-five-3.png" alt=""></p>
+<p>具体步骤，打开博客根目录_config.yml，找到其中 skip_render 配置项，这个用来配置 /source/ 中需要跳过渲染的文件或目录，例如希望跳过 /source/projects/ 里的所有文件渲染，可以配置为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">skip_render: projects/**</div></pre></td></tr></table></figure></p>
+<p>匹配规则是一种类似正则的规则，官方给出的参考是<a href="https://github.com/isaacs/node-glob" target="_blank" rel="external">这个</a>。另外在测试这个功能的时候发现，Hexo 的内部缓存不是特别好用，有时候你修改了配置但生成出来的内容不一定及时应用了新配置，最好在生成之前执行一下 hexo clean 命令，清除掉旧的生成文件和缓存。</p>
+<p>第二种方法是给单个文件添加不应用模板的标记，适用于个别特殊文件的处理。例如我们的网站如果要使用百度统计，往往需要在根目录放一个 html 格式的验证文件，这个文件默认也会经过用主题模板渲染，避免渲染的办法就是在文件头部添加如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">layout: false</div><div class="line">---</div></pre></td></tr></table></figure>
+<p>　　<br>这样，这个文件就不会经过模板渲染，最终发布到 /public/ 里的文件就是去掉标记后的文件的样子。</p>
+<h1 id="关于-categories-和-tags-页面-Cannot-GET-的解决方案"><a href="#关于-categories-和-tags-页面-Cannot-GET-的解决方案" class="headerlink" title="关于 categories 和 tags 页面 Cannot GET  的解决方案"></a>关于 categories 和 tags 页面 Cannot GET  的解决方案</h1><p>有同学反馈在配置文件中配置了 categories 和 tags 后依然没有 categories 和 tags 页面，提示 Cannot GET。<br><img src="/images/hexo-next-five-4.png" alt=""></p>
+<p>其实在配置了 categories 和 tags  后，还需要在 /source/ 目录下新建 categories 目录和 tags 目录，里面的要有 index.md 文件，并且文件开头不能少，也不能写错。<br><img src="/images/hexo-next-five-5.png" alt=""></p>
 ]]></content>
       
         <categories>
@@ -1609,6 +1619,8 @@
 <h3 id="问题三"><a href="#问题三" class="headerlink" title="问题三"></a>问题三</h3><p>使用 windows 的同学注意了，如果你在资源管理器里新建一个 .gitignore 文件，它会提示你必须输入文件名，但是在文本编辑器里“保存”或者“另存为”就可以把文件保存为 .gitignore 了。<br>有些时候，你想添加一个文件到 git，但发现添加不了，原因是这个文件被 .gitignore 忽略了：<br><code>git add App.class</code><br>如果你确实想添加该文件，可以用 -f 制添加到 git：<br><code>git add -f App.class</code><br>或者你发现，可能是 .gitignore 写得有问题，需要找出来到底哪个规则写错了。<br>可以用 <code>git check-ignore</code> 命令检查：<br><code>git check-ignore -v App.class</code></p>
 <h3 id="问题四"><a href="#问题四" class="headerlink" title="问题四"></a>问题四</h3><p>为什么我把我生成的 ssh key 添加到了 github 中<br>然后 也 remote 了 <code>https://github.com/Neveryu/Xxx.git</code><br>为什么提交的时候报错，或者提示 输入密码账号是为什么</p>
 <p>ssh key 是 ssh 协议的密钥，http 协议没权限</p>
+<h3 id="问题五"><a href="#问题五" class="headerlink" title="问题五"></a>问题五</h3><p>git怎样删除未监视的文件 untracked files?<br>用 git clean<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># 删除 untracked files</div><div class="line">git clean -f</div><div class="line"> </div><div class="line"># 连 untracked 的目录也一起删掉</div><div class="line">git clean -fd</div><div class="line"> </div><div class="line"># 连 gitignore 的untrack 文件/目录也一起删掉 （慎用，一般这个是用来删掉编译出来的 .o之类的文件用的）</div><div class="line">git clean -xfd</div><div class="line"> </div><div class="line"># 在用上述 git clean 前，墙裂建议加上 -n 参数来先看看会删掉哪些文件，防止重要文件被误删</div><div class="line">git clean -nxfd</div><div class="line">git clean -nf</div><div class="line">git clean -nfd</div></pre></td></tr></table></figure></p>
+<h2 id="我的常用命令"><a href="#我的常用命令" class="headerlink" title="我的常用命令"></a>我的常用命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git branch -avv</div><div class="line">git remote -v</div></pre></td></tr></table></figure>
 <p><a href="http://git-scm.com/book/zh/v2" target="_blank" rel="external">权威教程</a><br><a href="http://iissnan.com/progit/" target="_blank" rel="external">Pro Git 简体中文版</a></p>
 ]]></content>
       

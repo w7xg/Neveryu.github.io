@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://neveryu.github.io/"/>
-  <updated>2017-08-30T13:11:01.948Z</updated>
+  <updated>2017-09-17T13:37:34.723Z</updated>
   <id>https://neveryu.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://neveryu.github.io/2017/07/15/hexo-next-five/"/>
     <id>https://neveryu.github.io/2017/07/15/hexo-next-five/</id>
     <published>2017-07-15T15:25:24.000Z</published>
-    <updated>2017-08-30T13:11:01.948Z</updated>
+    <updated>2017-09-17T13:37:34.723Z</updated>
     
     <content type="html"><![CDATA[<p>在这之前，我写过四篇关于 Hexo + NexT 构建博客的文章。=》【<a href="/categories/Hexo/">传送门</a>】</p>
 <p>本文将会介绍一些自定义的功能。相较于之前主要是修改配置文件中的内容，现在更多的是动手改源码来实现功能，而且还能帮你搞懂一些 Hexo NexT 的源码。如果你能弄懂源码的一些流程和逻辑，那么，你将能更好的来实现自己的一些想法。</p>
@@ -46,6 +46,16 @@
 <p>然后在 <code>gulpfile.js</code> 里面写上相关代码，详情查看 <a href="https://github.com/Neveryu/Neveryu.github.io/blob/resource/gulpfile.js" target="_blank" rel="external">源码</a> 。</p>
 <p>然后执行 <code>gulp min</code> 就会根据 <code>gulpfile.js</code> 中的配置，对 public 目录中的静态资源文件进行压缩。</p>
 <p>鼠标右键 -&gt; 查看网页源代码，可以看到已经是压缩过的。</p>
+<h1 id="自定义页面与目录"><a href="#自定义页面与目录" class="headerlink" title="自定义页面与目录"></a>自定义页面与目录</h1><p>下面介绍两种方法：</p>
+<p>第一种方法是使用 Hexo 提供的跳过渲染配置，适用于整个目录的设置。</p>
+<p><img src="/images/hexo-next-five-3.png" alt=""></p>
+<p>具体步骤，打开博客根目录_config.yml，找到其中 skip_render 配置项，这个用来配置 /source/ 中需要跳过渲染的文件或目录，例如希望跳过 /source/projects/ 里的所有文件渲染，可以配置为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">skip_render: projects/**</div></pre></td></tr></table></figure></p>
+<p>匹配规则是一种类似正则的规则，官方给出的参考是<a href="https://github.com/isaacs/node-glob" target="_blank" rel="external">这个</a>。另外在测试这个功能的时候发现，Hexo 的内部缓存不是特别好用，有时候你修改了配置但生成出来的内容不一定及时应用了新配置，最好在生成之前执行一下 hexo clean 命令，清除掉旧的生成文件和缓存。</p>
+<p>第二种方法是给单个文件添加不应用模板的标记，适用于个别特殊文件的处理。例如我们的网站如果要使用百度统计，往往需要在根目录放一个 html 格式的验证文件，这个文件默认也会经过用主题模板渲染，避免渲染的办法就是在文件头部添加如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">layout: false</div><div class="line">---</div></pre></td></tr></table></figure>
+<p>　　<br>这样，这个文件就不会经过模板渲染，最终发布到 /public/ 里的文件就是去掉标记后的文件的样子。</p>
+<h1 id="关于-categories-和-tags-页面-Cannot-GET-的解决方案"><a href="#关于-categories-和-tags-页面-Cannot-GET-的解决方案" class="headerlink" title="关于 categories 和 tags 页面 Cannot GET  的解决方案"></a>关于 categories 和 tags 页面 Cannot GET  的解决方案</h1><p>有同学反馈在配置文件中配置了 categories 和 tags 后依然没有 categories 和 tags 页面，提示 Cannot GET。<br><img src="/images/hexo-next-five-4.png" alt=""></p>
+<p>其实在配置了 categories 和 tags  后，还需要在 /source/ 目录下新建 categories 目录和 tags 目录，里面的要有 index.md 文件，并且文件开头不能少，也不能写错。<br><img src="/images/hexo-next-five-5.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
