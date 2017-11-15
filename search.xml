@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title><![CDATA[vue2.x 做一个饿了么app]]></title>
+      <url>https://neveryu.github.io/2017/11/11/vue-sell/</url>
+      <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p id="div-border-top-green">本项目是基于 vue2.4 最新的实战项目，vue-cli2.8 + vue2.4 + vue-resource + vue-router2.7 + es6 + mock + webpack 的一个移动端外卖 app。</p>
+
+<p><img src="/images/vue-sell-1.png" alt=""></p>
+<p id="div-border-left-red">现在最流行的开发方式就是前后分离了；<br><a href="/tags/vue">vue</a> 也是现在最流行的前端框架之一。</p>
+
+
+<h2 id="移动端演示"><a href="#移动端演示" class="headerlink" title="移动端演示"></a>移动端演示</h2><p>扫二维码在手机上查看效果更好<br><img src="/images/vue-sell-2.png" alt=""></p>
+<p>vue 的官网文档写的很好，很多同学在学习完文档以后，很难实际上手做项目，只能做一些 todo-list 的小 demo ,距离上手做项目还有一些差距。<br>这一套 vue 的实战视频可以说是非常适合新手入门进阶，让你可以动手用 vue 来做项目，解决 vue 在实战中的问题才是真的，而不是小打小闹的小demo。<br><img src="/images/vue-sell-5.png" alt=""></p>
+<p>而且这套视频教程包含现在最新的前端必备技术点详细教学：webpack、eslint、vue-cli构建、模块打包、mock、vue-resource、axios、以及真实项目中会遇到的各种问题以及解决方案。</p>
+<h2 id="获取教程"><a href="#获取教程" class="headerlink" title="获取教程"></a>获取教程</h2><p>这个项目我从头到尾写了一遍，由于有一些包或者模块升级的原因，带来的一些小问题，我都已经解决过了。<br>现在扫码即可获取视频教程以及本人联系方式 微信/QQ，你可以向我咨询你在学这个项目中遇到的任何问题。<br><img src="/images/vue-sell-pay.png" alt=""></p>
+<!-- ## 截图演示
+
+<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column"  style="width: 50%;"><img src="/images/vue-sell-3.png" alt=""></div><div class="group-picture-column"  style="width: 50%;"><img src="/images/vue-sell-4.png" alt=""></div></div><div class="group-picture-row"></div></div></div> –&gt;
+-->]]></content>
+      
+        <categories>
+            
+            <category> 前端 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> vue </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hexo-NexT搭建个人博客（五）]]></title>
       <url>https://neveryu.github.io/2017/07/15/hexo-next-five/</url>
       <content type="html"><![CDATA[<p>在这之前，我写过四篇关于 Hexo + NexT 构建博客的文章。=》【<a href="/categories/Hexo/">传送门</a>】</p>
@@ -1023,7 +1056,8 @@
 <p>如果你需要修改内容的宽度，同样需要编辑样式文件。编辑主题的 source\css_variables\custom.styl 文件，新增变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 修改成你期望的宽度</div><div class="line">$content-desktop = 700px</div><div class="line"></div><div class="line">// 当视窗超过 1600px 后的宽度</div><div class="line">$content-desktop-large = 900px</div></pre></td></tr></table></figure></p>
 <p>此方法不适用于 Pisces Scheme ， Pisces Scheme 编辑 <code>themes\next\source\css\_schemes\Picses\_layout.styl</code> 文件，更改以下 css 选项定义值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.header &#123;width: 1150px;&#125;</div><div class="line">.container .main-inner &#123;width: 1150px;&#125;</div><div class="line">.content-wrap &#123;width: calc(100% - 260px);&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="六、图片模式"><a href="#六、图片模式" class="headerlink" title="六、图片模式"></a>六、图片模式</h2><p>新建博文，设置 <code>type: &quot;picture&quot;</code> ，使用 <code>{\% gp x-x \%}...{\% endgp \%}</code> 标签引用要展示的图片地址，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: Naruto-Pictures</div><div class="line">categories: [picture]</div><div class="line">tags: [picture,naruto]</div><div class="line">date: 2016-11-02 14:36:04</div><div class="line">type: &quot;picture&quot;</div><div class="line">---</div><div class="line">&#123;% gp 5-3 %&#125;</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/18210.jpg)</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/196232.jpg)</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/224147.jpg)</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/199301.jpg)</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/213318.jpg)</div><div class="line">&#123;% endgp %&#125;</div></pre></td></tr></table></figure></p>
-<p><strong> 图片展示效果 </strong><br><code>{\% gp 5-3 \%}</code>：设置图片展示效果，参考 themes\next\scripts\tags\group-pictures.js 注释示意图。<br><img src="http://p1.bpimg.com/567571/eaef5acfcb3011c2.png" alt=""><br><code>5-3</code> 的意思就是5张图片将会按照这种布局来展示，Next 提供了多张图片的多种布局，你可以随意选择。</p>
+<p><strong> 图片展示效果 </strong><br><code>{\% gp 5-3 \%}</code>：设置图片展示效果，参考 <code>themes\next\scripts\tags\group-pictures.js</code> 注释示意图。<br><img src="http://p1.bpimg.com/567571/eaef5acfcb3011c2.png" alt=""><br><code>5-3</code> 的意思就是5张图片将会按照这种布局来展示，Next 提供了多张图片的多种布局，你可以随意选择。</p>
+<p></p><h3 style="color:#f63;">注意点</h3>主题目前首页可以正常显示设置的图片效果，但是点击进入后显示效果丢失，所以需要修改一下文件 <code>themes\next\source\css\_common\components\tags\group-pictures.styl</code> 中的以下样式：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.page-post-detail .post-body .group-picture-column &#123;</div><div class="line">  // float: none;</div><div class="line">  margin-top: 10px;</div><div class="line">  // width: auto !important;</div><div class="line">  img &#123; margin: 0 auto; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
 <p></p><h5 style="color:#f63;"><i>最后要说的是：</i></h5><p></p>
 <p id="div-border-top-green"><i><a href="https://github.com/Neveryu/Neveryu.github.io" target="_blank" rel="external">博客源码</a> ， 欢迎 star<br></i></p>]]></content>
       

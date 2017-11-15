@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://neveryu.github.io/2017/11/11/vue-sell/</loc>
+    
+    <lastmod>2017-11-15T16:02:48.961Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://neveryu.github.io/2016/11/11/hexo-next-three/</loc>
+    
+    <lastmod>2017-11-15T15:39:03.855Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://neveryu.github.io/weblog/index.html</loc>
     
     <lastmod>2017-10-31T14:58:48.426Z</lastmod>
@@ -107,13 +121,6 @@
   </url>
   
   <url>
-    <loc>https://neveryu.github.io/2016/11/11/hexo-next-three/</loc>
-    
-    <lastmod>2017-06-20T13:25:21.306Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://neveryu.github.io/2016/09/30/hexo-next-two/</loc>
     
     <lastmod>2017-06-20T13:25:18.756Z</lastmod>
@@ -177,7 +184,7 @@
   </url>
   
   <url>
-    <loc>https://neveryu.github.io/2017/04/10/npm/</loc>
+    <loc>https://neveryu.github.io/2016/09/25/essay-20160925/</loc>
     
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     
@@ -198,7 +205,7 @@
   </url>
   
   <url>
-    <loc>https://neveryu.github.io/2016/09/25/essay-20160925/</loc>
+    <loc>https://neveryu.github.io/2017/04/10/npm/</loc>
     
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     
