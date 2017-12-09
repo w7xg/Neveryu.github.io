@@ -5,10 +5,10 @@
     
   <url>
     <loc>https://neveryu.github.io/2017/11/11/vue-sell/</loc>
-    <lastmod>2017-11-15T16:02:48.961Z</lastmod>
+    <lastmod>2017-12-09T13:37:32.092Z</lastmod>
     <data>
         <display>
-        <title>vue2.x 做一个饿了么app</title>
+        <title>vue2.x 做一个外卖app</title>
         <pubTime>2017-11-10T19:25:24.000Z</pubTime>
         
         <tag>vue</tag>
@@ -162,9 +162,9 @@
         <title>中国国内 JavaScript 圈的现状如何</title>
         <pubTime>2016-11-18T05:25:24.000Z</pubTime>
         
-        <tag>essay</tag>
-         
         <tag>JavaScript</tag>
+         
+        <tag>essay</tag>
          
          
            
@@ -250,9 +250,9 @@
         <title>【转】在2016年学JavaScript是一种什么样的体验</title>
         <pubTime>2016-10-16T15:25:24.000Z</pubTime>
         
-        <tag>essay</tag>
-         
         <tag>JavaScript</tag>
+         
+        <tag>essay</tag>
          
          
            
@@ -368,6 +368,28 @@
     
     
   <url>
+    <loc>https://neveryu.github.io/2016/11/22/use-jquery-skill/</loc>
+    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
+    <data>
+        <display>
+        <title>jQuery使用技巧</title>
+        <pubTime>2016-11-22T03:54:55.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>jQuery</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://neveryu.github.io/2016/12/24/why-introversion-like-alone/</loc>
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     <data>
@@ -396,28 +418,6 @@
         <pubTime>2017-04-09T19:25:24.000Z</pubTime>
         
         <tag>npm</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://neveryu.github.io/2016/11/22/use-jquery-skill/</loc>
-    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
-    <data>
-        <display>
-        <title>jQuery使用技巧</title>
-        <pubTime>2016-11-22T03:54:55.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>jQuery</tag>
          
          
            
@@ -490,26 +490,6 @@
 
     
   <url>
-    <loc>https://neveryu.github.io/2017/02/28/memory-leak/</loc>
-    <lastmod>2017-06-19T14:39:02.008Z</lastmod>
-    <data>
-        <display>
-        <title>如何解决内存泄漏引发的血案</title>
-        <pubTime>2017-02-27T17:01:00.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://neveryu.github.io/2017/05/20/npm-two/</loc>
     <lastmod>2017-06-19T14:39:02.008Z</lastmod>
     <data>
@@ -523,6 +503,26 @@
            
              
               <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2017/02/28/memory-leak/</loc>
+    <lastmod>2017-06-19T14:39:02.008Z</lastmod>
+    <data>
+        <display>
+        <title>如何解决内存泄漏引发的血案</title>
+        <pubTime>2017-02-27T17:01:00.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
           
         </display>
     </data>
