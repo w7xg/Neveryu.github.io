@@ -368,41 +368,19 @@
     
     
   <url>
-    <loc>https://neveryu.github.io/2016/11/22/use-jquery-skill/</loc>
+    <loc>https://neveryu.github.io/2016/09/25/essay-20160925/</loc>
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     <data>
         <display>
-        <title>jQuery使用技巧</title>
-        <pubTime>2016-11-22T03:54:55.000Z</pubTime>
+        <title>如果深圳的夜晚没有风</title>
+        <pubTime>2016-09-25T15:25:24.000Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
-        <tag>jQuery</tag>
+        <tag>essay</tag>
          
          
            
              
-              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://neveryu.github.io/2017/04/10/npm/</loc>
-    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
-    <data>
-        <display>
-        <title>npm 全面介绍</title>
-        <pubTime>2017-04-09T19:25:24.000Z</pubTime>
-        
-        <tag>npm</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+              <breadCrumb title="随笔" url="https://neveryu.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
           
         </display>
     </data>
@@ -450,19 +428,41 @@
 
     
   <url>
-    <loc>https://neveryu.github.io/2016/09/25/essay-20160925/</loc>
+    <loc>https://neveryu.github.io/2016/11/22/use-jquery-skill/</loc>
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     <data>
         <display>
-        <title>如果深圳的夜晚没有风</title>
-        <pubTime>2016-09-25T15:25:24.000Z</pubTime>
+        <title>jQuery使用技巧</title>
+        <pubTime>2016-11-22T03:54:55.000Z</pubTime>
         
-        <tag>essay</tag>
+        <tag>JavaScript</tag>
+         
+        <tag>jQuery</tag>
          
          
            
              
-              <breadCrumb title="随笔" url="https://neveryu.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2017/04/10/npm/</loc>
+    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
+    <data>
+        <display>
+        <title>npm 全面介绍</title>
+        <pubTime>2017-04-09T19:25:24.000Z</pubTime>
+        
+        <tag>npm</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
           
         </display>
     </data>
