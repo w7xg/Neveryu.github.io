@@ -4,6 +4,57 @@
   
     
     <entry>
+      <title><![CDATA[vue2.x 做一个音乐app]]></title>
+      <url>https://neveryu.github.io/2018/05/01/vue-music/</url>
+      <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p id="div-border-top-green">本项目是基于 vue2.4.1 最新的实战项目，vue-cli2.9.3 + vue2.4.1 + axios + vue-router3.0.1 + es6 + vux3.0.1 + webpack + better-scroll + 线上真实接口的一个移动端音乐 app。</p>
+
+<a id="more"></a>
+<p><img src="/images/vue-music-2.png" alt=""></p>
+<h2 id="实现的功能"><a href="#实现的功能" class="headerlink" title="实现的功能"></a>实现的功能</h2><p>1、音乐列表、歌单、歌手、排行、榜单、推荐<br>2、音乐播放、暂停、上一曲、下一曲、喜欢<br>3、播放列表、添加到播放列表、历史列表<br>4、搜索单曲、歌手、专辑、MV<br>5、查看歌手页面、专辑页面、MV<br>6、热门搜索<br>7、搜索历史记录<br>8、排行榜<br>9、切换播放模式<br>10、歌词<br>11、个人中心<br>12、项目介绍</p>
+<p id="div-border-left-red">现在最流行的开发方式就是前后分离了；<br><a href="/tags/vue">vue</a> 也是现在最流行的前端框架之一。</p>
+
+
+
+
+<h2 id="截屏演示"><a href="#截屏演示" class="headerlink" title="截屏演示"></a>截屏演示</h2><video src="/images/vue-music.mp4" controls="controls" preload="preload" height="400px"></video>
+
+<h2 id="移动端演示"><a href="#移动端演示" class="headerlink" title="移动端演示"></a>移动端演示</h2><p>扫二维码在手机上查看效果更好<br><img src="/images/vue-music-1.png" alt=""></p>
+<h2 id="项目代码"><a href="#项目代码" class="headerlink" title="项目代码"></a>项目代码</h2><p><a href="https://github.com/Neveryu/vue-music" target="_blank" rel="external">https://github.com/Neveryu/vue-music</a></p>
+<h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># install dependencies</span></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># serve with hot reload at localhost:8080</span></span><br><span class="line">npm run dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># build for production with minification</span></span><br><span class="line">npm run build</span><br><span class="line"></span><br><span class="line"><span class="comment"># build for production and view the bundle analyzer report</span></span><br><span class="line">npm run build --report</span><br><span class="line"></span><br><span class="line"><span class="comment"># run local server</span></span><br><span class="line">npm run prod.server.js</span><br></pre></td></tr></table></figure>
+<h2 id="Tip"><a href="#Tip" class="headerlink" title="Tip"></a>Tip</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果 npm install 长时间没有反应或者安装失败，请尝试</span></span><br><span class="line">npm install --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<h2 id="详细"><a href="#详细" class="headerlink" title="详细"></a>详细</h2><p>vue 有自己的脚手架构建工具 vue-cli 。使用起来非常方便，使用 webpack 来集成各种开发便捷工具，比如：</p>
+<ul>
+<li>代码热更新，修改代码之后网页无刷新改变，对前端开发来说非常的方便</li>
+<li>Postcss，再也不用去管兼容性的问题了，只针对 chrome 写 css 代码，会自动编译生成支持多款浏览器的 css 代码</li>
+<li>ESlint，统一代码风格</li>
+<li>bable，ES2015 出来已经有一段事件了，但是不少浏览器还没有兼容 ES6。有了 bable，放心使用 ES6 语法，它会自动转义成 ES5 语法</li>
+<li>Stylus，类似于 sass/scss ，但是可以不写 <code>{ }</code> 和 <code>:</code>，使用起来还是很方便的</li>
+<li>better-scroll，很好用的移动端各种滚动场景需求的插件（已支持PC）</li>
+<li>vuex，Vuex是一个专为 Vue.js 应用程序开发的状态管理模式</li>
+<li>vue-router，专为 Vue.js 应用程序开发的路由工具</li>
+</ul>
+<p>除此之外，vue-cli 已经使用 node 配置了一套本地服务器和安装命令等，本地运行和打包只需要一个命令就可以搞定，非常的方便。</p>
+<h2 id="为什么写这个项目"><a href="#为什么写这个项目" class="headerlink" title="为什么写这个项目"></a>为什么写这个项目</h2><p>之前的 <a href="https://neveryu.github.io/2017/11/11/vue-sell/">vue-sell</a>，是一个非常好的 vue 的项目教程了，学了 vue 以后，跟着做一遍 vue-sell，应该对 vue 的基本操作都能非常熟练的掌握了。<br>但是如何结合 vuex 和 vue-router，以及其他技术，做一个大型的项目，很多同学还是苦于没有经验和项目实例，所以就有了这个 vue-music。</p>
+<p><a href="https://neveryu.github.io/music/#/recommend">vue-music</a> 里面用到了 vue 全家桶，还有 better-scroll，jsonp 等其他工具，用的也是线上真实的音乐接口数据，而且项目里封装了很多完美的组件，对个人技术的学习和提升有很大的帮组，项目级别上也达到了中大型级别。<br>非常适合 vue 的进阶学习。</p>
+<h2 id="获取教程"><a href="#获取教程" class="headerlink" title="获取教程"></a>获取教程</h2><p>这个项目我从头到尾写了一遍，解决了项目中遇到的所有问题，由于有一些包或者模块升级的原因，会有一些小的问题，我都已经解决过了。<br>现在扫码即可获取视频教程以及本人联系方式 微信/QQ，你可以问我你在学这个项目中遇到的任何问题，我都会帮你解答。<br><img src="/images/vue-music-pay.JPG" alt=""></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 前端 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> vue </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[32岁白发新秀的NBA首秀——英格拉姆]]></title>
       <url>https://neveryu.github.io/2018/04/12/nba-story-1/</url>
       <content type="html"><![CDATA[<!-- ![](http://inews.gtimg.com/newsapp_bt/0/3241295767/641) -->
@@ -1111,9 +1162,9 @@
         
         <tags>
             
-            <tag> essay </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> essay </tag>
             
         </tags>
         
@@ -1653,9 +1704,9 @@
         
         <tags>
             
-            <tag> essay </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> essay </tag>
             
         </tags>
         
