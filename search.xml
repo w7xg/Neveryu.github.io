@@ -102,7 +102,7 @@
 </ul>
 <p>除此之外，vue-cli 已经使用 node 配置了一套本地服务器和安装命令等，本地运行和打包只需要一个命令就可以搞定，非常的方便。</p>
 <h2 id="为什么写这个项目"><a href="#为什么写这个项目" class="headerlink" title="为什么写这个项目"></a>为什么写这个项目</h2><p>之前的 <a href="https://neveryu.github.io/2017/11/11/vue-sell/">vue-sell</a>，是一个非常好的 vue 的项目教程了，学了 vue 以后，跟着做一遍 vue-sell，应该对 vue 的基本操作都能非常熟练的掌握了。<br>但是如何结合 vuex 和 vue-router，以及其他技术，做一个大型的项目，很多同学还是苦于没有经验和项目实例，所以就有了这个 vue-music。</p>
-<p><a href="https://neveryu.github.io/music/#/recommend">vue-music</a> 里面用到了 vue 全家桶，还有 better-scroll，jsonp 等其他工具，用的也是线上真实的音乐接口数据，而且项目里封装了很多完美的组件，对个人技术的学习和提升有很大的帮组，项目级别上也达到了中大型级别。<br>非常适合 vue 的进阶学习。</p>
+<p><a href="https://neveryu.github.io/music/#/recommend">vue-music</a> 里面用到了 vue 全家桶，还有 better-scroll，jsonp 等其他工具，用的也是线上真实的音乐接口数据，而且项目里封装了很多完美的组件，对个人技术的学习和提升有很大的帮助，项目级别上也达到了中大型级别。<br>非常适合 vue 的进阶学习。</p>
 <h2 id="获取教程"><a href="#获取教程" class="headerlink" title="获取教程"></a>获取教程</h2><p>这个项目我从头到尾写了一遍，解决了项目中遇到的所有问题，由于有一些包或者模块升级的原因，会有一些小的问题，我都已经解决过了。<br>现在扫码即可获取视频教程以及本人联系方式 微信/QQ，你可以问我你在学这个项目中遇到的任何问题，我都会帮你解答。<br><img src="/images/vue-music-pay.JPG" alt=""></p>
 ]]></content>
       
