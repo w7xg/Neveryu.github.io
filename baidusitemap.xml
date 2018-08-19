@@ -469,21 +469,19 @@
 
     
   <url>
-    <loc>https://neveryu.github.io/2016/11/22/use-jquery-skill/</loc>
+    <loc>https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/</loc>
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     <data>
         <display>
-        <title>jQuery使用技巧</title>
-        <pubTime>2016-11-22T03:54:55.000Z</pubTime>
+        <title>JavaScript 内存管理 & 垃圾回收机制</title>
+        <pubTime>2017-02-18T05:25:24.000Z</pubTime>
         
         <tag>JavaScript</tag>
-         
-        <tag>jQuery</tag>
          
          
            
              
-              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
           
         </display>
     </data>
@@ -531,34 +529,16 @@
 
     
   <url>
-    <loc>https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/</loc>
+    <loc>https://neveryu.github.io/2016/11/22/use-jquery-skill/</loc>
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     <data>
         <display>
-        <title>JavaScript 内存管理 & 垃圾回收机制</title>
-        <pubTime>2017-02-18T05:25:24.000Z</pubTime>
+        <title>jQuery使用技巧</title>
+        <pubTime>2016-11-22T03:54:55.000Z</pubTime>
         
         <tag>JavaScript</tag>
          
-         
-           
-             
-              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://neveryu.github.io/2017/05/20/npm-two/</loc>
-    <lastmod>2017-06-19T14:39:02.008Z</lastmod>
-    <data>
-        <display>
-        <title>npm 的一个小细节</title>
-        <pubTime>2017-05-19T17:25:24.000Z</pubTime>
-        
-        <tag>npm</tag>
+        <tag>jQuery</tag>
          
          
            
@@ -584,6 +564,26 @@
            
              
               <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2017/05/20/npm-two/</loc>
+    <lastmod>2017-06-19T14:39:02.008Z</lastmod>
+    <data>
+        <display>
+        <title>npm 的一个小细节</title>
+        <pubTime>2017-05-19T17:25:24.000Z</pubTime>
+        
+        <tag>npm</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
           
         </display>
     </data>
