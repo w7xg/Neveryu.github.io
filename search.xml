@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title><![CDATA[Hexo-NexT搭建个人博客（六）]]></title>
+      <url>https://neveryu.github.io/2018/10/15/hexo-next-six/</url>
+      <content type="html"><![CDATA[<p>在 hexo 中，我们如何使用自己自定义的 html 页面呢？</p>
+<p>我们知道，在 hexo 中，我们使用的是 markdown 格式的文件，渲染出来的页面是有主题样式的。如果我们不希望我们的页面使用主题样式。那么需要在文件头部加一个 <code>layout: false</code> 的配置。</p>
+<p><strong>使用 md 文件写文章时增加配置不使用 layout </strong></p>
+<a id="more"></a>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 我来试一下如何禁止解析html</span><br><span class="line">date: 2018-10-04 13:25:24</span><br><span class="line">categories: 综合</span><br><span class="line">tags: [综合]</span><br><span class="line">comments: false</span><br><span class="line">layout: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>这样，我们的文件就不会被主题渲染。</p>
+<hr>
+<p>其实在我们的 hexo 中，是可以直接写 html 文件的，不过也会被渲染，出来的页面还是有主题样式的。如果我们不想要这个主题样式，怎么做呢？</p>
+<p><strong> 使用 <code>skip_render</code> </strong></p>
+<p><code>skip_render</code> 跳过指定文件的渲染，您可使用 <a href="https://github.com/isaacs/node-glob" target="_blank" rel="external">glob 表达式</a> 来匹配路径。   </p>
+<p><code>skip_render</code> 的配置在 <span id="inline-blue">站点配置文件</span> 中。</p>
+<p>只有 <code>source</code> 目录下的文件才会发布到 <code>public</code>（能够在网络上访问到），因此 Hexo 只渲染 <code>source</code> 目录下的文件。<code>skip_render</code> 参数设置的路径是相对于 <code>source</code> 目录的路径。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skip_render: test.html</span><br></pre></td></tr></table></figure></p>
+<p>注意，千万不要写成<code>/test.html</code>，这里只能填相对于source文件夹的相对路径。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Next </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Yarn安装与使用详细介绍]]></title>
       <url>https://neveryu.github.io/2018/07/20/yarn/</url>
       <content type="html"><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>在 Node 生态系统中，依赖通常安装在项目的 <code>node_modules</code> 文件夹中。然而，这个文件的结构和实际依赖树可能有所区别，因为重复的依赖可以合并到一起。<code>npm</code> 客户端把依赖安装到 <code>node_modules</code> 目录的过程具有不确定性。这意味着当依赖的安装顺序不同时，<code>node_modules</code> 目录的结构可能会发生变化。这种差异可能会导致类似<font color="red">“我的电脑上可以运行，别的电脑上不行”</font>的情况，并且通常需要花费大量时间定为与解决。</p>
@@ -1292,9 +1327,9 @@
         
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> essay </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
         
@@ -1834,9 +1869,9 @@
         
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> essay </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
         

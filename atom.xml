@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://neveryu.github.io/"/>
-  <updated>2018-08-29T14:48:45.534Z</updated>
+  <updated>2018-10-20T07:44:55.439Z</updated>
   <id>https://neveryu.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo-NexT搭建个人博客（六）</title>
+    <link href="https://neveryu.github.io/2018/10/15/hexo-next-six/"/>
+    <id>https://neveryu.github.io/2018/10/15/hexo-next-six/</id>
+    <published>2018-10-15T15:25:24.000Z</published>
+    <updated>2018-10-20T07:44:55.439Z</updated>
+    
+    <content type="html"><![CDATA[<p>在 hexo 中，我们如何使用自己自定义的 html 页面呢？</p><p>我们知道，在 hexo 中，我们使用的是 markdown 格式的文件，渲染出来的页面是有主题样式的。如果我们不希望我们的页面使用主题样式。那么需要在文件头部加一个 <code>layout: false</code> 的配置。</p><p><strong>使用 md 文件写文章时增加配置不使用 layout </strong></p><a id="more"></a><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 我来试一下如何禁止解析html</span><br><span class="line">date: 2018-10-04 13:25:24</span><br><span class="line">categories: 综合</span><br><span class="line">tags: [综合]</span><br><span class="line">comments: false</span><br><span class="line">layout: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure><p>这样，我们的文件就不会被主题渲染。</p><hr><p>其实在我们的 hexo 中，是可以直接写 html 文件的，不过也会被渲染，出来的页面还是有主题样式的。如果我们不想要这个主题样式，怎么做呢？</p><p><strong> 使用 <code>skip_render</code> </strong></p><p><code>skip_render</code> 跳过指定文件的渲染，您可使用 <a href="https://github.com/isaacs/node-glob" target="_blank" rel="external">glob 表达式</a> 来匹配路径。   </p><p><code>skip_render</code> 的配置在 <span id="inline-blue">站点配置文件</span> 中。</p><p>只有 <code>source</code> 目录下的文件才会发布到 <code>public</code>（能够在网络上访问到），因此 Hexo 只渲染 <code>source</code> 目录下的文件。<code>skip_render</code> 参数设置的路径是相对于 <code>source</code> 目录的路径。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skip_render: test.html</span><br></pre></td></tr></table></figure></p><p>注意，千万不要写成<code>/test.html</code>，这里只能填相对于source文件夹的相对路径。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 hexo 中，我们如何使用自己自定义的 html 页面呢？&lt;/p&gt;
+&lt;p&gt;我们知道，在 hexo 中，我们使用的是 markdown 格式的文件，渲染出来的页面是有主题样式的。如果我们不希望我们的页面使用主题样式。那么需要在文件头部加一个 &lt;code&gt;layout: false&lt;/code&gt; 的配置。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用 md 文件写文章时增加配置不使用 layout &lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://neveryu.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="https://neveryu.github.io/tags/Hexo/"/>
+    
+      <category term="Next" scheme="https://neveryu.github.io/tags/Next/"/>
+    
+  </entry>
   
   <entry>
     <title>Yarn安装与使用详细介绍</title>
@@ -469,33 +495,6 @@
     
     
       <category term="essay" scheme="https://neveryu.github.io/tags/essay/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-NexT搭建个人博客（四）</title>
-    <link href="https://neveryu.github.io/2016/12/15/hexo-next-four/"/>
-    <id>https://neveryu.github.io/2016/12/15/hexo-next-four/</id>
-    <published>2016-12-15T15:25:24.000Z</published>
-    <updated>2018-09-20T08:21:29.159Z</updated>
-    
-    <content type="html"><![CDATA[<p id="div-border-left-blue">提示：本篇文章将介绍在使用 heox 做博客框架中的一些 bug 处理情况。</p><p>按照之前的教程介绍应该是会比较顺利的搭建好你的博客，但是难免会遇到一些意外，这个时候就要学会解决问题了。<br>解决问题的原则是：查看 bug 信息，从上到下依次解决 bug。</p><p>下面来看几个例子：</p><a id="more"></a><p>首先这个是在 <code>hexo clean</code> 时报的错：<br><img src="/images/hexo-next-four-error1.png" alt=""><br>提示插件 <strong>hexo-deployer-git</strong> 加载失败，想了一下，应该是上次我在移动博客目录的时候，这个模块中有一些文件名比较长的文件，系统会提示移动不过来，导致这个模块异常，很简单，文件夹中删除这个模块，重新安装即可。（或者使用 <strong>npm</strong> 来卸载这个模块，然后重新安装）如下：</p><p><img src="/images/hexo-next-four-solution1.png" alt=""></p><p>OK ， 现在好了，<code>hexo clean</code> 没有报错了。</p><p><img src="/images/hexo-next-four-result1.png" alt=""></p><p>下面，我是在执行 <code>hexo g</code> 的操作，同样也出现了错误：</p><p><img src="/images/hexo-next-four-error2.png" alt=""></p><p>按照图中我标注的步骤，来看一下错误信息：<br>如 1 所示：我们首先会发现缺少模块 <strong>isarray</strong> ，但是我们查看 <strong>package.json</strong> 文件，我们的项目根本就没有引入 <strong>isarray</strong> 这个模块，我猜测这个 <strong>isarray</strong> 模块应该是某个模块的子模块 。</p><p>如 2 所示：我们顺着 <strong>at</strong> 一路往下找。</p><p>如 3 所示：发现这个 <strong>isarray</strong> 是在 <strong>hexo-generator-sitemap</strong> 里面的 ，所以我们删除这个 <strong>hexo-generator-sitemap</strong> 模块，然后重新安装这个模块。如下：</p><p><img src="/images/hexo-next-four-solution2.png" alt=""></p><p>OK ， 现在好了，<code>hexo g</code> 没有报错了。</p><p><img src="/images/hexo-next-four-result2.png" alt=""></p><p>那么，就以这两个例子来作为本次的示范吧，其实，<strong>Hexo</strong> 中的一些问题还是比较好解决的，因为它都是依赖其他模块的，定位到出问题的模块，卸载重装即可。</p><p id="div-border-top-red">总结：遇到问题 <strong>bug</strong>，一定要仔细查阅错误提示信息，遵守从上往下解决的方案。</p><p></p><h5 style="color:#f63;"><i>最后要说的是：</i></h5><p></p><p id="div-border-top-green"><i><a href="https://github.com/Neveryu/Neveryu.github.io" target="_blank" rel="external">博客源码</a> ， 欢迎 star<br></i></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p id=&quot;div-border-left-blue&quot;&gt;提示：本篇文章将介绍在使用 heox 做博客框架中的一些 bug 处理情况。&lt;/p&gt;
-
-&lt;p&gt;按照之前的教程介绍应该是会比较顺利的搭建好你的博客，但是难免会遇到一些意外，这个时候就要学会解决问题了。&lt;br&gt;解决问题的原则是：查看 bug 信息，从上到下依次解决 bug。&lt;/p&gt;
-&lt;p&gt;下面来看几个例子：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Hexo" scheme="https://neveryu.github.io/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="https://neveryu.github.io/tags/Hexo/"/>
-    
-      <category term="Next" scheme="https://neveryu.github.io/tags/Next/"/>
     
   </entry>
   

@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://neveryu.github.io/2018/10/15/hexo-next-six/</loc>
+    
+    <lastmod>2018-10-20T07:44:55.439Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://neveryu.github.io/404.html</loc>
+    
+    <lastmod>2018-10-20T07:18:15.657Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://neveryu.github.io/2017/11/11/vue-sell/</loc>
     
     <lastmod>2018-10-16T07:41:18.796Z</lastmod>
@@ -114,13 +128,6 @@
   </url>
   
   <url>
-    <loc>https://neveryu.github.io/404.html</loc>
-    
-    <lastmod>2017-10-31T14:54:37.159Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://neveryu.github.io/2016/10/07/git/</loc>
     
     <lastmod>2017-09-18T15:15:31.691Z</lastmod>
@@ -226,6 +233,13 @@
   </url>
   
   <url>
+    <loc>https://neveryu.github.io/2016/09/25/essay-20160925/</loc>
+    
+    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://neveryu.github.io/2016/11/22/use-jquery-skill/</loc>
     
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
@@ -234,13 +248,6 @@
   
   <url>
     <loc>https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/</loc>
-    
-    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://neveryu.github.io/2016/09/25/essay-20160925/</loc>
     
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     

@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>https://neveryu.github.io/2018/10/15/hexo-next-six/</loc>
+    <lastmod>2018-10-20T07:44:55.439Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo-NexT搭建个人博客（六）</title>
+        <pubTime>2018-10-15T15:25:24.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Next</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="https://neveryu.github.io/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>https://neveryu.github.io/2017/11/11/vue-sell/</loc>
     <lastmod>2018-10-16T07:41:18.796Z</lastmod>
     <data>
@@ -95,9 +118,9 @@
         <title>中国国内 JavaScript 圈的现状如何</title>
         <pubTime>2016-11-18T05:25:24.000Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
         <tag>essay</tag>
+         
+        <tag>JavaScript</tag>
          
          
            
@@ -255,7 +278,6 @@
     
     
     
-    
   <url>
     <loc>https://neveryu.github.io/2016/10/07/git/</loc>
     <lastmod>2017-09-18T15:15:31.691Z</lastmod>
@@ -390,9 +412,9 @@
         <title>【转】在2016年学JavaScript是一种什么样的体验</title>
         <pubTime>2016-10-16T15:25:24.000Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
         <tag>essay</tag>
+         
+        <tag>JavaScript</tag>
          
          
            
@@ -508,6 +530,26 @@
 
     
   <url>
+    <loc>https://neveryu.github.io/2016/09/25/essay-20160925/</loc>
+    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
+    <data>
+        <display>
+        <title>如果深圳的夜晚没有风</title>
+        <pubTime>2016-09-25T15:25:24.000Z</pubTime>
+        
+        <tag>essay</tag>
+         
+         
+           
+             
+              <breadCrumb title="随笔" url="https://neveryu.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://neveryu.github.io/2016/11/22/use-jquery-skill/</loc>
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     <data>
@@ -543,26 +585,6 @@
            
              
               <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://neveryu.github.io/2016/09/25/essay-20160925/</loc>
-    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
-    <data>
-        <display>
-        <title>如果深圳的夜晚没有风</title>
-        <pubTime>2016-09-25T15:25:24.000Z</pubTime>
-        
-        <tag>essay</tag>
-         
-         
-           
-             
-              <breadCrumb title="随笔" url="https://neveryu.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
           
         </display>
     </data>
