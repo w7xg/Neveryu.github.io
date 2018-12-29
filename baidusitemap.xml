@@ -593,26 +593,6 @@
 
     
   <url>
-    <loc>https://neveryu.github.io/2017/02/28/memory-leak/</loc>
-    <lastmod>2017-06-19T14:39:02.008Z</lastmod>
-    <data>
-        <display>
-        <title>如何解决内存泄漏引发的血案</title>
-        <pubTime>2017-02-27T17:01:00.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://neveryu.github.io/2017/05/20/npm-two/</loc>
     <lastmod>2017-06-19T14:39:02.008Z</lastmod>
     <data>
@@ -626,6 +606,26 @@
            
              
               <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2017/02/28/memory-leak/</loc>
+    <lastmod>2017-06-19T14:39:02.008Z</lastmod>
+    <data>
+        <display>
+        <title>如何解决内存泄漏引发的血案</title>
+        <pubTime>2017-02-27T17:01:00.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
           
         </display>
     </data>
