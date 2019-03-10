@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://neveryu.github.io/2019/02/05/travis-ci/</loc>
-    <lastmod>2019-03-10T05:25:16.648Z</lastmod>
+    <lastmod>2019-03-10T07:31:47.331Z</lastmod>
     <data>
         <display>
         <title>使用 Travis CI 自动更新 GitHub Pages</title>
@@ -531,26 +531,6 @@
     
     
   <url>
-    <loc>https://neveryu.github.io/2016/09/25/essay-20160925/</loc>
-    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
-    <data>
-        <display>
-        <title>如果深圳的夜晚没有风</title>
-        <pubTime>2016-09-25T15:25:24.000Z</pubTime>
-        
-        <tag>essay</tag>
-         
-         
-           
-             
-              <breadCrumb title="随笔" url="https://neveryu.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://neveryu.github.io/2016/12/24/why-introversion-like-alone/</loc>
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     <data>
@@ -606,6 +586,26 @@
            
              
               <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2016/09/25/essay-20160925/</loc>
+    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
+    <data>
+        <display>
+        <title>如果深圳的夜晚没有风</title>
+        <pubTime>2016-09-25T15:25:24.000Z</pubTime>
+        
+        <tag>essay</tag>
+         
+         
+           
+             
+              <breadCrumb title="随笔" url="https://neveryu.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
           
         </display>
     </data>
