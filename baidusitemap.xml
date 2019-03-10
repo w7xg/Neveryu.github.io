@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://neveryu.github.io/2018/05/01/vue-music/</loc>
+    <lastmod>2019-03-10T09:15:12.686Z</lastmod>
+    <data>
+        <display>
+        <title>vue2.x 做一个音乐app</title>
+        <pubTime>2018-04-30T19:25:24.000Z</pubTime>
+        
+        <tag>vue</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://neveryu.github.io/2019/02/05/travis-ci/</loc>
     <lastmod>2019-03-10T07:31:47.331Z</lastmod>
     <data>
@@ -54,26 +74,6 @@
         <display>
         <title>vue2.x 做一个外卖app</title>
         <pubTime>2017-11-10T19:25:24.000Z</pubTime>
-        
-        <tag>vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://neveryu.github.io/2018/05/01/vue-music/</loc>
-    <lastmod>2018-10-16T07:40:24.473Z</lastmod>
-    <data>
-        <display>
-        <title>vue2.x 做一个音乐app</title>
-        <pubTime>2018-04-30T19:25:24.000Z</pubTime>
         
         <tag>vue</tag>
          
@@ -551,6 +551,26 @@
 
     
   <url>
+    <loc>https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/</loc>
+    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript 内存管理 & 垃圾回收机制</title>
+        <pubTime>2017-02-18T05:25:24.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://neveryu.github.io/2016/11/22/use-jquery-skill/</loc>
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     <data>
@@ -566,26 +586,6 @@
            
              
               <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/</loc>
-    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript 内存管理 & 垃圾回收机制</title>
-        <pubTime>2017-02-18T05:25:24.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
           
         </display>
     </data>

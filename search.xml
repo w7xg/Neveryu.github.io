@@ -366,7 +366,7 @@
 </ul>
 <p>除此之外，vue-cli 已经使用 node 配置了一套本地服务器和安装命令等，本地运行和打包只需要一个命令就可以搞定，非常的方便。</p>
 <h2 id="为什么写这个项目"><a href="#为什么写这个项目" class="headerlink" title="为什么写这个项目"></a>为什么写这个项目</h2><p>之前的 <a href="https://neveryu.github.io/2017/11/11/vue-sell/">vue-sell</a>，是一个非常好的 vue 的项目教程了，学了 vue 以后，跟着做一遍 vue-sell，应该对 vue 的基本操作都能非常熟练的掌握了。<br>但是如何结合 vuex 和 vue-router，以及其他技术，做一个大型的项目，很多同学还是苦于没有经验和项目实例，所以就有了这个 vue-music。</p>
-<p><a href="https://neveryu.github.io/music/#/recommend">vue-music</a> 里面用到了 vue 全家桶，还有 better-scroll，jsonp 等其他工具，用的也是线上真实的音乐接口数据，而且项目里封装了很多完美的组件，对个人技术的学习和提升有很大的帮助，项目级别上也达到了中大型级别。<br>非常适合 vue 的进阶学习。</p>
+<p><a href="https://neveryu.github.io/vue-music/">vue-music</a> 里面用到了 vue 全家桶，还有 better-scroll，jsonp 等其他工具，用的也是线上真实的音乐接口数据，而且项目里封装了很多完美的组件，对个人技术的学习和提升有很大的帮助，项目级别上也达到了中大型级别。<br>非常适合 vue 的进阶学习。</p>
 <h2 id="获取教程"><a href="#获取教程" class="headerlink" title="获取教程"></a>获取教程</h2><p>这个项目我从头到尾写了一遍，解决了项目中遇到的所有问题，由于有一些包或者模块升级的原因，会有一些小的问题，我都已经解决过了。想获取教程或者有疑问的，可以加这个群。</p>
 <font color="#f69" size="5">建了一个qq群，可以点击这个logo<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=32da7a18744756b0d8ffdd05b84999afecb5265dbad0fb119033e122abe803f3"><img border="0" width="150" src="https://neveryu.github.io/vue-tour/logo1.png" alt="Vue学习交流" title="Vue学习交流" style="vertical-align: middle"></a>，或者手动search群号：<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=32da7a18744756b0d8ffdd05b84999afecb5265dbad0fb119033e122abe803f3">685486827</a></font>]]></content>
       
