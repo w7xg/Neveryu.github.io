@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://neveryu.github.io/2018/05/01/vue-music/</loc>
+    <loc>https://neveryu.github.io/2019/02/05/travis-ci/</loc>
     
-    <lastmod>2019-03-10T09:15:12.686Z</lastmod>
+    <lastmod>2019-03-23T07:15:47.739Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://neveryu.github.io/2019/02/05/travis-ci/</loc>
+    <loc>https://neveryu.github.io/about/index.html</loc>
     
-    <lastmod>2019-03-10T07:31:47.331Z</lastmod>
+    <lastmod>2019-03-23T06:26:44.245Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://neveryu.github.io/2016/09/03/hexo-next-one/</loc>
+    
+    <lastmod>2019-03-23T06:03:09.868Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://neveryu.github.io/2018/05/01/vue-music/</loc>
+    
+    <lastmod>2019-03-10T09:15:12.686Z</lastmod>
     
   </url>
   
@@ -40,13 +54,6 @@
     <loc>https://neveryu.github.io/2017/11/11/vue-sell/</loc>
     
     <lastmod>2018-10-16T07:41:18.796Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://neveryu.github.io/2016/09/03/hexo-next-one/</loc>
-    
-    <lastmod>2018-09-20T08:37:05.677Z</lastmod>
     
   </url>
   
@@ -103,13 +110,6 @@
     <loc>https://neveryu.github.io/2018/06/18/vue-prerender/</loc>
     
     <lastmod>2018-06-19T15:27:03.375Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://neveryu.github.io/about/index.html</loc>
-    
-    <lastmod>2018-06-18T08:26:27.892Z</lastmod>
     
   </url>
   
@@ -247,14 +247,14 @@
   </url>
   
   <url>
-    <loc>https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/</loc>
+    <loc>https://neveryu.github.io/2016/11/22/use-jquery-skill/</loc>
     
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://neveryu.github.io/2016/11/22/use-jquery-skill/</loc>
+    <loc>https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/</loc>
     
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     
@@ -268,14 +268,14 @@
   </url>
   
   <url>
-    <loc>https://neveryu.github.io/2017/02/28/memory-leak/</loc>
+    <loc>https://neveryu.github.io/2017/05/20/npm-two/</loc>
     
     <lastmod>2017-06-19T14:39:02.008Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://neveryu.github.io/2017/05/20/npm-two/</loc>
+    <loc>https://neveryu.github.io/2017/02/28/memory-leak/</loc>
     
     <lastmod>2017-06-19T14:39:02.008Z</lastmod>
     
