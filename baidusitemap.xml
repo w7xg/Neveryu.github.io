@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://neveryu.github.io/2019/03/31/vue-ssr/</loc>
-    <lastmod>2019-03-29T15:38:48.213Z</lastmod>
+    <lastmod>2019-03-31T14:51:31.326Z</lastmod>
     <data>
         <display>
         <title>手把手教你 Vue 服务端渲染</title>
@@ -161,9 +161,9 @@
         <title>中国国内 JavaScript 圈的现状如何</title>
         <pubTime>2016-11-18T05:25:24.000Z</pubTime>
         
-        <tag>essay</tag>
-         
         <tag>JavaScript</tag>
+         
+        <tag>essay</tag>
          
          
            
@@ -453,9 +453,9 @@
         <title>【转】在2016年学JavaScript是一种什么样的体验</title>
         <pubTime>2016-10-16T15:25:24.000Z</pubTime>
         
-        <tag>essay</tag>
-         
         <tag>JavaScript</tag>
+         
+        <tag>essay</tag>
          
          
            
@@ -551,6 +551,26 @@
     
     
   <url>
+    <loc>https://neveryu.github.io/2016/12/24/why-introversion-like-alone/</loc>
+    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
+    <data>
+        <display>
+        <title>【转】为什么一些生活中很外向开朗的人会喜欢独来独往</title>
+        <pubTime>2016-12-24T14:25:24.000Z</pubTime>
+        
+        <tag>essay</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/</loc>
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     <data>
@@ -593,26 +613,6 @@
 
     
   <url>
-    <loc>https://neveryu.github.io/2016/12/24/why-introversion-like-alone/</loc>
-    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
-    <data>
-        <display>
-        <title>【转】为什么一些生活中很外向开朗的人会喜欢独来独往</title>
-        <pubTime>2016-12-24T14:25:24.000Z</pubTime>
-        
-        <tag>essay</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://neveryu.github.io/2016/09/25/essay-20160925/</loc>
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     <data>
@@ -633,26 +633,6 @@
 
     
   <url>
-    <loc>https://neveryu.github.io/2017/05/20/npm-two/</loc>
-    <lastmod>2017-06-19T14:39:02.008Z</lastmod>
-    <data>
-        <display>
-        <title>npm 的一个小细节</title>
-        <pubTime>2017-05-19T17:25:24.000Z</pubTime>
-        
-        <tag>npm</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://neveryu.github.io/2017/02/28/memory-leak/</loc>
     <lastmod>2017-06-19T14:39:02.008Z</lastmod>
     <data>
@@ -666,6 +646,26 @@
            
              
               <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2017/05/20/npm-two/</loc>
+    <lastmod>2017-06-19T14:39:02.008Z</lastmod>
+    <data>
+        <display>
+        <title>npm 的一个小细节</title>
+        <pubTime>2017-05-19T17:25:24.000Z</pubTime>
+        
+        <tag>npm</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
           
         </display>
     </data>
