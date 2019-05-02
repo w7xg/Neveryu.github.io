@@ -1,208 +1,207 @@
 <!doctype html><html class="theme-next pisces use-motion"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="//fonts.googleapis.com/css?family=Courier New:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css"><link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css"><meta name="keywords" content="Yarn,"><link rel="alternate" href="/atom.xml" title="Never_yu's Blog" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico?v=5.0.1"><meta name="description" content="背景在 Node 生态系统中，依赖通常安装在项目的 node_modules 文件夹中。然而，这个文件的结构和实际依赖树可能有所区别，因为重复的依赖可以合并到一起。npm 客户端把依赖安装到 node_modules 目录的过程具有不确定性。这意味着当依赖的安装顺序不同时，node_modules 目录的结构可能会发生变化。这种差异可能会导致类似“我的电脑上可以运行，别的电脑上不行”的情况，并且通"><meta property="og:type" content="article"><meta property="og:title" content="Yarn安装与使用详细介绍"><meta property="og:url" content="https://neveryu.github.io/2018/07/20/yarn/index.html"><meta property="og:site_name" content="Never_yu's Blog"><meta property="og:description" content="背景在 Node 生态系统中，依赖通常安装在项目的 node_modules 文件夹中。然而，这个文件的结构和实际依赖树可能有所区别，因为重复的依赖可以合并到一起。npm 客户端把依赖安装到 node_modules 目录的过程具有不确定性。这意味着当依赖的安装顺序不同时，node_modules 目录的结构可能会发生变化。这种差异可能会导致类似“我的电脑上可以运行，别的电脑上不行”的情况，并且通"><meta property="og:image" content="https://img-blog.csdn.net/20180824142908356?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NzZG5feXVkb25n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"><meta property="og:image" content="https://img-blog.csdn.net/20180824120236673?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NzZG5feXVkb25n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"><meta property="og:updated_time" content="2018-08-29T14:48:45.534Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Yarn安装与使用详细介绍"><meta name="twitter:description" content="背景在 Node 生态系统中，依赖通常安装在项目的 node_modules 文件夹中。然而，这个文件的结构和实际依赖树可能有所区别，因为重复的依赖可以合并到一起。npm 客户端把依赖安装到 node_modules 目录的过程具有不确定性。这意味着当依赖的安装顺序不同时，node_modules 目录的结构可能会发生变化。这种差异可能会导致类似“我的电脑上可以运行，别的电脑上不行”的情况，并且通"><meta name="twitter:image" content="https://img-blog.csdn.net/20180824142908356?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NzZG5feXVkb25n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"><script type="text/javascript" id="hexo.configuration">var NexT=window.NexT||{},CONFIG={scheme:"Pisces",sidebar:{position:"left",display:"hide"},fancybox:!0,motion:!0,duoshuo:{userId:void 0,author:"博主"}}</script><link rel="canonical" href="https://neveryu.github.io/2018/07/20/yarn/"><script src="/js/src/pace.min.js"></script><title>Yarn安装与使用详细介绍 | Never_yu's Blog</title></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container one-collumn sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Never_yu's Blog</span> <span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle">认真的人才有资格开玩笑</p></div><div class="site-nav-toggle"><button><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-categories"><a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-guestbook"><a href="/guestbook" rel="section"><i class="menu-item-icon fa fa-fw fa-commenting"></i><br>留言</a></li><li class="menu-item menu-item-about"><a href="/about" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-example"><a href="/example" rel="section"><i class="menu-item-icon fa fa-fw fa-question-circle"></i><br>示例</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li><li class="menu-item"><a title="把这个链接拖到你的工具栏中,任何网页都可以High" href='javascript:(
-    /*
-     * Copyright (C) 2016 Never_yu (Neveryu.github.io) <React.dong.yu@gmail.com>
-     * Sina Weibo (http://weibo.com/Neveryu)
-     *
-     * Licensed under the Apache License, Version 2.0 (the "License");
-     * you may not use this file except in compliance with the License.
-     * You may obtain a copy of the License at
-     *
-     *      http://www.apache.org/licenses/LICENSE-2.0
-     *
-     * Unless required by applicable law or agreed to in writing, software
-     * distributed under the License is distributed on an "AS IS" BASIS,
-     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     * See the License for the specific language governing permissions and
-     * limitations under the License.
-     */
-    function go() {
+/*
+ * Copyright (C) 2016 Never_yu (Neveryu.github.io) <React.dong.yu@gmail.com>
+ * Sina Weibo (http://weibo.com/Neveryu)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+function go() {
 
+var songs = [
+  "http://dl.stream.qqmusic.qq.com/C400001Qu4I30eVFYb.m4a?vkey=2127178E4405E7B8B268F20F05232485735CCF4FF8C1432F0360D2626D0B6C9564B5627C7AB481BBC685FEDB0946A50E97C66F0D1B008226&guid=7175649092&uin=0&fromtag=66",
+  "",
+  "",
+  ""
+];
 
-    var songs = [
-                "http://bdyun.65dj.com:8090/2015/06/28/84791C997D8C55023DAD0D5690E48C28/%D1%A6%D6%AE%C7%AB%20-%20%D1%DD%D4%B1.mp3",
-                "http://7xoiki.com1.z0.glb.clouddn.com/Music-sunburst.mp3",
-                ""
-    ];
+function c() {
+  var e = document.createElement("link");
+  e.setAttribute("type", "text/css");
+  e.setAttribute("rel", "stylesheet");
+  e.setAttribute("href", f);
+  e.setAttribute("class", l);
+  document.body.appendChild(e)
+}
 
-    
-    function c() {
-        var e = document.createElement("link");
-        e.setAttribute("type", "text/css");
-        e.setAttribute("rel", "stylesheet");
-        e.setAttribute("href", f);
-        e.setAttribute("class", l);
-        document.body.appendChild(e)
-    }
- 
-    function h() {
-        var e = document.getElementsByClassName(l);
-        for (var t = 0; t < e.length; t++) {
-            document.body.removeChild(e[t])
-        }
-    }
- 
-    function p() {
-        var e = document.createElement("div");
-        e.setAttribute("class", a);
-        document.body.appendChild(e);
-        setTimeout(function() {
-            document.body.removeChild(e)
-        }, 100)
-    }
- 
-    function d(e) {
-        return {
-            height : e.offsetHeight,
-            width : e.offsetWidth
-        }
-    }
- 
-    function v(i) {
-        var s = d(i);
-        return s.height > e && s.height < n && s.width > t && s.width < r
-    }
- 
-    function m(e) {
-        var t = e;
-        var n = 0;
-        while (!!t) {
-            n += t.offsetTop;
-            t = t.offsetParent
-        }
-        return n
-    }
- 
-    function g() {
-        var e = document.documentElement;
-        if (!!window.innerWidth) {
-            return window.innerHeight
-        } else if (e && !isNaN(e.clientHeight)) {
-            return e.clientHeight
-        }
-        return 0
-    }
- 
-    function y() {
-        if (window.pageYOffset) {
-            return window.pageYOffset
-        }
-        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
-    }
- 
-    function E(e) {
-        var t = m(e);
-        return t >= w && t <= b + w
-    }
+function h() {
+  var e = document.getElementsByClassName(l);
+  for (var t = 0; t < e.length; t++) {
+    document.body.removeChild(e[t])
+  }
+}
 
-    function S() {
-        var e = document.getElementById("audio_element_id");
-        if(e != null){
-            var index = parseInt(e.getAttribute("curSongIndex"));
-            if(index > songs.length - 2) {
-                index = 0;
-            } else {
-                index++;
-            }
-            e.setAttribute("curSongIndex", index);
-            N();
-        }
+function p() {
+  var e = document.createElement("div");
+  e.setAttribute("class", a);
+  document.body.appendChild(e);
+  setTimeout(function() {
+    document.body.removeChild(e)
+  }, 100)
+}
 
-        e.src = i;
-        e.play()
-    }
- 
-    function x(e) {
-        e.className += " " + s + " " + o
-    }
- 
-    function T(e) {
-        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
-    }
- 
-    function N() {
-        var e = document.getElementsByClassName(s);
-        var t = new RegExp("\\b" + s + "\\b");
-        for (var n = 0; n < e.length; ) {
-            e[n].className = e[n].className.replace(t, "")
-        }
-    }
+function d(e) {
+  return {
+    height : e.offsetHeight,
+    width : e.offsetWidth
+  }
+}
 
-    function initAudioEle() {
-        var e = document.getElementById("audio_element_id");
-        if(e === null){
-            e = document.createElement("audio");
-            e.setAttribute("class", l);
-            e.setAttribute("curSongIndex", 0);
-            e.id = "audio_element_id";
-            e.loop = false;
-            e.bgcolor = 0;
-            e.addEventListener("canplay", function() {
-            setTimeout(function() {
-                x(k)
-            }, 500);
-            setTimeout(function() {
-                N();
-                p();
-                for (var e = 0; e < O.length; e++) {
-                    T(O[e])
-                }
-            }, 15500)
-        }, true);
-        e.addEventListener("ended", function() {
-            N();
-            h();
-            go();
-        }, true);
-        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
-        document.body.appendChild(e);
-        }
-    }
-    
-    initAudioEle();
-    var e = 30;
-    var t = 30;
-    var n = 350;
-    var r = 350;
+function v(i) {
+  var s = d(i);
+  return s.height > e && s.height < n && s.width > t && s.width < r
+}
 
-    var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
-    var i = songs[curSongIndex];
-    
-    var s = "mw-harlem_shake_me";
-    var o = "im_first";
-    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
-    var a = "mw-strobe_light";
+function m(e) {
+  var t = e;
+  var n = 0;
+  while (!!t) {
+    n += t.offsetTop;
+    t = t.offsetParent
+  }
+  return n
+}
 
-    /* harlem-shake-style.css，替换成你的位置，也可以直接使用：//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css */
-    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
-    
-    var l = "mw_added_css";
-    var b = g();
-    var w = y();
-    var C = document.getElementsByTagName("*");
-    var k = null;
-    for (var L = 0; L < C.length; L++) {
-        var A = C[L];
-        if (v(A)) {
-            if (E(A)) {
-                k = A;
-                break
-            }
+function g() {
+  var e = document.documentElement;
+  if (!!window.innerWidth) {
+    return window.innerHeight
+  } else if (e && !isNaN(e.clientHeight)) {
+    return e.clientHeight
+  }
+  return 0
+}
+
+function y() {
+  if (window.pageYOffset) {
+    return window.pageYOffset
+  }
+  return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+}
+
+function E(e) {
+  var t = m(e);
+  return t >= w && t <= b + w
+}
+
+function S() {
+  var e = document.getElementById("audio_element_id");
+  if(e != null){
+    var index = parseInt(e.getAttribute("curSongIndex"));
+    if(index > songs.length - 2) {
+      index = 0;
+    } else {
+      index++;
+    }
+    e.setAttribute("curSongIndex", index);
+    N();
+  }
+
+  e.src = i;
+  e.play()
+}
+
+function x(e) {
+  e.className += " " + s + " " + o
+}
+
+function T(e) {
+  e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+}
+
+function N() {
+  var e = document.getElementsByClassName(s);
+  var t = new RegExp("\\b" + s + "\\b");
+  for (var n = 0; n < e.length; ) {
+    e[n].className = e[n].className.replace(t, "")
+  }
+}
+
+function initAudioEle() {
+  var e = document.getElementById("audio_element_id");
+  if(e === null){
+    e = document.createElement("audio");
+    e.setAttribute("class", l);
+    e.setAttribute("curSongIndex", 0);
+    e.id = "audio_element_id";
+    e.loop = false;
+    e.bgcolor = 0;
+    e.addEventListener("canplay", function() {
+      setTimeout(function() {
+        x(k)
+      }, 500);
+      setTimeout(function() {
+        N();
+        p();
+        for (var e = 0; e < O.length; e++) {
+          T(O[e])
         }
+      }, 15500)
+    }, true);
+    e.addEventListener("ended", function() {
+      N();
+      h();
+      go();
+    }, true);
+    e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+    document.body.appendChild(e);
+  }
+}
+
+initAudioEle();
+var e = 30;
+var t = 30;
+var n = 350;
+var r = 350;
+
+var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
+var i = songs[curSongIndex];
+
+var s = "mw-harlem_shake_me";
+var o = "im_first";
+var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+var a = "mw-strobe_light";
+
+/* harlem-shake-style.css，替换成你的位置，也可以直接使用：//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css */
+var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+
+var l = "mw_added_css";
+var b = g();
+var w = y();
+var C = document.getElementsByTagName("*");
+var k = null;
+for (var L = 0; L < C.length; L++) {
+  var A = C[L];
+  if (v(A)) {
+    if (E(A)) {
+      k = A;
+      break
     }
-    if (A === null) {
-        console.warn("Could not find a node of the right size. Please try a different page.");
-        return
-    }
-    c();
-    S();
-    var O = [];
-    for (var L = 0; L < C.length; L++) {
-        var A = C[L];
-        if (v(A)) {
-            O.push(A)
-        }
-    }
-    })()'><i class="menu-item-icon fa fa-music fa-fw"></i>High一下</a></li></ul><div class="site-search"><div class="popup"><span class="search-icon fa fa-search fa-lg"></span> <input type="text" id="local-search-input"><div id="local-search-result"></div><span class="popup-btn-close">close</span></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><header class="post-header"><h1 class="post-title" itemprop="name headline">Yarn安装与使用详细介绍</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time itemprop="dateCreated" datetime="2018-07-20T03:25:24+08:00" content="2018-07-20">2018-07-20 </time></span><span class="post-category">&nbsp; | &nbsp; <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span> </a></span></span>&nbsp; | &nbsp; <span class="page-pv">热度 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>℃</span></div></header><div class="post-body" itemprop="articleBody"><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>在 Node 生态系统中，依赖通常安装在项目的 <code>node_modules</code> 文件夹中。然而，这个文件的结构和实际依赖树可能有所区别，因为重复的依赖可以合并到一起。<code>npm</code> 客户端把依赖安装到 <code>node_modules</code> 目录的过程具有不确定性。这意味着当依赖的安装顺序不同时，<code>node_modules</code> 目录的结构可能会发生变化。这种差异可能会导致类似<font color="red">“我的电脑上可以运行，别的电脑上不行”</font>的情况，并且通常需要花费大量时间定为与解决。</p><blockquote><p>有时候就会遇到这种情况，完整可运行的项目上传到 git 上，别人 pull 下来以后，npm install 会报错。</p></blockquote><p><a href="https://github.com/yarnpkg/yarn" target="_blank" rel="external">Yarn</a> 一开始的主要目标是解决由于语义版本控制而导致的 npm 安装的不确定性问题。虽然可以用 <code>npm shrinkwrap</code> 来实现可预测的依赖关系树，但它并不是默认选项，而是取决于所有的开发人员指导并启用这个选项。</p><a id="more"></a><blockquote><p>npm 5+ 以后的版本加入了 package-lock.json 可以用来锁版本，package-lock.json 的名字，一看就懂，更清楚，但是不向后兼容。</p><p>npm-shrinkwrap.json 向后兼容 npm 2-4。</p></blockquote><p><font color="red">举个例子：</font><br>npm 对包引入顺序也十分的敏感，比如在一个空项目里执行以下命令：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br><span class="line">npm install globule@<span class="number">0.1</span><span class="number">.0</span> -S</span><br><span class="line">npm install babel-generator@<span class="number">6.19</span><span class="number">.0</span> -S</span><br><span class="line">npm install babel-helper-define-map@<span class="number">6.18</span><span class="number">.0</span> -S</span><br></pre></td></tr></table></figure><p></p>
+  }
+}
+if (A === null) {
+  console.warn("Could not find a node of the right size. Please try a different page.");
+  return
+}
+c();
+S();
+var O = [];
+for (var L = 0; L < C.length; L++) {
+  var A = C[L];
+  if (v(A)) {
+    O.push(A)
+  }
+}
+})()'><i class="menu-item-icon fa fa-music fa-fw"></i> High一下</a></li></ul><div class="site-search"><div class="popup"><span class="search-icon fa fa-search fa-lg"></span> <input type="text" id="local-search-input"><div id="local-search-result"></div><span class="popup-btn-close">close</span></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><header class="post-header"><h1 class="post-title" itemprop="name headline">Yarn安装与使用详细介绍</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time itemprop="dateCreated" datetime="2018-07-20T03:25:24+08:00" content="2018-07-20">2018-07-20 </time></span><span class="post-category">&nbsp; | &nbsp; <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span> </a></span></span>&nbsp; | &nbsp; <span class="page-pv">热度 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>℃</span></div></header><div class="post-body" itemprop="articleBody"><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>在 Node 生态系统中，依赖通常安装在项目的 <code>node_modules</code> 文件夹中。然而，这个文件的结构和实际依赖树可能有所区别，因为重复的依赖可以合并到一起。<code>npm</code> 客户端把依赖安装到 <code>node_modules</code> 目录的过程具有不确定性。这意味着当依赖的安装顺序不同时，<code>node_modules</code> 目录的结构可能会发生变化。这种差异可能会导致类似<font color="red">“我的电脑上可以运行，别的电脑上不行”</font>的情况，并且通常需要花费大量时间定为与解决。</p><blockquote><p>有时候就会遇到这种情况，完整可运行的项目上传到 git 上，别人 pull 下来以后，npm install 会报错。</p></blockquote><p><a href="https://github.com/yarnpkg/yarn" target="_blank" rel="external">Yarn</a> 一开始的主要目标是解决由于语义版本控制而导致的 npm 安装的不确定性问题。虽然可以用 <code>npm shrinkwrap</code> 来实现可预测的依赖关系树，但它并不是默认选项，而是取决于所有的开发人员指导并启用这个选项。</p><a id="more"></a><blockquote><p>npm 5+ 以后的版本加入了 package-lock.json 可以用来锁版本，package-lock.json 的名字，一看就懂，更清楚，但是不向后兼容。</p><p>npm-shrinkwrap.json 向后兼容 npm 2-4。</p></blockquote><p><font color="red">举个例子：</font><br>npm 对包引入顺序也十分的敏感，比如在一个空项目里执行以下命令：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br><span class="line">npm install globule@<span class="number">0.1</span><span class="number">.0</span> -S</span><br><span class="line">npm install babel-generator@<span class="number">6.19</span><span class="number">.0</span> -S</span><br><span class="line">npm install babel-helper-define-map@<span class="number">6.18</span><span class="number">.0</span> -S</span><br></pre></td></tr></table></figure><p></p>
 <p>我们这里安装了 3 个包都依赖于 lodash，不过 globule 依赖 lodash@1.0.3，另外另个依赖 lodash@4.x。<br>现在目录依赖结构如下：<br><img src="https://img-blog.csdn.net/20180824142908356?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NzZG5feXVkb25n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="npm-package"></p>
 <p>这是假设我们在项目里使用 lodash，但是忘记重新安装 lodash<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> lodash = <span class="built_in">require</span>(<span class="string">'lodash'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(lodash.VERSION)  <span class="comment">// v1.0.3</span></span><br></pre></td></tr></table></figure><p></p>
 <p>另一个同事获取项目代码，执行 <code>npm install</code>，这时的目录依赖结构里面，第一层依赖的 lodash 变成了 4.x 版本，这样就造成了依赖版本不一致的问题。而 yarn 则会保证无论怎样引入的顺序，目录依赖结构都是一致的，确保不会发生这样的BUG。</p>
@@ -530,10 +529,12 @@
           </div>
         </section>
       
+
       
-      <section style="border-top:1px dotted #ccc;height:10px"></section>
+        <section style="border-top:1px dotted #ccc;padding-top:10px">
+          <iframe width="100%" height="120" class="share_self" frameborder="0" scrolling="no" src="https://widget.weibo.com/weiboshow/index.php?language=&width=0&height=120&fansRow=2&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=5346488237&verifier=d529ff3a&dpc=1"></iframe>
+        </section>
       
-      <iframe width="100%" height="120" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=120&fansRow=2&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=5346488237&verifier=d529ff3a&dpc=1"></iframe>
     </div>
   </aside>
 

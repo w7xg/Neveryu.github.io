@@ -5,210 +5,209 @@
 使用 md 文件写文章时增加配置不使用 layout"><meta property="og:updated_time" content="2018-10-20T07:44:55.439Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Hexo-NexT搭建个人博客（六）"><meta name="twitter:description" content="在 hexo 中，我们如何使用自己自定义的 html 页面呢？
 我们知道，在 hexo 中，我们使用的是 markdown 格式的文件，渲染出来的页面是有主题样式的。如果我们不希望我们的页面使用主题样式。那么需要在文件头部加一个 layout: false 的配置。
 使用 md 文件写文章时增加配置不使用 layout"><script type="text/javascript" id="hexo.configuration">var NexT=window.NexT||{},CONFIG={scheme:"Pisces",sidebar:{position:"left",display:"hide"},fancybox:!0,motion:!0,duoshuo:{userId:void 0,author:"博主"}}</script><link rel="canonical" href="https://neveryu.github.io/2018/10/15/hexo-next-six/"><script src="/js/src/pace.min.js"></script><title>Hexo-NexT搭建个人博客（六） | Never_yu's Blog</title></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container one-collumn sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Never_yu's Blog</span> <span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle">认真的人才有资格开玩笑</p></div><div class="site-nav-toggle"><button><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-categories"><a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-guestbook"><a href="/guestbook" rel="section"><i class="menu-item-icon fa fa-fw fa-commenting"></i><br>留言</a></li><li class="menu-item menu-item-about"><a href="/about" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-example"><a href="/example" rel="section"><i class="menu-item-icon fa fa-fw fa-question-circle"></i><br>示例</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li><li class="menu-item"><a title="把这个链接拖到你的工具栏中,任何网页都可以High" href='javascript:(
-    /*
-     * Copyright (C) 2016 Never_yu (Neveryu.github.io) <React.dong.yu@gmail.com>
-     * Sina Weibo (http://weibo.com/Neveryu)
-     *
-     * Licensed under the Apache License, Version 2.0 (the "License");
-     * you may not use this file except in compliance with the License.
-     * You may obtain a copy of the License at
-     *
-     *      http://www.apache.org/licenses/LICENSE-2.0
-     *
-     * Unless required by applicable law or agreed to in writing, software
-     * distributed under the License is distributed on an "AS IS" BASIS,
-     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     * See the License for the specific language governing permissions and
-     * limitations under the License.
-     */
-    function go() {
+/*
+ * Copyright (C) 2016 Never_yu (Neveryu.github.io) <React.dong.yu@gmail.com>
+ * Sina Weibo (http://weibo.com/Neveryu)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+function go() {
 
+var songs = [
+  "http://dl.stream.qqmusic.qq.com/C400001Qu4I30eVFYb.m4a?vkey=2127178E4405E7B8B268F20F05232485735CCF4FF8C1432F0360D2626D0B6C9564B5627C7AB481BBC685FEDB0946A50E97C66F0D1B008226&guid=7175649092&uin=0&fromtag=66",
+  "",
+  "",
+  ""
+];
 
-    var songs = [
-                "http://bdyun.65dj.com:8090/2015/06/28/84791C997D8C55023DAD0D5690E48C28/%D1%A6%D6%AE%C7%AB%20-%20%D1%DD%D4%B1.mp3",
-                "http://7xoiki.com1.z0.glb.clouddn.com/Music-sunburst.mp3",
-                ""
-    ];
+function c() {
+  var e = document.createElement("link");
+  e.setAttribute("type", "text/css");
+  e.setAttribute("rel", "stylesheet");
+  e.setAttribute("href", f);
+  e.setAttribute("class", l);
+  document.body.appendChild(e)
+}
 
-    
-    function c() {
-        var e = document.createElement("link");
-        e.setAttribute("type", "text/css");
-        e.setAttribute("rel", "stylesheet");
-        e.setAttribute("href", f);
-        e.setAttribute("class", l);
-        document.body.appendChild(e)
-    }
- 
-    function h() {
-        var e = document.getElementsByClassName(l);
-        for (var t = 0; t < e.length; t++) {
-            document.body.removeChild(e[t])
-        }
-    }
- 
-    function p() {
-        var e = document.createElement("div");
-        e.setAttribute("class", a);
-        document.body.appendChild(e);
-        setTimeout(function() {
-            document.body.removeChild(e)
-        }, 100)
-    }
- 
-    function d(e) {
-        return {
-            height : e.offsetHeight,
-            width : e.offsetWidth
-        }
-    }
- 
-    function v(i) {
-        var s = d(i);
-        return s.height > e && s.height < n && s.width > t && s.width < r
-    }
- 
-    function m(e) {
-        var t = e;
-        var n = 0;
-        while (!!t) {
-            n += t.offsetTop;
-            t = t.offsetParent
-        }
-        return n
-    }
- 
-    function g() {
-        var e = document.documentElement;
-        if (!!window.innerWidth) {
-            return window.innerHeight
-        } else if (e && !isNaN(e.clientHeight)) {
-            return e.clientHeight
-        }
-        return 0
-    }
- 
-    function y() {
-        if (window.pageYOffset) {
-            return window.pageYOffset
-        }
-        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
-    }
- 
-    function E(e) {
-        var t = m(e);
-        return t >= w && t <= b + w
-    }
+function h() {
+  var e = document.getElementsByClassName(l);
+  for (var t = 0; t < e.length; t++) {
+    document.body.removeChild(e[t])
+  }
+}
 
-    function S() {
-        var e = document.getElementById("audio_element_id");
-        if(e != null){
-            var index = parseInt(e.getAttribute("curSongIndex"));
-            if(index > songs.length - 2) {
-                index = 0;
-            } else {
-                index++;
-            }
-            e.setAttribute("curSongIndex", index);
-            N();
-        }
+function p() {
+  var e = document.createElement("div");
+  e.setAttribute("class", a);
+  document.body.appendChild(e);
+  setTimeout(function() {
+    document.body.removeChild(e)
+  }, 100)
+}
 
-        e.src = i;
-        e.play()
-    }
- 
-    function x(e) {
-        e.className += " " + s + " " + o
-    }
- 
-    function T(e) {
-        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
-    }
- 
-    function N() {
-        var e = document.getElementsByClassName(s);
-        var t = new RegExp("\\b" + s + "\\b");
-        for (var n = 0; n < e.length; ) {
-            e[n].className = e[n].className.replace(t, "")
-        }
-    }
+function d(e) {
+  return {
+    height : e.offsetHeight,
+    width : e.offsetWidth
+  }
+}
 
-    function initAudioEle() {
-        var e = document.getElementById("audio_element_id");
-        if(e === null){
-            e = document.createElement("audio");
-            e.setAttribute("class", l);
-            e.setAttribute("curSongIndex", 0);
-            e.id = "audio_element_id";
-            e.loop = false;
-            e.bgcolor = 0;
-            e.addEventListener("canplay", function() {
-            setTimeout(function() {
-                x(k)
-            }, 500);
-            setTimeout(function() {
-                N();
-                p();
-                for (var e = 0; e < O.length; e++) {
-                    T(O[e])
-                }
-            }, 15500)
-        }, true);
-        e.addEventListener("ended", function() {
-            N();
-            h();
-            go();
-        }, true);
-        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
-        document.body.appendChild(e);
-        }
-    }
-    
-    initAudioEle();
-    var e = 30;
-    var t = 30;
-    var n = 350;
-    var r = 350;
+function v(i) {
+  var s = d(i);
+  return s.height > e && s.height < n && s.width > t && s.width < r
+}
 
-    var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
-    var i = songs[curSongIndex];
-    
-    var s = "mw-harlem_shake_me";
-    var o = "im_first";
-    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
-    var a = "mw-strobe_light";
+function m(e) {
+  var t = e;
+  var n = 0;
+  while (!!t) {
+    n += t.offsetTop;
+    t = t.offsetParent
+  }
+  return n
+}
 
-    /* harlem-shake-style.css，替换成你的位置，也可以直接使用：//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css */
-    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
-    
-    var l = "mw_added_css";
-    var b = g();
-    var w = y();
-    var C = document.getElementsByTagName("*");
-    var k = null;
-    for (var L = 0; L < C.length; L++) {
-        var A = C[L];
-        if (v(A)) {
-            if (E(A)) {
-                k = A;
-                break
-            }
+function g() {
+  var e = document.documentElement;
+  if (!!window.innerWidth) {
+    return window.innerHeight
+  } else if (e && !isNaN(e.clientHeight)) {
+    return e.clientHeight
+  }
+  return 0
+}
+
+function y() {
+  if (window.pageYOffset) {
+    return window.pageYOffset
+  }
+  return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+}
+
+function E(e) {
+  var t = m(e);
+  return t >= w && t <= b + w
+}
+
+function S() {
+  var e = document.getElementById("audio_element_id");
+  if(e != null){
+    var index = parseInt(e.getAttribute("curSongIndex"));
+    if(index > songs.length - 2) {
+      index = 0;
+    } else {
+      index++;
+    }
+    e.setAttribute("curSongIndex", index);
+    N();
+  }
+
+  e.src = i;
+  e.play()
+}
+
+function x(e) {
+  e.className += " " + s + " " + o
+}
+
+function T(e) {
+  e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+}
+
+function N() {
+  var e = document.getElementsByClassName(s);
+  var t = new RegExp("\\b" + s + "\\b");
+  for (var n = 0; n < e.length; ) {
+    e[n].className = e[n].className.replace(t, "")
+  }
+}
+
+function initAudioEle() {
+  var e = document.getElementById("audio_element_id");
+  if(e === null){
+    e = document.createElement("audio");
+    e.setAttribute("class", l);
+    e.setAttribute("curSongIndex", 0);
+    e.id = "audio_element_id";
+    e.loop = false;
+    e.bgcolor = 0;
+    e.addEventListener("canplay", function() {
+      setTimeout(function() {
+        x(k)
+      }, 500);
+      setTimeout(function() {
+        N();
+        p();
+        for (var e = 0; e < O.length; e++) {
+          T(O[e])
         }
+      }, 15500)
+    }, true);
+    e.addEventListener("ended", function() {
+      N();
+      h();
+      go();
+    }, true);
+    e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+    document.body.appendChild(e);
+  }
+}
+
+initAudioEle();
+var e = 30;
+var t = 30;
+var n = 350;
+var r = 350;
+
+var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
+var i = songs[curSongIndex];
+
+var s = "mw-harlem_shake_me";
+var o = "im_first";
+var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+var a = "mw-strobe_light";
+
+/* harlem-shake-style.css，替换成你的位置，也可以直接使用：//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css */
+var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+
+var l = "mw_added_css";
+var b = g();
+var w = y();
+var C = document.getElementsByTagName("*");
+var k = null;
+for (var L = 0; L < C.length; L++) {
+  var A = C[L];
+  if (v(A)) {
+    if (E(A)) {
+      k = A;
+      break
     }
-    if (A === null) {
-        console.warn("Could not find a node of the right size. Please try a different page.");
-        return
-    }
-    c();
-    S();
-    var O = [];
-    for (var L = 0; L < C.length; L++) {
-        var A = C[L];
-        if (v(A)) {
-            O.push(A)
-        }
-    }
-    })()'><i class="menu-item-icon fa fa-music fa-fw"></i>High一下</a></li></ul><div class="site-search"><div class="popup"><span class="search-icon fa fa-search fa-lg"></span> <input type="text" id="local-search-input"><div id="local-search-result"></div><span class="popup-btn-close">close</span></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><header class="post-header"><h1 class="post-title" itemprop="name headline">Hexo-NexT搭建个人博客（六）</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time itemprop="dateCreated" datetime="2018-10-15T23:25:24+08:00" content="2018-10-15">2018-10-15 </time></span><span class="post-category">&nbsp; | &nbsp; <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span> </a></span></span>&nbsp; | &nbsp; <span class="page-pv">热度 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>℃</span></div></header><div class="post-body" itemprop="articleBody"><p>在 hexo 中，我们如何使用自己自定义的 html 页面呢？</p><p>我们知道，在 hexo 中，我们使用的是 markdown 格式的文件，渲染出来的页面是有主题样式的。如果我们不希望我们的页面使用主题样式。那么需要在文件头部加一个 <code>layout: false</code> 的配置。</p><p><strong>使用 md 文件写文章时增加配置不使用 layout</strong></p><a id="more"></a><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 我来试一下如何禁止解析html</span><br><span class="line">date: 2018-10-04 13:25:24</span><br><span class="line">categories: 综合</span><br><span class="line">tags: [综合]</span><br><span class="line">comments: false</span><br><span class="line">layout: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+  }
+}
+if (A === null) {
+  console.warn("Could not find a node of the right size. Please try a different page.");
+  return
+}
+c();
+S();
+var O = [];
+for (var L = 0; L < C.length; L++) {
+  var A = C[L];
+  if (v(A)) {
+    O.push(A)
+  }
+}
+})()'><i class="menu-item-icon fa fa-music fa-fw"></i> High一下</a></li></ul><div class="site-search"><div class="popup"><span class="search-icon fa fa-search fa-lg"></span> <input type="text" id="local-search-input"><div id="local-search-result"></div><span class="popup-btn-close">close</span></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><header class="post-header"><h1 class="post-title" itemprop="name headline">Hexo-NexT搭建个人博客（六）</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time itemprop="dateCreated" datetime="2018-10-15T23:25:24+08:00" content="2018-10-15">2018-10-15 </time></span><span class="post-category">&nbsp; | &nbsp; <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span> </a></span></span>&nbsp; | &nbsp; <span class="page-pv">热度 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>℃</span></div></header><div class="post-body" itemprop="articleBody"><p>在 hexo 中，我们如何使用自己自定义的 html 页面呢？</p><p>我们知道，在 hexo 中，我们使用的是 markdown 格式的文件，渲染出来的页面是有主题样式的。如果我们不希望我们的页面使用主题样式。那么需要在文件头部加一个 <code>layout: false</code> 的配置。</p><p><strong>使用 md 文件写文章时增加配置不使用 layout</strong></p><a id="more"></a><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 我来试一下如何禁止解析html</span><br><span class="line">date: 2018-10-04 13:25:24</span><br><span class="line">categories: 综合</span><br><span class="line">tags: [综合]</span><br><span class="line">comments: false</span><br><span class="line">layout: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 <p>这样，我们的文件就不会被主题渲染。</p>
 <hr>
 <p>其实在我们的 hexo 中，是可以直接写 html 文件的，不过也会被渲染，出来的页面还是有主题样式的。如果我们不想要这个主题样式，怎么做呢？</p>
@@ -481,10 +480,12 @@
           </div>
         </section>
       
+
       
-      <section style="border-top:1px dotted #ccc;height:10px"></section>
+        <section style="border-top:1px dotted #ccc;padding-top:10px">
+          <iframe width="100%" height="120" class="share_self" frameborder="0" scrolling="no" src="https://widget.weibo.com/weiboshow/index.php?language=&width=0&height=120&fansRow=2&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=5346488237&verifier=d529ff3a&dpc=1"></iframe>
+        </section>
       
-      <iframe width="100%" height="120" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=120&fansRow=2&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=5346488237&verifier=d529ff3a&dpc=1"></iframe>
     </div>
   </aside>
 

@@ -2,210 +2,209 @@
 为什么要用 gulp与 grunt 相比，gulp 无需写一大堆繁杂的配置参数，API（中文 API） 也非常简单，学习起来很容易，而且 gulp 使用的是 nodejs 中 stream 来读取和操作数据，其速"><meta property="og:type" content="article"><meta property="og:title" content="gulp 详解与使用"><meta property="og:url" content="https://neveryu.github.io/2017/05/01/gulp/index.html"><meta property="og:site_name" content="Never_yu's Blog"><meta property="og:description" content="什么是 gulpgulp 是一个前端构建工具，它能通过自动执行常见任务，比如编译预处理 CSS ，压缩 JavaScript 和刷新浏览器，来改进网站开发的过程，从而使开发更加快速高效。
 为什么要用 gulp与 grunt 相比，gulp 无需写一大堆繁杂的配置参数，API（中文 API） 也非常简单，学习起来很容易，而且 gulp 使用的是 nodejs 中 stream 来读取和操作数据，其速"><meta property="og:image" content="https://neveryu.github.io/images/gulp-1.png"><meta property="og:updated_time" content="2017-08-23T14:44:51.257Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="gulp 详解与使用"><meta name="twitter:description" content="什么是 gulpgulp 是一个前端构建工具，它能通过自动执行常见任务，比如编译预处理 CSS ，压缩 JavaScript 和刷新浏览器，来改进网站开发的过程，从而使开发更加快速高效。
 为什么要用 gulp与 grunt 相比，gulp 无需写一大堆繁杂的配置参数，API（中文 API） 也非常简单，学习起来很容易，而且 gulp 使用的是 nodejs 中 stream 来读取和操作数据，其速"><meta name="twitter:image" content="https://neveryu.github.io/images/gulp-1.png"><script type="text/javascript" id="hexo.configuration">var NexT=window.NexT||{},CONFIG={scheme:"Pisces",sidebar:{position:"left",display:"hide"},fancybox:!0,motion:!0,duoshuo:{userId:void 0,author:"博主"}}</script><link rel="canonical" href="https://neveryu.github.io/2017/05/01/gulp/"><script src="/js/src/pace.min.js"></script><title>gulp 详解与使用 | Never_yu's Blog</title></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container one-collumn sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Never_yu's Blog</span> <span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle">认真的人才有资格开玩笑</p></div><div class="site-nav-toggle"><button><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-categories"><a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-guestbook"><a href="/guestbook" rel="section"><i class="menu-item-icon fa fa-fw fa-commenting"></i><br>留言</a></li><li class="menu-item menu-item-about"><a href="/about" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-example"><a href="/example" rel="section"><i class="menu-item-icon fa fa-fw fa-question-circle"></i><br>示例</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li><li class="menu-item"><a title="把这个链接拖到你的工具栏中,任何网页都可以High" href='javascript:(
-    /*
-     * Copyright (C) 2016 Never_yu (Neveryu.github.io) <React.dong.yu@gmail.com>
-     * Sina Weibo (http://weibo.com/Neveryu)
-     *
-     * Licensed under the Apache License, Version 2.0 (the "License");
-     * you may not use this file except in compliance with the License.
-     * You may obtain a copy of the License at
-     *
-     *      http://www.apache.org/licenses/LICENSE-2.0
-     *
-     * Unless required by applicable law or agreed to in writing, software
-     * distributed under the License is distributed on an "AS IS" BASIS,
-     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     * See the License for the specific language governing permissions and
-     * limitations under the License.
-     */
-    function go() {
+/*
+ * Copyright (C) 2016 Never_yu (Neveryu.github.io) <React.dong.yu@gmail.com>
+ * Sina Weibo (http://weibo.com/Neveryu)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+function go() {
 
+var songs = [
+  "http://dl.stream.qqmusic.qq.com/C400001Qu4I30eVFYb.m4a?vkey=2127178E4405E7B8B268F20F05232485735CCF4FF8C1432F0360D2626D0B6C9564B5627C7AB481BBC685FEDB0946A50E97C66F0D1B008226&guid=7175649092&uin=0&fromtag=66",
+  "",
+  "",
+  ""
+];
 
-    var songs = [
-                "http://bdyun.65dj.com:8090/2015/06/28/84791C997D8C55023DAD0D5690E48C28/%D1%A6%D6%AE%C7%AB%20-%20%D1%DD%D4%B1.mp3",
-                "http://7xoiki.com1.z0.glb.clouddn.com/Music-sunburst.mp3",
-                ""
-    ];
+function c() {
+  var e = document.createElement("link");
+  e.setAttribute("type", "text/css");
+  e.setAttribute("rel", "stylesheet");
+  e.setAttribute("href", f);
+  e.setAttribute("class", l);
+  document.body.appendChild(e)
+}
 
-    
-    function c() {
-        var e = document.createElement("link");
-        e.setAttribute("type", "text/css");
-        e.setAttribute("rel", "stylesheet");
-        e.setAttribute("href", f);
-        e.setAttribute("class", l);
-        document.body.appendChild(e)
-    }
- 
-    function h() {
-        var e = document.getElementsByClassName(l);
-        for (var t = 0; t < e.length; t++) {
-            document.body.removeChild(e[t])
-        }
-    }
- 
-    function p() {
-        var e = document.createElement("div");
-        e.setAttribute("class", a);
-        document.body.appendChild(e);
-        setTimeout(function() {
-            document.body.removeChild(e)
-        }, 100)
-    }
- 
-    function d(e) {
-        return {
-            height : e.offsetHeight,
-            width : e.offsetWidth
-        }
-    }
- 
-    function v(i) {
-        var s = d(i);
-        return s.height > e && s.height < n && s.width > t && s.width < r
-    }
- 
-    function m(e) {
-        var t = e;
-        var n = 0;
-        while (!!t) {
-            n += t.offsetTop;
-            t = t.offsetParent
-        }
-        return n
-    }
- 
-    function g() {
-        var e = document.documentElement;
-        if (!!window.innerWidth) {
-            return window.innerHeight
-        } else if (e && !isNaN(e.clientHeight)) {
-            return e.clientHeight
-        }
-        return 0
-    }
- 
-    function y() {
-        if (window.pageYOffset) {
-            return window.pageYOffset
-        }
-        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
-    }
- 
-    function E(e) {
-        var t = m(e);
-        return t >= w && t <= b + w
-    }
+function h() {
+  var e = document.getElementsByClassName(l);
+  for (var t = 0; t < e.length; t++) {
+    document.body.removeChild(e[t])
+  }
+}
 
-    function S() {
-        var e = document.getElementById("audio_element_id");
-        if(e != null){
-            var index = parseInt(e.getAttribute("curSongIndex"));
-            if(index > songs.length - 2) {
-                index = 0;
-            } else {
-                index++;
-            }
-            e.setAttribute("curSongIndex", index);
-            N();
-        }
+function p() {
+  var e = document.createElement("div");
+  e.setAttribute("class", a);
+  document.body.appendChild(e);
+  setTimeout(function() {
+    document.body.removeChild(e)
+  }, 100)
+}
 
-        e.src = i;
-        e.play()
-    }
- 
-    function x(e) {
-        e.className += " " + s + " " + o
-    }
- 
-    function T(e) {
-        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
-    }
- 
-    function N() {
-        var e = document.getElementsByClassName(s);
-        var t = new RegExp("\\b" + s + "\\b");
-        for (var n = 0; n < e.length; ) {
-            e[n].className = e[n].className.replace(t, "")
-        }
-    }
+function d(e) {
+  return {
+    height : e.offsetHeight,
+    width : e.offsetWidth
+  }
+}
 
-    function initAudioEle() {
-        var e = document.getElementById("audio_element_id");
-        if(e === null){
-            e = document.createElement("audio");
-            e.setAttribute("class", l);
-            e.setAttribute("curSongIndex", 0);
-            e.id = "audio_element_id";
-            e.loop = false;
-            e.bgcolor = 0;
-            e.addEventListener("canplay", function() {
-            setTimeout(function() {
-                x(k)
-            }, 500);
-            setTimeout(function() {
-                N();
-                p();
-                for (var e = 0; e < O.length; e++) {
-                    T(O[e])
-                }
-            }, 15500)
-        }, true);
-        e.addEventListener("ended", function() {
-            N();
-            h();
-            go();
-        }, true);
-        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
-        document.body.appendChild(e);
-        }
-    }
-    
-    initAudioEle();
-    var e = 30;
-    var t = 30;
-    var n = 350;
-    var r = 350;
+function v(i) {
+  var s = d(i);
+  return s.height > e && s.height < n && s.width > t && s.width < r
+}
 
-    var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
-    var i = songs[curSongIndex];
-    
-    var s = "mw-harlem_shake_me";
-    var o = "im_first";
-    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
-    var a = "mw-strobe_light";
+function m(e) {
+  var t = e;
+  var n = 0;
+  while (!!t) {
+    n += t.offsetTop;
+    t = t.offsetParent
+  }
+  return n
+}
 
-    /* harlem-shake-style.css，替换成你的位置，也可以直接使用：//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css */
-    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
-    
-    var l = "mw_added_css";
-    var b = g();
-    var w = y();
-    var C = document.getElementsByTagName("*");
-    var k = null;
-    for (var L = 0; L < C.length; L++) {
-        var A = C[L];
-        if (v(A)) {
-            if (E(A)) {
-                k = A;
-                break
-            }
+function g() {
+  var e = document.documentElement;
+  if (!!window.innerWidth) {
+    return window.innerHeight
+  } else if (e && !isNaN(e.clientHeight)) {
+    return e.clientHeight
+  }
+  return 0
+}
+
+function y() {
+  if (window.pageYOffset) {
+    return window.pageYOffset
+  }
+  return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+}
+
+function E(e) {
+  var t = m(e);
+  return t >= w && t <= b + w
+}
+
+function S() {
+  var e = document.getElementById("audio_element_id");
+  if(e != null){
+    var index = parseInt(e.getAttribute("curSongIndex"));
+    if(index > songs.length - 2) {
+      index = 0;
+    } else {
+      index++;
+    }
+    e.setAttribute("curSongIndex", index);
+    N();
+  }
+
+  e.src = i;
+  e.play()
+}
+
+function x(e) {
+  e.className += " " + s + " " + o
+}
+
+function T(e) {
+  e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+}
+
+function N() {
+  var e = document.getElementsByClassName(s);
+  var t = new RegExp("\\b" + s + "\\b");
+  for (var n = 0; n < e.length; ) {
+    e[n].className = e[n].className.replace(t, "")
+  }
+}
+
+function initAudioEle() {
+  var e = document.getElementById("audio_element_id");
+  if(e === null){
+    e = document.createElement("audio");
+    e.setAttribute("class", l);
+    e.setAttribute("curSongIndex", 0);
+    e.id = "audio_element_id";
+    e.loop = false;
+    e.bgcolor = 0;
+    e.addEventListener("canplay", function() {
+      setTimeout(function() {
+        x(k)
+      }, 500);
+      setTimeout(function() {
+        N();
+        p();
+        for (var e = 0; e < O.length; e++) {
+          T(O[e])
         }
+      }, 15500)
+    }, true);
+    e.addEventListener("ended", function() {
+      N();
+      h();
+      go();
+    }, true);
+    e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+    document.body.appendChild(e);
+  }
+}
+
+initAudioEle();
+var e = 30;
+var t = 30;
+var n = 350;
+var r = 350;
+
+var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
+var i = songs[curSongIndex];
+
+var s = "mw-harlem_shake_me";
+var o = "im_first";
+var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+var a = "mw-strobe_light";
+
+/* harlem-shake-style.css，替换成你的位置，也可以直接使用：//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css */
+var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+
+var l = "mw_added_css";
+var b = g();
+var w = y();
+var C = document.getElementsByTagName("*");
+var k = null;
+for (var L = 0; L < C.length; L++) {
+  var A = C[L];
+  if (v(A)) {
+    if (E(A)) {
+      k = A;
+      break
     }
-    if (A === null) {
-        console.warn("Could not find a node of the right size. Please try a different page.");
-        return
-    }
-    c();
-    S();
-    var O = [];
-    for (var L = 0; L < C.length; L++) {
-        var A = C[L];
-        if (v(A)) {
-            O.push(A)
-        }
-    }
-    })()'><i class="menu-item-icon fa fa-music fa-fw"></i>High一下</a></li></ul><div class="site-search"><div class="popup"><span class="search-icon fa fa-search fa-lg"></span> <input type="text" id="local-search-input"><div id="local-search-result"></div><span class="popup-btn-close">close</span></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><header class="post-header"><h1 class="post-title" itemprop="name headline">gulp 详解与使用</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time itemprop="dateCreated" datetime="2017-05-01T01:25:24+08:00" content="2017-05-01">2017-05-01 </time></span><span class="post-category">&nbsp; | &nbsp; <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span> </a></span></span>&nbsp; | &nbsp; <span class="page-pv">热度 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>℃</span></div></header><div class="post-body" itemprop="articleBody"><h1 id="什么是-gulp"><a href="#什么是-gulp" class="headerlink" title="什么是 gulp"></a>什么是 gulp</h1><p><a href="http://gulpjs.com/" target="_blank" rel="external">gulp</a> 是一个前端构建工具，它能通过自动执行常见任务，比如编译预处理 CSS ，压缩 JavaScript 和刷新浏览器，来改进网站开发的过程，从而使开发更加快速高效。</p><h1 id="为什么要用-gulp"><a href="#为什么要用-gulp" class="headerlink" title="为什么要用 gulp"></a>为什么要用 gulp</h1><p>与 grunt 相比，gulp 无需写一大堆繁杂的配置参数，<a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md" target="_blank" rel="external">API</a>（<a href="http://www.gulpjs.com.cn/docs/api/" target="_blank" rel="external">中文 API</a>） 也非常简单，学习起来很容易，而且 gulp 使用的是 nodejs 中 <a href="https://nodejs.org/api/stream.html" target="_blank" rel="external">stream</a> 来读取和操作数据，其速度更快。<br>gulp 有庞大的生态圈，且每天都在发展。依靠成千上万可供选择的插件，你可以利用 gulp 自动完成几乎任何事。</p><h1 id="如何使用-gulp"><a href="#如何使用-gulp" class="headerlink" title="如何使用 gulp"></a>如何使用 gulp</h1><h2 id="Installing-Gulp"><a href="#Installing-Gulp" class="headerlink" title="Installing Gulp"></a>Installing Gulp</h2><p>新版的 gulp 命令行工具已经改名为 gulp-cli 。<br>如果你之前安装了全局的 gulp 。在使用新的 gulp-cli 之前，执行命令<br><code>npm rm --global gulp</code> ，将之前的全局 gulp 卸掉。</p><a id="more"></a><h3 id="Install-the-gulp-command"><a href="#Install-the-gulp-command" class="headerlink" title="Install the gulp command"></a>Install the gulp command</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --global gulp-cli</span><br></pre></td></tr></table></figure>
+  }
+}
+if (A === null) {
+  console.warn("Could not find a node of the right size. Please try a different page.");
+  return
+}
+c();
+S();
+var O = [];
+for (var L = 0; L < C.length; L++) {
+  var A = C[L];
+  if (v(A)) {
+    O.push(A)
+  }
+}
+})()'><i class="menu-item-icon fa fa-music fa-fw"></i> High一下</a></li></ul><div class="site-search"><div class="popup"><span class="search-icon fa fa-search fa-lg"></span> <input type="text" id="local-search-input"><div id="local-search-result"></div><span class="popup-btn-close">close</span></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><header class="post-header"><h1 class="post-title" itemprop="name headline">gulp 详解与使用</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time itemprop="dateCreated" datetime="2017-05-01T01:25:24+08:00" content="2017-05-01">2017-05-01 </time></span><span class="post-category">&nbsp; | &nbsp; <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span> </a></span></span>&nbsp; | &nbsp; <span class="page-pv">热度 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>℃</span></div></header><div class="post-body" itemprop="articleBody"><h1 id="什么是-gulp"><a href="#什么是-gulp" class="headerlink" title="什么是 gulp"></a>什么是 gulp</h1><p><a href="http://gulpjs.com/" target="_blank" rel="external">gulp</a> 是一个前端构建工具，它能通过自动执行常见任务，比如编译预处理 CSS ，压缩 JavaScript 和刷新浏览器，来改进网站开发的过程，从而使开发更加快速高效。</p><h1 id="为什么要用-gulp"><a href="#为什么要用-gulp" class="headerlink" title="为什么要用 gulp"></a>为什么要用 gulp</h1><p>与 grunt 相比，gulp 无需写一大堆繁杂的配置参数，<a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md" target="_blank" rel="external">API</a>（<a href="http://www.gulpjs.com.cn/docs/api/" target="_blank" rel="external">中文 API</a>） 也非常简单，学习起来很容易，而且 gulp 使用的是 nodejs 中 <a href="https://nodejs.org/api/stream.html" target="_blank" rel="external">stream</a> 来读取和操作数据，其速度更快。<br>gulp 有庞大的生态圈，且每天都在发展。依靠成千上万可供选择的插件，你可以利用 gulp 自动完成几乎任何事。</p><h1 id="如何使用-gulp"><a href="#如何使用-gulp" class="headerlink" title="如何使用 gulp"></a>如何使用 gulp</h1><h2 id="Installing-Gulp"><a href="#Installing-Gulp" class="headerlink" title="Installing Gulp"></a>Installing Gulp</h2><p>新版的 gulp 命令行工具已经改名为 gulp-cli 。<br>如果你之前安装了全局的 gulp 。在使用新的 gulp-cli 之前，执行命令<br><code>npm rm --global gulp</code> ，将之前的全局 gulp 卸掉。</p><a id="more"></a><h3 id="Install-the-gulp-command"><a href="#Install-the-gulp-command" class="headerlink" title="Install the gulp command"></a>Install the gulp command</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --global gulp-cli</span><br></pre></td></tr></table></figure>
 <h3 id="Install-gulp-in-your-devDependencies"><a href="#Install-gulp-in-your-devDependencies" class="headerlink" title="Install gulp in your devDependencies"></a>Install gulp in your devDependencies</h3><p>Run this command in your project directory<br></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev gulp</span><br></pre></td></tr></table></figure><p></p>
 <h2 id="Create-a-gulpfile"><a href="#Create-a-gulpfile" class="headerlink" title="Create a gulpfile"></a>Create a gulpfile</h2><p>Create a file called gulpfile.js in your project root with these contents:<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// place code for your default tash here</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p></p>
 <h2 id="Test-it-out"><a href="#Test-it-out" class="headerlink" title="Test it out"></a>Test it out</h2><p>Run the gulp command in your projct directory:<br></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp</span><br></pre></td></tr></table></figure><p></p>
@@ -557,10 +556,12 @@
           </div>
         </section>
       
+
       
-      <section style="border-top:1px dotted #ccc;height:10px"></section>
+        <section style="border-top:1px dotted #ccc;padding-top:10px">
+          <iframe width="100%" height="120" class="share_self" frameborder="0" scrolling="no" src="https://widget.weibo.com/weiboshow/index.php?language=&width=0&height=120&fansRow=2&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=5346488237&verifier=d529ff3a&dpc=1"></iframe>
+        </section>
       
-      <iframe width="100%" height="120" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=120&fansRow=2&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=5346488237&verifier=d529ff3a&dpc=1"></iframe>
     </div>
   </aside>
 

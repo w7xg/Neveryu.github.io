@@ -2,210 +2,209 @@
 Service work"><meta property="og:type" content="article"><meta property="og:title" content="使用 Service worker 实现加速/离线访问博客"><meta property="og:url" content="https://neveryu.github.io/2017/06/08/service-worker/index.html"><meta property="og:site_name" content="Never_yu's Blog"><meta property="og:description" content="有一个困扰 web 用户多年的难题——丢失网络连接。即使是世界上最好的 web app，如果下载不了它，也是非常糟糕的体验。如今虽然已经有很多种技术去尝试着解决这一问题。而随着离线页面的出现，一些问题已经得到了解决。有一个叫做 APP Cache 的 API 可以提供离线体验，但它的问题比较多。最重要的问题是，仍然没有一个好的统筹机制对资源缓存和自定义的网络请求进行控制。
 Service work"><meta property="og:image" content="https://neveryu.github.io/images/service-worker-1.png"><meta property="og:image" content="https://neveryu.github.io/images/service-worker-2.png"><meta property="og:image" content="https://neveryu.github.io/images/service-worker-3.png"><meta property="og:image" content="https://neveryu.github.io/images/service-worker-4.png"><meta property="og:image" content="https://neveryu.github.io/images/service-worker-5.png"><meta property="og:updated_time" content="2017-07-02T05:03:40.433Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="使用 Service worker 实现加速/离线访问博客"><meta name="twitter:description" content="有一个困扰 web 用户多年的难题——丢失网络连接。即使是世界上最好的 web app，如果下载不了它，也是非常糟糕的体验。如今虽然已经有很多种技术去尝试着解决这一问题。而随着离线页面的出现，一些问题已经得到了解决。有一个叫做 APP Cache 的 API 可以提供离线体验，但它的问题比较多。最重要的问题是，仍然没有一个好的统筹机制对资源缓存和自定义的网络请求进行控制。
 Service work"><meta name="twitter:image" content="https://neveryu.github.io/images/service-worker-1.png"><script type="text/javascript" id="hexo.configuration">var NexT=window.NexT||{},CONFIG={scheme:"Pisces",sidebar:{position:"left",display:"hide"},fancybox:!0,motion:!0,duoshuo:{userId:void 0,author:"博主"}}</script><link rel="canonical" href="https://neveryu.github.io/2017/06/08/service-worker/"><script src="/js/src/pace.min.js"></script><title>使用 Service worker 实现加速/离线访问博客 | Never_yu's Blog</title></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container one-collumn sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Never_yu's Blog</span> <span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle">认真的人才有资格开玩笑</p></div><div class="site-nav-toggle"><button><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-categories"><a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-guestbook"><a href="/guestbook" rel="section"><i class="menu-item-icon fa fa-fw fa-commenting"></i><br>留言</a></li><li class="menu-item menu-item-about"><a href="/about" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-example"><a href="/example" rel="section"><i class="menu-item-icon fa fa-fw fa-question-circle"></i><br>示例</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li><li class="menu-item"><a title="把这个链接拖到你的工具栏中,任何网页都可以High" href='javascript:(
-    /*
-     * Copyright (C) 2016 Never_yu (Neveryu.github.io) <React.dong.yu@gmail.com>
-     * Sina Weibo (http://weibo.com/Neveryu)
-     *
-     * Licensed under the Apache License, Version 2.0 (the "License");
-     * you may not use this file except in compliance with the License.
-     * You may obtain a copy of the License at
-     *
-     *      http://www.apache.org/licenses/LICENSE-2.0
-     *
-     * Unless required by applicable law or agreed to in writing, software
-     * distributed under the License is distributed on an "AS IS" BASIS,
-     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     * See the License for the specific language governing permissions and
-     * limitations under the License.
-     */
-    function go() {
+/*
+ * Copyright (C) 2016 Never_yu (Neveryu.github.io) <React.dong.yu@gmail.com>
+ * Sina Weibo (http://weibo.com/Neveryu)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+function go() {
 
+var songs = [
+  "http://dl.stream.qqmusic.qq.com/C400001Qu4I30eVFYb.m4a?vkey=2127178E4405E7B8B268F20F05232485735CCF4FF8C1432F0360D2626D0B6C9564B5627C7AB481BBC685FEDB0946A50E97C66F0D1B008226&guid=7175649092&uin=0&fromtag=66",
+  "",
+  "",
+  ""
+];
 
-    var songs = [
-                "http://bdyun.65dj.com:8090/2015/06/28/84791C997D8C55023DAD0D5690E48C28/%D1%A6%D6%AE%C7%AB%20-%20%D1%DD%D4%B1.mp3",
-                "http://7xoiki.com1.z0.glb.clouddn.com/Music-sunburst.mp3",
-                ""
-    ];
+function c() {
+  var e = document.createElement("link");
+  e.setAttribute("type", "text/css");
+  e.setAttribute("rel", "stylesheet");
+  e.setAttribute("href", f);
+  e.setAttribute("class", l);
+  document.body.appendChild(e)
+}
 
-    
-    function c() {
-        var e = document.createElement("link");
-        e.setAttribute("type", "text/css");
-        e.setAttribute("rel", "stylesheet");
-        e.setAttribute("href", f);
-        e.setAttribute("class", l);
-        document.body.appendChild(e)
-    }
- 
-    function h() {
-        var e = document.getElementsByClassName(l);
-        for (var t = 0; t < e.length; t++) {
-            document.body.removeChild(e[t])
-        }
-    }
- 
-    function p() {
-        var e = document.createElement("div");
-        e.setAttribute("class", a);
-        document.body.appendChild(e);
-        setTimeout(function() {
-            document.body.removeChild(e)
-        }, 100)
-    }
- 
-    function d(e) {
-        return {
-            height : e.offsetHeight,
-            width : e.offsetWidth
-        }
-    }
- 
-    function v(i) {
-        var s = d(i);
-        return s.height > e && s.height < n && s.width > t && s.width < r
-    }
- 
-    function m(e) {
-        var t = e;
-        var n = 0;
-        while (!!t) {
-            n += t.offsetTop;
-            t = t.offsetParent
-        }
-        return n
-    }
- 
-    function g() {
-        var e = document.documentElement;
-        if (!!window.innerWidth) {
-            return window.innerHeight
-        } else if (e && !isNaN(e.clientHeight)) {
-            return e.clientHeight
-        }
-        return 0
-    }
- 
-    function y() {
-        if (window.pageYOffset) {
-            return window.pageYOffset
-        }
-        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
-    }
- 
-    function E(e) {
-        var t = m(e);
-        return t >= w && t <= b + w
-    }
+function h() {
+  var e = document.getElementsByClassName(l);
+  for (var t = 0; t < e.length; t++) {
+    document.body.removeChild(e[t])
+  }
+}
 
-    function S() {
-        var e = document.getElementById("audio_element_id");
-        if(e != null){
-            var index = parseInt(e.getAttribute("curSongIndex"));
-            if(index > songs.length - 2) {
-                index = 0;
-            } else {
-                index++;
-            }
-            e.setAttribute("curSongIndex", index);
-            N();
-        }
+function p() {
+  var e = document.createElement("div");
+  e.setAttribute("class", a);
+  document.body.appendChild(e);
+  setTimeout(function() {
+    document.body.removeChild(e)
+  }, 100)
+}
 
-        e.src = i;
-        e.play()
-    }
- 
-    function x(e) {
-        e.className += " " + s + " " + o
-    }
- 
-    function T(e) {
-        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
-    }
- 
-    function N() {
-        var e = document.getElementsByClassName(s);
-        var t = new RegExp("\\b" + s + "\\b");
-        for (var n = 0; n < e.length; ) {
-            e[n].className = e[n].className.replace(t, "")
-        }
-    }
+function d(e) {
+  return {
+    height : e.offsetHeight,
+    width : e.offsetWidth
+  }
+}
 
-    function initAudioEle() {
-        var e = document.getElementById("audio_element_id");
-        if(e === null){
-            e = document.createElement("audio");
-            e.setAttribute("class", l);
-            e.setAttribute("curSongIndex", 0);
-            e.id = "audio_element_id";
-            e.loop = false;
-            e.bgcolor = 0;
-            e.addEventListener("canplay", function() {
-            setTimeout(function() {
-                x(k)
-            }, 500);
-            setTimeout(function() {
-                N();
-                p();
-                for (var e = 0; e < O.length; e++) {
-                    T(O[e])
-                }
-            }, 15500)
-        }, true);
-        e.addEventListener("ended", function() {
-            N();
-            h();
-            go();
-        }, true);
-        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
-        document.body.appendChild(e);
-        }
-    }
-    
-    initAudioEle();
-    var e = 30;
-    var t = 30;
-    var n = 350;
-    var r = 350;
+function v(i) {
+  var s = d(i);
+  return s.height > e && s.height < n && s.width > t && s.width < r
+}
 
-    var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
-    var i = songs[curSongIndex];
-    
-    var s = "mw-harlem_shake_me";
-    var o = "im_first";
-    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
-    var a = "mw-strobe_light";
+function m(e) {
+  var t = e;
+  var n = 0;
+  while (!!t) {
+    n += t.offsetTop;
+    t = t.offsetParent
+  }
+  return n
+}
 
-    /* harlem-shake-style.css，替换成你的位置，也可以直接使用：//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css */
-    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
-    
-    var l = "mw_added_css";
-    var b = g();
-    var w = y();
-    var C = document.getElementsByTagName("*");
-    var k = null;
-    for (var L = 0; L < C.length; L++) {
-        var A = C[L];
-        if (v(A)) {
-            if (E(A)) {
-                k = A;
-                break
-            }
+function g() {
+  var e = document.documentElement;
+  if (!!window.innerWidth) {
+    return window.innerHeight
+  } else if (e && !isNaN(e.clientHeight)) {
+    return e.clientHeight
+  }
+  return 0
+}
+
+function y() {
+  if (window.pageYOffset) {
+    return window.pageYOffset
+  }
+  return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+}
+
+function E(e) {
+  var t = m(e);
+  return t >= w && t <= b + w
+}
+
+function S() {
+  var e = document.getElementById("audio_element_id");
+  if(e != null){
+    var index = parseInt(e.getAttribute("curSongIndex"));
+    if(index > songs.length - 2) {
+      index = 0;
+    } else {
+      index++;
+    }
+    e.setAttribute("curSongIndex", index);
+    N();
+  }
+
+  e.src = i;
+  e.play()
+}
+
+function x(e) {
+  e.className += " " + s + " " + o
+}
+
+function T(e) {
+  e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+}
+
+function N() {
+  var e = document.getElementsByClassName(s);
+  var t = new RegExp("\\b" + s + "\\b");
+  for (var n = 0; n < e.length; ) {
+    e[n].className = e[n].className.replace(t, "")
+  }
+}
+
+function initAudioEle() {
+  var e = document.getElementById("audio_element_id");
+  if(e === null){
+    e = document.createElement("audio");
+    e.setAttribute("class", l);
+    e.setAttribute("curSongIndex", 0);
+    e.id = "audio_element_id";
+    e.loop = false;
+    e.bgcolor = 0;
+    e.addEventListener("canplay", function() {
+      setTimeout(function() {
+        x(k)
+      }, 500);
+      setTimeout(function() {
+        N();
+        p();
+        for (var e = 0; e < O.length; e++) {
+          T(O[e])
         }
+      }, 15500)
+    }, true);
+    e.addEventListener("ended", function() {
+      N();
+      h();
+      go();
+    }, true);
+    e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+    document.body.appendChild(e);
+  }
+}
+
+initAudioEle();
+var e = 30;
+var t = 30;
+var n = 350;
+var r = 350;
+
+var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
+var i = songs[curSongIndex];
+
+var s = "mw-harlem_shake_me";
+var o = "im_first";
+var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+var a = "mw-strobe_light";
+
+/* harlem-shake-style.css，替换成你的位置，也可以直接使用：//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css */
+var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+
+var l = "mw_added_css";
+var b = g();
+var w = y();
+var C = document.getElementsByTagName("*");
+var k = null;
+for (var L = 0; L < C.length; L++) {
+  var A = C[L];
+  if (v(A)) {
+    if (E(A)) {
+      k = A;
+      break
     }
-    if (A === null) {
-        console.warn("Could not find a node of the right size. Please try a different page.");
-        return
-    }
-    c();
-    S();
-    var O = [];
-    for (var L = 0; L < C.length; L++) {
-        var A = C[L];
-        if (v(A)) {
-            O.push(A)
-        }
-    }
-    })()'><i class="menu-item-icon fa fa-music fa-fw"></i>High一下</a></li></ul><div class="site-search"><div class="popup"><span class="search-icon fa fa-search fa-lg"></span> <input type="text" id="local-search-input"><div id="local-search-result"></div><span class="popup-btn-close">close</span></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><header class="post-header"><h1 class="post-title" itemprop="name headline">使用 Service worker 实现加速/离线访问博客</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time itemprop="dateCreated" datetime="2017-06-08T11:25:24+08:00" content="2017-06-08">2017-06-08 </time></span><span class="post-category">&nbsp; | &nbsp; <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span> </a></span></span>&nbsp; | &nbsp; <span class="page-pv">热度 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>℃</span></div></header><div class="post-body" itemprop="articleBody"><p>有一个困扰 web 用户多年的难题——丢失网络连接。即使是世界上最好的 web app，如果下载不了它，也是非常糟糕的体验。如今虽然已经有很多种技术去尝试着解决这一问题。而随着<strong>离线页面</strong>的出现，一些问题已经得到了解决。有一个叫做 APP Cache 的 API 可以提供离线体验，但它的问题比较多。最重要的问题是，仍然没有一个好的统筹机制对资源缓存和自定义的网络请求进行控制。</p><h1 id="Service-worker"><a href="#Service-worker" class="headerlink" title="Service worker"></a>Service worker</h1><p>于是 HTML5 提出了 Service Worker，Service worker 提供了很多新的能力，使得 web app 拥有与 nativeapp 相同的离线体验、消息推送体验。</p><a id="more"></a><p>Service worker 是一段脚本，它有能力往我们的浏览器中写入缓存，过滤网络请求，将缓存内容作为网络响应结果输出。<br><strong>带来的效果是显而易见的：</strong></p><p id="div-border-top-green">1、当我们缓存了某些资源的时候，当我们再次请求该资源的时候，我们便可以使用缓存的内容，这样的话，就可以减少网络请求了，网站的打开速度明显提升。<br>2、如果我们将网站所需的资源缓存下来了以后，这个时候即使计算机没有网络，依然可以打开这个网站，即离线访问。<br></p><h1 id="Service-worker-使用场景"><a href="#Service-worker-使用场景" class="headerlink" title="Service worker 使用场景"></a>Service worker 使用场景</h1><p>现在很流行基于 GitHub page 和 markdown 的静态 blog ，非常适合技术的思维和习惯，针对不同的语言都有一些优秀的静态 blog 系统出现，如 Jekyll/Ruby，Pelican/Python，Hexo/NodeJs ，由于静态内容的特性非常适合做缓存来加速页面的访问，就利用 Service worker 来实现加速，结果是除了 PageSpeed，CDN 这些常见的服务器和网络加速之外，通过客户端实现了更好的访问体验。</p><h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p>你现在可以断开你的网络，或者用浏览器中模拟无网络的情景，继续访问本站。<br><i style="color:red">如何在浏览器中模拟无网络环境？(在 Network 中选择 offline)</i><br><img src="/images/service-worker-1.png" alt=""></p><h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><h2 id="注册-Service-worker"><a href="#注册-Service-worker" class="headerlink" title="注册 Service worker"></a>注册 Service worker</h2><p>要安装 Service worker，你需要在你的页面上注册它。下面的代码会告诉浏览器你的 Service worker 脚本放在哪里<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">if</span> (navigator.serviceWorker) &#123;</span><br><span class="line">    <span class="comment">// 注册Service Worker scope表示作用的页面的path</span></span><br><span class="line">    <span class="comment">// register函数返回Promise</span></span><br><span class="line">    navigator.serviceWorker.register(<span class="string">'/service-worker.js'</span>,&#123;<span class="attr">scope</span>: <span class="string">'/'</span>&#125;) </span><br><span class="line">      .then(<span class="function"><span class="keyword">function</span> (<span class="params">registration</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(registration);</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.error(e);</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Service Worker is not supported in this browser.'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure><p></p>
+  }
+}
+if (A === null) {
+  console.warn("Could not find a node of the right size. Please try a different page.");
+  return
+}
+c();
+S();
+var O = [];
+for (var L = 0; L < C.length; L++) {
+  var A = C[L];
+  if (v(A)) {
+    O.push(A)
+  }
+}
+})()'><i class="menu-item-icon fa fa-music fa-fw"></i> High一下</a></li></ul><div class="site-search"><div class="popup"><span class="search-icon fa fa-search fa-lg"></span> <input type="text" id="local-search-input"><div id="local-search-result"></div><span class="popup-btn-close">close</span></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><header class="post-header"><h1 class="post-title" itemprop="name headline">使用 Service worker 实现加速/离线访问博客</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time itemprop="dateCreated" datetime="2017-06-08T11:25:24+08:00" content="2017-06-08">2017-06-08 </time></span><span class="post-category">&nbsp; | &nbsp; <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span> </a></span></span>&nbsp; | &nbsp; <span class="page-pv">热度 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>℃</span></div></header><div class="post-body" itemprop="articleBody"><p>有一个困扰 web 用户多年的难题——丢失网络连接。即使是世界上最好的 web app，如果下载不了它，也是非常糟糕的体验。如今虽然已经有很多种技术去尝试着解决这一问题。而随着<strong>离线页面</strong>的出现，一些问题已经得到了解决。有一个叫做 APP Cache 的 API 可以提供离线体验，但它的问题比较多。最重要的问题是，仍然没有一个好的统筹机制对资源缓存和自定义的网络请求进行控制。</p><h1 id="Service-worker"><a href="#Service-worker" class="headerlink" title="Service worker"></a>Service worker</h1><p>于是 HTML5 提出了 Service Worker，Service worker 提供了很多新的能力，使得 web app 拥有与 nativeapp 相同的离线体验、消息推送体验。</p><a id="more"></a><p>Service worker 是一段脚本，它有能力往我们的浏览器中写入缓存，过滤网络请求，将缓存内容作为网络响应结果输出。<br><strong>带来的效果是显而易见的：</strong></p><p id="div-border-top-green">1、当我们缓存了某些资源的时候，当我们再次请求该资源的时候，我们便可以使用缓存的内容，这样的话，就可以减少网络请求了，网站的打开速度明显提升。<br>2、如果我们将网站所需的资源缓存下来了以后，这个时候即使计算机没有网络，依然可以打开这个网站，即离线访问。<br></p><h1 id="Service-worker-使用场景"><a href="#Service-worker-使用场景" class="headerlink" title="Service worker 使用场景"></a>Service worker 使用场景</h1><p>现在很流行基于 GitHub page 和 markdown 的静态 blog ，非常适合技术的思维和习惯，针对不同的语言都有一些优秀的静态 blog 系统出现，如 Jekyll/Ruby，Pelican/Python，Hexo/NodeJs ，由于静态内容的特性非常适合做缓存来加速页面的访问，就利用 Service worker 来实现加速，结果是除了 PageSpeed，CDN 这些常见的服务器和网络加速之外，通过客户端实现了更好的访问体验。</p><h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p>你现在可以断开你的网络，或者用浏览器中模拟无网络的情景，继续访问本站。<br><i style="color:red">如何在浏览器中模拟无网络环境？(在 Network 中选择 offline)</i><br><img src="/images/service-worker-1.png" alt=""></p><h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><h2 id="注册-Service-worker"><a href="#注册-Service-worker" class="headerlink" title="注册 Service worker"></a>注册 Service worker</h2><p>要安装 Service worker，你需要在你的页面上注册它。下面的代码会告诉浏览器你的 Service worker 脚本放在哪里<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">if</span> (navigator.serviceWorker) &#123;</span><br><span class="line">    <span class="comment">// 注册Service Worker scope表示作用的页面的path</span></span><br><span class="line">    <span class="comment">// register函数返回Promise</span></span><br><span class="line">    navigator.serviceWorker.register(<span class="string">'/service-worker.js'</span>,&#123;<span class="attr">scope</span>: <span class="string">'/'</span>&#125;) </span><br><span class="line">      .then(<span class="function"><span class="keyword">function</span> (<span class="params">registration</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(registration);</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.error(e);</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Service Worker is not supported in this browser.'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure><p></p>
 <p>以上代码会先检测 Service worker 在浏览器中是否可用，可用的话一个 Service worker（/service-worker.js）将被注册，如果这个 Service worker 已经注册过了，浏览器这会忽略以上代码。<br><code>{scope: &#39;/&#39;}</code> 表示 Service worker 作用的范围。<br>需要说明的是 service-worker.js 文件被放在这个域的根目录下，这意味着 service worker 是跟网站同源的。换句话说，这个 service worker 将会获取到这个域下的所有 fetch 事件。<br>如果 service worker 文件注册到 /example/service-worker.js ，那么 service worker 只能收到 /example/ 路径下的 fetch 事件（比如： /example/page1/, /example/page2/）。<br>如果 service worker 文件注册到根目录下 /service-worker.js ，同时 <code>{scope: &#39;/example&#39;}</code> ，那么 service worker 也只能收到 /example/ 路径下的 fetch 事件。</p>
 <p>service-worker.js 文件，我建议是放在网站的跟目录下，scope 不作修改，这样 service worker 拥有最大的使用范围。</p>
 <h2 id="安装-Service-worker"><a href="#安装-Service-worker" class="headerlink" title="安装 Service worker"></a>安装 Service worker</h2><p><img src="/images/service-worker-2.png" alt=""></p>
@@ -483,10 +482,12 @@ Service work"><meta name="twitter:image" content="https://neveryu.github.io/imag
           </div>
         </section>
       
+
       
-      <section style="border-top:1px dotted #ccc;height:10px"></section>
+        <section style="border-top:1px dotted #ccc;padding-top:10px">
+          <iframe width="100%" height="120" class="share_self" frameborder="0" scrolling="no" src="https://widget.weibo.com/weiboshow/index.php?language=&width=0&height=120&fansRow=2&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=5346488237&verifier=d529ff3a&dpc=1"></iframe>
+        </section>
       
-      <iframe width="100%" height="120" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=120&fansRow=2&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=5346488237&verifier=d529ff3a&dpc=1"></iframe>
     </div>
   </aside>
 
