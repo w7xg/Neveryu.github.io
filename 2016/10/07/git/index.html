@@ -1,4 +1,264 @@
-<!doctype html><html class="theme-next pisces use-motion"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="//fonts.googleapis.com/css?family=Courier New:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css"><link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css"><meta name="keywords" content="Git,"><link rel="alternate" href="/atom.xml" title="Never_yu's Blog" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico?v=5.0.1"><meta name="description" content="git 简介git 是分布式的，所以其核心就是分支，分支的意义在于，可以将项目代码按照功能、模块拆分成不同的分支。比如这个产品要加一个支付功能和一个登陆功能，可以创建两个分支，交给不同的开发人员并行开发。登陆功能先开发完，测试无误后合并改分支到 master 分支，master 分支部署上线。支付功能虽然没有开发完成，但是在另一条分支上，所以产品上线和功能开发完全不受影响。这才是分布式开发的高效模"><meta property="og:type" content="article"><meta property="og:title" content="Git学习总结"><meta property="og:url" content="https://neveryu.github.io/2016/10/07/git/index.html"><meta property="og:site_name" content="Never_yu's Blog"><meta property="og:description" content="git 简介git 是分布式的，所以其核心就是分支，分支的意义在于，可以将项目代码按照功能、模块拆分成不同的分支。比如这个产品要加一个支付功能和一个登陆功能，可以创建两个分支，交给不同的开发人员并行开发。登陆功能先开发完，测试无误后合并改分支到 master 分支，master 分支部署上线。支付功能虽然没有开发完成，但是在另一条分支上，所以产品上线和功能开发完全不受影响。这才是分布式开发的高效模"><meta property="og:updated_time" content="2017-09-18T15:15:31.691Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Git学习总结"><meta name="twitter:description" content="git 简介git 是分布式的，所以其核心就是分支，分支的意义在于，可以将项目代码按照功能、模块拆分成不同的分支。比如这个产品要加一个支付功能和一个登陆功能，可以创建两个分支，交给不同的开发人员并行开发。登陆功能先开发完，测试无误后合并改分支到 master 分支，master 分支部署上线。支付功能虽然没有开发完成，但是在另一条分支上，所以产品上线和功能开发完全不受影响。这才是分布式开发的高效模"><script type="text/javascript" id="hexo.configuration">var NexT=window.NexT||{},CONFIG={scheme:"Pisces",sidebar:{position:"left",display:"hide"},fancybox:!0,motion:!0,duoshuo:{userId:void 0,author:"博主"}}</script><link rel="canonical" href="https://neveryu.github.io/2016/10/07/git/"><script src="/js/src/pace.min.js"></script><title>Git学习总结 | Never_yu's Blog</title></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container one-collumn sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Never_yu's Blog</span> <span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle">认真的人才有资格开玩笑</p></div><div class="site-nav-toggle"><button><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-categories"><a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-guestbook"><a href="/guestbook" rel="section"><i class="menu-item-icon fa fa-fw fa-commenting"></i><br>留言</a></li><li class="menu-item menu-item-about"><a href="/about" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-example"><a href="/example" rel="section"><i class="menu-item-icon fa fa-fw fa-question-circle"></i><br>示例</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li><li class="menu-item"><a title="把这个链接拖到你的工具栏中,任何网页都可以High" href='javascript:(
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Courier New:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Git," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Never_yu's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="git 简介git 是分布式的，所以其核心就是分支，分支的意义在于，可以将项目代码按照功能、模块拆分成不同的分支。比如这个产品要加一个支付功能和一个登陆功能，可以创建两个分支，交给不同的开发人员并行开发。登陆功能先开发完，测试无误后合并改分支到 master 分支，master 分支部署上线。支付功能虽然没有开发完成，但是在另一条分支上，所以产品上线和功能开发完全不受影响。这才是分布式开发的高效模">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git学习总结">
+<meta property="og:url" content="https://neveryu.github.io/2016/10/07/git/index.html">
+<meta property="og:site_name" content="Never_yu's Blog">
+<meta property="og:description" content="git 简介git 是分布式的，所以其核心就是分支，分支的意义在于，可以将项目代码按照功能、模块拆分成不同的分支。比如这个产品要加一个支付功能和一个登陆功能，可以创建两个分支，交给不同的开发人员并行开发。登陆功能先开发完，测试无误后合并改分支到 master 分支，master 分支部署上线。支付功能虽然没有开发完成，但是在另一条分支上，所以产品上线和功能开发完全不受影响。这才是分布式开发的高效模">
+<meta property="og:updated_time" content="2017-09-18T15:15:31.691Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git学习总结">
+<meta name="twitter:description" content="git 简介git 是分布式的，所以其核心就是分支，分支的意义在于，可以将项目代码按照功能、模块拆分成不同的分支。比如这个产品要加一个支付功能和一个登陆功能，可以创建两个分支，交给不同的开发人员并行开发。登陆功能先开发完，测试无误后合并改分支到 master 分支，master 分支部署上线。支付功能虽然没有开发完成，但是在另一条分支上，所以产品上线和功能开发完全不受影响。这才是分布式开发的高效模">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://neveryu.github.io/2016/10/07/git/"/>
+
+
+<!-- 网页加载条 -->
+<script src="/js/src/pace.min.js"></script>
+  <title> Git学习总结 | Never_yu's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Never_yu's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">认真的人才有资格开玩笑</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-commenting"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-example">
+          <a href="/example" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            示例
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+      
+      
+        <li class="menu-item"> <a title="把这个链接拖到你的工具栏中,任何网页都可以High" href='javascript:(
 /*
  * Copyright (C) 2016 Never_yu (Neveryu.github.io) <React.dong.yu@gmail.com>
  * Sina Weibo (http://weibo.com/Neveryu)
@@ -201,7 +461,125 @@ for (var L = 0; L < C.length; L++) {
     O.push(A)
   }
 }
-})()'><i class="menu-item-icon fa fa-music fa-fw"></i> High一下</a></li></ul><div class="site-search"><div class="popup"><span class="search-icon fa fa-search fa-lg"></span> <input type="text" id="local-search-input"><div id="local-search-result"></div><span class="popup-btn-close">close</span></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><header class="post-header"><h1 class="post-title" itemprop="name headline">Git学习总结</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time itemprop="dateCreated" datetime="2016-10-07T13:25:24+08:00" content="2016-10-07">2016-10-07 </time></span><span class="post-category">&nbsp; | &nbsp; <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/综合/" itemprop="url" rel="index"><span itemprop="name">综合</span> </a></span></span>&nbsp; | &nbsp; <span class="page-pv">热度 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>℃</span></div></header><div class="post-body" itemprop="articleBody"><h2 id="git-简介"><a href="#git-简介" class="headerlink" title="git 简介"></a>git 简介</h2><p>git 是分布式的，所以其核心就是分支，分支的意义在于，可以将项目代码按照功能、模块拆分成不同的分支。比如这个产品要加一个支付功能和一个登陆功能，可以创建两个分支，交给不同的开发人员并行开发。登陆功能先开发完，测试无误后合并改分支到 master 分支，master 分支部署上线。支付功能虽然没有开发完成，但是在另一条分支上，所以产品上线和功能开发完全不受影响。这才是分布式开发的高效模式。<br>在 git 中，工作目录下面的所有文件都不外乎这两种状态：<strong>已跟踪</strong>或<strong>未跟踪</strong>。已跟踪的文件是指本来就被纳入版本控制管理的文件，在上次快照中有它们的记录，工作一段时间后，它们的状态可能是未更新，已修改或者已放入暂存区。而所有其他文件都属于未跟踪文件。它们既没有上次更新时的快照，也不在当前的暂存区域。初次克隆某个仓库时，工作目录中的所有文件都属于已跟踪文件，且状态为未修改。</p><a id="more"></a><h2 id="实用指令详解"><a href="#实用指令详解" class="headerlink" title="实用指令详解"></a>实用指令详解</h2><h3 id="merge"><a href="#merge" class="headerlink" title="merge"></a>merge</h3><p>通常，合并分支时，如果可能，Git 会用 Fast froward 模式，但这种模式下，删除分支后，会丢掉分支信息。<br>如果要强制禁用 Fast forward 模式，Git 就会在 merge 时生成一个新的 commit ，这样，从分支历史上就可以看出分支信息。<br><code>git merge --no-ff -m &#39;merge with no-ff&#39; dev</code><br>因为本次合并要创建一个新的 commit，所以加上 -m 参数，把 commit 描述写进去。</p><p>合并分支时，加上 <code>--no-ff</code> 参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而 fast forward 合并就看不出来曾经做过合并。</p><h3 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h3><p>一旦远程主机的版本库有了更新(git 术语叫做 commit)，需要将这些更新取回本地，这时就要用到 git fetch 命令。<br><code>git fetch &lt;远程主机名&gt;</code><br>上面命令将某个远程主机的更新，全部取回本地。<br>默认情况下，git fetch 取回所有分支(branch)的更新。如果只想取回特定分支的更新，可以指定分支名。<br><code>git fetch &lt;远程主机名&gt; &lt;分支名&gt;</code><br>比如，取回 origin 主机的 master 分支<br><code>git fetch origin master</code><br>所取回的更新，在本地主机上要用“远程主机名/分支名”的形式读取。比如 origin 主机的 master，就要用 origin/master 读取。</p><p><code>git fetch -p</code> ：取回远程更新，删除不存在的分支。</p><h3 id="pull"><a href="#pull" class="headerlink" title="pull"></a>pull</h3><p>git pull 命令的作用是，取回远程主机的某个分支的更新，再与本地的指定分支合并，完整格式如下：<br><code>git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</code><br>比如，取回origin主机的next分支，与本地的master分支合并，需要写成下面这样。<br><code>git pull origin next:master</code><br>如果远程分支是与当前分支合并，则冒号后面的部分可以省略。<br><code>git pull origin master</code><br>上面的命令表示，取回 origin/master 分支，再与当前分支合并。实质上，这等同于先做 git fetch，再 merge。<br></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin</span><br><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure><p></p>
+})()'><i class="menu-item-icon fa fa-music fa-fw"></i> High一下</a></li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search fa-lg"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Git学习总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-07T13:25:24+08:00" content="2016-10-07">
+              2016-10-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/综合/" itemprop="url" rel="index">
+                    <span itemprop="name">综合</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">热度
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>℃
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="git-简介"><a href="#git-简介" class="headerlink" title="git 简介"></a>git 简介</h2><p>git 是分布式的，所以其核心就是分支，分支的意义在于，可以将项目代码按照功能、模块拆分成不同的分支。比如这个产品要加一个支付功能和一个登陆功能，可以创建两个分支，交给不同的开发人员并行开发。登陆功能先开发完，测试无误后合并改分支到 master 分支，master 分支部署上线。支付功能虽然没有开发完成，但是在另一条分支上，所以产品上线和功能开发完全不受影响。这才是分布式开发的高效模式。<br>在 git 中，工作目录下面的所有文件都不外乎这两种状态：<strong>已跟踪</strong>或<strong>未跟踪</strong>。已跟踪的文件是指本来就被纳入版本控制管理的文件，在上次快照中有它们的记录，工作一段时间后，它们的状态可能是未更新，已修改或者已放入暂存区。而所有其他文件都属于未跟踪文件。它们既没有上次更新时的快照，也不在当前的暂存区域。初次克隆某个仓库时，工作目录中的所有文件都属于已跟踪文件，且状态为未修改。</p>
+<a id="more"></a>
+<h2 id="实用指令详解"><a href="#实用指令详解" class="headerlink" title="实用指令详解"></a>实用指令详解</h2><h3 id="merge"><a href="#merge" class="headerlink" title="merge"></a>merge</h3><p>通常，合并分支时，如果可能，Git 会用 Fast froward 模式，但这种模式下，删除分支后，会丢掉分支信息。<br>如果要强制禁用 Fast forward 模式，Git 就会在 merge 时生成一个新的 commit ，这样，从分支历史上就可以看出分支信息。<br><code>git merge --no-ff -m &#39;merge  with no-ff&#39; dev</code><br>因为本次合并要创建一个新的 commit，所以加上 -m 参数，把 commit 描述写进去。</p>
+<p>合并分支时，加上 <code>--no-ff</code> 参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而 fast forward 合并就看不出来曾经做过合并。</p>
+<h3 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h3><p>一旦远程主机的版本库有了更新(git 术语叫做 commit)，需要将这些更新取回本地，这时就要用到 git fetch 命令。<br><code>git fetch &lt;远程主机名&gt;</code><br>上面命令将某个远程主机的更新，全部取回本地。<br>默认情况下，git fetch 取回所有分支(branch)的更新。如果只想取回特定分支的更新，可以指定分支名。<br><code>git fetch &lt;远程主机名&gt; &lt;分支名&gt;</code><br>比如，取回 origin 主机的 master 分支<br><code>git fetch origin master</code><br>所取回的更新，在本地主机上要用“远程主机名/分支名”的形式读取。比如 origin 主机的 master，就要用 origin/master 读取。</p>
+<p><code>git fetch -p</code> ：取回远程更新，删除不存在的分支。</p>
+<h3 id="pull"><a href="#pull" class="headerlink" title="pull"></a>pull</h3><p>git pull 命令的作用是，取回远程主机的某个分支的更新，再与本地的指定分支合并，完整格式如下：<br><code>git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</code><br>比如，取回origin主机的next分支，与本地的master分支合并，需要写成下面这样。<br><code>git pull origin next:master</code><br>如果远程分支是与当前分支合并，则冒号后面的部分可以省略。<br><code>git pull origin master</code><br>上面的命令表示，取回 origin/master 分支，再与当前分支合并。实质上，这等同于先做 git fetch，再 merge。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin</span><br><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure></p>
 <p>在某些场合，git 会自动在本地分支与远程分支之间，建立一种追踪关系(tracking)。比如，在 git clone 的时候，所有本地分支默认与远程主机的同名分支，建立追踪关系，也就是说，本地的 master 分支自动“追踪” origin/master 分支。<br>git 也允许手动建立追踪关系。<br><code>git branch --set-upstream master origin/next</code><br>上面的命令指定 master 分支追踪 origin/next 分支。<br>如果当前分支与远程分支存在追踪关系，git pull 就可以省略远程分支名。<br><code>git pull origin</code><br>上面命令表示，本地的当前分支自动与对应的 origin 主机“追踪分支”(remote-tracking branch)进行合并。<br>如果当前分支只有一个追踪分支，连远程主机名都可以忽略。<br><code>git pull</code><br>上面命令表示，当前分支自动与唯一一个追踪分支进行合并。<br>如果合并需要采用 rebase 模式，可以使用 -rebase 选项。<br><code>git pull --rebase &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</code></p>
 <h3 id="push"><a href="#push" class="headerlink" title="push"></a>push</h3><p>git push 命令用于将本地分支的更新，推送到远程主机。它的格式与 git pull 命令相仿。<br><code>git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</code><br>如果省略远程分支名，则表示将本地分支推送与之存在“追踪关系”的远程分支(通常两者同名)，如果该远程分支不存在，则会被新建。<br><code>git push origin master</code><br>上面命令表示，将本地的 master 分支推送到 origin 主机的 master 分支。如果后者不存在，则会被新建。<br><strong>如果省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支。</strong><br><code>git push origin :master</code><br>等同于<br><code>git push origin --delete master</code><br>上面命令表示删除 origin 主机的 master 分支。<br>如果当前分支与远程分支之间存在追踪关系，则本地分支和远程分支都可以省略。<br><code>git push origin</code><br>上面命令表示，将当前分支推送到 origin 主机的对应分支。<br>如果当前分支只有一个追踪分支，那么主机名都可以省略。<br><code>git push</code><br>如果当前分支与多个主机存在追踪关系，则可以使用-u选项指定一个默认主机，这样后面就可以不加任何参数使用 git push 。<br><code>git push -u origin master</code><br>上面的命令将本地 master 分支推送到 origin 主机，同时指定 origin 为默认主机，后面就可以不加任何参数使用 git push 了。<br>不带任何参数的 git push ，默认只推送当前分支，这叫做 simple 方式。此外，还有一种 matching 方式，会推送所有有对应的远程分支的本地分支。<br>git 2.0 版本之前，默认采用 matching 方式，现在改为默认采用 simple 方式，如果要修改这个设置，可以采用 git config 命令。<br><code>git config --global push.default matching</code><br>或者<br><code>git config --global push.default simple</code><br>还有一种情况，就是不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机，这时需要使用 -all 选项。<br><code>git push --all origin</code><br>上面命令表示，将所有本地分支都推送到 origin 主机。<br>如果远程主机的版本比本地版本更新，推送时 git 会报错，要求先在本地做 git pull 合并差异，然后再推送到远程主机。这时，如果你一定要推送，可以使用 -force 选项。<br><code>git push --force origin</code><br>上面命令使用-force选项，结果导致在远程主机产生一个“非直进式”的合并(non-fast-forward merge)。除非你很确定要这样做，否则应该尽量避免使用 -force 选项。<br>最后，git push 不会推送标签(tag)，除非使用 -tags 选项。<br><code>git push origin --tags</code></p>
 <h3 id="log"><a href="#log" class="headerlink" title="log"></a>log</h3><p><code>git log</code> 命令可以查看历史记录，<code>git log</code> 命令显示从最近到最远的提交日志；<br>如果嫌输出信息太多，看得眼花缭乱的，可以试试 <code>git log --pretty=oneline</code> 。我们可以看到当前版本以及之前的版本日志以及版本号。<br>用 <code>git log --graph</code> 命令可以看到分支合并图。<br>或者两个参数一起用：<br><code>git log --graph --pretty=oneline</code><br><code>git log --graph --pretty=oneline --abbrev-commit</code><br>首先，git 必须知道当前版本是哪个版本，在 git 中，用 HEAD 表示当前版本，上一个版本就是 <code>HEAD^</code> ，上上一个版本就是 <code>HEAD^^</code> ， 当然往上100个版本写100个 <code>^</code> 比较容易数不过来，所以写成 <code>HEAD~100</code> 。<br>现在，我们要把当前版本回退到上一个版本，就可以使用 <code>git reset</code> 命令：<br><code>git reset --hard HEAD^</code><br>当你回退到了某个版本后，<code>git log</code> 只能显示此版本及之前的版本的日志，之后的版本日志就看不到了，但是，我们想恢复到之后教新的版本怎么办？<br>Git 提供了一个命令 <code>git reflog</code> 用来记录你的每一次命令</p>
@@ -250,7 +628,7 @@ for (var L = 0; L < C.length; L++) {
 <h3 id="从远程仓库拉取代码到本地仓库，并建立跟踪关系"><a href="#从远程仓库拉取代码到本地仓库，并建立跟踪关系" class="headerlink" title="从远程仓库拉取代码到本地仓库，并建立跟踪关系"></a>从远程仓库拉取代码到本地仓库，并建立跟踪关系</h3><p><code>git checkout -b &lt;本地新分支名&gt; &lt;对应的远程分支名&gt;</code></p>
 <h3 id="如何在远程仓库新建一个分支"><a href="#如何在远程仓库新建一个分支" class="headerlink" title="如何在远程仓库新建一个分支"></a>如何在远程仓库新建一个分支</h3><p>新建一个本地分支，按照正常流程提交完代码后，推送到远程<br><code>git push &lt;remote base&gt; &lt;local branch&gt;:&lt;remote branch&gt;</code></p>
 <h3 id="比较文件"><a href="#比较文件" class="headerlink" title="比较文件"></a>比较文件</h3><p><code>git diff HEAD -- demo.html</code><br>命令可以查看工作区的 demo.html 和版本库里面最新版本的区别。</p>
-<h3 id="忽略某些文件"><a href="#忽略某些文件" class="headerlink" title="忽略某些文件"></a>忽略某些文件</h3><p>默认方法是在当前项目目录下创建一个 .gitignore 文件，如果需要忽略的文件已经添加到版本库中，请先移除<br><code>git rm --cached [file]</code><br>不删除文件，只移除追踪。<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat .gitignore</span><br><span class="line">*.[oa]</span><br><span class="line">*~</span><br></pre></td></tr></table></figure><p></p>
+<h3 id="忽略某些文件"><a href="#忽略某些文件" class="headerlink" title="忽略某些文件"></a>忽略某些文件</h3><p>默认方法是在当前项目目录下创建一个 .gitignore 文件，如果需要忽略的文件已经添加到版本库中，请先移除<br><code>git rm --cached [file]</code><br>不删除文件，只移除追踪。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat .gitignore</span><br><span class="line">*.[oa]</span><br><span class="line">*~</span><br></pre></td></tr></table></figure></p>
 <p>文件 .gitignore 的格式规范如下：</p>
 <ul>
 <li>所有空行或者以注释符号 # 开头的目录都会被 git 忽略</li>
@@ -270,7 +648,7 @@ for (var L = 0; L < C.length; L++) {
 <h3 id="问题三"><a href="#问题三" class="headerlink" title="问题三"></a>问题三</h3><p>使用 windows 的同学注意了，如果你在资源管理器里新建一个 .gitignore 文件，它会提示你必须输入文件名，但是在文本编辑器里“保存”或者“另存为”就可以把文件保存为 .gitignore 了。<br>有些时候，你想添加一个文件到 git，但发现添加不了，原因是这个文件被 .gitignore 忽略了：<br><code>git add App.class</code><br>如果你确实想添加该文件，可以用 -f 制添加到 git：<br><code>git add -f App.class</code><br>或者你发现，可能是 .gitignore 写得有问题，需要找出来到底哪个规则写错了。<br>可以用 <code>git check-ignore</code> 命令检查：<br><code>git check-ignore -v App.class</code></p>
 <h3 id="问题四"><a href="#问题四" class="headerlink" title="问题四"></a>问题四</h3><p>为什么我把我生成的 ssh key 添加到了 github 中<br>然后 也 remote 了 <code>https://github.com/Neveryu/Xxx.git</code><br>为什么提交的时候报错，或者提示 输入密码账号是为什么</p>
 <p>ssh key 是 ssh 协议的密钥，http 协议没权限</p>
-<h3 id="问题五"><a href="#问题五" class="headerlink" title="问题五"></a>问题五</h3><p>git怎样删除未监视的文件 untracked files?<br>用 git clean<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 删除 untracked files</span><br><span class="line">git clean -f</span><br><span class="line"> </span><br><span class="line"># 连 untracked 的目录也一起删掉</span><br><span class="line">git clean -fd</span><br><span class="line"> </span><br><span class="line"># 连 gitignore 的untrack 文件/目录也一起删掉 （慎用，一般这个是用来删掉编译出来的 .o之类的文件用的）</span><br><span class="line">git clean -xfd</span><br><span class="line"> </span><br><span class="line"># 在用上述 git clean 前，墙裂建议加上 -n 参数来先看看会删掉哪些文件，防止重要文件被误删</span><br><span class="line">git clean -nxfd</span><br><span class="line">git clean -nf</span><br><span class="line">git clean -nfd</span><br></pre></td></tr></table></figure><p></p>
+<h3 id="问题五"><a href="#问题五" class="headerlink" title="问题五"></a>问题五</h3><p>git怎样删除未监视的文件 untracked files?<br>用 git clean<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 删除 untracked files</span><br><span class="line">git clean -f</span><br><span class="line"> </span><br><span class="line"># 连 untracked 的目录也一起删掉</span><br><span class="line">git clean -fd</span><br><span class="line"> </span><br><span class="line"># 连 gitignore 的untrack 文件/目录也一起删掉 （慎用，一般这个是用来删掉编译出来的 .o之类的文件用的）</span><br><span class="line">git clean -xfd</span><br><span class="line"> </span><br><span class="line"># 在用上述 git clean 前，墙裂建议加上 -n 参数来先看看会删掉哪些文件，防止重要文件被误删</span><br><span class="line">git clean -nxfd</span><br><span class="line">git clean -nf</span><br><span class="line">git clean -nfd</span><br></pre></td></tr></table></figure></p>
 <h2 id="我的常用命令"><a href="#我的常用命令" class="headerlink" title="我的常用命令"></a>我的常用命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch -avv</span><br><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
 <p><a href="http://git-scm.com/book/zh/v2" target="_blank" rel="external">权威教程</a><br><a href="http://iissnan.com/progit/" target="_blank" rel="external">Pro Git 简体中文版</a></p>
 
@@ -280,8 +658,8 @@ for (var L = 0; L < C.length; L++) {
     <div>
       
         
-<div id="wechat_subscriber" style="display:block;padding:10px 0;margin:20px auto;width:100%;text-align:center">
-    <img id="wechat_subscriber_qcode" src="/images/blog-mobile.png" alt="Never_yu wechat" style="width:200px;max-width:100%">
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/blog-mobile.png" alt="Never_yu wechat" style="width: 200px; max-width: 100%;"/>
     <div>扫一扫，用手机访问本站</div>
 </div>
 
@@ -293,27 +671,27 @@ for (var L = 0; L < C.length; L++) {
       
         
 
-<blockquote class="blockquote-center" style="color:#ccc">
+<blockquote class="blockquote-center" style="color: #ccc;">
     -------------本文结束 <i class="fa fa-apple"></i> 感谢您的阅读-------------
 </blockquote>
 
-  <span id="inline-green" style="border-radius:3px">作者</span>：<a class="link-blue" href="https://github.com/Neveryu" target="_blank">Neveryu</a><br>有问题请 <a class="link-blue" href="https://neveryu.github.io/guestbook" target="_blank">留言</a> 或者私信我的 <a class="link-blue" href="http://weibo.com/Neveryu" target="_blank">微博</a>。
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://github.com/Neveryu" target="_blank">Neveryu</a><br/>有问题请 <a class="link-blue" href="https://neveryu.github.io/guestbook" target="_blank">留言</a> 或者私信我的 <a class="link-blue" href="http://weibo.com/Neveryu" target="_blank">微博</a>。
 
-  <div style="padding:10px 0;margin:20px auto;width:90%;text-align:center">
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
     <div>满分是10分的话，这篇文章你给几分</div>
-    <button id="rewardButton" disable="enable" onclick='var qr=document.getElementById("QR");"none"===qr.style.display?qr.style.display="block":qr.style.display="none"'>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
       <span>赏</span>
     </button>
-    <div id="QR" style="display:none">
+    <div id="QR" style="display: none;">
       
-        <div id="wechat" style="display:inline-block">
-          <img id="wechat_qr" src="/reward/reward_wechat.png" alt="Never_yu WeChat Pay">
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/reward/reward_wechat.png" alt="Never_yu WeChat Pay"/>
           <p>微信打赏</p>
         </div>
       
       
-        <div id="alipay" style="display:inline-block">
-          <img id="alipay_qr" src="/reward/reward_alipay.png" alt="Never_yu Alipay">
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/reward/reward_alipay.png" alt="Never_yu Alipay"/>
           <p>支付宝打赏</p>
         </div>
       
@@ -362,7 +740,7 @@ for (var L = 0; L < C.length; L++) {
 
     <div class="post-spread">
       
-        
+        <!-- JiaThis Button BEGIN -->
 <div class="jiathis_style">
   <a class="jiathis_button_tsina"></a>
   <a class="jiathis_button_tqq"></a>
@@ -376,9 +754,13 @@ for (var L = 0; L < C.length; L++) {
   <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
   <a class="jiathis_counter_style"></a>
 </div>
-<script type="text/javascript">var jiathis_config={hideMore:!1}</script>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
 <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-
+<!-- JiaThis Button END -->
 
       
     </div>
@@ -409,7 +791,7 @@ for (var L = 0; L < C.length; L++) {
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -418,16 +800,18 @@ for (var L = 0; L < C.length; L++) {
         </ul>
       
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/avatar/avatar.png" alt="Never_yu">
+          <img class="site-author-image" itemprop="image"
+               src="/avatar/avatar.png"
+               alt="Never_yu" />
           <p class="site-author-name" itemprop="name">Never_yu</p>
           <p class="site-description motion-element" itemprop="description">Stay Hungry,Stay Foolish</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-count">36</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -444,7 +828,7 @@ for (var L = 0; L < C.length; L++) {
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -489,7 +873,7 @@ for (var L = 0; L < C.length; L++) {
         
           <div class="cc-license motion-element" itemprop="license">
             <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
-              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
             </a>
           </div>
         
@@ -498,7 +882,7 @@ for (var L = 0; L < C.length; L++) {
         
           <div class="links-of-blogroll motion-element links-of-blogroll-inline">
             <div class="links-of-blogroll-title">
-              <i class="fa fa-fw fa-globe"></i>
+              <i class="fa  fa-fw fa-globe"></i>
               友情链接
             </div>
             <ul class="links-of-blogroll-list">
@@ -542,8 +926,8 @@ for (var L = 0; L < C.length; L++) {
       
 
       
-        <section style="border-top:1px dotted #ccc;padding-top:10px">
-          <iframe width="100%" height="120" class="share_self" frameborder="0" scrolling="no" src="https://widget.weibo.com/weiboshow/index.php?language=&width=0&height=120&fansRow=2&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=5346488237&verifier=d529ff3a&dpc=1"></iframe>
+        <section style="border-top:1px dotted #ccc; padding-top:10px;">
+          <iframe width="100%" height="120" class="share_self"  frameborder="0" scrolling="no" src="https://widget.weibo.com/weiboshow/index.php?language=&width=0&height=120&fansRow=2&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=5346488237&verifier=d529ff3a&dpc=1"></iframe>
         </section>
       
     </div>
@@ -560,8 +944,8 @@ for (var L = 0; L < C.length; L++) {
 
 <div class="busuanzi-count">
 
-  
-  
+  <!-- <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+  <!-- 上面这个是之前的，不知道为什么失效了，改成下面这个 -->
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
@@ -576,10 +960,10 @@ for (var L = 0; L < C.length; L++) {
 
 
 
-        <div class="copyright">
+        <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -599,7 +983,7 @@ for (var L = 0; L < C.length; L++) {
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count" style="color:#e90f92">全站共 153k 字</span>
+  <span class="post-count" style="color: #e90f92;">全站共 156k 字</span>
 </div>
         
       </div>
@@ -612,7 +996,11 @@ for (var L = 0; L < C.length; L++) {
 
   
 
-<script type="text/javascript">"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script>
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
 
 
 
@@ -688,7 +1076,134 @@ for (var L = 0; L < C.length; L++) {
 
   
   
-  <script type="text/javascript">var isfetched=!1,search_path="search.xml";0==search_path.length&&(search_path="search.xml");var path="/"+search_path;function proceedsearch(){$("body").append('<div class="popoverlay">').css("overflow","hidden"),$(".popup").toggle()}var searchFunc=function(e,t,a){"use strict";$.ajax({url:e,dataType:"xml",async:!0,success:function(e){isfetched=!0,$(".popup").detach().appendTo(".header-inner");var r=$("entry",e).map(function(){return{title:$("title",this).text(),content:$("content",this).text(),url:$("url",this).text()}}).get(),c=document.getElementById(t),s=document.getElementById(a);c.addEventListener("input",function(){var e=0,t='<ul class="search-result-list">',a=this.value.trim().toLowerCase().split(/[\s\-]+/);s.innerHTML="",this.value.trim().length>1&&r.forEach(function(r){var c=!0,s=r.title.trim().toLowerCase(),n=r.content.trim().replace(/<[^>]+>/g,"").toLowerCase(),i=r.url,o=-1,l=-1,p=-1;if(""!=s&&""!=n&&a.forEach(function(e,t){o=s.indexOf(e),l=n.indexOf(e),o<0&&l<0?c=!1:(l<0&&(l=0),0==t&&(p=l))}),c){e+=1,t+="<li><a href='"+i+"' class='search-result-title'>"+s+"</a>";var h=r.content.trim().replace(/<[^>]+>/g,"");if(p>=0){var u=p-20,d=p+80;u<0&&(u=0),0==u&&(d=50),d>h.length&&(d=h.length);var f=h.substring(u,d);a.forEach(function(e){var t=new RegExp(e,"gi");f=f.replace(t,'<b class="search-keyword">'+e+"</b>")}),t+='<p class="search-result">'+f+"...</p>"}t+="</li>"}}),t+="</ul>",0==e&&(t='<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'),""==a&&(t='<div id="no-result"><i class="fa fa-search fa-5x" /></div>'),s.innerHTML=t}),proceedsearch()}})};$(".popup-trigger").click(function(e){e.stopPropagation(),0==isfetched?searchFunc(path,"local-search-input","local-search-result"):proceedsearch()}),$(".popup-btn-close").click(function(e){$(".popup").hide(),$(".popoverlay").remove(),$("body").css("overflow","")}),$(".popup").click(function(e){e.stopPropagation()})</script>
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
 
 
   
@@ -696,27 +1211,76 @@ for (var L = 0; L < C.length; L++) {
   
 
   
-<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js"></script>
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
 
 
-  
-  
-<script type="text/javascript">(function(){if("gfan"!=GetRequest().index){var e=navigator.userAgent.toLowerCase(),r=function(e,r){if(-1!=e.indexOf(r))return!0};if(r(e,"android")&&r(e,"mobile")||r(e,"android")&&r(e,"mozilla")||r(e,"android")&&r(e,"opera")||r(e,"ucweb7")||r(e,"iphone"))return!1;$.getScript("/js/src/particle.js?v=5.0.1")}})();function GetRequest(){var e=location.search,r=new Object;if(-1!=e.indexOf("?")){var t=e.substr(1);strs=t.split("&");for(var i=0;i<strs.length;i++)r[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1])}return r}</script>
-  
+  <!-- 按需加载背景 -->
+  <!-- 背景动画 -->
+<script type="text/javascript">
+  // 按需加载背景
+  // 如果是all，就直接加载了
+  if("pc" == "all") {
+    $.getScript("/js/src/particle.js?v=5.0.1");
+  }
+  // 识别手机或电脑的js开始
+  (function(){
+    var res = GetRequest();
+    var par = res['index'];
+    if(par!='gfan'){
+      var ua=navigator.userAgent.toLowerCase();
+      var contains=function (a, b){
+          if(a.indexOf(b)!=-1){return true;}
+      };
+      if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla"))||(contains(ua,"android") && contains(ua,"opera"))||contains(ua,"ucweb7")||contains(ua,"iphone")){
+        return false;
+      } else {
+        $.getScript("/js/src/particle.js?v=5.0.1");
+      }
+    }
+  })();
+  function GetRequest() {
+    var url = location.search;
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for(var i = 0; i < strs.length; i ++) {
+        theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+      }
+    }
+    return theRequest;
+  }
+</script>
+<!-- 识别手机或电脑的js结束 -->  
 
-  
-  
+  <!-- 页面点击小红心 -->
+  <!-- 页面点击小红心 -->
 
   <script type="text/javascript" src="/js/src/love.js?v=5.0.1"></script>
 
 
-  
-  
+  <!-- 鼠标移动，效果 -->
+  <!-- 鼠标移动特效 -->
 
   <script type="text/javascript" src="/js/src/jquery-stars.js?v=5.0.1"></script>
-  <script type="text/javascript">jQuery("body").jstars({image_path:"/images",image:"candy-cane-stars.png",style:"white",width:34,height:34,delay:700,frequency:5})</script>
+  <script type="text/javascript">
+  jQuery('body').jstars({
+  	image_path: '/images',
+  	image: 'candy-cane-stars.png',
+  	style: 'white',
+  	width: 34,
+  	height: 34,
+  	delay: 700,
+  	frequency: 5
+  });
+  </script>
 
 
-  
+  <!-- 页面 title 进入/离开 效果 -->
 
-  <script type="text/javascript">var st,OriginTitile=document.title;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="≡[。。]≡ 回不去了吗？!",clearTimeout(st)):(document.title="(ฅ>ω<*ฅ) Thank Vue~ "+OriginTitile,st=setTimeout(function(){document.title=OriginTitile},4e3))})</script></body></html>
+  <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="≡[。。]≡ 回不去了吗？!",clearTimeout(st)):(document.title="(ฅ>ω<*ฅ) Thank Vue~ "+OriginTitile,st=setTimeout(function(){document.title=OriginTitile},4e3))})</script>
+
+
+</body>
+</html>

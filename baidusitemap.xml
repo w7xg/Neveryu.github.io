@@ -4,6 +4,48 @@
 
     
   <url>
+    <loc>https://neveryu.github.io/2020/06/10/husky-lint-staged/</loc>
+    <lastmod>2020-06-21T04:27:53.558Z</lastmod>
+    <data>
+        <display>
+        <title>husky+lint-staged助力团队编码规范</title>
+        <pubTime>2020-06-09T21:25:24.000Z</pubTime>
+        
+        <tag>husky</tag>
+         
+        <tag>lint-staged</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2019/10/10/mid-age/</loc>
+    <lastmod>2020-06-21T03:58:22.974Z</lastmod>
+    <data>
+        <display>
+        <title>人到中年</title>
+        <pubTime>2019-10-09T19:25:24.000Z</pubTime>
+        
+        <tag>essay</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://neveryu.github.io/2019/07/01/vue-element-change-theme/</loc>
     <lastmod>2019-10-08T14:54:48.499Z</lastmod>
     <data>
@@ -593,26 +635,6 @@
     
     
   <url>
-    <loc>https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/</loc>
-    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript 内存管理 & 垃圾回收机制</title>
-        <pubTime>2017-02-18T05:25:24.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://neveryu.github.io/2016/09/25/essay-20160925/</loc>
     <lastmod>2017-06-19T14:39:02.024Z</lastmod>
     <data>
@@ -626,6 +648,26 @@
            
              
               <breadCrumb title="随笔" url="https://neveryu.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2017/02/18/js-memory-management-and-gc/</loc>
+    <lastmod>2017-06-19T14:39:02.024Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript 内存管理 & 垃圾回收机制</title>
+        <pubTime>2017-02-18T05:25:24.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
           
         </display>
     </data>
@@ -675,26 +717,6 @@
 
     
   <url>
-    <loc>https://neveryu.github.io/2017/05/20/npm-two/</loc>
-    <lastmod>2017-06-19T14:39:02.008Z</lastmod>
-    <data>
-        <display>
-        <title>npm 的一个小细节</title>
-        <pubTime>2017-05-19T17:25:24.000Z</pubTime>
-        
-        <tag>npm</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://neveryu.github.io/2017/02/28/memory-leak/</loc>
     <lastmod>2017-06-19T14:39:02.008Z</lastmod>
     <data>
@@ -708,6 +730,26 @@
            
              
               <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://neveryu.github.io/2017/05/20/npm-two/</loc>
+    <lastmod>2017-06-19T14:39:02.008Z</lastmod>
+    <data>
+        <display>
+        <title>npm 的一个小细节</title>
+        <pubTime>2017-05-19T17:25:24.000Z</pubTime>
+        
+        <tag>npm</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
           
         </display>
     </data>
