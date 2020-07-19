@@ -3,6 +3,26 @@
 
 
     
+  <url>
+    <loc>https://neveryu.github.io/2019/10/10/mid-age/</loc>
+    <lastmod>2020-07-19T06:27:16.778Z</lastmod>
+    <data>
+        <display>
+        <title>人到中年</title>
+        <pubTime>2019-10-09T19:25:24.000Z</pubTime>
+        
+        <tag>essay</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
   <url>
@@ -21,26 +41,6 @@
            
              
               <breadCrumb title="前端" url="https://neveryu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://neveryu.github.io/2019/10/10/mid-age/</loc>
-    <lastmod>2020-06-21T03:58:22.974Z</lastmod>
-    <data>
-        <display>
-        <title>人到中年</title>
-        <pubTime>2019-10-09T19:25:24.000Z</pubTime>
-        
-        <tag>essay</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://neveryu.github.io/categories/%E7%BB%BC%E5%90%88/"/>
           
         </display>
     </data>
@@ -246,9 +246,9 @@
         <title>中国国内 JavaScript 圈的现状如何</title>
         <pubTime>2016-11-18T05:25:24.000Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
         <tag>essay</tag>
+         
+        <tag>JavaScript</tag>
          
          
            
@@ -537,9 +537,9 @@
         <title>【转】在2016年学JavaScript是一种什么样的体验</title>
         <pubTime>2016-10-16T15:25:24.000Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
         <tag>essay</tag>
+         
+        <tag>JavaScript</tag>
          
          
            

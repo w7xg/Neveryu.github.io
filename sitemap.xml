@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://neveryu.github.io/2019/10/10/mid-age/</loc>
+    
+    <lastmod>2020-07-19T06:27:16.778Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://neveryu.github.io/example/index.html</loc>
     
     <lastmod>2020-07-18T14:47:55.421Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://neveryu.github.io/2020/06/10/husky-lint-staged/</loc>
     
     <lastmod>2020-06-21T04:27:53.558Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://neveryu.github.io/2019/10/10/mid-age/</loc>
-    
-    <lastmod>2020-06-21T03:58:22.974Z</lastmod>
     
   </url>
   
